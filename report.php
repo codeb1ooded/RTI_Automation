@@ -80,19 +80,19 @@ if(isset($_POST['close'])){
 	if(!$con)
 		echo " Connection to the server failed ";
 	$db=mysqli_select_db($con,'rti');
+	
 	if(!$db)
 		echo " Connection to the database failed ";
 	
-	$query="SELECT * FROM add_rti";
-    $res=mysqli_query($con,$query);
+	$query="SELECT * FROM old";
+	$res=mysqli_query($con,$query);
 
-	echo "<table  width=100% border=2>" ;
+    echo "<table  width=100% border=2>" ;
 	echo "<tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
 			<th>Reply Date</th>
 		</tr>";  
-	
 	while($r=mysqli_fetch_assoc($res))
 	{
 		echo "<tr>";
@@ -103,7 +103,7 @@ if(isset($_POST['close'])){
 		echo $r['name'];
 		echo "</td>";
 		echo "<td>";
-		echo $r['reply_date'];	
+		echo $v['reply_date'];	
 		echo "</td></tr>";		
 	}
 }
