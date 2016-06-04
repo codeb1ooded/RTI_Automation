@@ -7,7 +7,7 @@ if(isset($_POST['submit']))
 	{ 
 		die('Could not connect: ' . mysqli_error()); 
 	} 
-	$id = $_POST['ID'];
+	$id = $_GET['Id'];
 	$d1=strtotime($_POST['date_of_receipt']);
 	$d2=strtotime($_POST['date_of_receipt_cio']);
 	$d3=floor(abs($d2-$d1)/86400);

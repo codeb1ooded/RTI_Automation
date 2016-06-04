@@ -2,14 +2,13 @@
 <html>
 	<head>
 		<title>Previous RTI</title>
-		<link rel="stylesheet" href="css/prev_rti.css">
 	</head>
 <body>
 <?php
-	$conn=mysqli_connect("localhost","root","");
-	$var = 'test';
-	if(!$conn)
+	$con=mysqli_connect("localhost","root","");
+	if(!$con)
 		echo " Connection to the server failed ";
+	
 	$db=mysqli_select_db($conn,'rti');
 	if(!$db)
 		echo " Connection to the database failed ";
@@ -38,7 +37,7 @@
 		$yr=0;
 		$d2=date('Y-m-d h:i:s',mktime(date('h',$d1),date('i',$d1),date('s',$d1),date('m',$d1)+$mth,date('d',$d1)+$day,date('Y',$d1)+$yr));
 		echo "<td>".date("Y-m-d",strtotime($d2))."</td>"; 
-		//date_default_timezone_set('India/Delhi');
+		
 		//$cyr=date('Y',time());
 		//$cmon=date('m',time());
 		//$cday=date('d',time());

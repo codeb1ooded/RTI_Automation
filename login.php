@@ -3,17 +3,18 @@ session_start();
 if(isset($_POST['submit']))
 {
 	mysql_connect('localhost','root','') or die(mysql_error());
+	echo "hi";
 	mysql_select_db('rti') or die(mysql_error());
 	$name=$_POST['name'];
 	$pwd=$_POST['pswd'];
-	if($name!=''&&$pwd!='')
+	if($name!='' && $pwd!='')
 	{
 		$query=mysql_query("select * from login where name='".$name."' and password='".$pwd."'") or die(mysql_error());
 		$res=mysql_fetch_row($query);
 		if($res)
 		{
 			$_SESSION['name']=$name;
-			header('location: 1.php');
+			header('location:new_prev.php');
 		}
 		else
 		{

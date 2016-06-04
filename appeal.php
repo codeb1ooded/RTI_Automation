@@ -3,7 +3,9 @@
 <head>
 	<title></title>
 </head>
-<body><table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
+<body>
+<form action = "submitappeal.php" method ="post">
+<table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
 			<tbody>
 				<tr>
 					<th>(VI) I<sup>st</sup> Appeal:- (where applicable)</th>
@@ -28,5 +30,7 @@
 		<th><input type="text" name="meet_date" id="Name" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD"></th>
 	</tr>
 </table>
+<th colspan="15"></th><th><input type="submit" name="submitappeal" id="Save_appeal" value="Save and Exit" class="btnsaveappeal"></th>
 </body>
+</form>
 </html>

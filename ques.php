@@ -1,7 +1,4 @@
 <?php
-if(isset($_POST['enter']))
-{
-	include 'logoff.html';
 	$con= mysqli_connect("localhost","root","","rti");
 	session_start();
 	$b=$_POST['ques'];
@@ -21,12 +18,9 @@ if(isset($_POST['enter']))
 	$c=1;
 	while($a!=0)
 	{
-		//$qno="q_no".$a;
 		$ques="ques".$a;
 		$map="map".$a;
-		$ans="ans".$a;
 		$date_s="date_s".$a;
-		$date_r="date_r".$a;
 ?>
 		<tr>
 			<th><input type=text name=<?php echo $c; ?> value=<?php echo $c; ?>></th>	
@@ -50,8 +44,7 @@ if(isset($_POST['enter']))
 		$c++;
 	}
 	echo "<th colspan=15></th><th><input type=submit name=save value='Save and Exit' ></th>";
-	echo "<th colspan=15></th><th><input type=submit name=reply value='Generate Reply' ></th>";
 	echo "</form>";
 	mysqli_close($con);
-}
+    include 'logoff.html';
 ?>
