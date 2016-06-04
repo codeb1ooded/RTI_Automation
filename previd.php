@@ -24,36 +24,44 @@ if(isset($_GET['id']))
 	$query=" SELECT * FROM add_rti";
     $res=mysqli_query($conn,$query);
 echo "Your options are:";
-while($r=mysqli_fetch_assoc($res))?>
+session_start();
+		$_SESSION['prev_rti_id']=$Id;
+
+?>
 <ul>
 <li>
 <?php 
-echo "<a href='modify.php?id=".$Id."'><input type=submit name=modifyentereddetails id=addqueries value=Modify_queries></a>" ;
+echo "<a href='modify.php'><input type=submit name=modifyentereddetails id=addqueries value=Modify_queries></a>" ;
 ?>
 </li>
 <li>
 <?php
-echo "<a href='submit.php?id=".$Id."'><input type=submit name=Addqueries id=addqueries value=Add_additional_queries></a>" ; 
+echo "<a href='submit.php'><input type=submit name=Addqueries id=addqueries value=Add_additional_queries></a>" ; 
 ?>
 </li>
 <li>
 <?php
-echo "<a href='reply_queries.php?id=".$Id."'><input type=submit name=Replyqueries id=replyqueries value=Reply_of_the_queries></a>" ;
+echo "<a href='reply_queries.php'><input type=submit name=Replyqueries id=replyqueries value=Reply_of_the_queries></a>" ;
 ?>
 </li>
 <li>
 <?php
-echo "<a href='b4reply.php?id=".$Id."'><input type=submit name=Genreply id=Genreply value=Generate_Reply></a>" ;
+echo "<input type=submit name=Genreply id=Genreply value=Generate_Reply></a>" ;
 ?>
 </li>
 <li>
 <?php
-echo "<a href='responsetoappelant3.php?id=".$Id."''><input type=submit name=Inforeply id=Inforeply value=Information-about_reply></a>" ;
+echo "<a href='b4reply.php'><input type=submit name=Section_4 value=Section_4></a>" ;
 ?>
 </li>
 <li>
 <?php
-echo "<a href='appeal.php?id=".$Id."'><input type=submit name=appeal id=appeal value=First Appeal></li></a>" ;
+echo "<a href='responsetoappelant3.php'><input type=submit name=Inforeply id=Inforeply value=Information-about_reply></a>" ;
+?>
+</li>
+<li>
+<?php
+echo "<a href='appeal.php?id=".$Id."'><input type=submit name=appeal id=appeal value=First_Appeal></li></a>" ;
 ?>
 </ul>
 </body>

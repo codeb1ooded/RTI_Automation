@@ -53,7 +53,6 @@ if(isset($_POST['reply']))
 	session_start();
 	$b=$_SESSION['q'];
 	$a=$_SESSION['oid'];
-	
 	$c=$a;
 	while( $b!=0)
 	{			
@@ -80,7 +79,6 @@ if(isset($_POST['reply']))
 		mysqli_query($con,$sql);
 		$b--;
 	}
-	
 	echo"The reply to the questions is furnished beneath as:";
 	echo"<table width=100% border =2>";
 	echo "<tr>
@@ -91,7 +89,6 @@ if(isset($_POST['reply']))
 		
 	$query="SELECT * FROM t2 WHERE id = ".$c.";";
 	$res=mysqli_query($con,$query);
-	
 	while($r=mysqli_fetch_array($res))
 	{
 		echo "<tr>";
@@ -104,5 +101,4 @@ if(isset($_POST['reply']))
 	echo "<a href='new_prev.php'><input type=submit value=Exit name='save' /></a>";
 	mysqli_close($con);
 }
- 
 ?>

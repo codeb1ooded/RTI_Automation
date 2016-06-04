@@ -10,7 +10,7 @@
 				<tr><th colspan="2">(IV) Reference u/s 7 of RTI Act:- (where applicable)</th></tr>
 			</tbody>
 			</table>
-			<form action=save_ques.php method=post>
+			<form action='replysection4.php' method=post>
 			<table width="100%" border="2" class="tbl-border" cellpadding="0" cellspacing="2">
 	<tr>
 		<th> Date of intimation given to appelant regarding fee u/s</br> 7(1) chargeable  and his right to review</th>
@@ -30,6 +30,6 @@
 	</tr>
 	
 	</table>
-	<input type='submit' value ='Generate reply' class ='btn' id='genreply'>
+	<input type='submit' value ='Save and Exit' name='submitSection4'>
 	</body>
 	</html>

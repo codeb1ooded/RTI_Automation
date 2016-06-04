@@ -93,7 +93,13 @@ function test1()
 			<input type="text" name="email" maxlength="70" value="" id="Email" class="watermark">
 			</td>
 		</tr>
- 
+        
+       <!-- <tr>
+			<th>Confirm Email-ID</th>
+			<td>
+			<input type="text" name="ConfirmEmail" id="ConfirmEmail" maxlength="70" value="">
+			</td>
+		</tr> -->
 		
 		<tr>
 			<th class="THfirst">Citizenship<cite><br>(Only Indian citizens can file RTI Request application)</cite>

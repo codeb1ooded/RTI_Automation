@@ -32,5 +32,6 @@ if(isset($_POST['enter']))
 			<th><input type=text name=<?php echo $ans; ?>></th>
 			<th><input type=text name=<?php echo $date_r; ?> placeholder=YYYY-MM-DD></th>
 		</tr>
-		</body>
-		</html>
+	<?php	} ?>
+</body>
+</html>
