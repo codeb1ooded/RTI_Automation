@@ -31,17 +31,17 @@ session_start();
 <ul>
 <li>
 <?php 
-echo "<a href='modify.php'><input type=submit name=modifyentereddetails id=addqueries value=Modify_queries></a>" ;
+echo "<a href='replyform.php?id=".$Id."'><input type=submit name=modifyentereddetails id=addqueries value=Modify_queries></a>" ;
 ?>
 </li>
 <li>
 <?php
-echo "<a href='submit.php'><input type=submit name=Addqueries id=addqueries value=Add_additional_queries></a>" ; 
+echo "<a href='addqueries.php?id=".$Id."'><input type=submit name=Addqueries id=addqueries value=Add_additional_queries></a>" ; 
 ?>
 </li>
 <li>
 <?php
-echo "<a href='reply_queries.php'><input type=submit name=Replyqueries id=replyqueries value=Reply_of_the_queries></a>" ;
+echo "<a href='reply_queries.php?id=".$Id."'><input type=submit name=Replyqueries id=replyqueries value=Reply_of_the_queries></a>" ;
 ?>
 </li>
 <li>

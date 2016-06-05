@@ -14,7 +14,7 @@
 		echo " Connection to the database failed ";
 	
 	$query=" SELECT * FROM add_rti order by date_of_receipt_cio";
-    $res=mysqli_query($conn,$query);
+    $res= mysqli_query($conn,$query);
 	echo "<table  width=100% border=2>" ;
 	echo "<form method=post action='./back.php'><tr>
 			<th>ID</th>

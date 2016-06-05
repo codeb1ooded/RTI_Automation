@@ -5,6 +5,11 @@
 </head>
 <body>
 <?php
+	if(isset($_GET['id']))
+	{
+		$Id = $_GET['id'];
+		echo "Id is:".$Id;
+	}
 	include 'logoff.html';
 	$con = mysqli_connect("localhost","root",""); 
 	if (!$con) 
@@ -151,115 +156,9 @@
 		<th><input type="text" name="pay_mode" maxlength="50" value="<?php echo $data2['pay_mode']?>"></th>
 	</tr>
 	</table>
-	<!--Processing of RTI application and response to the appellant-->	<table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
-			<tbody>
-				<tr><th colspan="2">(III) Processing of RTI application and response to the appellant:-</th></tr>
-			</tbody>
-			</table>
-			<table width="100%" border="2" class="tbl-border" cellpadding="0" cellspacing="2">
-
-	<tr>
-		<th>(i) Date of receipt of information by the CPIO<br> from the holder(s) of information</th>
-		<th><input type="text" name="holder_receipt_date" id="Name" maxlength="50" value="<?php echo $data2['holder_receipt_date']?>" class="name" placeholder="YYYY-MM-DD"></th>
-	</tr>	
-	<tr>
-		<th>(ii)Date of reply to appellant/complaint by CPIO</th>
-		<th><input type="text" name="reply_date" id="Name" maxlength="50" value="<?php echo $data2['reply_date']?>" class="name" placeholder="YYYY-MM-DD"></th></tr>
-	<tr>
-	<tr>
-		<th>Time between (i)&(ii) days</th>
-		<th><input type="text" name="reply_time" id="Name" maxlength="50" value="<?php echo $data2['reply_time']?>" class="name"></th>
-	</tr>
-	<tr>
-		<th>Mode of communicating reply </th><th>
-		<input type="text" name="reply_mode" maxlength="50" value="<?php echo $data2['reply_mode']?>"></th>
-	</tr>
-		<th>Whether name and address of FAA mentioned in the</br> reply u/s 7(8)(give particulars)</th>
-		<th><input type="text" name="faa_info" id="Name" maxlength="50" value="<?php echo $data2['faa_info']?>" class="name" placeholder=""></th>
-	</tr>
-	
-	</table>
-	<!--Information providing,fee details--><table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
-			<tbody>
-				<tr><th colspan="2">(IV) Reference u/s 7 of RTI Act:- (where applicable)</th></tr>
-			</tbody>
-			</table>
-			<table width="100%" border="2" class="tbl-border" cellpadding="0" cellspacing="2">
-	<tr>
-		<th> Date of intimation given to appelant regarding fee u/s</br> 7(1) chargeable  and his right to review</th>
-		<th><input type="text" name="info_fee_date" id="Name" maxlength="50" value="<?php echo $data2['info_fee_date']?>" class="name" placeholder="YYYY-MM-DD"></th>
-	</tr>
-	<tr>
-		<th>Quantum of<br>(a) Fee & (b) Further fee indicated to be charged</th>
-		<th><input type="text" name="info_fee" id="Name" maxlength="50" value="<?php echo $data2['info_fee']?>" class="name" placeholder=""></th>
-	</tr>
-	<tr>
-		<th>(vi)Date of depositing fees by petitioner as demanded by CPIO </br>(indicate mode of depositing fee too)</th>
-		<th><input type="text" name="fee_submit_date" id="Name" maxlength="50" value="<?php echo $data2['fee_submit_date']?>" class="name" placeholder="YYYY-MM-DD"></th>
-	</tr>
-	<tr>
-		<th>(vii)Date of furnishing information </th>
-		<th><input type="text" name="given_info_date" id="Name" maxlength="50" value="<?php echo $data2['given_info_date']?>" class="name" placeholder="YYYY-MM-DD"></th>
-	</tr>
-	<tr>
-		<th>Time taken between (vi)&(vii) in days</th>
-		<th><input type="text" name="info_time" id="Name" maxlength="50" value="<?php echo $data2['info_time']?> " class="name"></th>
-		</tr>
-	</table>
-	<!--Reference to another CPIO-->	<table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
-			<tbody>
-				<tr><th colspan="2">(V) Reference u/s 6(3) of RTI Act:- (where applicable)</th></tr>
-			</tbody>
-			</table>
-			<table width="100%" border="2" class="tbl-border" cellpadding="0" cellspacing="2">
-	<tr>
-		<th>(iv)Date of transfer to another Public Authority</th>
-		<th><input type="text" name="Asent_date" id="Name" maxlength="50" value="<?php echo $data2['Asent_date']?>" class="name" placeholder="YYYY-MM-DD"></th>
-	</tr>
-	<tr>
-		<th>To whom was it transferred</br> (mention name,designation and address)</th>
-		<th><input type="text" name="Ainfo" id="Name" maxlength="50" value="<?php echo $data2['Ainfo']?>" class="name" placeholder=""></th>
-	</tr>
-	<tr>
-		<th>(v)Date of receipt by another Public Authority</th>
-		<th><input type="text" name="Areceived_date" id="Name" maxlength="50" value="<?php echo $data2['Areceived_date']?>" class="name" placeholder="YYYY-MM-DD"></th>
-	</tr>
-	<tr>
-		<th>Time between (iv)&(v)</th>
-		<th><input type="text" name="Atime" id="Name" maxlength="50" value="<?php echo $data2['Atime']?> " class="name"></th>
-	</tr>
-	</table>
-			
-		<!-- APPEAL--> <table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
-			<tbody>
-				<tr>
-					<th>(VI) I<sup>st</sup> Appeal:- (where applicable)</th>
-				</tr>
-			</tbody>
-			</table>
-			<table width="100%" border="2" class="tbl-border" cellpadding="0" cellspacing="2">
-	<tr>
-		<th> Name and designation of the officer before whom <br>the 1<sup>st</sup> appeal is filed u/s 19(1)</th>
-		<th><input type="text" name="appeal_info" id="Name" maxlength="50" value="<?php echo $data2['appeal_info']?> " class="name" placeholder=""></th>
-	</tr>
-	<tr>
-		<th>Date of transfer of appeal by the receiving officer to FAA</th>
-		<th><input type="text" name="transfer_date" id="Name" maxlength="50" value="<?php echo $data2['transfer_date']?> " class="name" placeholder="YYYY-MM-DD"></th>
-	</tr>
-	<tr>
-		<th>Date of receipt of appeal by FAA(mention name of FAA)</th>
-		<th><input type="text" name="faa_receipt_date" id="Name" maxlength="50" value="<?php echo $data2['faa_receipt_date']?> " class="name" placeholder="YYYY-MM-DD"></th>
-	</tr>
-	<tr>
-		<th>Date of communicating decision to appelant </th>
-		<th><input type="text" name="meet_date" id="Name" maxlength="50" value="<?php echo $data2['meet_date']?> " class="name" placeholder="YYYY-MM-DD"></th>
-	</tr>
-</table>
-
 <table>
 	<tbody>
 		<tr>
-			<th colspan="15"></th><th><input type="submit" name="add" id="addQuestions" value="Add Queries" class="btnaddQuestions"></th>
 			<th colspan="15"></th><th><input type="submit" name="edit" id="addQuestions" value="Edit Queries" class="btnaddQuestions"></th>
 			<th colspan="15"></th><th><input type="submit" name="submit" id="addQuestions" value="Save and Exit" class="btnaddQuestions"></th>
 		

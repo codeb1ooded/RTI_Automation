@@ -6,7 +6,7 @@ if(isset($_POST['enter']))
 	session_start();
 	$b=$_POST['ques'];
 	$_SESSION['q']=$b;
-	$id=$_SESSION['id'];
+	$id=$_SESSION['oid'];
 	$a=$b;
 	echo "The id of this RTI is: ".$id;
 	echo "<table>
