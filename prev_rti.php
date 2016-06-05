@@ -50,6 +50,6 @@
 	}
 	echo "</table>";
 ?>
-	<input type="submit" name="back" value="Back" />
+	<br><input type="submit" name="back" value="Back" />
 </body>
 </html>
