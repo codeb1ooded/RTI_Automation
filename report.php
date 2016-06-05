@@ -5,10 +5,10 @@
 <input type="submit" name="dept" value="Department">
 <input type="submit" name="date" value="Date">
 <input type="submit" name="close" value="Closed">
+<input type="submit" name="back" value="Back">
 
 </form>
 <?php
-include 'logoff.html';
 	
 if(isset($_POST['name'])){
 	$con=mysqli_connect("localhost","root","");
@@ -147,5 +147,8 @@ if(isset($_POST['enter'])){
 		echo "</td>";
 	}
 }
+ if(isset($_POST['back'])){
+ header('Location: new_prev.php');}
+
 ?>
 <html>
