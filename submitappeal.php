@@ -1,6 +1,6 @@
 <?php	
 	if(isset($_POST['submitappeal'])){
-	include 'new_prev.php';
+	include 'prev_rti.php';
 	$con= mysqli_connect("localhost","root","","rti");
 	
 	if(!$con){

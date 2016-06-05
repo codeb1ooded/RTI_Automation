@@ -10,7 +10,6 @@
 if(isset($_GET['id']))
 	{
 		$Id = $_GET['id'];
-		echo "Id is:".$Id;
 	}
 	include 'logoff.html';
 	$conn=mysqli_connect("localhost","root","");
@@ -63,6 +62,11 @@ echo "<a href='responsetoappelant3.php'><input type=submit name=Inforeply id=Inf
 <?php
 echo "<a href='appeal.php?id=".$Id."'><input type=submit name=appeal id=appeal value=First_Appeal></li></a>" ;
 ?>
+<li>
+<?php
+echo "<a href='prev_rti.php'><input type=submit name=Back value=Back></a>" ;
+?>
+</li>
 </ul>
 </body>
 </html>

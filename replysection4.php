@@ -1,6 +1,6 @@
 <?php	
 	if(isset($_POST['submitSection4'])){
-	include 'new_prev.php';
+	include 'nprev_rti.php';
 	$con= mysqli_connect("localhost","root","","rti");
 	
 	if(!$con){
