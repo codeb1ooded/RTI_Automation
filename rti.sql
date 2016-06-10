@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2016 at 09:00 AM
+-- Generation Time: Jun 10, 2016 at 04:25 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -138,6 +138,19 @@ CREATE TABLE `public_authority` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `reply_queries`
+--
+
+CREATE TABLE `reply_queries` (
+  `id` int(11) NOT NULL,
+  `q_no` int(11) NOT NULL,
+  `ans` varchar(80) NOT NULL,
+  `date_received` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `section4`
 --
 
@@ -169,21 +182,18 @@ CREATE TABLE `t2` (
   `q_no` int(11) NOT NULL,
   `ques` varchar(200) NOT NULL,
   `map` varchar(50) NOT NULL,
-  `ans` varchar(1000) NOT NULL,
-  `date_sent` date NOT NULL,
-  `date_received` date NOT NULL,
-  `days` int(11) NOT NULL
+  `date_sent` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `t2`
 --
 
-INSERT INTO `t2` (`id`, `q_no`, `ques`, `map`, `ans`, `date_sent`, `date_received`, `days`) VALUES
-(1, 1, 'abc', 'Ad', '', '2016-07-18', '0000-00-00', 0),
-(1, 2, 'def', 'HR', '', '2016-07-18', '0000-00-00', 0),
-(0, 1, 'rdtfgyhbunj', '', '', '0000-00-00', '0000-00-00', 0),
-(0, 2, 'sdrtfgvybhnj', '', '', '0000-00-00', '0000-00-00', 0);
+INSERT INTO `t2` (`id`, `q_no`, `ques`, `map`, `date_sent`) VALUES
+(1, 1, 'abc', 'Ad', '2016-07-18'),
+(1, 2, 'def', 'HR', '2016-07-18'),
+(0, 1, 'rdtfgyhbunj', '', '0000-00-00'),
+(0, 2, 'sdrtfgvybhnj', '', '0000-00-00');
 
 --
 -- Indexes for dumped tables
