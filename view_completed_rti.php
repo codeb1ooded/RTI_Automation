@@ -27,7 +27,7 @@
 		if($r['archieve']==1)
 		{			
 			echo "<tr>";
-				echo "<td>".$r['id']."</td>";
+				echo "<td><a href='compid.php?id=".$r['id']."'>".$r['id']." </a></td>";
 				echo "<td>".$r['name']."</td>"; 
 				echo "<td>".$r['address']."</td>"; 		
 				echo "<td>".$r['phone_no']."</td>";

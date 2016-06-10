@@ -18,21 +18,20 @@
 	mysqli_query($con,$sql);
 	
  if(isset($_POST['add'])){
-	
-	
+	$a=0;
+	$k="SELECT * FROM add_rti";
+	$v=mysqli_query($con,$k);
+	while($r=mysqli_fetch_assoc($v))
+	{
+		$a=$r['id'];
+	}
+	echo "The id is:".$a;
 	echo "<form action=ques.php method=post>";
 	echo "<tr>
 		<th><h3>No. of Queries</h3></th>
 		<th><input type=text name=ques></th>
 	<th><input type=submit name=enter value='Enter'></th>
-	</tr>";
-	$a=0;
-	$k="SELECT * FROM add_rti";
-	$v=mysqli_query($con,$k);
-	while($r=mysqli_fetch_assoc($v)){
-		$a=$r['id'];
-	}
-	
+	</tr>";	
 	session_start();
 	$_SESSION['id']=$a;
 	include 'logoff.html';

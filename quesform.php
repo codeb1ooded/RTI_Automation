@@ -6,10 +6,10 @@ if(isset($_POST['save']))
 	if(!$con)
 		die("Can not connect:" . mysql_error());
 	session_start();
-	$c=$_SESSION['oid'];
+	$c=$_SESSION['id'];
+	$b=$_SESSION['qu'];
 	$data1="SELECT * FROM t2 WHERE id=".$c.";";
 	$query=mysqli_query($con,$data1);
-	$b=$_SESSION['uq'];
 	
 	while( $b!=0)
 	{		
@@ -22,8 +22,10 @@ if(isset($_POST['save']))
 		$ques1=$_POST[$ques];
 		$map1=$_POST[$map];
 		$date_s1=$_POST[$date_s];
-		$sql="INSERT INTO t2 (id,q_no,ques,map,ans,date_sent,date_received,days) 
-		  VALUES('$c','$qno1','$ques1','$map1','$ans1','$date_s1','$date_r1','$d4')";
+		$d1=strtotime($_POST[$date_s]);
+		
+		$sql="INSERT INTO t2 (id,q_no,ques,map,date_sent) 
+		  VALUES('$c','$qno1','$ques1','$map1','$date_s1')";
 		mysqli_query($con,$sql);	
 		$b--;
 	}
@@ -39,32 +41,24 @@ if(isset($_POST['reply']))
 		die("Can not connect:" . mysql_error());
 	}
 	session_start();
-	$c=$_SESSION['oid'];
+	$c=$_SESSION['id'];
 	$data1="SELECT * FROM t2 WHERE id=".$c.";";
 	$query=mysqli_query($con,$data1);
-	$b=$_SESSION['uq'];
+	$b=$_SESSION['qu'];
 	while( $b!=0)
 	{		
 		$qno="q_no".$b;
 		$ques="ques".$b;
 		$map="map".$b;
-		$ans="ans".$b;
 		$date_s="date_s".$b;
-		$date_r="date_r".$b;
 		
 		$qno1=$_POST[$qno];
 		$ques1=$_POST[$ques];
 		$map1=$_POST[$map];
-		$ans1=$_POST[$ans];
 		$date_s1=$_POST[$date_s];
-		$date_r1=$_POST[$date_r];
-		
-		$d1=strtotime($_POST[$date_s]);
-		$d2=strtotime($_POST[$date_r]);
-		$d4=floor(abs($d2-$d1)/86400);
 				
 		$sql="INSERT INTO t2 (id,q_no,ques,map,ans,date_sent,date_received,days) 
-		  VALUES('$c','$qno1','$ques1','$map1','$ans1','$date_s1','$date_r1','$d4')";
+		  VALUES('$c','$qno1','$ques1','$map1','$date_s1')";
 		
 		mysqli_query($con,$sql);	
 		$b--;
@@ -85,7 +79,6 @@ if(isset($_POST['reply']))
 		echo "<tr>";
 		echo "<td>".$r['q_no']."</td>";
 		echo "<td>".$r['ques']."</td>"; 
-		echo "<td>".$r['ans']."</td>";
 		echo "</tr>";
 	}
 	echo"</table>";

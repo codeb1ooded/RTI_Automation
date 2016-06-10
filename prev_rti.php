@@ -15,8 +15,9 @@
 	
 	$query=" SELECT * FROM add_rti order by date_of_receipt_cio";
     $res= mysqli_query($conn,$query);
+	echo "<marquee><strong>CHOOSE THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
 	echo "<table  width=100% border=2>" ;
-	echo "<form method=post action='./back.php'><tr>
+	echo "<tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
 			<th>Date of Receipt</th>
@@ -50,6 +51,6 @@
 	}
 	echo "</table>";
 ?>
-	<br><input type="submit" name="back" value="Back" />
+	<br><a href="new_prev.php">Back</a>
 </body>
 </html>

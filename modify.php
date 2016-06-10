@@ -79,9 +79,7 @@ if(isset($_POST['edit']))
 	$query=mysqli_query($con,$data1);
 	$data2=mysqli_num_rows($query);
 	$a=$data2;
-	session_start();
-	$_SESSION['oid']=$id;
-	$_SESSION['uq']=$data2;
+	
 	echo "<table>
 			<tbody>
 				<tr>
@@ -113,6 +111,9 @@ if(isset($_POST['edit']))
 	echo "<th colspan=15></th><th><input type=submit name=save value='Save and Exit' ></th>";
 	echo "<th colspan=15></th><th><input type=submit name=reply value='Generate Reply' ></th>";
 	echo "</form>";
+	session_start();
+	$_SESSION['id']=$id;
+	$_SESSION['qu']=$data2;
 	if ($con->query($data) === TRUE) 
 	{
 		echo "Record updated successfully";
@@ -123,4 +124,5 @@ if(isset($_POST['edit']))
 	}
 	$con->close();
 }
+
 ?>

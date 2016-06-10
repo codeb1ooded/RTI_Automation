@@ -15,9 +15,7 @@ if(isset($_POST['enter']))
 					<th>Query No</th>
 					<th>Query</th>
 					<th>Map To</th>
-					<th>Reply</th>
 					<th>Date Sent</th>
-					<th>Date Received</th>
 				</tr>";
 	echo "<form action=save_ques1.php method=post>";
 	while( $a!=0)
@@ -38,9 +36,7 @@ if(isset($_POST['enter']))
 				<option value=Ex>Examination Division</option>
 				<option value=Ad>Administrative</option>
 				<option value=HR>Human Resource</option></span></select></th>
-			<th><input type=text name=<?php echo $ans; ?>></th>
 			<th><input type=text name=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
-			<th><input type=text name=<?php echo $date_r; ?> placeholder=YYYY-MM-DD></th>
 		</tr>
 <?php				
 		$a--;

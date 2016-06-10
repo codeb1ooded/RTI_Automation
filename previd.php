@@ -62,6 +62,12 @@ echo "<a href='responsetoappelant3.php'><input type=submit name=Inforeply id=Inf
 <?php
 echo "<a href='appeal.php?id=".$Id."'><input type=submit name=appeal id=appeal value=First_Appeal></li></a>" ;
 ?>
+</li>
+<li>
+<?php
+echo "<a href='compid.php?id=".$Id."'><input type=submit name=Details value=Details></a>" ;
+?>
+</li>
 <li>
 <?php
 echo "<a href='prev_rti.php'><input type=submit name=Back value=Back></a>" ;

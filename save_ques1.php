@@ -19,30 +19,30 @@ if(isset($_POST['save']))
 		//$qno="q_no".$b;
 		$ques="ques".$b;
 		$map="map".$b;
-		$ans="ans".$b;
+		//$ans="ans".$b;
 		$date_s="date_s".$b;
-		$date_r="date_r".$b;
+		//$date_r="date_r".$b;
 		
 		//$qno1=$_POST[$qno];
 		$ques1=$_POST[$ques];
 		$map1=$_POST[$map];
-		$ans1=$_POST[$ans];
+		//$ans1=$_POST[$ans];
 		$date_s1=$_POST[$date_s];
-		$date_r1=$_POST[$date_r];
+		//$date_r1=$_POST[$date_r];
 		
-		$d1=strtotime($_POST[$date_s]);
+		/*$d1=strtotime($_POST[$date_s]);
 		$d2=strtotime($_POST[$date_r]);
-		$d4=floor(abs($d2-$d1)/86400);
+		$d4=floor(abs($d2-$d1)/86400);*/
 		$a++;
-		$sql="INSERT INTO t2(id,q_no,ques,map,ans,date_sent,date_received,days) 
-			VALUES('$c','$a','$ques1','$map1','$ans1','$date_s1','$date_r1','$d4')";
+		$sql="INSERT INTO t2(id,q_no,ques,map,date_sent) 
+			VALUES('$c','$a','$ques1','$map1','$date_s1'')";
 		mysqli_query($con,$sql);
 		$b--;
 	}
 	mysqli_close($con);
 }
 ////////////////////////////////
-if(isset($_POST['reply']))
+/*if(isset($_POST['reply']))
 {
 	include 'logoff.html';
 	$con= mysqli_connect("localhost","root","","rti");
@@ -59,23 +59,23 @@ if(isset($_POST['reply']))
 		$qno="q_no".$b;
 		$ques="ques".$b;
 		$map="map".$b;
-		$ans="ans".$b;
+		//$ans="ans".$b;
 		$date_s="date_s".$b;
-		$date_r="date_r".$b;
+		//$date_r="date_r".$b;
 		
 		$qno1=$_POST[$qno];
 		$ques1=$_POST[$ques];
 		$map1=$_POST[$map];
-		$ans1=$_POST[$ans];
+		//$ans1=$_POST[$ans];
 		$date_s1=$_POST[$date_s];
-		$date_r1=$_POST[$date_r];
+		//$date_r1=$_POST[$date_r];
 		
 		$d1=strtotime($_POST[$date_s]);
 		$d2=strtotime($_POST[$date_r]);
 		$d4=floor(abs($d2-$d1)/86400);
 				
-		$sql="INSERT INTO t2(id,q_no,ques,map,ans,date_sent,date_received,days) 
-			VALUES('$c','$qno1','$ques1','$map1','$ans1','$date_s1','$date_r1','$d4')";
+		$sql="INSERT INTO t2(id,q_no,ques,map,date_sent) 
+			VALUES('$c','$qno1','$ques1','$map1','$date_s1')";
 		mysqli_query($con,$sql);
 		$b--;
 	}
@@ -100,5 +100,5 @@ if(isset($_POST['reply']))
 	echo"</table>";
 	echo "<a href='new_prev.php'><input type=submit value=Exit name='save' /></a>";
 	mysqli_close($con);
-}
+}*/
 ?>

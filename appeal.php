@@ -4,7 +4,7 @@
 	<title></title>
 </head>
 <body>
-<form action = "submitappeal.php" method ="post">
+<form action = "replysection4.php" method ="post">
 <table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
 			<tbody>
 				<tr>

@@ -5,7 +5,7 @@
 	</tbody>
 </table>
 <table width="100%" border="2" class="tbl-border" cellpadding="0" cellspacing="2">
-	<form action ="responsetoappelant.php" method ="post">
+	<form action ="replysection4.php" method ="post">
 	<tr>
 		<th>(i) Date of receipt of information by the CPIO<br> from the holder(s) of information</th>
 		<th><input type="text" name="holder_receipt_date" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD"></th>
