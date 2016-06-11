@@ -5,9 +5,23 @@ if(isset($_POST['enter']))
 	$con= mysqli_connect("localhost","root","","rti");
 	session_start();
 	$b=$_POST['ques'];
-	$_SESSION['q']=$b;
 	$id=$_SESSION['oid'];
+	$_SESSION['oid']=$id;
 	$a=$b;
+	$query="SELECT * FROM t2 where id=".$id.";";
+	$data=mysqli_query($con,$query);
+	$data2=mysqli_num_rows($data);
+	$ac=$data2;
+	$qno=0;
+		
+
+	while( $ac!=0)
+	{
+		$data3=mysqli_fetch_array($data);
+		$qno=$data3['q_no'];
+		$ac--;
+	}
+	$_SESSION['v']=$qno;
 	echo "The id of this RTI is: ".$id;
 	echo "<table>
 			<tbody>
@@ -20,7 +34,7 @@ if(isset($_POST['enter']))
 	echo "<form action=save_ques1.php method=post>";
 	while( $a!=0)
 	{
-		$qno="q_no".$a;
+		$qno=$qno+1;	
 		$ques="ques".$a;
 		$map="map".$a;
 		$ans="ans".$a;
@@ -28,7 +42,7 @@ if(isset($_POST['enter']))
 		$date_r="date_r".$a;
 ?>
 		<tr>
-			<th><input type=text name=<?php echo $qno; ?>></th>	
+			<th><input type=text name=<?php echo $qno; ?> value=<?php echo $qno; ?>></th>	
 			<th><input type=text name=<?php echo $ques; ?>></th>
 			<th><select name=<?php echo $map; ?>>
 				<span><option value=''>--Select--</option>
@@ -42,7 +56,7 @@ if(isset($_POST['enter']))
 		$a--;
 	}
 	echo "<th colspan=15></th><th><input type=submit name=save value='Save and Exit' ></th>";
-	echo "<th colspan=15></th><th><input type=submit name=reply value='Generate Reply' ></th>";
+	echo "<th colspan=15></th><th><input type=submit name=gen_pdf value='Generate Reply' ></th>";
 	echo "</form>";
 	mysqli_close($con);
 }

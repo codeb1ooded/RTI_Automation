@@ -45,7 +45,7 @@ echo "<a href='reply_queries.php?id=".$Id."'><input type=submit name=Replyquerie
 </li>
 <li>
 <?php
-echo "<input type=submit name=Genreply id=Genreply value=Generate_Reply></a>" ;
+echo "<a href='generate_reply.php?id=".$Id."'><input type=submit name=Genreply id=Genreply value=Generate_Reply></a>" ;
 ?>
 </li>
 <li>

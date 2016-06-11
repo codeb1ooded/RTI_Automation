@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2016 at 04:25 PM
--- Server version: 10.1.9-MariaDB
+-- Generation Time: Jun 11, 2016 at 11:36 AM
+-- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -56,7 +56,12 @@ INSERT INTO `add_rti` (`id`, `name`, `gender`, `address`, `pin_code`, `state`, `
 (2, 'xyz', '', '', 0, '', '', '', '', '', '', '0000-00-00', '0000-00-00', 0, '', '0000-00-00', '', 1),
 (3, 'abc', 'Female', 'esdtrgyuij', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 0),
 (4, 'blah', 'Male', '', 0, '', 'India', '', '', '', 'Indian', '0000-00-00', '0000-00-00', 0, 'yes', '0000-00-00', '', 0),
-(5, 'utkarsha', 'Female', 'abcdef', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 0);
+(5, 'utkarsha', 'Female', 'abcdef', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 0),
+(6, 'mia', 'Female', 'nskjx', 0, '', 'India', '', '', '', 'Indian', '0000-00-00', '0000-00-00', 0, 'yes', '0000-00-00', '', NULL),
+(7, 'tris', 'Male', '', 0, '', 'India', '', '', '', 'Indian', '0000-00-00', '0000-00-00', 0, 'yes', '0000-00-00', '', NULL),
+(8, 'Tia', 'Female', 'sakml', 0, '', 'India', '', '', '', 'Indian', '0000-00-00', '0000-00-00', 0, 'yes', '0000-00-00', '', NULL),
+(9, 'yara', 'Female', '', 0, '', 'India', '', '', '', 'Indian', '0000-00-00', '0000-00-00', 0, 'yes', '0000-00-00', '', NULL),
+(10, 'lisa', 'Male', 'smqwd', 0, '', 'India', '', '', '', 'Indian', '0000-00-00', '0000-00-00', 0, 'yes', '0000-00-00', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -138,19 +143,6 @@ CREATE TABLE `public_authority` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reply_queries`
---
-
-CREATE TABLE `reply_queries` (
-  `id` int(11) NOT NULL,
-  `q_no` int(11) NOT NULL,
-  `ans` varchar(80) NOT NULL,
-  `date_received` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `section4`
 --
 
@@ -181,19 +173,39 @@ CREATE TABLE `t2` (
   `id` int(11) NOT NULL,
   `q_no` int(11) NOT NULL,
   `ques` varchar(200) NOT NULL,
+  `ans` varchar(100) NOT NULL,
   `map` varchar(50) NOT NULL,
-  `date_sent` date NOT NULL
+  `date_sent` date NOT NULL,
+  `date_rec` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `t2`
 --
 
-INSERT INTO `t2` (`id`, `q_no`, `ques`, `map`, `date_sent`) VALUES
-(1, 1, 'abc', 'Ad', '2016-07-18'),
-(1, 2, 'def', 'HR', '2016-07-18'),
-(0, 1, 'rdtfgyhbunj', '', '0000-00-00'),
-(0, 2, 'sdrtfgvybhnj', '', '0000-00-00');
+INSERT INTO `t2` (`id`, `q_no`, `ques`, `ans`, `map`, `date_sent`, `date_rec`) VALUES
+(1, 1, 'abc', '', 'Ad', '2016-07-18', '0000-00-00'),
+(1, 2, 'def', '', 'HR', '2016-07-18', '0000-00-00'),
+(0, 1, 'rdtfgyhbunj', '', '', '0000-00-00', '0000-00-00'),
+(0, 2, 'sdrtfgvybhnj', '', '', '0000-00-00', '0000-00-00'),
+(4, 1, 'dckmlsnvls', '', '', '0000-00-00', '0000-00-00'),
+(4, 2, 'lfd,mlgrjkdo', '', '', '0000-00-00', '0000-00-00'),
+(6, 1, 'sjjjjjjjjchjsd', 'gftgvbhyj', 'Ac', '1996-01-02', '0000-00-00'),
+(6, 1, 'sjjjjjjjjchjsd', 'gftgvbhyj', 'Ac', '1996-01-02', '0000-00-00'),
+(6, 1, 'sjjjjjjjjchjsd', 'gftgvbhyj', 'Ac', '1996-01-02', '0000-00-00'),
+(6, 1, 'sjjjjjjjjchjsd', 'gftgvbhyj', 'Ac', '1996-01-02', '0000-00-00'),
+(7, 2, 'sdkjhkjhfiu', 'jkscbihury', 'Ex', '1996-01-02', '1996-08-02'),
+(7, 2, 'sdkjhkjhfiu', 'jkscbihury', 'Ex', '1996-01-02', '1996-08-02'),
+(5, 1, 'sjcjgewu', 'welenewluoie', 'Ad', '0000-00-00', '0000-00-00'),
+(5, 1, 'sjcjgewu', 'welenewluoie', 'Ad', '0000-00-00', '0000-00-00'),
+(3, 1, 'sakjwqhxdws', 'samkdo', '', '0000-00-00', '0000-00-00'),
+(3, 1, 'sakjwqhxdws', 'samkdo', '', '0000-00-00', '0000-00-00'),
+(8, 0, '', 'awsmnhda', '', '0000-00-00', '0000-00-00'),
+(8, 0, '', 'awsmnhda', '', '0000-00-00', '0000-00-00'),
+(9, 0, '', 'bnvjfytds', '', '0000-00-00', '0000-00-00'),
+(9, 0, '', 'bnvjfytds', '', '0000-00-00', '0000-00-00'),
+(10, 1, 'dwnm,', 'wdkm', '', '0000-00-00', '0000-00-00'),
+(10, 2, 'ed ,mwjkre', 'nscdk', '', '0000-00-00', '0000-00-00');
 
 --
 -- Indexes for dumped tables
@@ -237,7 +249,7 @@ ALTER TABLE `section4`
 -- AUTO_INCREMENT for table `add_rti`
 --
 ALTER TABLE `add_rti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `first_appeal`
 --

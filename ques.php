@@ -37,14 +37,15 @@
 			</th>
 			
 			<th><input type=text name=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
-			
 		</tr>
 <?php				
 		$a--;
 		$c++;
 	}
 	echo "<th colspan=15></th><th><input type=submit name=save value='Save and Exit' ></th>";
+	echo"<th colspan=30></th><th><input type=submit name=gen_pdf value='Generate_pdf_query' ></th>";
 	echo "</form>";
 	mysqli_close($con);
+	
     include 'logoff.html';
 ?>

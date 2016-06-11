@@ -23,8 +23,8 @@ echo "<table>
 		$data3=mysqli_fetch_array($query);
 		$qno="q_no".$a;
 		$ques="ques".$a;
-		$ans="ans".$id;
-		$date_rec="date_rec".$id;
+		$ans="ans".$a;
+		$date_rec="date_rec".$a;
 ?>
 <tr>
 			<th><input  value="<?php echo $data3['q_no']?>" type=text name=<?php echo $qno; ?>></th>	
