@@ -10,10 +10,10 @@ echo "End of queries ".$d;
 //$id= $_SESSION['oid'];
 $c=$d;
 $a=$b;
-$c=$c+1;
+//$c=$c+1;
 //echo $b;
 //echo $d;
-while($a<$c)
+while($a<=$c)
 {	
 		echo"<li>";
 				echo"<a href='gen_q.php?qno=".$a."' target=_blank><input type=submit name=query_btn value=query_no_is_".$a."></a>";

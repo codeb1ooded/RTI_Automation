@@ -21,7 +21,7 @@ if(isset($_POST['enter']))
 		$qno=$data3['q_no'];
 		$ac--;
 	}
-	$_SESSION['v']=$qno;
+	$_SESSION['q']=$qno;
 	echo "The id of this RTI is: ".$id;
 	echo "<table>
 			<tbody>
@@ -55,6 +55,7 @@ if(isset($_POST['enter']))
 <?php				
 		$a--;
 	}
+	$_SESSION['v']=$qno;
 	echo "<th colspan=15></th><th><input type=submit name=save value='Save and Exit' ></th>";
 	echo "<th colspan=15></th><th><input type=submit name=gen_pdf value='Generate Reply' ></th>";
 	echo "</form>";

@@ -19,7 +19,9 @@
 		$qno=$data3['q_no'];
 		$ac--;
 	}
+	
 	$qno=$qno+1;
+	$_SESSION['q']=$qno;
 	while($b!=0)
 	{				
 		$ques="ques".$b;
@@ -37,7 +39,7 @@
 		$qno=$qno+1;
 		$b--;
 	}
-	$_SESSION['v']=$qno;
+	$_SESSION['v']=$qno-1;
 	mysqli_close($con);
 	if(isset($_POST['save']))
 	include 'new_prev.php';
