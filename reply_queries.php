@@ -8,7 +8,7 @@ $k = "SELECT * FROM t2 WHERE id=".$id.";";
 $query=mysqli_query($con,$k);
 $data2=mysqli_num_rows($query);
 $a=$data2;
-
+echo "Fill the query reply for RTI ID: ".$id."<br><br>";
 echo "<table>
 			<tbody>
 				<tr>

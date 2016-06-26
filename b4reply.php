@@ -5,6 +5,10 @@
 	<title></title>
 </head>
 <body>
+<?php
+	$Id = $_GET['id'];
+	echo "Add Details of RTI with Id: ".$Id;
+?>
 	<!--Information providing,fee details--><table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
 			<tbody>
 				<tr><th colspan="2">(IV) Reference u/s 7 of RTI Act:- (where applicable)</th></tr>
@@ -31,5 +35,8 @@
 	
 	</table>
 	<input type='submit' value ='Save and Exit' name='submitSection4'>
-	</body>
-	</html>
+<?php
+	echo "<br><br><a href='previd.php?id=".$Id."''>Back</a>" ;
+?>
+</body>
+</html>

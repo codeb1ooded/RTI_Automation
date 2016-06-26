@@ -7,9 +7,8 @@
 <?php
 	if(isset($_GET['id'])) {
 		$Id = $_GET['id'];
-		echo "Id is:".$Id;
+		echo " Modify Details of RTI with Id: ".$Id;
 	}
-	include 'logoff.html';
 	$con = mysqli_connect("localhost","root",""); 
 	if (!$con) { 
 		die('Could not connect: ' . mysqli_error()); 
@@ -173,6 +172,10 @@
 	</tbody>
  </table>
 </form>		
-	</body>
+</body>
 </html>
-<?php } ?>
+<?php 
+	}
+	echo "<a href='previd.php?id=".$Id."''>Back</a>" ;
+	include 'logoff.html'; 
+?>

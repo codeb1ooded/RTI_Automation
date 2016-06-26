@@ -43,4 +43,4 @@
 		$qno++;
 	}
 	mysqli_close($con);
-	?>
+?>

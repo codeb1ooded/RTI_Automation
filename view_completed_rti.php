@@ -15,8 +15,10 @@
 	
 	$query=" SELECT * FROM add_rti order by date_of_receipt_cio";
     $res=mysqli_query($conn,$query);
+    echo "<h2>CLOSED RTIs</h2>" ;
+    echo "<marquee><strong>CHOOSE THE CLOSED RTI TO BE VIEWED: </strong></marquee><br><br>";
 	echo "<table  width=100% border=2>" ;
-	echo "<form method=post action='./back.php'><tr>
+	echo "<tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
 			<th>Address</th>
@@ -27,15 +29,15 @@
 		if($r['archieve']==1)
 		{			
 			echo "<tr>";
-				echo "<td><a href='compid.php?id=".$r['id']."'>".$r['id']." </a></td>";
-				echo "<td>".$r['name']."</td>"; 
-				echo "<td>".$r['address']."</td>"; 		
-				echo "<td>".$r['phone_no']."</td>";
+				echo "<td><a href='compid.php?id=".$r['id']."'>".$r['id']."</a></td>";
+				echo "<td><a href='compid.php?id=".$r['id']."'>".$r['name']."</a></td>"; 
+				echo "<td><a href='compid.php?id=".$r['id']."'>".$r['address']."</a></td>"; 		
+				echo "<td><a href='compid.php?id=".$r['id']."'>".$r['phone_no']."</a></td>";
 			echo "</tr>";
 		}
 	}
 	echo "</table>";
 ?>
-	<input type="submit" name="back" value="Back" />
+	<br><a href="new_prev.php">Back</a>
 </body>
 </html>

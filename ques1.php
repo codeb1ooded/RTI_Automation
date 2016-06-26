@@ -1,7 +1,6 @@
 <?php
 if(isset($_POST['enter']))
 {
-	include 'logoff.html';
 	$con= mysqli_connect("localhost","root","","rti");
 	session_start();
 	$b=$_POST['ques'];
@@ -13,8 +12,7 @@ if(isset($_POST['enter']))
 	$data2=mysqli_num_rows($data);
 	$ac=$data2;
 	$qno=0;
-		
-
+	
 	while( $ac!=0)
 	{
 		$data3=mysqli_fetch_array($data);
@@ -22,7 +20,7 @@ if(isset($_POST['enter']))
 		$ac--;
 	}
 	$_SESSION['q']=$qno;
-	echo "The id of this RTI is: ".$id;
+	echo "Fill the query details for RTI ID: ".$id."<br><br>";
 	echo "<table>
 			<tbody>
 				<tr>

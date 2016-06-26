@@ -13,6 +13,7 @@
 		echo " Connection to the database failed ";
 	$id=$_GET['id'];
 	
+	echo "<h4>The deatils of RTI with ID: ".$id." are-</h4>" ;
 	$query=" SELECT * FROM add_rti where id=".$id;
     $res=mysqli_query($conn,$query);
 	$r1=mysqli_fetch_assoc($res);
@@ -32,7 +33,6 @@
 	$query=" SELECT * FROM first_appeal where id=".$id;
     $res=mysqli_query($conn,$query);
 	$r5=mysqli_fetch_assoc($res);
-	echo"<form method=post action=view_completed_rti.php>";
 	echo "<table width=100% border=2>" ;
 		echo "<tr>
 				<th>Field</th>
@@ -174,7 +174,7 @@
 				echo "<td>".$r5['meet_date']."</td>";
 			echo "</tr>";
 		}
-	echo "</table>";
+	echo "</table><br>";
 	
 	$query=" SELECT * FROM t2 where id=".$id;
     $res=mysqli_query($conn,$query);
@@ -183,7 +183,7 @@
     $res=mysqli_query($conn,$query);
 	$r7=mysqli_fetch_assoc($res);
 	
-	echo "Queries";
+	echo "<h4>Queries</h4>";
 	echo "<table width=100% border=2>
 			<tr>
 				<th>Query Number</th>
@@ -210,8 +210,12 @@
 		}while($r6=mysqli_fetch_assoc($res));
 	}
 	echo "</table>";
+	if($r1['archieve']==1)
+		echo "<a href='view_completed_rti.php'>Back</a>" ;
+	else
+		echo "<a href='previd.php?id=".$id."'>Back</a>" ;
+
 ?>
-<input type="submit" name="back" value="Back" />
 </form>
 </body>
 </html>

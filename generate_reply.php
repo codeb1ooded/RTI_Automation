@@ -68,7 +68,7 @@ Encl.: As above.";
 		
 echo"</table>";
 echo "<button onclick='myFuction()'>Print the reply</button>";
-echo "<a href='new_prev.php'><th colspan=15></th><th><input type=submit name=save value='Exit' ></th></a>";
+echo "<br><br><a href='previd.php?id=".$id."''>Back</a>";
 ?>
 <script>
 function myFuction(){

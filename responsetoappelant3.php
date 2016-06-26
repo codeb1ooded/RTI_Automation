@@ -1,3 +1,13 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<?php
+	$Id = $_GET['id'];
+	echo "Add Details of RTI with Id: ".$Id;
+?>
 <!--Processing of RTI application and response to the appellant-->	
 <table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
 	<tbody>
@@ -25,3 +35,8 @@
 </table>
 <th colspan="15"></th><th><input type="submit" name="submitresponse" value="Save and Exit"></th>
 </form>
+<?php
+	echo "<br><br><a href='previd.php?id=".$Id."''>Back</a>" ;
+?>
+</body>
+</html>

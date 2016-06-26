@@ -4,6 +4,10 @@
 	<title></title>
 </head>
 <body>
+<?php
+	$Id = $_GET['id'];
+	echo "Add Details of RTI with Id: ".$Id;
+?>
 <form action = "replysection4.php" method ="post">
 <table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
 			<tbody>
@@ -31,6 +35,9 @@
 	</tr>
 </table>
 <th colspan="15"></th><th><input type="submit" name="submitappeal" id="Save_appeal" value="Save and Exit" class="btnsaveappeal"></th>
+<?php
+	echo "<br><br><a href='previd.php?id=".$Id."''>Back</a>" ;
+?>
 </body>
 </form>
 </html>

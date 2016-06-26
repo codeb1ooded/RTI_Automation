@@ -1,12 +1,11 @@
 <html>
+<h2>Generate Report Of RTIs</h2>
+<marquee><strong>CHOOSE THE DESIRED FIELD ON WHICH RTIs NEED TO BE SORTED</strong></marquee><br>
 <form action="report.php" method="post">
-
-<input type="submit" name="name" value="Name">
-<input type="submit" name="dept" value="Department">
-<input type="submit" name="date" value="Date">
-<input type="submit" name="close" value="Closed">
-<input type="submit" name="back" value="Back">
-
+	<input type="submit" name="name" value="Name"><br><br>
+	<input type="submit" name="dept" value="Department"><br><br>
+	<input type="submit" name="date" value="Date"><br><br>
+	<input type="submit" name="close" value="Closed"><br><br>
 </form>
 <?php
 	
@@ -84,7 +83,7 @@ if(isset($_POST['close'])){
 	if(!$db)
 		echo " Connection to the database failed ";
 	
-	$query="SELECT * FROM old";
+	$query="SELECT * FROM add_rti WHERE archieve=1";
 	$res=mysqli_query($con,$query);
 
     echo "<table  width=100% border=2>" ;
@@ -102,8 +101,11 @@ if(isset($_POST['close'])){
 		echo "<td>";
 		echo $r['name'];
 		echo "</td>";
+		$que="SELECT * FROM info_about_rti WHERE id=".$r['id'].";";
+		$ut=mysqli_query($con,$que);
+		$ut1=mysqli_fetch_assoc($ut);
 		echo "<td>";
-		echo $v['reply_date'];	
+		echo $ut1['reply_date'];	
 		echo "</td></tr>";		
 	}
 }
@@ -147,8 +149,7 @@ if(isset($_POST['enter'])){
 		echo "</td>";
 	}
 }
- if(isset($_POST['back'])){
- header('Location: new_prev.php');}
-
 ?>
+
+<br><a href="new_prev.php">Back</a>
 <html>
