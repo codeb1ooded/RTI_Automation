@@ -101,7 +101,7 @@ if(isset($_POST['close'])){
 		echo "<td>";
 		echo $r['name'];
 		echo "</td>";
-		$que="SELECT * FROM info_about_rti WHERE id=".$r['id'].";";
+		$que="SELECT * FROM info_about_reply WHERE id=".$r['id'].";";
 		$ut=mysqli_query($con,$que);
 		$ut1=mysqli_fetch_assoc($ut);
 		echo "<td>";

@@ -54,9 +54,9 @@ echo"<table>";
 			$ans="ans".$a;
 ?>
 		<tr>
-			<th><input type=text value="<?php echo $t2rows['q_no']?>"></th>	
-			<th><input type=text value="<?php echo $t2rows['ques']?>" ></th>
-			<th><input type=text value="<?php echo $t2rows['ans']?>" ></th>
+			<th>"<?php echo $t2rows['q_no']?></th>	
+			<th><?php echo $t2rows['ques']?></th>
+			<th><?php echo $t2rows['ans']?></th>
 		</tr>
 <?php
 		$a--;
