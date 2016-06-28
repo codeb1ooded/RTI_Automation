@@ -180,9 +180,8 @@
     $res=mysqli_query($conn,$query);
 	$r6=mysqli_fetch_assoc($res);
 	$query=" SELECT * FROM reply_queries where id=".$id;
-    $res=mysqli_query($conn,$query);
-	$r7=mysqli_fetch_assoc($res);
-	
+    $res1=mysqli_query($conn,$query);
+	$r7=mysqli_fetch_assoc($res1);
 	echo "<h4>Queries</h4>";
 	echo "<table width=100% border=2>
 			<tr>
@@ -201,13 +200,23 @@
 				echo "<td>".$r6['ques']."</td>";
 				echo "<td>".$r6['map']."</td>";
 				echo "<td>".$r6['date_sent']."</td>";
-				while($r7=mysqli_fetch_assoc($res) && $r6['q_no']==$r7['q_no'])
+				if($r7)
 				{
-					echo "<td>".$r7['date_received']."</td>";
-					echo "<td>".$r7['ans']."</td>";
+					while($r6['q_no']==$r7['q_no'])
+					{
+						echo "<td>".$r7['date_received']."</td>";
+						echo "<td>".$r7['ans']."</td>";
+						$r7=mysqli_fetch_assoc($res1);
+					}
+				}
+				else
+				{
+					echo "<td> - </td>";
+					echo "<td> - </td>";
 				}
 			echo "</tr>";
-		}while($r6=mysqli_fetch_assoc($res));
+			$r6=mysqli_fetch_assoc($res);
+		}while($r6);
 	}
 	echo "</table>";
 	if($r1['archieve']==1)
