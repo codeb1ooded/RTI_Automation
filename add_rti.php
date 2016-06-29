@@ -200,9 +200,17 @@
 </table>
 <script type="text/javascript">
 		function validateDate(){
-			validatedate1(document.add_rti.date_of_receipt);
-			validatedate2(document.add_rti.date_of_receipt_cio);
-			validatedate3(document.add_rti.fee_deposit_date)
+			var bool1 = validatedate1(document.add_rti.date_of_receipt);
+			var bool2, bool3;
+			if(bool1 == true){
+				bool2 = validatedate2(document.add_rti.date_of_receipt_cio);
+				if(bool2 == true){
+					bool3 = validatedate3(document.add_rti.fee_deposit_date);			
+				}		
+			}
+			if(bool1 == false || bool2 == false || bool3 == false){
+				return false;		
+			}
 		}
 </script>
 <script src="date_validation_add_rti.js"></script>

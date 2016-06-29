@@ -1,5 +1,5 @@
 function validatedate1(inputText)  {  
-	var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;  
+	var dateformat = /^(\d{4})-(\d{1,2})-(\d{1,2})/;  
 	
 	// Match the date format through regular expression  
 	if(inputText.value.match(dateformat)) {  
@@ -17,17 +17,26 @@ function validatedate1(inputText)  {
 		} else if (lopera2>1) {  
 			var pdate = inputText.value.split('-');  
 		}  
-		var dd = parseInt(pdate[0]);  
+		var dd = parseInt(pdate[2]);  
 		var mm  = parseInt(pdate[1]);  
-		var yy = parseInt(pdate[2]);  
+		var yy = parseInt(pdate[0]);  
 		
 		// Create list of days of a month [assume there is no leap year by default]  
 		var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];  
+		if(mm >12){
+			document.add_rti.date_of_receipt.focus();
+			alert('Month should be less than twelve!!! \nInvalid date format!');  
+			return false; 
+		}
 		if (mm==1 || mm>2) {  
 			if (dd>ListofDays[mm-1]) {  
-				alert('Invalid date format!');  
+				document.add_rti.date_of_receipt.focus();
+				alert('Date exceeded!!! \nInvalid date format!');  
 				return false;  
 			}  
+			else {
+				return true;
+			}
 		}  
 		if (mm==2) {  
 			var lyear = false;  
@@ -35,24 +44,29 @@ function validatedate1(inputText)  {
 				lyear = true;  
 			}  
 			if ((lyear==false) && (dd>=29)) {  
-				alert('Invalid date format!');  
+				alert('Date exceeded!!! \nInvalid date format!');  
+				document.add_rti.date_of_receipt.focus();
 				return false;  
   			}  
-			if ((lyear==true) && (dd>29)) {  
-				alert('Invalid date format!');  
+			else if ((lyear==true) && (dd>29)) {  
+				alert('Date exceeded!!! \nInvalid date format!');  
+				document.add_rti.date_of_receipt.focus(); 
 				return false;  
 			}  
+			else {
+				return true;
+			}
 		}  
 	}  
 	else {  
-		alert("Invalid date format!");  
+		alert("Date format is not correct!!!! \nInvalid date format!");  
 		document.add_rti.date_of_receipt.focus();  
 		return false;  
 	}  
 }  
 
-function validatedate2(inputText) {
-	var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;  
+function validatedate2(inputText)  {  
+	var dateformat = /^(\d{4})-(\d{1,2})-(\d{1,2})/;  
 	
 	// Match the date format through regular expression  
 	if(inputText.value.match(dateformat)) {  
@@ -70,17 +84,26 @@ function validatedate2(inputText) {
 		} else if (lopera2>1) {  
 			var pdate = inputText.value.split('-');  
 		}  
-		var dd = parseInt(pdate[0]);  
+		var dd = parseInt(pdate[2]);  
 		var mm  = parseInt(pdate[1]);  
-		var yy = parseInt(pdate[2]);  
+		var yy = parseInt(pdate[0]);  
 		
+		if(mm >12){
+			document.add_rti.date_of_receipt_cio.focus();
+			alert('Month should be less than twelve!!! \nInvalid date format!');  
+			return false; 
+		}
 		// Create list of days of a month [assume there is no leap year by default]  
 		var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];  
 		if (mm==1 || mm>2) {  
 			if (dd>ListofDays[mm-1]) {  
-				alert('Invalid date format!');  
+				document.add_rti.date_of_receipt_cio.focus();
+				alert('Date exceeded!!! \nInvalid date format!');  
 				return false;  
 			}  
+			else {
+				return true;
+			}
 		}  
 		if (mm==2) {  
 			var lyear = false;  
@@ -88,23 +111,29 @@ function validatedate2(inputText) {
 				lyear = true;  
 			}  
 			if ((lyear==false) && (dd>=29)) {  
-				alert('Invalid date format!');  
+				alert('Date exceeded!!! \nInvalid date format!');  
+				document.add_rti.date_of_receipt_cio.focus();
 				return false;  
   			}  
-			if ((lyear==true) && (dd>29)) {  
-				alert('Invalid date format!');  
+			else if ((lyear==true) && (dd>29)) {  
+				alert('Date exceeded!!! \nInvalid date format!');  
+				document.add_rti.date_of_receipt_cio.focus(); 
 				return false;  
 			}  
+			else {
+				return true;
+			}
 		}  
 	}  
 	else {  
-		alert("Invalid date format!");  
 		document.add_rti.date_of_receipt_cio.focus();  
+		alert("Date format is not correct!!!! \nInvalid date format!");  
 		return false;  
 	}  
 } 
-function validatedate3(inputText) {
-	var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;  
+
+function validatedate3(inputText)  {  
+	var dateformat = /^(\d{4})-(\d{1,2})-(\d{1,2})/;  
 	
 	// Match the date format through regular expression  
 	if(inputText.value.match(dateformat)) {  
@@ -122,17 +151,26 @@ function validatedate3(inputText) {
 		} else if (lopera2>1) {  
 			var pdate = inputText.value.split('-');  
 		}  
-		var dd = parseInt(pdate[0]);  
+		var dd = parseInt(pdate[2]);  
 		var mm  = parseInt(pdate[1]);  
-		var yy = parseInt(pdate[2]);  
+		var yy = parseInt(pdate[0]);  
 		
 		// Create list of days of a month [assume there is no leap year by default]  
 		var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];  
+		if(mm >12){
+			document.add_rti.fee_deposit_date.focus();
+			alert('Month should be less than twelve!!! \nInvalid date format!');  
+			return false; 
+		}
 		if (mm==1 || mm>2) {  
 			if (dd>ListofDays[mm-1]) {  
-				alert('Invalid date format!');  
+				document.add_rti.fee_deposit_date.focus();
+				alert('Date exceeded!!! \nInvalid date format!');  
 				return false;  
 			}  
+			else {
+				return true;
+			}
 		}  
 		if (mm==2) {  
 			var lyear = false;  
@@ -140,18 +178,23 @@ function validatedate3(inputText) {
 				lyear = true;  
 			}  
 			if ((lyear==false) && (dd>=29)) {  
-				alert('Invalid date format!');  
+				alert('Date exceeded!!! \nInvalid date format!');  
+				document.add_rti.fee_deposit_date.focus();
 				return false;  
   			}  
-			if ((lyear==true) && (dd>29)) {  
-				alert('Invalid date format!');  
+			else if ((lyear==true) && (dd>29)) {  
+				alert('Date exceeded!!! \nInvalid date format!');  
+				document.add_rti.fee_deposit_date.focus(); 
 				return false;  
 			}  
+			else {
+				return true;
+			}
 		}  
 	}  
 	else {  
-		alert("Invalid date format!");  
 		document.add_rti.fee_deposit_date.focus();  
+		alert("Date format is not correct!!!! \nInvalid date format!");  
 		return false;  
 	}  
-} 
+}

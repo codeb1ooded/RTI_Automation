@@ -120,11 +120,11 @@
 	
 			<tr>
 				<th>Date of receipt of RTI application by R & I section of public authority</th>
-				<th><input type="text" name="date_of_receipt" id="date_of_receipt" placeholder="YYYY-MM_DD" maxlength="50" value="<?php echo $data2['date_of_receipt']?>" class="name" placeholder="YYYY-MM-DD"></th>
+				<th><input type="text" name="date_of_receipt" id="date_of_receipt" placeholder="DD-MM-YYYY" maxlength="50" value="<?php echo $data2['date_of_receipt']?>" class="name" placeholder="YYYY-MM-DD"></th>
 			</tr>
 	
 			<tr>
-				<th>Date of its receipt by CPIO</th><th><input type="text" placeholder="YYYY-MM_DD" name="date_of_receipt_cio" id="date_of_receipt_cpio" maxlength="50" value="<?php echo $data2['date_of_receipt_cio']?>" class="name" placeholder="YYYY-MM-DD"></th>
+				<th>Date of its receipt by CPIO</th><th><input type="text" placeholder="DD-MM-YYYY" name="date_of_receipt_cio" id="date_of_receipt_cpio" maxlength="50" value="<?php echo $data2['date_of_receipt_cio']?>" class="name" placeholder="YYYY-MM-DD"></th>
 			</tr>
 		
 			<tr>
@@ -151,7 +151,7 @@
 
 	<tr>
 		<th>Date of depositing fee</th>
-		<th><input type="text" id="fee_deposit_date" name="fee_deposit_date" maxlength="50" placeholder="YYYY-MM-DD" value="<?php echo $data2['fee_deposit_date']?>"></th>
+		<th><input type="text" id="fee_deposit_date" name="fee_deposit_date" maxlength="50" placeholder="DD-MM-YYYY" value="<?php echo $data2['fee_deposit_date']?>"></th>
 	</tr>
 	<tr>
 		<th>Mode of payment(cheque/DD,cash,IPO)</th>
