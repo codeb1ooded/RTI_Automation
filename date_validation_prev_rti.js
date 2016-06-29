@@ -8,8 +8,7 @@ function test(){
 			document.getElementById('date_of_receipt').disabled=false;
 			document.getElementById('date_of_receipt_cpio').disabled=false;
 			document.getElementById('time').disabled=false;
-			document.getElementById('fee_paid').disabled=false;
-			document.getElementById('fee_not_paid').disabled=false;
+			document.getElementById('fee_enclosed').disabled=false;
 			document.getElementById('fee_deposit_date').disabled=false;
 			document.getElementById('pay_mode').disabled=false;
 		}
@@ -24,8 +23,7 @@ function test(){
 			document.getElementById('date_of_receipt').disabled=true;
 			document.getElementById('date_of_receipt_cpio').disabled=true;
 			document.getElementById('time').disabled=true;
-			document.getElementById('fee_paid').disabled=true;
-			document.getElementById('fee_not_paid').disabled=true;
+			document.getElementById('fee_enclosed').disabled=true;
 			document.getElementById('fee_deposit_date').disabled=true;
 			document.getElementById('pay_mode').disabled=true;
 

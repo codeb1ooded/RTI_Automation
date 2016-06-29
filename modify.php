@@ -1,18 +1,11 @@
 <?php
 if(isset($_POST['submit']))
 {
-	include 'new_prev.php';
-	$con = mysqli_connect("localhost","root",""); 
-	if (!$con) 
-	{ 
-		die('Could not connect: ' . mysqli_error()); 
-	} 
+	include 'config_database.php'; 
 	$id = $_POST['ID'];
 	$d1=strtotime($_POST['date_of_receipt']);
 	$d2=strtotime($_POST['date_of_receipt_cio']);
 	$d3=floor(abs($d2-$d1)/86400);
-	
-	mysqli_select_db($con, "rti");
 	
 	$data = "UPDATE add_rti SET
 			name = '$_POST[name]',
@@ -44,17 +37,11 @@ if(isset($_POST['submit']))
 //////////////
 if(isset($_POST['edit']))
 {
-	$con = mysqli_connect("localhost","root",""); 
-	if (!$con) 
-	{ 
-		die('Could not connect: ' . mysqli_error()); 
-	} 
+	include 'config_database.php'; 
 	$id = $_POST['ID'];
 	$d1=strtotime($_POST['date_of_receipt']);
 	$d2=strtotime($_POST['date_of_receipt_cio']);
 	$d3=floor(abs($d2-$d1)/86400);
-		
-	mysqli_select_db($con, "rti");
 	
 	$data = "UPDATE add_rti SET
 			name = '$_POST[name]',

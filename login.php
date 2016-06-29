@@ -2,11 +2,7 @@
 session_start();
 if(isset($_POST['submit'])){
 	
-	$con = mysqli_connect("localhost","root",""); 
-	if (!$con) { 
-		die('Could not connect: ' . mysqli_error()); 
-	} 
-	mysqli_select_db($con, "rti");
+	include 'config_database.php'; 
 	
 	$name=$_POST['name'];
 	$pwd=$_POST['pswd'];

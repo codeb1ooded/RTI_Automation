@@ -1,5 +1,5 @@
 <?php
-	$con= mysqli_connect("localhost","root","","rti");
+	include 'config_database.php'; 
 	$qno=$_GET['qno'];
 	
 	session_start();

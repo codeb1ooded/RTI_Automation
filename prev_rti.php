@@ -6,15 +6,10 @@
 	</head>
 <body>
 <?php
-	$conn=mysqli_connect("localhost","root","");
-	if(!$conn)
-		echo " Connection to the server failed ";
-	$db=mysqli_select_db($conn,'rti');
-	if(!$db)
-		echo " Connection to the database failed ";
+	include 'config_database.php'; 
 	
 	$query=" SELECT * FROM add_rti order by date_of_receipt_cio";
-    $res= mysqli_query($conn,$query);
+    $res= mysqli_query($con, $query);
     echo "<h2>ONGOING RTIs</h2>" ;
 	echo "<marquee><strong>CHOOSE THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
 	echo "<table  width=100% border=2>" ;
@@ -46,7 +41,7 @@
 				echo "<td><a href='previd.php?id=".$r['id']."'>".$r['date_of_receipt_cio']."</a></td>"; 		
 				echo "<td><a href='previd.php?id=".$r['id']."'>".date("Y-m-d",strtotime($d2))."</a></td>"; 
 				echo "<td><a href='previd.php?id=".$r['id']."'>".$d3."</a></td>";
-				echo "<td><a href='old_rti.php?id=".$r['id']."'>Completed</a></td>";
+				echo "<td><a href='old_rti.php?id=".$r['id']."'>Mark as Completed</a></td>";
 			echo "</tr>";
 		}
 	}

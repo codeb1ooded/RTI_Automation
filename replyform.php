@@ -9,11 +9,7 @@
 		$Id = $_GET['id'];
 		echo " Modify Details of RTI with Id: ".$Id;
 	}
-	$con = mysqli_connect("localhost","root",""); 
-	if (!$con) { 
-		die('Could not connect: ' . mysqli_error()); 
-	} 
-	mysqli_select_db($con, "rti"); 
+	include 'config_database.php'; 
 	if(isset($_GET['id'])) {
 		$Id = $_GET['id'];
 		$data = "SELECT * FROM  add_rti WHERE id=".$Id.";";
@@ -148,8 +144,8 @@
 	<tr>
 		<th>Whether fee is enclosed with RTI application</th>
 			<td>    
-				<input type="radio" value="yes" <?php if(strcmp($data2['fee_enclosed'], "yes") == 0){ echo "checked=\"checked\""; }?>  name="fee" id="fee_paid"> Yes                         
-				<input type="radio" value="no" <?php if(strcmp($data2['fee_enclosed'], "No") == 0 or strcmp($data2['fee_enclosed'], "no") == 0){ echo "checked=\"checked\""; }?> name="fee" id="fee_not_paid"> No 
+				<input type="radio" value="yes" name="fee_enclosed" id="fee_enclosed" <?php if(strcmp($data2['fee_enclosed'], "yes") == 0){ echo "checked=\"checked\""; }?>> Yes                         
+				<input type="radio" value="no" name="fee_enclosed" id="fee_enclosed" <?php if(strcmp($data2['fee_enclosed'], "No") == 0 or strcmp($data2['fee_enclosed'], "no") == 0){ echo "checked=\"checked\""; }?>> No 
 			</td>
 	</tr>
 

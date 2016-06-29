@@ -3,12 +3,7 @@
 <body>
 <?php
 $id=$_GET['id'];
-$con = mysqli_connect("localhost","root","");
-if (!$con) 
-	{ 
-		die('Could not connect: ' . mysqli_error()); 
-	} 
-	mysqli_select_db($con, "rti");
+include 'config_database.php'; 
 	
 $data1="SELECT * FROM t2 WHERE id=".$id.";";
 $query=mysqli_query($con,$data1);

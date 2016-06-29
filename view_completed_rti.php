@@ -6,12 +6,7 @@
 	</head>
 <body>
 <?php
-	$conn=mysqli_connect("localhost","root","");
-	if(!$conn)
-		echo " Connection to the server failed ";
-	$db=mysqli_select_db($conn,'rti');
-	if(!$db)
-		echo " Connection to the database failed ";
+	include 'config_database.php'; 
 	
 	$query=" SELECT * FROM add_rti order by date_of_receipt_cio";
     $res=mysqli_query($conn,$query);

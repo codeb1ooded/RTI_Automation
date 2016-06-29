@@ -1,9 +1,5 @@
 <?php	
-	$con= mysqli_connect("localhost","root","","rti");
-	
-	if(!$con){
-			die("Can not connect:" . mysql_error());
-	}
+	include 'config_database.php'; 
 	
 	$d1=strtotime($_POST['date_of_receipt']);
 	$d2=strtotime($_POST['date_of_receipt_cio']);

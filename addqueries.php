@@ -1,10 +1,6 @@
 <?php
 
-	$con = mysqli_connect("localhost","root",""); 
-	if (!$con) 
-	{ 
-		die('Could not connect: ' . mysqli_error()); 
-	} 
+	include 'config_database.php'; 
 	$id = $_GET['id'];
 	session_start();
 	$_SESSION['oid']=$id;

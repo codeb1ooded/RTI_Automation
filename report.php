@@ -10,12 +10,7 @@
 <?php
 	
 if(isset($_POST['name'])){
-	$con=mysqli_connect("localhost","root","");
-	if(!$con)
-		echo " Connection to the server failed ";
-	$db=mysqli_select_db($con,'rti');
-	if(!$db)
-		echo " Connection to the database failed ";
+	include 'config_database.php'; 
 	
 	$query="SELECT count(name),name,id FROM add_rti group by name order by id";
     $res=mysqli_query($con,$query);
@@ -42,12 +37,7 @@ if(isset($_POST['name'])){
 }	
 if(isset($_POST['dept'])){
 	
-	$con=mysqli_connect("localhost","root","");
-	if(!$con)
-		echo " Connection to the server failed ";
-	$db=mysqli_select_db($con,'rti');
-	if(!$db)
-		echo " Connection to the database failed ";
+	include 'config_database.php'; 
 	
 	$query="SELECT count(map),map,id FROM t2 group by map order by id";
     $res=mysqli_query($con,$query);
@@ -75,13 +65,7 @@ if(isset($_POST['dept'])){
 }
 if(isset($_POST['close'])){
 	
-	$con=mysqli_connect("localhost","root","");
-	if(!$con)
-		echo " Connection to the server failed ";
-	$db=mysqli_select_db($con,'rti');
-	
-	if(!$db)
-		echo " Connection to the database failed ";
+	include 'config_database.php'; 
 	
 	$query="SELECT * FROM add_rti WHERE archieve=1";
 	$res=mysqli_query($con,$query);
@@ -119,12 +103,8 @@ if(isset($_POST['date'])){
 					</form>";
 }
 if(isset($_POST['enter'])){
-	$con=mysqli_connect("localhost","root","");
-	if(!$con)
-		echo " Connection to the server failed ";
-	$db=mysqli_select_db($con,'rti');
-	if(!$db)
-		echo " Connection to the database failed ";
+	include 'config_database.php'; 
+	
 	$d1=$_POST['d1'];
 	$d2=$_POST['d2'];
 //	$d1=date('Y-m-d',);

@@ -1,5 +1,6 @@
+
 <?php
-	$con= mysqli_connect("localhost","root","","rti");
+	include 'config_database.php';
 	session_start();
 	$b=$_POST['ques'];
 	$_SESSION['q']=$b;
@@ -15,20 +16,54 @@
 					<th>Date Sent</th>
 				</tr>";
 	echo "<form action=save_ques.php method=post>";
+?>
+
+<script type="text/javascript">
+	function mailTo (a) {
+		var map = document.getElementById("dropdown"+a);
+		var no_select = "no_selection"+a;
+		var selected = map.options[map.selectedIndex].value;
+		if(no_select != selected){
+			var mailid;
+			if(selected == "Ac"){
+				mailid = "academics@igdtuw.com";
+			} else if(selected == "Ex"){
+				mailid = "examination@igdtuw.com";
+			} else if(selected == "Ad"){
+				mailid = "administrative@igdtuw.com";						
+			} else{
+				mailid = "humaresource@igdtuw.com";
+			}
+			var subject="Please Send reply to the query of RTI Id: "+ <?php echo $id; ?>;
+			var ques = "ques"+a;
+			var body="Query: " + document.getElementById(ques).value + " \ndated on:" + document.getElementById("date_s"+a).value;
+			window.open('mailto:'+mailid+'?subject='+subject+'&body='+body);
+		}
+		else{
+			alert("Please select department first");
+		}
+	}
+</script>
+
+<?php
 	$c=1;
 	while($a!=0)
 	{
 		$ques="ques".$a;
 		$map="map".$a;
 		$date_s="date_s".$a;
+		$no_selection="no_selection".$a;
+		$dropdown="dropdown".$a;
 ?>
+
+
 		<tr>
 			<th><input type=text name=<?php echo $c; ?> value=<?php echo $c; ?>></th>	
-			<th><input type=text name=<?php echo $ques; ?>></th>
-			<th><select name=<?php echo $map; ?>>
+			<th><input type=text name=<?php echo $ques; ?> id=<?php echo $ques; ?>></th>
+			<th><select name=<?php echo $map; ?> id=<?php echo $dropdown;?> >
 					<span>
-						<option value=''>--Select--</option>
-						<option value=Ac>Acacemics</option>
+						<option value=<?php echo $no_selection; ?>>--Select--</option>
+						<option value=Ac>Academics</option>
 						<option value=Ex>Examination Division</option>
 						<option value=Ad>Administrative</option>
 						<option value=HR>Human Resource</option>
@@ -36,16 +71,15 @@
 				</select>
 			</th>
 			
-			<th><input type=text name=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
-		</tr>
-<?php				
+			<th><input type=text name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
+			<th><button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button>
+<?php		
+		echo '</tr>';				
 		$a--;
 		$c++;
 	}
 	echo "<th colspan=15></th><th><input type=submit name=save value='Save and Exit' ></th>";
-	echo"<th colspan=30></th><th><input type=submit name=gen_pdf value='Generate_pdf_query' ></th>";
 	echo "</form>";
 	mysqli_close($con);
-	
     include 'logoff.html';
 ?>

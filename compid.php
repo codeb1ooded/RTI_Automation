@@ -5,33 +5,28 @@
 	</head>
 <body>
 <?php
-	$conn=mysqli_connect("localhost","root","");
-	if(!$conn)
-		echo " Connection to the server failed ";
-	$db=mysqli_select_db($conn,'rti');
-	if(!$db)
-		echo " Connection to the database failed ";
+	include 'config_database.php'; 
 	$id=$_GET['id'];
 	
 	echo "<h4>The deatils of RTI with ID: ".$id." are-</h4>" ;
 	$query=" SELECT * FROM add_rti where id=".$id;
-    $res=mysqli_query($conn,$query);
+    $res=mysqli_query($con, $query);
 	$r1=mysqli_fetch_assoc($res);
 	
 	$query=" SELECT * FROM info_about_reply where id=".$id;
-    $res=mysqli_query($conn,$query);
+    $res=mysqli_query($con, $query);
 	$r2=mysqli_fetch_assoc($res);
 	
 	$query=" SELECT * FROM section4 where id=".$id;
-    $res=mysqli_query($conn,$query);
+    $res=mysqli_query($con, $query);
 	$r3=mysqli_fetch_assoc($res);
 	
 	$query=" SELECT * FROM public_authority where id=".$id;
-    $res=mysqli_query($conn,$query);
+    $res=mysqli_query($con, $query);
 	$r4=mysqli_fetch_assoc($res);
 	
 	$query=" SELECT * FROM first_appeal where id=".$id;
-    $res=mysqli_query($conn,$query);
+    $res=mysqli_query($con, $query);
 	$r5=mysqli_fetch_assoc($res);
 	echo "<table width=100% border=2>" ;
 		echo "<tr>
@@ -177,10 +172,10 @@
 	echo "</table><br>";
 	
 	$query=" SELECT * FROM t2 where id=".$id;
-    $res=mysqli_query($conn,$query);
+    $res=mysqli_query($con, $query);
 	$r6=mysqli_fetch_assoc($res);
 	$query=" SELECT * FROM reply_queries where id=".$id;
-    $res1=mysqli_query($conn,$query);
+    $res1=mysqli_query($con, $query);
 	$r7=mysqli_fetch_assoc($res1);
 	echo "<h4>Queries</h4>";
 	echo "<table width=100% border=2>

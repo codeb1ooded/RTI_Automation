@@ -1,11 +1,7 @@
 <?php
 
 	include 'new_prev.php';
-	$con= mysqli_connect("localhost","root","","rti");
-	if(!$con)
-	{
-		die("Can not connect:" . mysql_error());
-	}
+	include 'config_database.php'; 
 
 	session_start();
 	$c=$_SESSION['oid'];

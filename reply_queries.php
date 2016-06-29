@@ -3,10 +3,7 @@
 <body>
 <?php
 session_start();
-$con= mysqli_connect("localhost","root","","rti");
-
-if ($con->connect_error)
-    die("Connection failed: " . $conn->connect_error);
+include 'config_database.php'; 
 
 $id=$_GET['id'];
 $k = "SELECT * FROM t2 WHERE id=".$id.";";

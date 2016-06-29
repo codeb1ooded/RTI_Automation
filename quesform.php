@@ -1,15 +1,14 @@
 <?php
 
-	$con= mysqli_connect("localhost","root","","rti");
-	if(!$con)
-		die("Can not connect:" . mysql_error());
+	include 'config_database.php'; 
+	
 	session_start();
 	$c=$_SESSION['id'];
 	$b=$_SESSION['qu'];
 	$_SESSION['v']=$b;
 	$_SESSION['q']=1;
 	$data1="SELECT * FROM t2 WHERE id=".$c.";";
-	$query=mysqli_query($con,$data1);
+	$query=mysqli_query($con, $data1);
 	
 	while( $b!=0)
 	{		

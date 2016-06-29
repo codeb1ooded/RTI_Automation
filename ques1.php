@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['enter']))
 {
-	$con= mysqli_connect("localhost","root","","rti");
+	include 'config_database.php'; 
 	session_start();
 	$b=$_POST['ques'];
 	$id=$_SESSION['oid'];

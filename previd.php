@@ -11,16 +11,11 @@ if(isset($_GET['id']))
 	{
 		$Id = $_GET['id'];
 	}
-	$conn=mysqli_connect("localhost","root","");
+	include 'config_database.php'; 
 	$var = 'test';
-	if(!$conn)
-		echo " Connection to the server failed ";
-	$db=mysqli_select_db($conn,'rti');
-	if(!$db)
-		echo " Connection to the database failed ";
 	
 	$query=" SELECT * FROM add_rti";
-    $res=mysqli_query($conn,$query);
+    $res=mysqli_query($con, $query);
 	echo "Your options for the RTI Id: ".$Id." are-";
 	session_start();
 		$_SESSION['prev_rti_id']=$Id;

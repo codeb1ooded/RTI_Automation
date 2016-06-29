@@ -2,10 +2,7 @@
 <body>
 <?php
 $id=$_GET['id'];
-echo "The rti corresponding to ".$id." has been marked completed.\n";
-$con= mysqli_connect("localhost","root","","rti");
-if(!$con)
-	die("Can not connect:" . mysql_error());
+include 'config_database.php'; 
 $sql="UPDATE add_rti SET archieve=1 WHERE id=".$id;
 mysqli_query($con,$sql);
 ?>
