@@ -30,6 +30,38 @@ if(isset($_POST['enter']))
 					<th>Date Sent</th>
 				</tr>";
 	echo "<form action=save_ques1.php method=post>";
+?>
+
+<script type="text/javascript">
+	function mailTo (a) {
+		var map = document.getElementById("map"+a);
+		var no_select = "no_selection"+a;
+		var selected = map.options[map.selectedIndex].value;
+		if(no_select != selected){
+			var mailid;
+			if(selected == "Ac"){
+				mailid = "academics@igdtuw.com";
+			} else if(selected == "Ex"){
+				mailid = "examination@igdtuw.com";
+			} else if(selected == "Ad"){
+				mailid = "administrative@igdtuw.com";						
+			} else if(selected == "HR"){
+				mailid = "humaresource@igdtuw.com";
+			} else{
+				alert("Please select department first");
+				return;
+			}
+			var subject="Please Send reply to the query of RTI Id: "+ <?php echo $id; ?>;
+			var ques = "ques"+a;
+			var body="Query: " + document.getElementById(ques).value + " \ndated on:" + document.getElementById("date_s"+a).value;
+			window.open('mailto:'+mailid+'?subject='+subject+'&body='+body);
+		}
+		else{
+			alert("Please select department first");
+		}
+	}
+</script>
+<?php
 	while( $a!=0)
 	{
 		$qno=$qno+1;	
@@ -41,14 +73,15 @@ if(isset($_POST['enter']))
 ?>
 		<tr>
 			<th><input type=text name=<?php echo $qno; ?> value=<?php echo $qno; ?>></th>	
-			<th><input type=text name=<?php echo $ques; ?>></th>
-			<th><select name=<?php echo $map; ?>>
+			<th><input type=text name=<?php echo $ques; ?> id=<?php echo $ques; ?>></th>
+			<th><select name=<?php echo $map; ?> id=<?php echo $map; ?>>
 				<span><option value=''>--Select--</option>
 				<option value=Ac>Acacemics</option>
 				<option value=Ex>Examination Division</option>
 				<option value=Ad>Administrative</option>
 				<option value=HR>Human Resource</option></span></select></th>
-			<th><input type=text name=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
+			<th><input type=text name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
+			<th><button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button>
 		</tr>
 <?php				
 		$a--;

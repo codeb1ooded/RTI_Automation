@@ -1,3 +1,4 @@
+<html>
 <?php
 if(isset($_POST['submit']))
 {
@@ -76,19 +77,62 @@ if(isset($_POST['edit']))
 					<th>Date Sent</th>
 				</tr>";
 	echo "<form action=quesform.php method=post>";
+?>
+<script type="text/javascript">
+	function mailTo (q_no) {
+		var a = "q_no"+q_no;
+		var map = document.getElementById("map"+a);
+		var no_select = "no_selection"+a;
+		var selected = map.options[map.selectedIndex].value;
+		if(no_select != selected){
+			var mailid;
+			if(selected == "Ac"){
+				mailid = "academics@igdtuw.com";
+			} else if(selected == "Ex"){
+				mailid = "examination@igdtuw.com";
+			} else if(selected == "Ad"){
+				mailid = "administrative@igdtuw.com";						
+			} else{
+				mailid = "humaresource@igdtuw.com";
+			}
+			var subject="Please Send reply to the query of RTI Id: "+ <?php echo $id; ?>;
+			var ques = "ques"+a;
+			var body="Query: " + document.getElementById(ques).value + " \ndated on:" + document.getElementById("date_s"+a).value;
+			window.open('mailto:'+mailid+'?subject='+subject+'&body='+body);
+		}
+		else{
+			alert("Please select department first");
+		}
+	}
+</script>
+<?php
 	while( $a!=0)
 	{
 		$data3=mysqli_fetch_array($query);
 		$qno="q_no".$a;
 		$ques="ques".$a;
+		$no_selection="no_selectio".$qno;
 		$map="map".$a;
 		$date_s="date_s".$a;
+		$ques_id= "ques".$qno;
+		$map_id= "map".$qno;
+		$date_s_id= "date_s".$qno;
 ?>
 		<tr>
 			<th><input  value="<?php echo $data3['q_no']?>" type=text name=<?php echo $qno; ?>></th>	
-			<th><input type=text name=<?php echo $ques; ?> value="<?php echo $data3['ques']?>" ></th>
-			<th><input type=text name=<?php echo $map; ?> value="<?php echo $data3['map']?>" ></th>
-			<th><input type=text name=<?php echo $date_s; ?> value="<?php echo $data3['date_sent'] ?>" placeholder=YYYY-MM-DD></th>
+			<th><input type=text name=<?php echo $ques; ?> value="<?php echo $data3['ques'];?>" id=<?php echo $ques_id; ?>></th>
+			<th><select name=<?php echo $map; ?> id=<?php echo $map_id; ?> >
+					<span>
+						<option value=<?php echo $no_selection; ?> <?php if(strcmp($data3['map'], "") == 0){ echo "selected=\"selected\""; }?> >--Select--</option>
+						<option value=Ac <?php if(strcmp($data3['map'], "Ac") == 0){ echo "selected=\"selected\""; }?>>Academics</option>
+						<option value=Ex <?php if(strcmp($data3['map'], "Ex") == 0){ echo "selected=\"selected\""; }?>>Examination Division</option>
+						<option value=Ad <?php if(strcmp($data3['map'], "Ad") == 0){ echo "selected=\"selected\""; }?>>Administrative</option>
+						<option value=HR <?php if(strcmp($data3['map'], "HR") == 0){ echo "selected=\"selected\""; }?>>Human Resource</option>
+					</span>
+				</select>
+			</th>
+			<th><input type=text name=<?php echo $date_s; ?> value="<?php echo $data3['date_sent'] ?>" id=<?php echo $date_s_id; ?> placeholder=YYYY-MM-DD></th>
+			<th><button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button></th>
 		</tr>
 <?php				
 		$sql="DELETE FROM t2 WHERE id=".$id.";";

@@ -100,8 +100,8 @@
 						<th class="THfirst">Citizenship<cite><br>(Only Indian citizens can file RTI Request application)</cite>	</th>
 						<td class="TDfirst">
 							<select name="citizenship" id="Citizenship" class="selectLong" onchange="chkCitizenship(this);">
-								<option value="Indian">Indian</option>
-								<option value="Other">Other</option>
+								<option value="Indian" <?php if(strcmp($data2['citizenship'], "Indian") == 0){ echo "selected"; }?>>Indian</option>
+								<option value="Other" <?php if(strcmp($data2['citizenship'], "Other") == 0){ echo "selected"; }?>>Other</option>
 							</select>
 						</td>
 					</tr>
