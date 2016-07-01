@@ -161,8 +161,8 @@
 <table>
 	<tbody>
 		<tr>
-			<th colspan="15"></th><th><input type="submit" name="edit" id="addQuestions" value="Edit Queries" class="btnaddQuestions" onclick="validateDate()"></th>
-			<th colspan="15"></th><th><input type="submit" name="submit" id="addQuestions" value="Save and Exit" class="btnaddQuestions" onclick="validateDate()"></th>
+			<th colspan="15"></th><th><input type="submit" name="edit" id="addQuestions" value="Edit Queries" class="btnaddQuestions" onclick="return validateDate()"></th>
+			<th colspan="15"></th><th><input type="submit" name="submit" id="addQuestions" value="Save and Exit" class="btnaddQuestions" onclick="return validateDate()"></th>
 		
 		</tr>
 	</tbody>

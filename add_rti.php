@@ -193,8 +193,8 @@
 	<table>
 	<tbody>
 		<tr>
-			<th colspan="15"></th><th><input type="submit" name="add" value="Add Queries" class="btnaddQuestions" onclick="validatedate()"></th>
-			<th colspan="15"></th><th><input type="submit" name="submit" value="Save and Exit" class="btnaddQuestions" onclick="validatedate()"></th>
+			<th colspan="15"></th><th><input type="submit" name="add" value="Add Queries" class="btnaddQuestions" onclick="return validateDate()"></th>
+			<th colspan="15"></th><th><input type="submit" name="submit" value="Save and Exit" class="btnaddQuestions" onclick="return validateDate()"></th>
 		</tr>
 	</tbody>
 </table>
