@@ -1,4 +1,12 @@
-<?php
+<!DOCTYPE html>
+	<head>
+		<title>Add Queries</title>
+		<link rel="stylesheet" href="css/background.css">
+		<meta charset="utf-8">
+	</head>
+		
+	<body>
+	<?php
 
 	include 'config_database.php'; 
 	$id = $_GET['id'];
@@ -15,3 +23,5 @@
 		</tr></form>";
 	$con->close();
 ?>
+</body>
+</html>

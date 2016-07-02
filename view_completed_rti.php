@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
 	<head>
 		<title>Completed RTI</title>
-		<link rel="stylesheet" href="css/prev_rti.css">
+		<link rel="stylesheet" href="css/prev_rti.css"><!DOCTYPE html>
+		<link rel="stylesheet" href="css/background.css">
+		<meta charset="utf-8">
 	</head>
 <body>
 <?php

@@ -1,0 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+  background-image: url("bg.png");
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;    
+}
+
+.btn {
+  background: white;
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  color: #000000;
+  font-size: 12px;
+  padding: 8px 13px 8px 13px;
+  border: solid black 1px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  text-decoration: none;
+}

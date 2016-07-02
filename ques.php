@@ -1,4 +1,10 @@
-
+<!DOCTYPE HTML>
+<head>
+	<title>Queries</title>
+	<link rel="stylesheet" href="css/background.css">
+	<meta charset="utf-8">
+</head>
+<body>
 <?php
 	include 'config_database.php';
 	session_start();
@@ -58,7 +64,7 @@
 
 
 		<tr>
-			<th><input type=text name=<?php echo $c; ?> value=<?php echo $c; ?>></th>	
+			<th><input type=text name=<?php echo $c; ?> value=<?php echo $c; ?> readonly></th>	
 			<th><input type=text name=<?php echo $ques; ?> id=<?php echo $ques; ?>></th>
 			<th><select name=<?php echo $map; ?> id=<?php echo $dropdown;?> >
 					<span>
@@ -72,7 +78,7 @@
 			</th>
 			
 			<th><input type=text name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
-			<th><button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button>
+			<th><button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button></th>
 <?php		
 		echo '</tr>';				
 		$a--;
@@ -83,3 +89,5 @@
 	mysqli_close($con);
     include 'logoff.html';
 ?>
+</body>
+</html>

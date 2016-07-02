@@ -1,7 +1,9 @@
 <!doctype html>
 <html>
 <head>
-	<title></title>
+		<title>First Appeal Form</title>
+		<link rel="stylesheet" href="css/background.css">
+		<meta charset="utf-8">
 </head>
 <body>
 <?php

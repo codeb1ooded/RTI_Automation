@@ -1,8 +1,9 @@
 <!--//On clicking previous rti id-->
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
 <head>
-	<title>ID:</title>
+	<title>Ongoing RTI</title>
+	<link rel="stylesheet" href="css/background.css">
+	<meta charset="utf-8">
 </head>
 <body>
 <?php
@@ -23,9 +24,7 @@ if(isset($_GET['id']))
 ?>
 <?php 
 	echo "<br><br>" ;
-	echo "<a href='replyform.php?id=".$Id."'>Modify Details</a>" ;
-	echo "<br><br>" ;
-	echo "<a href='#'>Modify Queries</a>" ;
+	echo "<a href='replyform.php?id=".$Id."'>Modify Details and Queries</a>" ;
 	echo "<br><br>" ;
 	echo "<a href='addqueries.php?id=".$Id."'>Add Additional Queries</a>" ; 
 	echo "<br><br>" ;

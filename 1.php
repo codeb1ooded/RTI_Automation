@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title> Login </title>
 	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="css/background.css">
 </head>
 <body>
 	<h2><center>RTI APPLICATION SYSTEM</center></h2>

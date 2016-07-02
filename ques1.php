@@ -1,3 +1,10 @@
+<!DOCTYPE HTML>
+<head>
+	<title>GModify Queries</title>
+	<link rel="stylesheet" href="css/background.css">
+	<meta charset="utf-8">
+</head>
+<body>
 <?php
 if(isset($_POST['enter']))
 {
@@ -67,21 +74,19 @@ if(isset($_POST['enter']))
 		$qno=$qno+1;	
 		$ques="ques".$a;
 		$map="map".$a;
-		$ans="ans".$a;
 		$date_s="date_s".$a;
-		$date_r="date_r".$a;
 ?>
 		<tr>
-			<th><input type=text name=<?php echo $qno; ?> value=<?php echo $qno; ?>></th>	
+			<th><input type=text name=<?php echo $qno; ?> value=<?php echo $qno; ?> readonly></th>	
 			<th><input type=text name=<?php echo $ques; ?> id=<?php echo $ques; ?>></th>
 			<th><select name=<?php echo $map; ?> id=<?php echo $map; ?>>
-				<span><option value=''>--Select--</option>
+				<span><option value='' name=<?php echo $map; ?> id=<?php echo $map; ?>>--Select--</option>
 				<option value=Ac>Acacemics</option>
 				<option value=Ex>Examination Division</option>
 				<option value=Ad>Administrative</option>
 				<option value=HR>Human Resource</option></span></select></th>
 			<th><input type=text name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
-			<th><button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button>
+			<th><button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button></th>
 		</tr>
 <?php				
 		$a--;
@@ -93,3 +98,5 @@ if(isset($_POST['enter']))
 	mysqli_close($con);
 }
 ?>
+</body>
+</html>

@@ -2,6 +2,7 @@
 	<head>
 			<title>View RTI</title>
 		<link rel="stylesheet" href="css/new_prev.css">
+		<link rel="stylesheet" href="css/background.css">
 	</head>
 <?php
 	echo "<div class=new-prev>";

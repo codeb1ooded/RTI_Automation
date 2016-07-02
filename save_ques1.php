@@ -23,8 +23,7 @@
 		$ques="ques".$b;
 		$map="map".$b;
 		$date_s="date_s".$b;
-
-		//$qno1=$_POST[$qno];		
+		
 		$ques1=$_POST[$ques];
 		$map1=$_POST[$map];
 		$date_s1=$_POST[$date_s];

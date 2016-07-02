@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<title>RTI Application Form</title>
-		</head>
-	<body>
+<head>
+	<title>RTI Application Form</title>
+	<link rel="stylesheet" href="css/background.css">
+	<meta charset="utf-8">
+</head>
+<body>
 <?php
 	if(isset($_GET['id'])) {
 		$Id = $_GET['id'];
@@ -16,11 +17,11 @@
 		$query = mysqli_query($con, $data);
 		$data2 = mysqli_fetch_array($query);
 ?>
-		<form action='modify.php'  method='post' id='Form_1458553627' name="prev_rti">
+		<form action='modify.php'  method='post' name="prev_rti">
 		<!-- Personal details of applicant--> 
-			<table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
+			<table width="100%">
 				<tbody>
-					<tr><th colspan="2">Personal Details of RTI Applicant:-</th></tr>
+					<tr><th>Personal Details of RTI Applicant:-</th></tr>
 				</tbody>
 			</table>
 			<input type="hidden" name="ID" value="<?php echo $Id ?>">
@@ -168,10 +169,10 @@
 	</tbody>
  </table>
 </form>		
-</body>
-</html>
 <?php 
 	}
 	echo "<a href='previd.php?id=".$Id."''>Back</a>" ;
 	include 'logoff.html'; 
 ?>
+</body>
+</html>

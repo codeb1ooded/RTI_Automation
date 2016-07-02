@@ -1,4 +1,13 @@
+<!DOCTYPE html>
+
 <html>
+	<head>
+		<title>Generate Report</title>
+		<link rel="stylesheet" href="css/background.css">
+		<meta charset="utf-8">
+	</head>
+		
+	<body>
 <h2>Generate Report Of RTIs</h2>
 <marquee><strong>CHOOSE THE DESIRED FIELD ON WHICH RTIs NEED TO BE SORTED</strong></marquee><br>
 <form action="report.php" method="post">
@@ -132,4 +141,5 @@ if(isset($_POST['enter'])){
 ?>
 
 <br><a href="new_prev.php">Back</a>
+</body>
 <html>

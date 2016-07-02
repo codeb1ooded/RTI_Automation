@@ -3,6 +3,8 @@
 	<head>
 		<title>Previous RTI</title>
 		<link rel="stylesheet" href="css/prev_rti.css">
+		<link rel="stylesheet" href="css/background.css">
+		<meta charset="utf-8">
 	</head>
 <body>
 <?php

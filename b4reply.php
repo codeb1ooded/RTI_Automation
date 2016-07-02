@@ -2,7 +2,11 @@
 <!doctype html>
 <html>
 <head>
-	<title></title>
+	<head>
+		<title>Before Reply Form</title>
+		<link rel="stylesheet" href="css/background.css">
+		<meta charset="utf-8">
+	</head>
 </head>
 <body>
 <?php

@@ -1,5 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+    <head>
+        <title>Reply Queries</title>
+        <link rel="stylesheet" href="css/background.css">
+        <meta charset="utf-8">
+    </head>
 <body>
 <?php
 session_start();

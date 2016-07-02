@@ -1,9 +1,11 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
 <head>
-	<title></title>
+	<title>Response To Appellant Form</title>
+	<link rel="stylesheet" href="css/background.css">
+	<meta charset="utf-8">
 </head>
-<body>
+		
+	<body>
 <?php
 	$Id = $_GET['id'];
 	echo "Add Details of RTI with Id: ".$Id;

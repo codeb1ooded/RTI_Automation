@@ -3,33 +3,30 @@
 <html>
 	<head>
 		<title>RTI Application Form</title>
+		<link rel="stylesheet" href="css/background.css">
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<script src="bootstrap/jQuery/jquery.min.js"></script>
+  		<script src="bootstrap/js/bootstrap.min.js"></script>
 	</head>
 		
 	<body>
-		<form action="submit.php" method="post" name="add_rti">
-
-		<!-- Personal details of applicant--> 
-		<table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
-			<tbody>
-				<tr><th colspan="2">Personal Details of RTI Applicant:-</th></tr>
-			</tbody>
-		</table>
-		
-		<table width="100%" border="2"  cellpadding="0" cellspacing="2">
+	<div class="container">
+		<br><h4><strong>Personal Details of RTI Applicant:</strong></h4>
+		<form action="submit.php" method="post" class="form-horizontal" role="form">
+		<table class="table table-bordered table-condensed">
 			<tbody>
 				<tr>
-                    <th class="THfirst">Name of Applicant</th>
-                    <td class="TDfirst">
-						<input type="text" name="name" pattern="[a-zA-Z ]+" title="Only Alphabets are allowed" required>
-                    </td>
+                    <th>Name of Applicant</th>
+                    <td><input type="text" name="name" pattern="[a-zA-Z ]+" title="Only Alphabets are allowed" required></td>
                 </tr>
 			
 				<tr>
                     <th>Gender </th>
                     <td>
-						<input type="radio" name="gender" id="gender" class="radio" checked="checked" value="Male"> Male                            
-						<input type="radio" name="gender" id="gender" class="radio" value="Female"> Female                           
-						<input type="radio" name="gender" id="gender" class="radio" value="Third Gender"> Third Gender
+						<input type="radio" name="gender" id="gender" checked="checked" value="Male"> Male                            
+						<input type="radio" name="gender" id="gender" value="Female"> Female                           
+						<input type="radio" name="gender" id="gender" value="Third Gender"> Third Gender
                     </td>
 				</tr>
 		
@@ -99,14 +96,14 @@
 				<tr>
 					<th>Phone Number</th>
 					<td>
-						011<input type="text" name="phone" id="phone" maxlength="18" pattern="^\d{8}$" onkeydown="return isNumeric(event.keyCode);" class="numeric" value="" required>
+						<input type="text" name="phone" id="phone" maxlength="18" pattern="^\d{8}$" onkeydown="return isNumeric(event.keyCode);" class="numeric" value="" required>
 						<cite>Provide STD code with zero eg.01123456789</cite>
 					</td>
 				</tr>
 
 				<tr>
-					<th>Mobile Number<cite>(For receiving SMS alerts)</cite></th>
-     	    	    <td>+91<input type="text" name="mobile" id="cell" maxlength="15" class="numeric" pattern="^\d{10}$" onkeydown="return isNumeric(event.keyCode);" value="" required>
+					<th>Mobile Number (For receiving SMS alerts)</th>
+     	    	    <td><input type="text" name="mobile" id="cell" maxlength="15" pattern="^\d{10}$" onkeydown="return isNumeric(event.keyCode);" value="" required>
 						<cite>Provide Country code eg. +910123456789</cite>
 					</td>
 				</tr>
@@ -114,23 +111,13 @@
 				<tr>
 					<th>Email-ID</th>
 					<td>
-						<input type="email" name="email" maxlength="70" value="" id="Email" class="watermark" required>
+						<input type="email" name="email" maxlength="70" value="" id="Email" required>
 					</td>
 				</tr>
-       
-       	<!--	<tr>
-					<th>Confirm Email-ID</th>
-					<td>
-						<input type="text" name="ConfirmEmail" id="ConfirmEmail" maxlength="70" value="">
-					</td>
-				</tr>
-		-->
 				<tr>
-					<th class="THfirst">Citizenship<cite><br>(Only Indian citizens can file RTI Request application)</cite>
-			
-					</th>
+					<th class="THfirst">Citizenship (Only Indian citizens can file RTI Request application)</th>
 					<td class="TDfirst">
-					<select name="citizenship" id="Citizenship" class="selectLong" onchange="chkCitizenship(this);">
+					<select name="citizenship" id="Citizenship" onchange="chkCitizenship(this);">
 						<option value="Indian">Indian</option>
 						<option value="Other">Other</option>
 					</select></td>
@@ -138,14 +125,9 @@
 			
 			</tbody>
 		</table>
-	<!--Receipt of RTI Application:- -->	<table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
-			<tbody>
-				<tr><th colspan="2">(I)Receipt of RTI Application:-</th></tr>
-				<tr><th colspan="2">(Section 7)</th></tr>
-			</tbody>
-		</table>
 
-			<table width="100%" border="2" class="tbl-border" cellpadding="0" cellspacing="2">
+	<h4><strong>Receipt of RTI Application (Section 7):</strong></h4>
+	<table class="table table-bordered table-condensed">
 	<tbody>
 	
 	<tr>
@@ -158,22 +140,10 @@
 	</tr>
 	</tbody> </table>
 	
-<table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
-<!DOCTYPE html>
-<head>
-	<title></title>
-</head>
-		<body>
-		<form action="submit.php" method="post">
-		<table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
-		<tbody>
-				<tr><th colspan="2">(II) Fee Payment Details:-</th></tr>
-				<tr><th colspan="2">(Rule-3 of RTI regulation of fee and cost rules)</th></tr>
-			</tbody>
-		</table>
-			<table width="100%" border="2" class="tbl-border" cellpadding="0" cellspacing="2">
-	
-	<tr>
+		<h4><strong>Fee Payment Details (Rule-3 of RTI regulation of fee and cost rules):</strong></h4>
+		
+		<table class="table table-bordered table-condensed">
+		<tr>
 		<th>Whether fee is enclosed with RTI application</th>
 			<td>    
 				<input type="radio" value="yes" checked="checked" name="fee" id="fee_paid"> Yes                         
@@ -193,8 +163,8 @@
 	<table>
 	<tbody>
 		<tr>
-			<th colspan="15"></th><th><input type="submit" name="add" value="Add Queries" class="btnaddQuestions" onclick="return validateDate()"></th>
-			<th colspan="15"></th><th><input type="submit" name="submit" value="Save and Exit" class="btnaddQuestions" onclick="return validateDate()"></th>
+			<th colspan="15"></th><th><input type="submit" name="add" value="Add Queries" class="btn" onclick="return validateDate()"></th>
+			<th colspan="15"></th><th><input type="submit" name="submit" value="Save and Exit" class="btn" onclick="return validateDate()"></th>
 		</tr>
 	</tbody>
 </table>
@@ -214,6 +184,7 @@
 		}
 </script>
 <script src="date_validation_add_rti.js"></script>
+<div>
 </body>
 </form>
 </html>		

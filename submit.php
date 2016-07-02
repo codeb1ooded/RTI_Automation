@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<head>
+	<title>Submit</title>
+	<link rel="stylesheet" href="css/background.css">
+	<meta charset="utf-8">
+</head>
+<body>
 <?php	
 	include 'config_database.php'; 
 	
@@ -36,3 +43,5 @@
 		include 'new_prev.php';
 	mysqli_close($con);
 	?>
+</body>
+</html>

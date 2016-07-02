@@ -1,4 +1,10 @@
-<html>
+<!DOCTYPE HTML>
+<head>
+	<title>Modified</title>
+	<link rel="stylesheet" href="css/background.css">
+	<meta charset="utf-8">
+</head>
+<body>
 <?php
 if(isset($_POST['submit']))
 {
@@ -29,6 +35,7 @@ if(isset($_POST['submit']))
 		
 	if ($con->query($data) === TRUE) {
 		echo "Record updated successfully";
+		echo "<a href='previd.php?id=".$id."'>Back</a>";
 	} else {
 		echo "Error updating record: " . $con->error;
 	}
@@ -147,7 +154,7 @@ if(isset($_POST['edit']))
 	$_SESSION['qu']=$data2;
 	if ($con->query($data) === TRUE) 
 	{
-		echo "Record updated successfully";
+		echo "Details of record updated successfully";
 	} 
 	else 
 	{
@@ -157,3 +164,5 @@ if(isset($_POST['edit']))
 }
 
 ?>
+</body>
+</html>

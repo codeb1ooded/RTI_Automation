@@ -31,7 +31,7 @@
 	mysqli_close($con);
 if(isset($_POST['save']))
 {
-	include 'new_prev.php';
+	include 'prev_rti.php';
 }
 if(isset($_POST['reply']))
 {
