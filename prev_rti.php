@@ -4,6 +4,7 @@
 		<title>Previous RTI</title>
 		<link rel="stylesheet" href="css/prev_rti.css">
 		<link rel="stylesheet" href="css/background.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 		<meta charset="utf-8">
 	</head>
 <body>
@@ -14,7 +15,7 @@
     $res= mysqli_query($con, $query);
     echo "<h2>ONGOING RTIs</h2>" ;
 	echo "<marquee><strong>CHOOSE THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
-	echo "<table  width=100% border=2>" ;
+	echo "<table  class=table table-bordered table-condensed width=100% border=2>" ;
 	echo "<tr>
 			<th>ID</th>
 			<th>Applicant Name</th>

@@ -4,6 +4,7 @@
 	<head>
 		<title>Generate Report</title>
 		<link rel="stylesheet" href="css/background.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 		<meta charset="utf-8">
 	</head>
 		
@@ -11,10 +12,10 @@
 <h2>Generate Report Of RTIs</h2>
 <marquee><strong>CHOOSE THE DESIRED FIELD ON WHICH RTIs NEED TO BE SORTED</strong></marquee><br>
 <form action="report.php" method="post">
-	<input type="submit" name="name" value="Name"><br><br>
-	<input type="submit" name="dept" value="Department"><br><br>
-	<input type="submit" name="date" value="Date"><br><br>
-	<input type="submit" name="close" value="Closed"><br><br>
+	<input type="submit" name="name" class=btn value="Name"><br><br>
+	<input type="submit" name="dept" class=btn value="Department"><br><br>
+	<input type="submit" name="date" class=btn value="Date"><br><br>
+	<input type="submit" name="close" class=btn value="Closed"><br><br>
 </form>
 <?php
 	
@@ -140,6 +141,6 @@ if(isset($_POST['enter'])){
 }
 ?>
 
-<br><a href="new_prev.php">Back</a>
+<br><a href="new_prev.php" class=btn>Back</a>
 </body>
 <html>

@@ -2,7 +2,6 @@
 
 	include 'new_prev.php';
 	include 'config_database.php'; 
-
 	session_start();
 	$c=$_SESSION['oid'];
 	$b=$_SESSION['quer'];

@@ -3,6 +3,7 @@
 		<title>Completed RTI</title>
 		<link rel="stylesheet" href="css/prev_rti.css"><!DOCTYPE html>
 		<link rel="stylesheet" href="css/background.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 		<meta charset="utf-8">
 	</head>
 <body>
