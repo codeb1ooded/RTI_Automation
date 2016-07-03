@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jun 28, 2016 at 11:19 PM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.20
+-- Host: 127.0.0.1
+-- Generation Time: Jul 03, 2016 at 07:42 PM
+-- Server version: 10.1.10-MariaDB
+-- PHP Version: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -58,7 +58,8 @@ INSERT INTO `add_rti` (`id`, `name`, `gender`, `address`, `pin_code`, `state`, `
 (4, 'blah', 'Male', '', 0, '', 'India', '', '', '', 'Indian', '0000-00-00', '0000-00-00', 0, 'yes', '0000-00-00', '', 1),
 (5, 'utkarsha', 'Female', 'abcdef', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 0),
 (6, 'woah', 'Male', 'address', 110077, 'Andhra', 'India', '25090133', '9968813151', 'ug@gmail.com', 'Indian', '2016-06-17', '2016-06-18', 1, 'yes', '2016-06-17', 'cash', NULL),
-(7, 'woah', 'Male', 'address', 110077, 'Andhra', 'India', '25090133', '9968813151', 'ug@gmail.com', 'Indian', '2016-06-17', '2016-06-18', 1, 'yes', '2016-06-17', 'cash', NULL);
+(7, 'woah', 'Male', 'address', 110077, 'Andhra', 'India', '25090133', '9968813151', 'ug@gmail.com', 'Indian', '2016-06-17', '2016-06-18', 1, 'yes', '2016-06-17', 'cash', NULL),
+(8, 'Tia', 'Female', 'Bh-3 East shalomar Bagh', 110088, 'Delhi', 'India', '98745874', '8932865258', 's@gmail.com', 'Indian', '2016-06-22', '2016-01-01', 172, 'yes', '2016-06-05', 'DD', 1);
 
 -- --------------------------------------------------------
 
@@ -163,7 +164,11 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`name`, `password`) VALUES
 ('ut', 'nathu'),
-('pc', 'prachi');
+('pc', 'prachi'),
+('admin', 'xyzabc'),
+('examination', 'exam'),
+('Human Resource', 'HR'),
+('Academics', 'Ac');
 
 -- --------------------------------------------------------
 
@@ -256,7 +261,9 @@ INSERT INTO `t2` (`id`, `q_no`, `ques`, `map`, `date_sent`) VALUES
 (6, 3, '', 'HR', '2016-06-20'),
 (7, 1, 'blah', 'Ex', '2016-06-20'),
 (7, 2, 'blah2', 'Ad', '2016-06-20'),
-(7, 3, 'blah3', 'HR', '2016-06-20');
+(7, 3, 'blah3', 'HR', '2016-06-20'),
+(8, 1, 'hwsxbj', 'Ac', '2016-06-05'),
+(8, 2, 'gshgbj', 'Ex', '2016-06-04');
 
 --
 -- Indexes for dumped tables
@@ -300,7 +307,7 @@ ALTER TABLE `section4`
 -- AUTO_INCREMENT for table `add_rti`
 --
 ALTER TABLE `add_rti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `first_appeal`
 --
