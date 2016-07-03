@@ -2,6 +2,7 @@
 <head>
 	<title>RTI Application Form</title>
 	<link rel="stylesheet" href="css/background.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<meta charset="utf-8">
 </head>
 <body>
@@ -162,8 +163,8 @@
 <table>
 	<tbody>
 		<tr>
-			<th colspan="15"></th><th><input type="submit" name="edit" id="addQuestions" value="Edit Queries" class="btnaddQuestions" onclick="return validateDate()"></th>
-			<th colspan="15"></th><th><input type="submit" name="submit" id="addQuestions" value="Save and Exit" class="btnaddQuestions" onclick="return validateDate()"></th>
+			<th colspan="15"></th><th><input type="submit" name="edit" id="addQuestions" value="Edit Queries" class="btn" onclick="return validateDate()"></th>
+			<th colspan="15"></th><th><input type="submit" name="submit" id="addQuestions" value="Save and Exit" class="btn" onclick="return validateDate()"></th>
 		
 		</tr>
 	</tbody>
@@ -171,7 +172,7 @@
 </form>		
 <?php 
 	}
-	echo "<a href='previd.php?id=".$Id."''>Back</a>" ;
+	echo "<a href='previd.php?id=".$Id."'' class=btn>Back</a>" ;
 	include 'logoff.html'; 
 ?>
 </body>

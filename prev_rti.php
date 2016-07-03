@@ -50,6 +50,6 @@
 	}
 	echo "</table>";
 ?>
-	<br><a href="new_prev.php">Back</a>
+	<br><a href="new_prev.php" class=btn>Back</a>
 </body>
 </html>

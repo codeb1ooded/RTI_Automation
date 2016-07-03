@@ -109,7 +109,7 @@ if(isset($_POST['date'])){
                     <td><input type=text name=d1 placeholder=YYYY-MM-DD></td>
 					<th>End Date</th>
                     <td><input type=text name=d2 placeholder=YYYY-MM-DD></td>
-					<input type=submit name=enter value=Enter>
+					<input type=submit name=enter class=btn value=Enter>
 					</form>";
 }
 if(isset($_POST['enter'])){
