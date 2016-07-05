@@ -35,7 +35,7 @@
 		<th><input type="text" name="faa_info" maxlength="50" value="" class="name" placeholder=""></th>
 	</tr>
 </table>
-<th colspan="15"></th><th><input type="submit" name="submitresponse" value="Save and Exit"></th>
+<th colspan="15"></th><th><input type="submit" name="submitresponse" class=btn value="Save and Exit"></th>
 </form>
 <?php
 	echo "<br><br><a href='previd.php?id=".$Id."''>Back</a>" ;

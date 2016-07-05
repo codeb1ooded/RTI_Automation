@@ -97,14 +97,14 @@
 					<th>Phone Number</th>
 					<td>
 						<input type="text" name="phone" id="phone" maxlength="18" pattern="^\d{8}$" onkeydown="return isNumeric(event.keyCode);" class="numeric" value="" required>
-						<cite>Provide STD code with zero eg.01123456789</cite>
+						<cite>Do not provide STD code eg.23456789</cite>
 					</td>
 				</tr>
 
 				<tr>
 					<th>Mobile Number (For receiving SMS alerts)</th>
      	    	    <td><input type="text" name="mobile" id="cell" maxlength="15" pattern="^\d{10}$" onkeydown="return isNumeric(event.keyCode);" value="" required>
-						<cite>Provide Country code eg. +910123456789</cite>
+						<cite>Provide a 10-digit no.</cite>
 					</td>
 				</tr>
 	
@@ -156,7 +156,7 @@
 		<th><input id="fee_deposit_date" name="fee_deposit_date" maxlength="50" placeholder="YYYY-MM-DD" required></th>
 	</tr>
 	<tr>
-		<th>Mode of payment(cheque/DD,cash,IPO)</th>
+		<th>Mode of payment(cheque/DD/cash/IPO)</th>
 		<th><input type="text" id="pay_mode" name="pay_mode" maxlength="50" required></th>
 	</tr>
 	</table>

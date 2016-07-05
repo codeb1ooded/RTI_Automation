@@ -172,8 +172,7 @@
 </form>		
 <?php 
 	}
-	echo "<a href='previd.php?id=".$Id."'' class=btn>Back</a>" ;
-	include 'logoff.html'; 
+	echo "<a href='previd.php?id=".$Id."''>Back</a>" ; 
 ?>
 </body>
 </html>

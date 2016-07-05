@@ -50,8 +50,8 @@ echo "<table>
         }
 ?>
 	<tr>
-		<th><input type=text value="<?php echo $data3['q_no']?>" name="<?php echo $qno; ?>" ></th>	
-		<th><input type=text name=<?php echo $ques; ?> value="<?php echo $data3['ques']?>" ></th>
+		<th> <?php echo $data3['q_no']?> </th>	
+		<th> <?php echo $data3['ques']?></th>
 		<th><input type=text name=<?php echo $ans; ?>></th>
 		<th>
 			<select onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value, this.name);" name=<?php echo $sec; ?>>
@@ -121,7 +121,7 @@ echo "<table>
 	}
 	$_SESSION['oid']=$id;
 	$_SESSION['quer']=$data2;
-	echo "<th colspan=15></th><th><input type=submit name=save value='Save and Exit' ></th>";
+	echo "<th colspan=15></th><th><input type=submit name=save  class=btn value='Save and Exit' ></th>";
 	echo "</form>" ;
 ?>
 	

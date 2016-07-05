@@ -19,7 +19,7 @@
 	echo "<tr>
 			<th><h3>No. of Queries</h3></th>
 			<th><input type=text name=ques></th>
-			<th><input type=submit name=enter value='Enter'></th>
+			<th><input type=submit name=enter  class=btn value='Enter'></th>
 		</tr></form>";
 	$con->close();
 ?>

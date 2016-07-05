@@ -78,13 +78,13 @@
 			</th>
 			
 			<th><input type=text name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
-			<th><button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button></th>
+			<th><button type="button" name="mail_button" class=btn onclick="mailTo(<?php echo $a; ?>);">Mail</button></th>
 <?php		
 		echo '</tr>';				
 		$a--;
 		$c++;
 	}
-	echo "<th colspan=15></th><th><input type=submit name=save value='Save and Exit' ></th>";
+	echo "<th colspan=15></th><th><input type=submit name=save  class=btn value='Save and Exit' ></th>";
 	echo "</form>";
 	mysqli_close($con);
     include 'logoff.html';

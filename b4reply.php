@@ -38,7 +38,7 @@
 	</tr>
 	
 	</table>
-	<input type='submit' value ='Save and Exit' name='submitSection4'>
+	<input type='submit' value ='Save and Exit' class=btn name='submitSection4'>
 <?php
 	echo "<br><br><a href='previd.php?id=".$Id."''>Back</a>" ;
 ?>

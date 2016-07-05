@@ -7,26 +7,20 @@
 <body>
 <?php
 if(isset($_POST['enter']))
-{
+{	
 	include 'config_database.php'; 
 	session_start();
-	$b=$_POST['ques'];
 	$id=$_SESSION['oid'];
-	$_SESSION['oid']=$id;
-	$a=$b;
+	$a=$_POST['ques'];
+	$_SESSION['q']=$a;
+	
 	$query="SELECT * FROM t2 where id=".$id.";";
 	$data=mysqli_query($con,$query);
 	$data2=mysqli_num_rows($data);
-	$ac=$data2;
-	$qno=0;
+	$qno=$data2;
+	$_SESSION['qno']=$qno;
 	
-	while( $ac!=0)
-	{
-		$data3=mysqli_fetch_array($data);
-		$qno=$data3['q_no'];
-		$ac--;
-	}
-	$_SESSION['q']=$qno;
+
 	echo "Fill the query details for RTI ID: ".$id."<br><br>";
 	echo "<table>
 			<tbody>
@@ -68,7 +62,10 @@ if(isset($_POST['enter']))
 		}
 	}
 </script>
+
+
 <?php
+
 	while( $a!=0)
 	{
 		$qno=$qno+1;	
@@ -92,8 +89,8 @@ if(isset($_POST['enter']))
 		$a--;
 	}
 	$_SESSION['v']=$qno;
-	echo "<th colspan=15></th><th><input type=submit name=save value='Save and Exit' ></th>";
-	echo "<th colspan=15></th><th><input type=submit name=gen_pdf value='Generate Reply' ></th>";
+	echo "<th colspan=15></th><th><input type=submit name=save class=btn value='Save and Exit' ></th>";
+	echo "<th colspan=15></th><th><input type=submit name=gen_pdf class=btn value='Generate Reply' ></th>";
 	echo "</form>";
 	mysqli_close($con);
 }

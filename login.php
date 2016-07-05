@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
 			$_SESSION['name']=$name;
 			header('location:new_prev.php');
 		} else{
-			echo'You entered username or password is incorrect';
+			echo'You entered username or password is incorrect';  #NO effect
 			header("Location: content.php");
 		}
 	} else{

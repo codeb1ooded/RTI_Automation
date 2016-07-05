@@ -28,16 +28,15 @@
 	{
 		$a=$r['id'];
 	}
-	echo "The id is:".$a;
+	echo "RTI ID: ".$a;
 	echo "<form action=ques.php method=post>";
 	echo "<tr>
 		<th><h3>No. of Queries</h3></th>
 		<th><input type=text name=ques></th>
-	<th><input type=submit name=enter value='Enter'></th>
+	<th><input type=submit name=enter class=btn value='Enter'></th>
 	</tr>";	
 	session_start();
 	$_SESSION['id']=$a;
-	include 'logoff.html';
 	}
 	else
 		include 'new_prev.php';

@@ -1,6 +1,6 @@
 <?php	
 	if(isset($_POST['submitSection4'])){
-	include 'nprev_rti.php';
+	include 'prev_rti.php';
 	include 'config_database.php';
 	$d1=strtotime($_POST['fee_submit_date']);
 	$d2=strtotime($_POST['given_info_date']);

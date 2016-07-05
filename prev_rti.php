@@ -20,13 +20,8 @@
 {
 	$query=" SELECT * FROM add_rti order by date_of_receipt_cio";
     $res= mysqli_query($con, $query);
-<<<<<<< Updated upstream
-    echo "<h2>ONGOING RTIs</h2>" ;
-	echo "<marquee><strong>CHOOSE THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
-	echo "<table  class=table table-bordered table-condensed width=100% border=2>" ;
-=======
 	echo "<table  width=100% border=2>" ;
->>>>>>> Stashed changes
+#>>>>>>> Stashed changes
 	echo "<tr>
 			<th>ID</th>
 			<th>Applicant Name</th>

@@ -3,21 +3,8 @@
 	session_start();
 	$c=$_SESSION['oid'];
 	$b=$_SESSION['q'];
-	$_SESSION['q']=$b;
-	$data1="SELECT * FROM t2 WHERE id=".$c.";";
-	$query=mysqli_query($con,$data1);
-	$data2=mysqli_num_rows($query);
-	$ac=$data2;
-	$qno=0;
-	while( $ac!=0)
-	{
-		$data3=mysqli_fetch_array($query);
-		$qno=$data3['q_no'];
-		$ac--;
-	}
 	
-	$qno=$qno+1;
-	$_SESSION['q']=$qno;
+	$qno=$_SESSION['qno']+1;
 	while($b!=0)
 	{				
 		$ques="ques".$b;
@@ -34,7 +21,6 @@
 		$qno=$qno+1;
 		$b--;
 	}
-	$_SESSION['v']=$qno-1;
 	mysqli_close($con);
 	if(isset($_POST['save']))
 	include 'new_prev.php';

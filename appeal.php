@@ -36,7 +36,7 @@
 		<th><input type="text" name="meet_date" id="Name" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD"></th>
 	</tr>
 </table>
-<th colspan="15"></th><th><input type="submit" name="submitappeal" id="Save_appeal" value="Save and Exit" class="btnsaveappeal"></th>
+<th colspan="15"></th><th><input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save and Exit" class="btnsaveappeal"></th>
 <?php
 	echo "<br><br><a href='previd.php?id=".$Id."''>Back</a>" ;
 ?>

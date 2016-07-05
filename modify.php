@@ -146,8 +146,8 @@ if(isset($_POST['edit']))
 		mysqli_query($con,$sql);
 		$a--;
 	}
-	echo "<th colspan=15></th><th><input type=submit name=save value='Save and Exit' ></th>";
-	echo "<th colspan=15></th><th><input type=submit name=reply value='Generate Reply' ></th>";
+	echo "<th colspan=15></th><th><input type=submit name=save class=btn value='Save and Exit' ></th>";
+	echo "<th colspan=15></th><th><input type=submit name=reply class=btn value='Generate Reply' ></th>";
 	echo "</form>";
 	session_start();
 	$_SESSION['id']=$id;
