@@ -7,9 +7,10 @@
 </head>
 <body>
 <?php
+	echo "<br><div class='container'>";
 	if(isset($_GET['id'])) {
 		$Id = $_GET['id'];
-		echo " Modify Details of RTI with Id: ".$Id;
+		echo "<h4>Modify Details of RTI with Id: ".$Id."</h4>";
 	}
 	include 'config_database.php'; 
 	if(isset($_GET['id'])) {
@@ -18,161 +19,132 @@
 		$query = mysqli_query($con, $data);
 		$data2 = mysqli_fetch_array($query);
 ?>
-		<form action='modify.php'  method='post' name="prev_rti">
-		<!-- Personal details of applicant--> 
-			<table width="100%">
-				<tbody>
-					<tr><th>Personal Details of RTI Applicant:-</th></tr>
-				</tbody>
-			</table>
-			<input type="hidden" name="ID" value="<?php echo $Id ?>">
-			<table width="100%" border="2" class="tbl-border" cellpadding="0" cellspacing="2">
-				<tbody>
-					<tr>
-                	    <th class="THfirst"><samp style="color:#FF0000"><b>*</b></samp>Name of Applicant</th>
-                    	<td class="TDfirst">
-							<input type="text" name="name" id="name" maxlength="50" value="<?php echo $data2['name']?>" class="name" placeholder="">
-                	    </td>
-                	</tr>
-					<tr>
-    	                <th>Gender </th>
-        	            <td>
-							<input type="radio" name="gender" id="gender" class="radio" <?php if(strcmp($data2['gender'], "Male") == 0){ echo "checked=\"checked\""; }?> value="Male"> Male                         
-							<input type="radio" name="gender" id="gender" class="radio" <?php if(strcmp($data2['gender'], "Female") == 0){ echo "checked=\"checked\""; }?> value="Female"> Female                           
-							<input type="radio" name="gender" id="gender" class="radio" <?php if(strcmp($data2['gender'], "Third Gender") == 0){ echo "checked=\"checked\""; }?> value="Third Gender"> Third Gender
-                    	</td>
-					</tr>
-					<tr>
-						<th><samp style="color:#FF0000"><b>*</b></samp> Address</th>
-						<td>
-							<input type="text" name="address" id="address1" class="address" maxlength="100" value="<?php echo $data2['address']?>">
-							<!--<add class="question"><img src="https://rtionline.gov.in/images/questionToolTip.png" /></add>-->
-						</td>
-					</tr>
-					<tr>
-						<th>Pin code</th>
-						<td>
-							<input type="text" name="pin_code" minlength="6" maxlength="6" onkeydown="return isNumeric(event.keyCode);" value="<?php echo $data2['pin_code']?>">
-						</td>
-					</tr>
+	<h4><strong>Personal Details of RTI Applicant:</strong></h4>
+	<form action='modify.php'  method='post' name="prev_rti">
+		<input type="hidden" name="ID" value="<?php echo $Id ?>">
+		<table class="table table-bordered table-condensed">
+			<tbody>
+				<tr>
+               	    <th>Name of Applicant</th>
+                   	<th><input type="text" name="name" id="name" maxlength="50" value="<?php echo $data2['name']?>" class="name" placeholder="">
+                	</th>
+                </tr>
+				
+				<tr>
+    	            <th>Gender</th>
+        	        <td>
+						<input type="radio" name="gender" id="gender" value="Male"<?php if(strcmp($data2['gender'], "Male") == 0){ echo "checked=\"checked\""; }?>> Male &nbsp&nbsp          
+						<input type="radio" name="gender" id="gender" value="Female" <?php if(strcmp($data2['gender'], "Female") == 0){ echo "checked=\"checked\""; }?>> Female &nbsp&nbsp                      
+						<input type="radio" name="gender" id="gender" value="Third Gender" <?php if(strcmp($data2['gender'], "Third Gender") == 0){ echo "checked=\"checked\""; }?>> Third Gender &nbsp&nbsp
+                   	</td>
+				</tr>
+			
+				<tr>
+					<th>Address</th>
+					<th><input type="text" name="address" id="address1" class="address" maxlength="100" value="<?php echo $data2['address']?>"></th>
+				</tr>
+				
+				<tr>
+					<th>Pin code</th>
+					<th><input type="text" name="pin_code" minlength="6" maxlength="6" onkeydown="return isNumeric(event.keyCode);" value="<?php echo $data2['pin_code']?>"></th>
+				</tr>
 
 <script src="date_validation_prev_rti.js"></script>
 
-					<tr>
-						<th>Country</th>
-						<td>
-							<input type="radio" name="country" id="chkstate" <?php if(strcmp($data2['country'], "India") == 0){ echo "checked=\"checked\""; }?> value="India" onclick="test();"> India                  
-							<input type="radio" name="country" id="chkcountry" <?php if(strcmp($data2['country'], "other") == 0){ echo "checked=\"checked\""; }?> value="Other" onclick="test1();"> Other                			
-						</td>
-					</tr>
-					<tr>
-						<th>State</th>
-						<td>
-							<input type="text" name="state" id="cngStateName" maxlength="18" value="<?php echo $data2['state']?>">
-						</td>
-					</tr>
+				<tr>
+					<th>Country</th>
+					<th>
+						<input type="radio" name="country" id="chkstate" <?php if(strcmp($data2['country'], "India") == 0){ echo "checked=\"checked\""; }?> value="India" onclick="test();"> India &nbsp&nbsp                  
+						<input type="radio" name="country" id="chkcountry" <?php if(strcmp($data2['country'], "other") == 0){ echo "checked=\"checked\""; }?> value="Other" onclick="test1();"> Other                			
+					</th>
+				</tr>
+				
+				<tr>
+					<th>State</th>
+					<th><input type="text" name="state" id="cngStateName" maxlength="18" value="<?php echo $data2['state']?>"></th>
+				</tr>
 					
-					<tr>
-						<th>Phone Number</th>
-						<td>
-							<input type="text" name="phone_no" id="phone" maxlength="18" onkeydown="return isNumeric(event.keyCode);" class="numeric" value="<?php echo $data2['phone_no']?>">
-							<!--<phone class="question"><img src="https://rtionline.gov.in/images/questionToolTip.png" /></phone>-->
-							<cite>Provide STD code with zero eg.01123456789</cite>
-						</td>
-					</tr>
+				<tr>
+					<th>Phone Number</th>
+					<th><input type="text" name="phone_no" id="phone" maxlength="18" onkeydown="return isNumeric(event.keyCode);" class="numeric" value="<?php echo $data2['phone_no']?>"><cite> Provide STD code with zero eg.01123456789</cite></th>
+				</tr>
 
-					<tr>
-						<th>Mobile Number<cite>(For receiving SMS alerts)</cite></th>
-			            <td><input type="text" name="mobile" id="cell" maxlength="15" class="numeric" onkeydown="return isNumeric(event.keyCode);" value="<?php echo $data2['mobile']?>">
-							<cite>Provide Country code eg. +910123456789</cite>
-							<!--<cell class="question"><img src="https://rtionline.gov.in/images/questionToolTip.png" /></cell>-->
-							<!-- <cite>eg. 9400000001</cite>-->
-						</td>
-					</tr>
+				<tr>
+					<th>Mobile Number<cite>(For receiving SMS alerts)</cite></th>
+			        <th><input type="text" name="mobile" id="cell" maxlength="15" class="numeric" onkeydown="return isNumeric(event.keyCode);" value="<?php echo $data2['mobile']?>"><cite> Provide Country code eg. +910123456789</cite></th>
+				</tr>
 	
-					<tr>
-						<th><samp style="color:#FF0000"><b>*</b></samp> Email-ID</th>
-						<td>
-							<input type="text" name="email" maxlength="70" value="<?php echo $data2['email']?>" id="Email" class="watermark">
-							<!--<email class="question"><img src="https://rtionline.gov.in/images/questionToolTip.png" /></email>-->
-						</td>
-					</tr>
+				<tr>
+					<th>Email-ID</th>
+					<th><input type="text" name="email" maxlength="70" value="<?php echo $data2['email']?>" id="Email"></th>
+				</tr>
 
-					<tr>
-						<th class="THfirst">Citizenship<cite><br>(Only Indian citizens can file RTI Request application)</cite>	</th>
-						<td class="TDfirst">
-							<select name="citizenship" id="Citizenship" class="selectLong" onchange="chkCitizenship(this);">
-								<option value="Indian" <?php if(strcmp($data2['citizenship'], "Indian") == 0){ echo "selected"; }?>>Indian</option>
-								<option value="Other" <?php if(strcmp($data2['citizenship'], "Other") == 0){ echo "selected"; }?>>Other</option>
-							</select>
-						</td>
-					</tr>
-			
+				<tr>
+					<th>Citizenship <cite>(Only Indian citizens can file RTI Request application)</cite></th>
+					<th>
+						<select name="citizenship" id="Citizenship" class="btn" style="background:white; color:black" onchange="chkCitizenship(this);">
+							<option value="Indian" <?php if(strcmp($data2['citizenship'], "Indian") == 0){ echo "selected"; }?>>Indian</option>
+							<option value="Other" <?php if(strcmp($data2['citizenship'], "Other") == 0){ echo "selected"; }?>>Other</option>
+						</select>
+					</th>
+				</tr>
 			</tbody>
 		</table>
-		<!--Receipt of RTI Application:- -->	<table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
-		<tbody>
-			<tr><th colspan="2">(I)Receipt of RTI Application:-</th></tr>
-			<tr><th colspan="2">(Section 7)</th></tr>
-		</tbody>
-		</table>
 
-		<table width="100%" border="2" class="tbl-border" cellpadding="0" cellspacing="2">
-		<tbody>
-	
-			<tr>
-				<th>Date of receipt of RTI application by R & I section of public authority</th>
-				<th><input type="text" name="date_of_receipt" id="date_of_receipt" placeholder="DD-MM-YYYY" maxlength="50" value="<?php echo $data2['date_of_receipt']?>" class="name" placeholder="YYYY-MM-DD"></th>
-			</tr>
-	
-			<tr>
-				<th>Date of its receipt by CPIO</th><th><input type="text" placeholder="DD-MM-YYYY" name="date_of_receipt_cio" id="date_of_receipt_cpio" maxlength="50" value="<?php echo $data2['date_of_receipt_cio']?>" class="name" placeholder="YYYY-MM-DD"></th>
-			</tr>
-		
-			<tr>
-				<th>Time between (1) & (2) in days</th><th> <input type="text" name="time" id="time" maxlength="50" value="<?php echo $data2['timespan']?>" class="name" placeholder=""></th>
-			</tr> 
-		</tbody> 
-	</table>
-	
-	<!-- Fee Payment Details-->	<table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
+		<h4><strong>Receipt of RTI Application (Section 7):</strong></h4>
+
+		<table class="table table-bordered table-condensed">
 			<tbody>
-				<tr><th colspan="2">(II) Fee Payment Details:-</th></tr>
-				<tr><th colspan="2">(Rule-3 of RTI regulation of fee and cost rules)</th></tr>
-			</tbody>
-		</table>
-			<table width="100%" border="2" class="tbl-border" cellpadding="0" cellspacing="2">
+				<tr>
+					<th>Date of receipt of RTI application by R & I section of public authority</th>
+					<th><input type="text" name="date_of_receipt" id="date_of_receipt" placeholder="DD-MM-YYYY" maxlength="50" value="<?php echo $data2['date_of_receipt']?>" class="name" placeholder="YYYY-MM-DD"></th>
+				</tr>
 	
-	<tr>
-		<th>Whether fee is enclosed with RTI application</th>
-			<td>    
-				<input type="radio" value="yes" name="fee_enclosed" id="fee_enclosed" <?php if(strcmp($data2['fee_enclosed'], "yes") == 0){ echo "checked=\"checked\""; }?>> Yes                         
-				<input type="radio" value="no" name="fee_enclosed" id="fee_enclosed" <?php if(strcmp($data2['fee_enclosed'], "No") == 0 or strcmp($data2['fee_enclosed'], "no") == 0){ echo "checked=\"checked\""; }?>> No 
-			</td>
-	</tr>
-
-	<tr>
-		<th>Date of depositing fee</th>
-		<th><input type="text" id="fee_deposit_date" name="fee_deposit_date" maxlength="50" placeholder="DD-MM-YYYY" value="<?php echo $data2['fee_deposit_date']?>"></th>
-	</tr>
-	<tr>
-		<th>Mode of payment(cheque/DD,cash,IPO)</th>
-		<th><input type="text" id="pay_mode" name="pay_mode" maxlength="50" value="<?php echo $data2['pay_mode']?>"></th>
-	</tr>
-	</table>
-<table>
-	<tbody>
-		<tr>
-			<th colspan="15"></th><th><input type="submit" name="edit" id="addQuestions" value="Edit Queries" class="btn" onclick="return validateDate()"></th>
-			<th colspan="15"></th><th><input type="submit" name="submit" id="addQuestions" value="Save and Exit" class="btn" onclick="return validateDate()"></th>
+				<tr>
+					<th>Date of its receipt by CPIO</th>
+					<th><input type="text" placeholder="DD-MM-YYYY" name="date_of_receipt_cio" id="date_of_receipt_cpio" maxlength="50" value="<?php echo $data2['date_of_receipt_cio']?>" class="name" placeholder="YYYY-MM-DD"></th>
+				</tr>
 		
-		</tr>
-	</tbody>
- </table>
-</form>		
+				<tr>
+					<th>Time between (1) & (2) in days</th>
+					<th><input type="text" name="time" id="time" maxlength="50" value="<?php echo $data2['timespan']?>" class="name" placeholder=""></th>
+				</tr> 
+			</tbody> 
+		</table>
+	
+	
+	<h4><strong>Fee Payment Details (Rule-3 of RTI regulation of fee and cost rules):</strong></h4>
+
+	<table class="table table-bordered table-condensed">
+		<tbody>
+			<tr>
+				<th>Whether fee is enclosed with RTI application</th>
+				<td>    
+					<input type="radio" value="yes" name="fee_enclosed" id="fee_enclosed" <?php if(strcmp($data2['fee_enclosed'], "yes") == 0){ echo "checked=\"checked\""; }?>> Yes &nbsp&nbsp                        
+					<input type="radio" value="no" name="fee_enclosed" id="fee_enclosed" <?php if(strcmp($data2['fee_enclosed'], "No") == 0 or strcmp($data2['fee_enclosed'], "no") == 0){ echo "checked=\"checked\""; }?>> No 
+				</td>
+			</tr>
+
+			<tr>
+				<th>Date of depositing fee</th>
+				<th><input type="text" id="fee_deposit_date" name="fee_deposit_date" maxlength="50" placeholder="DD-MM-YYYY" value="<?php echo $data2['fee_deposit_date']?>"></th>
+			</tr>
+			
+			<tr>
+				<th>Mode of payment(cheque/DD,cash,IPO)</th>
+				<th><input type="text" id="pay_mode" name="pay_mode" maxlength="50" value="<?php echo $data2['pay_mode']?>"></th>
+			</tr>
+		</tbody>
+	</table>
+
+	<input type="submit" name="edit" id="addQuestions" value="Edit Queries" class="btn" onclick="return validateDate()">
+	<input type="submit" name="submit" id="addQuestions" value="Save and Exit" class="btn" onclick="return validateDate()">		
 <?php 
 	}
-	echo "<a href='previd.php?id=".$Id."''>Back</a>" ; 
+	echo "<a class='btn' href='previd.php?id=".$Id."''>Back</a>" ; 
 ?>
+
+</form>
+</div>
 </body>
 </html>

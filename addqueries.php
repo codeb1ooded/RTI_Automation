@@ -1,27 +1,29 @@
 <!DOCTYPE html>
-	<head>
-		<title>Add Queries</title>
-		<link rel="stylesheet" href="css/background.css">
-		<meta charset="utf-8">
-	</head>
-		
-	<body>
-	<?php
-
-	include 'config_database.php'; 
-	$id = $_GET['id'];
-	session_start();
-	$_SESSION['oid']=$id;
-	mysqli_select_db($con, "rti");
+<head>
+	<title>Add Queries</title>
+	<link rel="stylesheet" href="css/background.css">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<script src="bootstrap/jQuery/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<?php
+			include 'config_database.php'; 
+			$id = $_GET['id'];
+			session_start();
+			$_SESSION['oid']=$id;
+			mysqli_select_db($con, "rti");
 			
-	echo "<form action=ques1.php method=post>";
-	echo "The id of this RTI is: ".$id;
-	echo "<tr>
-			<th><h3>No. of Queries</h3></th>
-			<th><input type=text name=ques></th>
-			<th><input type=submit name=enter  class=btn value='Enter'></th>
-		</tr></form>";
-	$con->close();
-?>
+			echo "<form action=ques1.php method=post class='form-horizontal' role='form'>";
+			echo "<br><h3>The id of this RTI is: ".$id."</h3>";
+			echo "<h4>Enter the number of queries to be added:</h4>
+					<input style='height:32px' type=text name=ques>
+					<input type=submit name=enter class='btn' value='Enter'>
+				</form>";
+			$con->close();
+		?>
+	</div>
 </body>
 </html>

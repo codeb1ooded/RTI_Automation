@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Reply Queries</title>
-        <link rel="stylesheet" href="css/background.css">
-        <meta charset="utf-8">
-    </head>
+<head>
+    <title>Reply Queries</title>
+    <link rel="stylesheet" href="css/background.css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/jQuery/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
 <body>
+<div class="container">
 <?php
-session_start();
-include 'config_database.php'; 
-
-$id=$_GET['id'];
-$k = "SELECT * FROM t2 WHERE id=".$id.";";
-$query=mysqli_query($con,$k);
-$data2=mysqli_num_rows($query);
-$a=$data2;
-echo "Fill the query reply for RTI ID: ".$id."<br><br>";
-echo "<table>
+    session_start();
+    include 'config_database.php'; 
+    $id=$_GET['id'];
+    $k = "SELECT * FROM t2 WHERE id=".$id.";";
+    $query=mysqli_query($con,$k);
+    $data2=mysqli_num_rows($query);
+    $a=$data2;
+    echo "<br><h3>Fill the query reply for RTI ID: ".$id."</h3><br>";
+    echo "<table class='table table-bordered'>
 			<tbody>
 				<tr>
 					<th>Query No</th>
@@ -50,11 +52,11 @@ echo "<table>
         }
 ?>
 	<tr>
-		<th> <?php echo $data3['q_no']?> </th>	
-		<th> <?php echo $data3['ques']?></th>
-		<th><input type=text name=<?php echo $ans; ?>></th>
-		<th>
-			<select onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value, this.name);" name=<?php echo $sec; ?>>
+		<td> <?php echo $data3['q_no']?> </td>	
+		<td> <?php echo $data3['ques']?></td>
+		<td><input  style="height:32px" type=text name=<?php echo $ans; ?>></td>
+		<td>
+			<select class="btn" style="background:white; color:black" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value, this.name);" name=<?php echo $sec; ?>>
                 <option value="">Select Section</option>
                 <?php if ($result->num_rows > 0) { ?>
                     <?php while($row = mysqli_fetch_assoc($result)) { ?>
@@ -62,20 +64,20 @@ echo "<table>
                     <?php } ?>
                 <?php } ?>
             </select>
-        </th>
+        </td>
         <script type='text/javascript'>
         var blah="<?php echo $subsec; ?>";
         </script>
-        <th>
+        <td>
         <div>
             <script type="text/javascript" language="JavaScript">
-                document.write('<select name="subsec" id="subsec" ><option value="">Please select sub-section</option></select>')
+                document.write('<select class="btn" style="background:white; color:black" name="subsec" id="subsec" ><option value="">Please select sub-section</option></select>')
                 document.getElementById("subsec").name=blah;
                 document.getElementById("subsec").id=blah;
             </script>
             
             <noscript>
-                <select name=<?php echo $subsec; ?> id=<?php echo $subsec; ?>>
+                <select class="btn" style="background:white; color:black" name=<?php echo $subsec; ?> id=<?php echo $subsec; ?>>
                     <option value="">Please select sub-section</option>
                 </select>
             </noscript>
@@ -113,17 +115,18 @@ echo "<table>
                 return true;
             }
         </script>
-      	</th>
-		<th><input type=date name=<?php echo $date_rec;?> placeholder=YYYY-MM-DD></th>
+      	</td>
+		<td><input  style="height:32px" type=date name=<?php echo $date_rec;?> placeholder=YYYY-MM-DD></td>
 	</tr>
 <?php				
 		$a--;
 	}
 	$_SESSION['oid']=$id;
 	$_SESSION['quer']=$data2;
-	echo "<th colspan=15></th><th><input type=submit name=save  class=btn value='Save and Exit' ></th>";
+    echo "</table>" ;
+	echo "<input type=submit name=save  class=btn value='Save and Exit' >";
 	echo "</form>" ;
 ?>
-	
+</div>
 </body>
 </html>

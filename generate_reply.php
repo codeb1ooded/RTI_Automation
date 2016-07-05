@@ -66,8 +66,8 @@ echo"<table>";
 Encl.: As above.";
 		
 echo"</table>";
-echo "<button onclick='myFuction()'>Print the reply</button>";
-echo "<br><br><a href='previd.php?id=".$id."''>Back</a>";
+echo "<button class='btn' onclick='myFuction()'>Print the reply</button>";
+echo "<br><br><a class='btn' href='previd.php?id=".$id."''>Back</a>";
 ?>
 <script>
 function myFuction(){

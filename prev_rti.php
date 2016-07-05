@@ -4,23 +4,26 @@
 		<title>Previous RTI</title>
 		<link rel="stylesheet" href="css/prev_rti.css">
 		<link rel="stylesheet" href="css/background.css">
-		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 		<meta charset="utf-8">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<script src="bootstrap/jQuery/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
 	</head>
 <body>
 <?php
 	include 'config_database.php'; 
 	session_start();
+	echo "<div class='container'>";
     $uname=$_SESSION['name'];
 	$_SESSION['name']=$uname;
 	//echo $uname;
 	echo "<h2>ONGOING RTIs</h2>" ;
 	echo "<marquee><strong>CHOOSE THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
 	if($uname=='ut'||$uname=='pc')
-{
+	{
 	$query=" SELECT * FROM add_rti order by date_of_receipt_cio";
     $res= mysqli_query($con, $query);
-	echo "<table  width=100% border=2>" ;
+	echo "<table class='table table-bordered'>" ;
 #>>>>>>> Stashed changes
 	echo "<tr>
 			<th>ID</th>
@@ -73,7 +76,7 @@ else if($uname!='ut'||$uname!='pc')
 	$data=mysqli_query($con,$query);
 	//echo $data;
 	$data2=mysqli_num_rows($data);
-	echo "<table  width=100% border=2>" ;
+	echo "<table class='table table-bordered'>" ;
 	echo "<tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
@@ -105,7 +108,7 @@ else if($uname!='ut'||$uname!='pc')
 			$a=strtotime($d2);
 			$b=strtotime(date('Y-m-d h:i:s'));
 			$d3=floor(($a-$b)/86400);
-		echo"<table width=100% border=2>";	
+		echo"<table class='table table-bordered'>";	
 			echo "<tr>";
 				echo "<th><a href='previd.php?id=".$r['id']."'>".$r['id']." </a></th>";
 				echo "<th><a href='previd.php?id=".$r['id']."'>".$r['name']."</a></th>"; 
@@ -126,7 +129,9 @@ else if($uname!='ut'||$uname!='pc')
 }
 
 }
+
 ?>
 	<br><a href="new_prev.php" class=btn>Back</a>
+</div>
 </body>
 </html>

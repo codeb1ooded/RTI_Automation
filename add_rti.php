@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-
-<html>
-	<head>
-		<title>RTI Application Form</title>
-		<link rel="stylesheet" href="css/background.css">
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-		<script src="bootstrap/jQuery/jquery.min.js"></script>
-  		<script src="bootstrap/js/bootstrap.min.js"></script>
-	</head>
-		
-	<body>
-	<div class="container">
-		<br><h4><strong>Personal Details of RTI Applicant:</strong></h4>
-		<form action="submit.php" method="post" class="form-horizontal" role="form">
+<head>
+	<title>RTI Application Form</title>
+	<link rel="stylesheet" href="css/background.css">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<script src="bootstrap/jQuery/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+	
+<body>
+<div class="container">
+	<h2><strong>New RTI</strong></h2>
+	<h4><strong>Personal Details of RTI Applicant:</strong></h4>
+	<form action="submit.php" method="post" class="form-horizontal" role="form">
 		<table class="table table-bordered table-condensed">
 			<tbody>
 				<tr>
@@ -24,24 +23,20 @@
 				<tr>
                     <th>Gender </th>
                     <td>
-						<input type="radio" name="gender" id="gender" checked="checked" value="Male"> Male                            
-						<input type="radio" name="gender" id="gender" value="Female"> Female                           
+						<input type="radio" name="gender" id="gender" checked="checked" value="Male"> Male &nbsp&nbsp                            
+						<input type="radio" name="gender" id="gender" value="Female"> Female &nbsp&nbsp                 
 						<input type="radio" name="gender" id="gender" value="Third Gender"> Third Gender
                     </td>
 				</tr>
 		
 				<tr>
 					<th> Address</th>
-					<td>
-    	                <input type="text" name="address" id="address1" class="address" required>
-        	        </td>
+					<td><input type="text" name="address" id="address1" class="address" required></td>
 				</tr>
 		
 				<tr>
 					<th>Pin code</th>
-					<td>
-						<input type="text" pattern="^\d{6}$" name="pc" minlength="6" maxlength="6" onkeydown="return isNumeric(event.keyCode);" required>
-					</td>
+					<td><input type="text" pattern="^\d{6}$" name="pc" minlength="6" maxlength="6" onkeydown="return isNumeric(event.keyCode);" required></td>
 				</tr>
 		
 <script type="text/javascript">
@@ -76,21 +71,18 @@
 
 		}
 	}
-			
 </script>
 				<tr>
 					<th>Country</th>
 					<td>
-						<input type="radio" name="country" id="chkstate" checked="checked" value="India" onclick="test();"> India                  
-						<input type="radio" name="country" id="chkcountry" value="Other" onclick="test1();"> Other                			
+						<input type="radio" name="country" id="chkstate" checked="checked" value="India" onclick="test();"> India &nbsp&nbsp
+						<input type="radio" name="country" id="chkcountry" value="Other" onclick="test1();"> Other                		
 					</td>
 				</tr>
 		
 				<tr>
 					<th><span id="cngStateName">State</span>				
-					<td>
-						<span><input type="text" name="state"  id="txtCountry" required></span>
-					</td>
+					<td><span><input type="text" name="state" id="txtCountry" required></span></td>
 				</tr>			
 				
 				<tr>
@@ -110,64 +102,61 @@
 	
 				<tr>
 					<th>Email-ID</th>
-					<td>
-						<input type="email" name="email" maxlength="70" value="" id="Email" required>
-					</td>
+					<td><input type="email" name="email" maxlength="70" value="" id="Email" required></td>
 				</tr>
+
 				<tr>
-					<th class="THfirst">Citizenship (Only Indian citizens can file RTI Request application)</th>
-					<td class="TDfirst">
-					<select name="citizenship" id="Citizenship" onchange="chkCitizenship(this);">
+					<th>Citizenship (Only Indian citizens can file RTI Request application)</th>
+					<td>
+					<select class="btn" style="background:white; color:black" name="citizenship" id="Citizenship" onchange="chkCitizenship(this);">
 						<option value="Indian">Indian</option>
 						<option value="Other">Other</option>
 					</select></td>
 				</tr>
-			
 			</tbody>
 		</table>
 
 	<h4><strong>Receipt of RTI Application (Section 7):</strong></h4>
 	<table class="table table-bordered table-condensed">
-	<tbody>
+		<tbody>
+			<tr>
+				<th>Date of receipt of RTI application by R & I section of public authority</th>
+				<th><input name="date_of_receipt" id="date_of_receipt" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD" 	required></th>
+			</tr>
 	
-	<tr>
-	<th>Date of receipt of RTI application by R & I section of public authority</th>
-	<th><input name="date_of_receipt" id="date_of_receipt" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD" required></th>
-	</tr>
-	
-	<tr>
-	<th>Date of its receipt by CPIO</th><th><input id="date_of_receipt_cpio" name="date_of_receipt_cio" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD" required></th>
-	</tr>
-	</tbody> </table>
-	
-		<h4><strong>Fee Payment Details (Rule-3 of RTI regulation of fee and cost rules):</strong></h4>
-		
-		<table class="table table-bordered table-condensed">
-		<tr>
-		<th>Whether fee is enclosed with RTI application</th>
-			<td>    
-				<input type="radio" value="yes" checked="checked" name="fee" id="fee_paid"> Yes                         
-				<input type="radio" value="no" name="fee" id="fee_not_paid"> No 
-			</td>
-	</tr>
-
-	<tr>
-		<th>Date of depositing fee</th>
-		<th><input id="fee_deposit_date" name="fee_deposit_date" maxlength="50" placeholder="YYYY-MM-DD" required></th>
-	</tr>
-	<tr>
-		<th>Mode of payment(cheque/DD/cash/IPO)</th>
-		<th><input type="text" id="pay_mode" name="pay_mode" maxlength="50" required></th>
-	</tr>
+			<tr>
+				<th>Date of its receipt by CPIO</th><th><input id="date_of_receipt_cpio" name="date_of_receipt_cio" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD" required></th>
+			</tr>
+		</tbody>
 	</table>
-	<table>
-	<tbody>
-		<tr>
-			<th colspan="15"></th><th><input type="submit" name="add" value="Add Queries" class="btn" onclick="return validateDate()"></th>
-			<th colspan="15"></th><th><input type="submit" name="submit" value="Save and Exit" class="btn" onclick="return validateDate()"></th>
-		</tr>
-	</tbody>
-</table>
+	
+	<h4><strong>Fee Payment Details (Rule-3 of RTI regulation of fee and cost rules):</strong></h4>
+		
+	<table class="table table-bordered table-condensed">
+		<tbody>
+			<tr>
+				<th>Whether fee is enclosed with RTI application</th>
+				<th>    
+					<input type="radio" value="yes" checked="checked" name="fee" id="fee_paid"> Yes&nbsp&nbsp                        
+					<input type="radio" value="no" name="fee" id="fee_not_paid"> No 
+				</th>
+			</tr>
+
+			<tr>
+				<th>Date of depositing fee</th>
+				<th><input id="fee_deposit_date" name="fee_deposit_date" maxlength="50" placeholder="YYYY-MM-DD" required></th>
+			</tr>
+		
+			<tr>
+				<th>Mode of payment(cheque/DD/cash/IPO)</th>
+				<th><input type="text" id="pay_mode" name="pay_mode" maxlength="50" required></th>
+			</tr>
+		</tbody>
+	</table>
+
+	<input type="submit" name="add" value="Add Queries" class="btn" onclick="return validateDate()">&nbsp&nbsp 
+	<input type="submit" name="submit" value="Save and Exit" class="btn" onclick="return validateDate()">
+		
 <script type="text/javascript">
 		function validateDate(){
 			var bool1 = validatedate1(document.add_rti.date_of_receipt);
@@ -183,10 +172,11 @@
 			}
 		}
 </script>
+
 <script src="date_validation_add_rti.js"></script>
-<div>
-</body>
+</div>
 </form>
+</body>
 </html>		
 
 <?php

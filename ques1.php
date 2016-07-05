@@ -1,13 +1,17 @@
 <!DOCTYPE HTML>
 <head>
-	<title>GModify Queries</title>
+	<title>Modify Queries</title>
 	<link rel="stylesheet" href="css/background.css">
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<script src="bootstrap/jQuery/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 <?php
 if(isset($_POST['enter']))
 {	
+	echo "<div class='container'>";
 	include 'config_database.php'; 
 	session_start();
 	$id=$_SESSION['oid'];
@@ -19,20 +23,19 @@ if(isset($_POST['enter']))
 	$data2=mysqli_num_rows($data);
 	$qno=$data2;
 	$_SESSION['qno']=$qno;
-	
 
-	echo "Fill the query details for RTI ID: ".$id."<br><br>";
-	echo "<table>
+	echo "<br><h4>Fill the query details for RTI ID: ".$id."</h4><br>";
+	echo "<table class='table table-bordered table-condensed'>
 			<tbody>
 				<tr>
 					<th>Query No</th>
 					<th>Query</th>
 					<th>Map To</th>
 					<th>Date Sent</th>
+					<th></th>
 				</tr>";
 	echo "<form action=save_ques1.php method=post>";
 ?>
-
 <script type="text/javascript">
 	function mailTo (a) {
 		var map = document.getElementById("map"+a);
@@ -63,9 +66,7 @@ if(isset($_POST['enter']))
 	}
 </script>
 
-
 <?php
-
 	while( $a!=0)
 	{
 		$qno=$qno+1;	
@@ -74,25 +75,27 @@ if(isset($_POST['enter']))
 		$date_s="date_s".$a;
 ?>
 		<tr>
-			<th><input type=text name=<?php echo $qno; ?> value=<?php echo $qno; ?> readonly></th>	
-			<th><input type=text name=<?php echo $ques; ?> id=<?php echo $ques; ?>></th>
-			<th><select name=<?php echo $map; ?> id=<?php echo $map; ?>>
+			<th><input type=text style="height:32px" name=<?php echo $qno; ?> value=<?php echo $qno; ?> readonly></th>	
+			<th><input type=text style="height:32px" name=<?php echo $ques; ?> id=<?php echo $ques; ?>></th>
+			<th><select class="btn" style="background:white; color:black" name=<?php echo $map; ?> id=<?php echo $map; ?>>
 				<span><option value='' name=<?php echo $map; ?> id=<?php echo $map; ?>>--Select--</option>
 				<option value=Ac>Acacemics</option>
 				<option value=Ex>Examination Division</option>
 				<option value=Ad>Administrative</option>
 				<option value=HR>Human Resource</option></span></select></th>
-			<th><input type=text name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
-			<th><button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button></th>
+			<th><input type=text style="height:32px" name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
+			<th><button type="button" style="height:32px" class='btn' name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button></th>
 		</tr>
 <?php				
 		$a--;
 	}
 	$_SESSION['v']=$qno;
-	echo "<th colspan=15></th><th><input type=submit name=save class=btn value='Save and Exit' ></th>";
-	echo "<th colspan=15></th><th><input type=submit name=gen_pdf class=btn value='Generate Reply' ></th>";
+	echo "</table>";
+	echo "<input class='btn' type=submit name=save value='Save and Exit' >&nbsp&nbsp";
+	echo "<input class='btn' type=submit name=gen_pdf value='Generate Reply' >";
 	echo "</form>";
 	mysqli_close($con);
+	echo "</div>";
 }
 ?>
 </body>

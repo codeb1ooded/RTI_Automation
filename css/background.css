@@ -8,11 +8,11 @@ body {
 }
 
 .btn {
-  background: white;
+   background: black;
   -webkit-border-radius: 7;
   -moz-border-radius: 7;
   border-radius: 7px;
-  color: #000000;
+  color: white;
   font-size: 12px;
   padding: 8px 13px 8px 13px;
   border: solid black 1px;
@@ -20,5 +20,10 @@ body {
 }
 
 .btn:hover {
-  text-decoration: none;
+  color: white;
+}
+
+input
+{
+  border-radius: 6px; 
 }
