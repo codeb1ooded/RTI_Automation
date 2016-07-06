@@ -1,13 +1,17 @@
-<!DOCTYPE HTML>
+<?php
+session_start();
+?>
+<html>
 <head>
 	<title>Modified</title>
 	<link rel="stylesheet" href="css/background.css">
 	<meta charset="utf-8">
 </head>
+
 <body>
 <?php
-if(isset($_POST['submit']))
-{
+if(isset($_POST['submit'])){
+	
 	include 'config_database.php'; 
 	$id = $_POST['ID'];
 	$d1=strtotime($_POST['date_of_receipt']);
@@ -43,6 +47,7 @@ if(isset($_POST['submit']))
 }
 	
 //////////////
+
 if(isset($_POST['edit']))
 {
 	include 'config_database.php'; 
@@ -73,6 +78,8 @@ if(isset($_POST['edit']))
 	$data1="SELECT * FROM t2 WHERE id=".$id.";";
 	$query=mysqli_query($con,$data1);
 	$data2=mysqli_num_rows($query);
+	
+	$_SESSION['qu']= $data2;
 	$a=$data2;
 	
 	echo "<table>
@@ -149,9 +156,7 @@ if(isset($_POST['edit']))
 	echo "<th colspan=15></th><th><input type=submit name=save class=btn value='Save and Exit' ></th>";
 	echo "<th colspan=15></th><th><input type=submit name=reply class=btn value='Generate Reply' ></th>";
 	echo "</form>";
-	session_start();
-	$_SESSION['id']=$id;
-	$_SESSION['qu']=$data2;
+
 	if ($con->query($data) === TRUE) 
 	{
 		echo "Details of record updated successfully";

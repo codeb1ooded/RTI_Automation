@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+?>
+<html>
 <head>
     <title>Reply Queries</title>
     <link rel="stylesheet" href="css/background.css">
@@ -7,15 +10,18 @@
     <script src="bootstrap/jQuery/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 <div class="container">
 <?php
-    session_start();
     include 'config_database.php'; 
     $id=$_GET['id'];
     $k = "SELECT * FROM t2 WHERE id=".$id.";";
     $query=mysqli_query($con,$k);
     $data2=mysqli_num_rows($query);
+	
+	$_SESSION['quer']=$data2;
+	
     $a=$data2;
     echo "<br><h3>Fill the query reply for RTI ID: ".$id."</h3><br>";
     echo "<table class='table table-bordered'>
@@ -121,8 +127,7 @@
 <?php				
 		$a--;
 	}
-	$_SESSION['oid']=$id;
-	$_SESSION['quer']=$data2;
+	
     echo "</table>" ;
 	echo "<input type=submit name=save  class=btn value='Save and Exit' >";
 	echo "</form>" ;

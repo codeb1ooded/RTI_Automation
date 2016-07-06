@@ -1,10 +1,11 @@
 <?php
-	include 'config_database.php'; 
 	session_start();
-	$c=$_SESSION['oid'];
+	$c=$_SESSION['prev_rti_id'];
 	$b=$_SESSION['q'];
-	
 	$qno=$_SESSION['qno']+1;
+	
+	include 'config_database.php'; 
+	
 	while($b!=0)
 	{				
 		$ques="ques".$b;

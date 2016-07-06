@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
 <head>
 	<title>Add Queries</title>
 	<link rel="stylesheet" href="css/background.css">
@@ -12,8 +12,6 @@
 		<?php
 			include 'config_database.php'; 
 			$id = $_GET['id'];
-			session_start();
-			$_SESSION['oid']=$id;
 			mysqli_select_db($con, "rti");
 			
 			echo "<form action=ques1.php method=post class='form-horizontal' role='form'>";

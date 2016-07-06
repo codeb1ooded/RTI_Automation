@@ -1,19 +1,21 @@
-<!DOCTYPE HTML>
+<?php 
+session_start();
+$d=$_SESSION['no_of_queries'];
+$b=$_SESSION['qu'];
+$id= $_SESSION['id'];
+?>
+
 <html>
 
 <?php
-//session_start();
-$b= $_SESSION['q'];
+
 echo "Start of queries ".$b;
-$d= $_SESSION['v'];
+
 echo "End of queries ".$d;
-//$id= $_SESSION['oid'];
-$c=$d;
+
 $a=$b;
-//$c=$c+1;
-//echo $b;
-//echo $d;
-while($a<=$c)
+
+while($a<=$d)
 {	
 		echo"<li>";
 				echo"<a href='gen_q.php?qno=".$a."' target=_blank><input type=submit name=query_btn value=query_no_is_".$a."></a>";

@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<head>
-	<title>Response To Appellant Form</title>
-	<link rel="stylesheet" href="css/background.css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<script src="bootstrap/jQuery/jquery.min.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
-	<meta charset="utf-8">
-</head>
-<body>
-<div class="container">
+<html>
+
+	<head>
+		<title>Response To Appellant Form</title>
+		<link rel="stylesheet" href="css/background.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<script src="bootstrap/jQuery/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<div class="container">
 <?php
 	$Id = $_GET['id'];
 	echo "<br><h3>Add Details of RTI with Id: ".$Id."</h3>";

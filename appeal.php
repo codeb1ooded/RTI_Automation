@@ -1,4 +1,3 @@
-<!doctype html>
 <html>
 <head>
 	<title>First Appeal Form</title>
@@ -8,7 +7,9 @@
 	<script src="bootstrap/jQuery/jquery.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
+
 <body>
+
 <div class="container">
 <?php
 	$Id = $_GET['id'];

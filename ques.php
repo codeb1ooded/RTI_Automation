@@ -1,16 +1,21 @@
-<!DOCTYPE HTML>
+<?php
+	session_start();
+	$id=$_SESSION['id'];
+?>
+<html>
 <head>
 	<title>Queries</title>
 	<link rel="stylesheet" href="css/background.css">
 	<meta charset="utf-8">
 </head>
+
 <body>
 <?php
 	include 'config_database.php';
-	session_start();
 	$b=$_POST['ques'];
-	$_SESSION['q']=$b;
-	$id=$_SESSION['id'];
+	
+	$_SESSION['no_of_queries']=$b;
+	
 	$a=$b;
 	echo "The id of this RTI is: ".$id;
 	echo "<table>

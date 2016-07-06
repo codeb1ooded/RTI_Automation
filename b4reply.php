@@ -1,16 +1,16 @@
 <!-- After reply-->
-<!doctype html>
 <html>
-<head>
-	<title>Before Reply Form</title>
-	<link rel="stylesheet" href="css/background.css">
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<script src="bootstrap/jQuery/jquery.min.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
-</head>
-<body>
-<div class="container">
+	<head>
+		<title>Before Reply Form</title>
+		<link rel="stylesheet" href="css/background.css">
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<script src="bootstrap/jQuery/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
 <?php
 	$Id = $_GET['id'];
 	echo "<br><h3>Add Details of RTI with Id: ".$Id."</h3>";

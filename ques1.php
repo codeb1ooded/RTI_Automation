@@ -1,4 +1,9 @@
-<!DOCTYPE HTML>
+<?php
+session_start();
+$id=$_SESSION['prev_rti_id'];
+	
+?>
+<html>
 <head>
 	<title>Modify Queries</title>
 	<link rel="stylesheet" href="css/background.css">
@@ -9,12 +14,9 @@
 </head>
 <body>
 <?php
-if(isset($_POST['enter']))
-{	
+	
 	echo "<div class='container'>";
 	include 'config_database.php'; 
-	session_start();
-	$id=$_SESSION['oid'];
 	$a=$_POST['ques'];
 	$_SESSION['q']=$a;
 	
@@ -89,14 +91,13 @@ if(isset($_POST['enter']))
 <?php				
 		$a--;
 	}
-	$_SESSION['v']=$qno;
 	echo "</table>";
 	echo "<input class='btn' type=submit name=save value='Save and Exit' >&nbsp&nbsp";
 	echo "<input class='btn' type=submit name=gen_pdf value='Generate Reply' >";
 	echo "</form>";
 	mysqli_close($con);
 	echo "</div>";
-}
+
 ?>
 </body>
 </html>

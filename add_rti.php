@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
 <head>
 	<title>RTI Application Form</title>
 	<link rel="stylesheet" href="css/background.css">
@@ -177,7 +177,3 @@
 </form>
 </body>
 </html>		
-
-<?php
-include 'logoff.html';
-?>	

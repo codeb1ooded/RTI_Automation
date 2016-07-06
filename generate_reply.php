@@ -1,10 +1,11 @@
-<!DOCTYPE HTML>
-<head>
-	<title>Generate Reply</title>
-	<link rel="stylesheet" href="css/background.css">
-	<meta charset="utf-8">
-</head>
-<body>
+<html>
+	<head>
+		<title>Generate Reply</title>
+		<link rel="stylesheet" href="css/background.css">
+		<meta charset="utf-8">
+	</head>
+
+	<body>
 <?php
 $id=$_GET['id'];
 include 'config_database.php'; 

@@ -1,9 +1,15 @@
-<!DOCTYPE html>
-<head>
-	<title>Submit</title>
-	<link rel="stylesheet" href="css/background.css">
-	<meta charset="utf-8">
-</head>
+<?php
+ if(!isset($_SESSION)) {
+	session_start();
+ }
+?>
+<html>
+	<head>
+		<title>Submit</title>
+		<link rel="stylesheet" href="css/background.css">
+		<meta charset="utf-8">
+	</head>
+	
 <body>
 <?php	
 	include 'config_database.php'; 
@@ -20,7 +26,6 @@
 	
 	mysqli_query($con,$sql);
 	
- if(isset($_POST['add'])){
 	$a=0;
 	$k="SELECT * FROM add_rti";
 	$v=mysqli_query($con,$k);
@@ -28,19 +33,21 @@
 	{
 		$a=$r['id'];
 	}
+	$_SESSION['id']=$a;
+	
+ if(isset($_POST['add'])){
+	
 	echo "RTI ID: ".$a;
 	echo "<form action=ques.php method=post>";
 	echo "<tr>
 		<th><h3>No. of Queries</h3></th>
 		<th><input type=text name=ques></th>
-	<th><input type=submit name=enter class=btn value='Enter'></th>
-	</tr>";	
-	session_start();
-	$_SESSION['id']=$a;
+		<th><input type=submit name=enter class=btn value='Enter'></th>
+		</tr>";	
 	}
 	else
 		include 'new_prev.php';
 	mysqli_close($con);
-	?>
+?>
 </body>
 </html>

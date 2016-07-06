@@ -1,12 +1,10 @@
 <?php
-
+	session_start();
+	$c=$_SESSION['prev_rti_id'];
+	$b=$_SESSION['qu'];
+	
 	include 'config_database.php'; 
 	
-	session_start();
-	$c=$_SESSION['id'];
-	$b=$_SESSION['qu'];
-	$_SESSION['v']=$b;
-	$_SESSION['q']=1;
 	$data1="SELECT * FROM t2 WHERE id=".$c.";";
 	$query=mysqli_query($con, $data1);
 	

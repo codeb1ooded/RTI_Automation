@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <head>
 	<title>Generate Report</title>
 	<link rel="stylesheet" href="css/background.css">

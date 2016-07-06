@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+session_start();
+$uname=$_SESSION['name'];	
+?>
 	<head>
 		<title>Completed RTI</title>
 		<link rel="stylesheet" href="css/prev_rti.css"><!DOCTYPE html>
@@ -10,15 +13,16 @@
 	</head>
 <body>
 <div class='container'>
+
 <?php
 	include 'config_database.php'; 
-	session_start();
-    $uname=$_SESSION['name'];
-	$_SESSION['name']=$uname;
-	$query=" SELECT * FROM add_rti order by date_of_receipt_cio";
+	
+    $query=" SELECT * FROM add_rti order by date_of_receipt_cio";
     $res=mysqli_query($conn,$query);
-    echo "<h2>CLOSED RTIs</h2>" ;
+    
+	echo "<h2>CLOSED RTIs</h2>" ;
     echo "<marquee><strong>CHOOSE THE CLOSED RTI TO BE VIEWED: </strong></marquee><br><br>";
+	
 	if($uname=='ut'||$uname=='pc')
 	{
 	echo "<table class='table table-bordered'>" ;
@@ -42,8 +46,8 @@
 	}
 	echo "</table>";
 	}
-	else if($uname!='ut'||$uname!='pc')
-{	$i=0;
+	else if($uname!='ut'||$uname!='pc'){
+	$i=0;
 	$m='';
 	if($uname=='admin')
 		$m='Ad';
@@ -53,11 +57,8 @@
 		$m='HR';
 	if($uname=='Academics')
 		$m='Ac';
-	//echo $m;
 	$query=" SELECT * FROM t2 WHERE map='".$m."' order by id;";// order by id";
-   //echo $query;
-	$data=mysqli_query($con,$query);
-	//echo $data;
+    $data=mysqli_query($con,$query);
 	$data2=mysqli_num_rows($data);
 	echo "<table  width=100% border=2>" ;
 	echo "<tr>
@@ -99,11 +100,9 @@
 			echo "</tr>";
 		echo"<table>";	
 		}
-		//$r=mysqli_fetch_array($res);
 		$v--;
 		echo "</table>";
 	}
-		//}
 		echo "</table>";
 		$data2--;
 }
