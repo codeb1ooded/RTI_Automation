@@ -29,7 +29,6 @@ $uname=$_SESSION['name'];
 	$query=" SELECT * FROM add_rti order by date_of_receipt_cio";
     $res= mysqli_query($con, $query);
 	echo "<table class='table table-bordered'>" ;
-#>>>>>>> Stashed changes
 	echo "<tr>
 			<th>ID</th>
 			<th>Applicant Name</th>

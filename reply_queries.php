@@ -129,7 +129,7 @@
 	}
 	
     echo "</table>" ;
-	echo "<input type=submit name=save  class=btn value='Save and Exit' >";
+	echo "<input type=submit name=save class=btn value='Save and Exit' >";
 	echo "</form>" ;
     echo "<br><br><a href='previd.php?id=".$id."' class=btn>Back</a>";
 ?>
