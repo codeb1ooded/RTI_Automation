@@ -2,43 +2,46 @@
 <head>
 	<title>Response To Appellant Form</title>
 	<link rel="stylesheet" href="css/background.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<script src="bootstrap/jQuery/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
 </head>
-		
-	<body>
+<body>
+<div class="container">
 <?php
 	$Id = $_GET['id'];
-	echo "Add Details of RTI with Id: ".$Id;
+	echo "<br><h3>Add Details of RTI with Id: ".$Id."</h3>";
 ?>
 <!--Processing of RTI application and response to the appellant-->	
-<table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
-	<tbody>
-		<tr><th colspan="2">(III) Processing of RTI application and response to the appellant:-</th></tr>
-	</tbody>
-</table>
-<table width="100%" border="2" class="tbl-border" cellpadding="0" cellspacing="2">
+<h4><strong>(III) Processing of RTI application and response to the appellant-</strong></h4>
 	<form action ="replysection4.php" method ="post">
-	<tr>
-		<th>(i) Date of receipt of information by the CPIO<br> from the holder(s) of information</th>
-		<th><input type="text" name="holder_receipt_date" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD"></th>
-	</tr>	
-	<tr>
-		<th>(ii)Date of reply to appellant/complaint by CPIO</th>
-		<th><input type="text" name="reply_date" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD"></th></tr>
-	</tr>
-	<tr>
-		<th>Mode of communicating reply </th><th>
-		<input type="text" name="reply_mode" maxlength="50"></th>
-	</tr>
-	<tr>
-		<th>Whether name and address of FAA mentioned in the</br> reply u/s 7(8)(give particulars)</th>
-		<th><input type="text" name="faa_info" maxlength="50" value="" class="name" placeholder=""></th>
-	</tr>
-</table>
-<th colspan="15"></th><th><input type="submit" name="submitresponse" class=btn value="Save and Exit"></th>
-</form>
+		<table class="table table-bordered">
+			<tr>
+				<th>Date of receipt of information by the CPIO from the holder(s) of information</th>
+				<th><input type="text" style="height:32px" name="holder_receipt_date" value="" placeholder="YYYY-MM-DD"></th>
+			</tr>	
+			
+			<tr>
+				<th>Date of reply to appellant/complaint by CPIO</th>
+				<th><input type="text" style="height:32px" name="reply_date" value="" placeholder="YYYY-MM-DD"></th></tr>
+			</tr>
+	
+			<tr>
+				<th>Mode of communicating reply </th>
+				<th><input type="text" style="height:32px" name="reply_mode" maxlength="50"></th>
+			</tr>
+			
+			<tr>
+				<th>Whether name and address of FAA mentioned in the reply u/s 7(8)(give particulars)</th>
+				<th><input type="text" style="height:32px" name="faa_info" value="" placeholder=""></th>
+			</tr>
+		</table>
+		<input type="submit" name="submitresponse" class=btn value="Save and Exit">
+	</form>
 <?php
-	echo "<br><br><a href='previd.php?id=".$Id."''>Back</a>" ;
+	echo "<br><a class=btn href='previd.php?id=".$Id."''>Back</a>" ;
 ?>
+</div>
 </body>
 </html>

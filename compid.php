@@ -5,13 +5,16 @@
 		<link rel="stylesheet" href="css/background.css">
 		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 		<meta charset="utf-8">
+		<script src="bootstrap/jQuery/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
 	</head>
 <body>
+<div class='container'>
 <?php
 	include 'config_database.php'; 
 	$id=$_GET['id'];
 	
-	echo "<h4>The deatils of RTI with ID: ".$id." are-</h4>" ;
+	echo "<h4><strong>The deatils of RTI with ID: ".$id." are-</strong></h4>" ;
 	$query=" SELECT * FROM add_rti where id=".$id;
     $res=mysqli_query($con, $query);
 	$r1=mysqli_fetch_assoc($res);
@@ -31,7 +34,7 @@
 	$query=" SELECT * FROM first_appeal where id=".$id;
     $res=mysqli_query($con, $query);
 	$r5=mysqli_fetch_assoc($res);
-	echo "<table width=100% border=2>" ;
+	echo "<table class='table table-bordered'>" ;
 		echo "<tr>
 				<th>Field</th>
 				<th>Value</th>
@@ -180,8 +183,8 @@
 	$query=" SELECT * FROM reply_queries where id=".$id;
     $res1=mysqli_query($con, $query);
 	$r7=mysqli_fetch_assoc($res1);
-	echo "<h4>Queries</h4>";
-	echo "<table width=100% border=2>
+	echo "<h4><strong>Queries<strong></h4>";
+	echo "<table class='table table-bordered'>
 			<tr>
 				<th>Query Number</th>
 				<th>Queries</th>
@@ -203,7 +206,7 @@
 					while($r6['q_no']==$r7['q_no'])
 					{
 						echo "<td>".$r7['date_received']."</td>";
-						echo "<td>".$r7['ans']."</td>";
+						echo "<td>".$r7['ans']."; ".$r7['section']."</td>";
 						$r7=mysqli_fetch_assoc($res1);
 					}
 				}
@@ -218,11 +221,12 @@
 	}
 	echo "</table>";
 	if($r1['archieve']==1)
-		echo "<a href='view_completed_rti.php'>Back</a>" ;
+		echo "<a class=btn href='view_completed_rti.php'>Back</a>" ;
 	else
-		echo "<a href='previd.php?id=".$id."'>Back</a>" ;
+		echo "<a class=btn href='previd.php?id=".$id."'>Back</a>" ;
 
 ?>
 </form>
+</div>
 </body>
 </html>

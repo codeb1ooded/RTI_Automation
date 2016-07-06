@@ -20,22 +20,22 @@
 		<table class="table table-bordered">
 			<tr>
 				<th> Date of intimation given to appelant regarding fee u/s</br> 7(1) chargeable  and his right to review</th>
-				<th><input type="text" style="height:32px" name="info_fee_date" id="Name" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD"></th>
+				<th><input type="text" style="height:32px" name="info_fee_date" id="Name" value="" placeholder="YYYY-MM-DD"></th>
 			</tr>
 			
 			<tr>
 				<th>Quantum of<br>(a) Fee & (b) Further fee indicated to be charged</th>
-				<th><input type="text" style="height:32px" name="info_fee" id="Name" maxlength="50" value="" class="name" placeholder=""></th>
+				<th><input type="text" style="height:32px" name="info_fee" id="Name" value="" class="name" placeholder=""></th>
 			</tr>
 			
 			<tr>
 				<th>(vi)Date of depositing fees by petitioner as demanded by CPIO </br>(indicate mode of depositing fee too)</th>
-				<th><input type="text" style="height:32px" name="fee_submit_date" id="Name" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD"></th>
+				<th><input type="text" style="height:32px" name="fee_submit_date" id="Name" value="" class="name" placeholder="YYYY-MM-DD"></th>
 			</tr>
 			
 			<tr>
 				<th>(vii)Date of furnishing information </th>
-				<th><input type="text" style="height:32px" name="given_info_date" id="Name" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD"></th>
+				<th><input type="text" style="height:32px" name="given_info_date" id="Name" value="" class="name" placeholder="YYYY-MM-DD"></th>
 			</tr>
 		</table>
 	

@@ -4,9 +4,12 @@
 		<link rel="stylesheet" href="css/prev_rti.css"><!DOCTYPE html>
 		<link rel="stylesheet" href="css/background.css">
 		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<script src="bootstrap/jQuery/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<meta charset="utf-8">
 	</head>
 <body>
+<div class='container'>
 <?php
 	include 'config_database.php'; 
 	session_start();
@@ -18,7 +21,7 @@
     echo "<marquee><strong>CHOOSE THE CLOSED RTI TO BE VIEWED: </strong></marquee><br><br>";
 	if($uname=='ut'||$uname=='pc')
 	{
-	echo "<table  width=100% border=2>" ;
+	echo "<table class='table table-bordered'>" ;
 	echo "<tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
@@ -107,5 +110,6 @@
 }
 ?>
 	<br><a href="new_prev.php" class=btn >Back</a>
+</div>
 </body>
 </html>

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-
-<html>
-	<head>
-		<title>Generate Report</title>
-		<link rel="stylesheet" href="css/background.css">
-		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-		<meta charset="utf-8">
-	</head>
+<head>
+	<title>Generate Report</title>
+	<link rel="stylesheet" href="css/background.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<script src="bootstrap/jQuery/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<meta charset="utf-8">
+</head>
 		
-	<body>
+<body>
+<div class='container'>
 <h2>Generate Report Of RTIs</h2>
 <marquee><strong>CHOOSE THE DESIRED FIELD ON WHICH RTIs NEED TO BE SORTED</strong></marquee><br>
 <form action="report.php" method="post">
@@ -17,14 +18,14 @@
 	<input type="submit" name="date" class=btn value="Date"><br><br>
 	<input type="submit" name="close" class=btn value="Closed"><br><br>
 </form>
+
 <?php
-	
 if(isset($_POST['name'])){
 	include 'config_database.php'; 
 	
 	$query="SELECT count(name),name,id FROM add_rti group by name order by id";
     $res=mysqli_query($con,$query);
-	echo "<table  width=100% border=2>" ;
+	echo "<table class='table table-bordered'>" ;
 	echo "<tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
@@ -44,6 +45,7 @@ if(isset($_POST['name'])){
 		echo $r['count(name)'];	
 		echo "</td></tr>";		
 	}
+	echo "</table>";
 }	
 if(isset($_POST['dept'])){
 	
@@ -52,7 +54,7 @@ if(isset($_POST['dept'])){
 	$query="SELECT count(map),map,id FROM t2 group by map order by id";
     $res=mysqli_query($con,$query);
 
-	echo "<table  width=100% border=2>" ;
+	echo "<table class='table table-bordered'>" ;
 	echo "<tr>
 			<th>ID</th>
 			<th>Department Name</th>
@@ -72,6 +74,7 @@ if(isset($_POST['dept'])){
 		echo $r['count(map)'];	
 		echo "</td></tr>";		
 	}
+	echo "</table>";
 }
 if(isset($_POST['close'])){
 	
@@ -80,7 +83,7 @@ if(isset($_POST['close'])){
 	$query="SELECT * FROM add_rti WHERE archieve=1";
 	$res=mysqli_query($con,$query);
 
-    echo "<table  width=100% border=2>" ;
+    echo "<table class='table table-bordered'>" ;
 	echo "<tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
@@ -102,6 +105,7 @@ if(isset($_POST['close'])){
 		echo $ut1['reply_date'];	
 		echo "</td></tr>";		
 	}
+	echo "</table>";
 }
 if(isset($_POST['date'])){
 		echo "
@@ -111,6 +115,7 @@ if(isset($_POST['date'])){
                     <td><input type=text name=d2 placeholder=YYYY-MM-DD></td>
 					<input type=submit name=enter class=btn value=Enter>
 					</form>";
+	echo "</table>";
 }
 if(isset($_POST['enter'])){
 	include 'config_database.php'; 
@@ -122,7 +127,7 @@ if(isset($_POST['enter'])){
 	$query="SELECT * FROM add_rti where (date_of_receipt_cio>='".$d1."' and date_of_receipt_cio<='".$d2."');";
     $res=mysqli_query($con,$query);
 
-	echo "<table width=100% border=2>" ;
+	echo "<table class='table table-bordered'>" ;
 	echo "<tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
@@ -138,9 +143,10 @@ if(isset($_POST['enter'])){
 		echo $r['name'];
 		echo "</td>";
 	}
+	echo "</table>";
 }
 ?>
-
-<br><a href="new_prev.php" class=btn>Back</a>
+<br><a href=new_prev.php class=btn>Back</a>
+</div>
 </body>
-<html>
+</html>

@@ -1,45 +1,47 @@
 <!doctype html>
 <html>
 <head>
-		<title>First Appeal Form</title>
-		<link rel="stylesheet" href="css/background.css">
-		<meta charset="utf-8">
+	<title>First Appeal Form</title>
+	<link rel="stylesheet" href="css/background.css">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<script src="bootstrap/jQuery/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="container">
 <?php
 	$Id = $_GET['id'];
-	echo "Add Details of RTI with Id: ".$Id;
+	echo "<br><h3>Add Details of RTI with Id: ".$Id."</h3>";
 ?>
-<form action = "replysection4.php" method ="post">
-<table width="100%" border="0" class="heading" cellpadding="0 0 0 15">
-			<tbody>
-				<tr>
-					<th>(VI) I<sup>st</sup> Appeal:- (where applicable)</th>
-				</tr>
-			</tbody>
-			</table>
-			<table width="100%" border="2" class="tbl-border" cellpadding="0" cellspacing="2">
-	<tr>
-		<th> Name and designation of the officer before whom <br>the 1<sup>st</sup> appeal is filed u/s 19(1)</th>
-		<th><input type="text" name="appeal_info" id="Name" maxlength="50" value="" class="name" placeholder=""></th>
-	</tr>
-	<tr>
-		<th>Date of transfer of appeal by the receiving officer to FAA</th>
-		<th><input type="text" name="transfer_date" id="Name" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD"></th>
-	</tr>
-	<tr>
-		<th>Date of receipt of appeal by FAA(mention name of FAA)</th>
-		<th><input type="text" name="faa_receipt_date" id="Name" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD"></th>
-	</tr>
-	<tr>
-		<th>Date of communicating decision to appelant </th>
-		<th><input type="text" name="meet_date" id="Name" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD"></th>
-	</tr>
-</table>
-<th colspan="15"></th><th><input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save and Exit" class="btnsaveappeal"></th>
+	<h4><strong>(VI) I<sup>st</sup> Appeal (where applicable):</strong></h4>
+	<form action = "replysection4.php" method ="post">
+		<table class="table table-bordered">
+			<tr>
+				<th> Name and designation of the officer before whom <br>the 1<sup>st</sup> appeal is filed u/s 19(1)</th>
+				<th><input type="text" style="height:32px" name="appeal_info" id="Name" value="" placeholder=""></th>
+			</tr>
+			
+			<tr>
+				<th>Date of transfer of appeal by the receiving officer to FAA</th>
+				<th><input type="text" style="height:32px" name="transfer_date" id="Name" value="" placeholder="YYYY-MM-DD"></th>
+			</tr>
+	
+			<tr>
+				<th>Date of receipt of appeal by FAA(mention name of FAA)</th>
+				<th><input type="text" style="height:32px" name="faa_receipt_date" id="Name" value="" placeholder="YYYY-MM-DD"></th>
+			</tr>
+		
+			<tr>
+				<th>Date of communicating decision to appelant </th>
+				<th><input type="text" style="height:32px" name="meet_date" id="Name" value="" placeholder="YYYY-MM-DD"></th>
+			</tr>
+		</table>
+		<input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save and Exit" class="btnsaveappeal"></th>
+	</form>
 <?php
-	echo "<br><br><a href='previd.php?id=".$Id."''>Back</a>" ;
-?>
+	echo "<br><a class=btn href='previd.php?id=".$Id."''>Back</a>" ;
+?>	
+</div>
 </body>
-</form>
 </html>

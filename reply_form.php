@@ -7,8 +7,6 @@
 	$b=$_SESSION['quer'];
 	$data1="SELECT * FROM t2 WHERE id=".$c.";";
 	$query=mysqli_query($con,$data1);
-	//$ans='';
-	//mysqli_select_db($con, "rti");
 	while($b!=0)
 	{	
 		$data3=mysqli_fetch_array($query);
@@ -25,10 +23,12 @@
 		$sql1="SELECT * FROM article_sub_section WHERE Id=".$subsec1.";";
 		$row=mysqli_query($con,$sql1);
 		if($row)
-		$desc1=mysqli_fetch_assoc($row);
-		$desc=$desc1['Description'];
-		if(!$desc)
-			$desc="NULL";
+		{
+			$desc1=mysqli_fetch_assoc($row);
+			$desc=$desc1['Description'];
+			if(!$desc)
+				$desc="NULL";
+		}
 		
 		$sql="INSERT INTO reply_queries VALUES('$c','$qno','$ans1','$desc','$date_rec1');";
 	
