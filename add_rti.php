@@ -43,10 +43,17 @@
 	function test(){
 		if(document.getElementById('chkstate').value=='India'){
 			document.getElementById('cngStateName').innerHTML='State';
-			document.getElementById('phone').disabled=false;
-			document.getElementById('cell').disabled=false;
-			document.getElementById('Email').disabled=false;
-			document.getElementById('Citizenship').disabled=false;
+		}
+	}
+	function test1(){
+		if(document.getElementById('chkcountry').value=='Other'){
+			document.getElementById('cngStateName').innerHTML='Country Name';
+
+		}
+	}
+	function chkCitizenship(citizenship){
+		var strCitizenship = citizenship.options[citizenship.selectedIndex].value;
+		if(strCitizenship == 'Indian'){
 			document.getElementById('date_of_receipt').disabled=false;
 			document.getElementById('date_of_receipt_cpio').disabled=false;
 			document.getElementById('fee_paid').disabled=false;
@@ -54,21 +61,13 @@
 			document.getElementById('fee_deposit_date').disabled=false;
 			document.getElementById('pay_mode').disabled=false;
 		}
-	}
-	function test1(){
-		if(document.getElementById('chkcountry').value=='Other'){
-			document.getElementById('cngStateName').innerHTML='Country Name';
-			document.getElementById('phone').disabled=true;
-			document.getElementById('cell').disabled=true;
-			document.getElementById('Email').disabled=true;
-			document.getElementById('Citizenship').disabled=true;
+		else if(strCitizenship == 'Other'){
 			document.getElementById('date_of_receipt').disabled=true;
 			document.getElementById('date_of_receipt_cpio').disabled=true;
 			document.getElementById('fee_paid').disabled=true;
 			document.getElementById('fee_not_paid').disabled=true;
 			document.getElementById('fee_deposit_date').disabled=true;
 			document.getElementById('pay_mode').disabled=true;
-
 		}
 	}
 </script>
@@ -108,9 +107,9 @@
 				<tr>
 					<th>Citizenship (Only Indian citizens can file RTI Request application)</th>
 					<td>
-					<select class="btn" style="background:white; color:black" name="citizenship" id="Citizenship" onchange="chkCitizenship(this);">
-						<option value="Indian">Indian</option>
-						<option value="Other">Other</option>
+					<select class="btn" style="background:white; color:black" name="citizenship" id="citizenship" onchange="chkCitizenship(this);">
+						<option value="Indian" id="IndianCitizenship">Indian</option>
+						<option value="Other" id="OtherCitizenship">Other</option>
 					</select></td>
 				</tr>
 			</tbody>
