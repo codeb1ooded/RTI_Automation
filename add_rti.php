@@ -12,7 +12,7 @@
 <div class="container">
 	<h2><strong>New RTI</strong></h2>
 	<h4><strong>Personal Details of RTI Applicant:</strong></h4>
-	<form action="submit.php" method="post" class="form-horizontal" role="form">
+	<form action="submit.php" method="post" class="form-horizontal" name="add_rti" role="form">
 		<table class="table table-bordered table-condensed">
 			<tbody>
 				<tr>
@@ -36,7 +36,7 @@
 		
 				<tr>
 					<th>Pin code</th>
-					<td><input type="text" pattern="^\d{6}$" name="pc" minlength="6" maxlength="6" onkeydown="return isNumeric(event.keyCode);" required></td>
+					<td><input type="text" pattern="^\d{6}$" name="pc" minlength="6" maxlength="6" required></td>
 				</tr>
 		
 <script type="text/javascript">
@@ -87,14 +87,14 @@
 				<tr>
 					<th>Phone Number</th>
 					<td>
-						<input type="text" name="phone" id="phone" maxlength="18" pattern="^\d{8}$" onkeydown="return isNumeric(event.keyCode);" class="numeric" value="" required>
+						<input type="text" name="phone" id="phone" maxlength="18" pattern="^\d{8}$" class="numeric" value="" required>
 						<cite>Do not provide STD code eg.23456789</cite>
 					</td>
 				</tr>
 
 				<tr>
 					<th>Mobile Number (For receiving SMS alerts)</th>
-     	    	    <td><input type="text" name="mobile" id="cell" maxlength="15" pattern="^\d{10}$" onkeydown="return isNumeric(event.keyCode);" value="" required>
+     	    	    <td><input type="text" name="mobile" id="cell" maxlength="15" pattern="^\d{10}$" value="" required>
 						<cite>Provide a 10-digit no.</cite>
 					</td>
 				</tr>
@@ -107,7 +107,7 @@
 				<tr>
 					<th>Citizenship (Only Indian citizens can file RTI Request application)</th>
 					<td>
-					<select class="btn" style="background:white; color:black" name="citizenship" id="citizenship" onchange="chkCitizenship(this);">
+					<select class="btn" style="background:white; color:black" name="citizenship" id="citizenship" onchange="chkCitizenship(this);" required>
 						<option value="Indian" id="IndianCitizenship">Indian</option>
 						<option value="Other" id="OtherCitizenship">Other</option>
 					</select></td>
@@ -136,8 +136,8 @@
 			<tr>
 				<th>Whether fee is enclosed with RTI application</th>
 				<th>    
-					<input type="radio" value="yes" checked="checked" name="fee" id="fee_paid"> Yes&nbsp&nbsp                        
-					<input type="radio" value="no" name="fee" id="fee_not_paid"> No 
+					<input type="radio" value="yes" checked="checked" name="fee" id="fee_paid" required> Yes&nbsp&nbsp                        
+					<input type="radio" value="no" name="fee" id="fee_not_paid" required> No 
 				</th>
 			</tr>
 

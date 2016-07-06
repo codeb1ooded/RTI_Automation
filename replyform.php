@@ -25,62 +25,62 @@
 		<table class="table table-bordered table-condensed">
 			<tbody>
 				<tr>
-               	    <th>Name of Applicant</th>
-                   	<th><input type="text" name="name" id="name" maxlength="50" value="<?php echo $data2['name']?>" class="name" placeholder="">
+               	    <th>Name of Applicant*</th>
+                   	<th><input type="text" name="name" id="name" maxlength="50" value="<?php echo $data2['name']?>" class="name" placeholder="" required>
                 	</th>
                 </tr>
 				
 				<tr>
-    	            <th>Gender</th>
+    	            <th>Gender*</th>
         	        <td>
-						<input type="radio" name="gender" id="gender" value="Male"<?php if(strcmp($data2['gender'], "Male") == 0){ echo "checked=\"checked\""; }?>> Male &nbsp&nbsp          
-						<input type="radio" name="gender" id="gender" value="Female" <?php if(strcmp($data2['gender'], "Female") == 0){ echo "checked=\"checked\""; }?>> Female &nbsp&nbsp                      
-						<input type="radio" name="gender" id="gender" value="Third Gender" <?php if(strcmp($data2['gender'], "Third Gender") == 0){ echo "checked=\"checked\""; }?>> Third Gender &nbsp&nbsp
+						<input type="radio" name="gender" id="gender" value="Male"<?php if(strcmp($data2['gender'], "Male") == 0){ echo "checked=\"checked\""; }?> required> Male &nbsp&nbsp          
+						<input type="radio" name="gender" id="gender" value="Female" <?php if(strcmp($data2['gender'], "Female") == 0){ echo "checked=\"checked\""; }?> required> Female &nbsp&nbsp                      
+						<input type="radio" name="gender" id="gender" value="Third Gender" <?php if(strcmp($data2['gender'], "Third Gender") == 0){ echo "checked=\"checked\""; }?> required> Third Gender &nbsp&nbsp
                    	</td>
 				</tr>
 			
 				<tr>
-					<th>Address</th>
-					<th><input type="text" name="address" id="address1" class="address" maxlength="100" value="<?php echo $data2['address']?>"></th>
+					<th>Address*</th>
+					<th><input type="text" name="address" id="address1" class="address" maxlength="100" value="<?php echo $data2['address']?>" required></th>
 				</tr>
 				
 				<tr>
-					<th>Pin code</th>
-					<th><input type="text" name="pin_code" minlength="6" maxlength="6" onkeydown="return isNumeric(event.keyCode);" value="<?php echo $data2['pin_code']?>"></th>
+					<th>Pin code*</th>
+					<th><input type="text" name="pin_code" minlength="6" maxlength="6" onkeydown="return isNumeric(event.keyCode);" value="<?php echo $data2['pin_code']?>" required></th>
 				</tr>
 
 <script src="date_validation_prev_rti.js"></script>
 
 				<tr>
-					<th>Country</th>
+					<th>Country*</th>
 					<th>
-						<input type="radio" name="country" id="chkstate" <?php if(strcmp($data2['country'], "India") == 0){ echo "checked=\"checked\""; }?> value="India" onclick="test();"> India &nbsp&nbsp                  
-						<input type="radio" name="country" id="chkcountry" <?php if(strcmp($data2['country'], "other") == 0){ echo "checked=\"checked\""; }?> value="Other" onclick="test1();"> Other                			
+						<input type="radio" name="country" id="chkstate" <?php if(strcmp($data2['country'], "India") == 0){ echo "checked=\"checked\""; }?> value="India" onclick="test();" required> India &nbsp&nbsp                  
+						<input type="radio" name="country" id="chkcountry" <?php if(strcmp($data2['country'], "other") == 0){ echo "checked=\"checked\""; }?> value="Other" onclick="test1();" required> Other                			
 					</th>
 				</tr>
 				
 				<tr>
-					<th>State</th>
-					<th><input type="text" name="state" id="cngStateName" maxlength="18" value="<?php echo $data2['state']?>"></th>
+					<th>State*</th>
+					<th><input type="text" name="state" id="cngStateName" maxlength="18" value="<?php echo $data2['state']?>" required></th>
 				</tr>
 					
 				<tr>
-					<th>Phone Number</th>
-					<th><input type="text" name="phone_no" id="phone" maxlength="18" onkeydown="return isNumeric(event.keyCode);" class="numeric" value="<?php echo $data2['phone_no']?>"><cite> Provide STD code with zero eg.01123456789</cite></th>
+					<th>Phone Number*</th>
+					<th><input type="text" name="phone_no" id="phone" maxlength="18" onkeydown="return isNumeric(event.keyCode);" class="numeric" value="<?php echo $data2['phone_no']?>" required><cite> Provide STD code with zero eg.01123456789</cite></th>
 				</tr>
 
 				<tr>
-					<th>Mobile Number<cite>(For receiving SMS alerts)</cite></th>
-			        <th><input type="text" name="mobile" id="cell" maxlength="15" class="numeric" onkeydown="return isNumeric(event.keyCode);" value="<?php echo $data2['mobile']?>"><cite> Provide Country code eg. +910123456789</cite></th>
+					<th>Mobile Number<cite>(For receiving SMS alerts)*</cite></th>
+			        <th><input type="text" name="mobile" id="cell" maxlength="15" class="numeric" onkeydown="return isNumeric(event.keyCode);" value="<?php echo $data2['mobile']?>" required><cite> Provide Country code eg. +910123456789</cite></th>
 				</tr>
 	
 				<tr>
-					<th>Email-ID</th>
-					<th><input type="text" name="email" maxlength="70" value="<?php echo $data2['email']?>" id="Email"></th>
+					<th>Email-ID*</th>
+					<th><input type="text" name="email" maxlength="70" value="<?php echo $data2['email']?>" id="Email" required></th>
 				</tr>
 
 				<tr>
-					<th>Citizenship <cite>(Only Indian citizens can file RTI Request application)</cite></th>
+					<th>Citizenship <cite>(Only Indian citizens can file RTI Request application)*</cite></th>
 					<th>
 						<select name="citizenship" id="Citizenship" class="btn" style="background:white; color:black" onchange="chkCitizenship(this);">
 							<option value="Indian" <?php if(strcmp($data2['citizenship'], "Indian") == 0){ echo "selected"; }?>>Indian</option>
@@ -96,13 +96,13 @@
 		<table class="table table-bordered table-condensed">
 			<tbody>
 				<tr>
-					<th>Date of receipt of RTI application by R & I section of public authority</th>
-					<th><input type="text" name="date_of_receipt" id="date_of_receipt" placeholder="DD-MM-YYYY" maxlength="50" value="<?php echo $data2['date_of_receipt']?>" class="name" placeholder="YYYY-MM-DD"></th>
+					<th>Date of receipt of RTI application by R & I section of public authority* </th>
+					<th><input type="text" name="date_of_receipt" id="date_of_receipt" placeholder="DD-MM-YYYY" maxlength="50" value="<?php echo $data2['date_of_receipt']?>" class="name" placeholder="YYYY-MM-DD" required></th>
 				</tr>
 	
 				<tr>
-					<th>Date of its receipt by CPIO</th>
-					<th><input type="text" placeholder="DD-MM-YYYY" name="date_of_receipt_cio" id="date_of_receipt_cpio" maxlength="50" value="<?php echo $data2['date_of_receipt_cio']?>" class="name" placeholder="YYYY-MM-DD"></th>
+					<th>Date of its receipt by CPIO* </th>
+					<th><input type="text" placeholder="DD-MM-YYYY" name="date_of_receipt_cio" id="date_of_receipt_cpio" maxlength="50" value="<?php echo $data2['date_of_receipt_cio']?>" class="name" placeholder="YYYY-MM-DD" required></th>
 				</tr>
 		
 				<tr>
@@ -118,21 +118,21 @@
 	<table class="table table-bordered table-condensed">
 		<tbody>
 			<tr>
-				<th>Whether fee is enclosed with RTI application</th>
+				<th>Whether fee is enclosed with RTI application*</th>
 				<td>    
-					<input type="radio" value="yes" name="fee_enclosed" id="fee_enclosed" <?php if(strcmp($data2['fee_enclosed'], "yes") == 0){ echo "checked=\"checked\""; }?>> Yes &nbsp&nbsp                        
-					<input type="radio" value="no" name="fee_enclosed" id="fee_enclosed" <?php if(strcmp($data2['fee_enclosed'], "No") == 0 or strcmp($data2['fee_enclosed'], "no") == 0){ echo "checked=\"checked\""; }?>> No 
+					<input type="radio" value="yes" name="fee_enclosed" id="fee_enclosed" <?php if(strcmp($data2['fee_enclosed'], "yes") == 0){ echo "checked=\"checked\""; }?> required> Yes &nbsp&nbsp                        
+					<input type="radio" value="no" name="fee_enclosed" id="fee_enclosed" <?php if(strcmp($data2['fee_enclosed'], "No") == 0 or strcmp($data2['fee_enclosed'], "no") == 0){ echo "checked=\"checked\""; }?> required> No 
 				</td>
 			</tr>
 
 			<tr>
-				<th>Date of depositing fee</th>
-				<th><input type="text" id="fee_deposit_date" name="fee_deposit_date" maxlength="50" placeholder="DD-MM-YYYY" value="<?php echo $data2['fee_deposit_date']?>"></th>
+				<th>Date of depositing fee* </th>
+				<th><input type="text" id="fee_deposit_date" name="fee_deposit_date" maxlength="50" placeholder="DD-MM-YYYY" value="<?php echo $data2['fee_deposit_date']?>" required></th>
 			</tr>
 			
 			<tr>
-				<th>Mode of payment(cheque/DD,cash,IPO)</th>
-				<th><input type="text" id="pay_mode" name="pay_mode" maxlength="50" value="<?php echo $data2['pay_mode']?>"></th>
+				<th>Mode of payment(cheque/DD,cash,IPO)* </th>
+				<th><input type="text" id="pay_mode" name="pay_mode" maxlength="50" value="<?php echo $data2['pay_mode']?>" required></th>
 			</tr>
 		</tbody>
 	</table>
