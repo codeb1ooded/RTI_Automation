@@ -5,6 +5,12 @@
 	<title> Login </title>
 	<link rel="stylesheet" href="css/login.css">
 	<link rel="stylesheet" href="css/background.css">
+<script type="text/javascript">
+function fpassoverlay()
+{
+	alert("Please Contact Admin");
+}
+</script>
 </head>
 <body>
 	<h2><center>RTI APPLICATION SYSTEM</center></h2>
@@ -15,6 +21,7 @@
 				Password:<input type=password name=pswd><br><br>
 				<input type='submit' name ='submit' value='Log in' />
     		</form>
+    		<div class="btn" id="fpass" onclick="fpassoverlay()">Forgot Password?</div>
 		</div>
 	</div>
 </body>
