@@ -82,7 +82,7 @@
 				</select>
 			</th>
 			
-			<th><input type=text name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
+			<th><input type=date name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
 			<th><button type="button" name="mail_button" class=btn onclick="mailTo(<?php echo $a; ?>);">Mail</button></th>
 <?php		
 		echo '</tr>';				

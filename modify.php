@@ -145,7 +145,7 @@ if(isset($_POST['edit']))
 					</span>
 				</select>
 			</th>
-			<th><input type=text name=<?php echo $date_s; ?> value="<?php echo $data3['date_sent'] ?>" id=<?php echo $date_s_id; ?> placeholder=YYYY-MM-DD></th>
+			<th><input type=date name=<?php echo $date_s; ?> value="<?php echo $data3['date_sent'] ?>" id=<?php echo $date_s_id; ?> placeholder=YYYY-MM-DD></th>
 			<th><button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button></th>
 		</tr>
 <?php				

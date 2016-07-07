@@ -19,31 +19,31 @@
     $k = "SELECT * FROM t2 WHERE id=".$id.";";
     $query=mysqli_query($con,$k);
     $data2=mysqli_num_rows($query);
-	
-	$_SESSION['quer']=$data2;
-	
+    
+    $_SESSION['quer']=$data2;
+    
     $a=$data2;
     echo "<br><h3>Fill the query reply for RTI ID: ".$id."</h3><br>";
     echo "<table class='table table-bordered'>
-			<tbody>
-				<tr>
-					<th>Query No</th>
-					<th>Query</th>
-					<th>Reply</th>
-					<th>Section</th>
-					<th>Sub-Section</th>
-					<th>Date Received</th>
-				</tr>";
-	echo "<form action=reply_form.php method=post>";
-	while( $a!=0)
-	{
-		$data3=mysqli_fetch_array($query);
-		$qno="q_no".$a;
-		$ques="ques".$a;
-		$ans="ans".$a;
-		$sec="sec".$a;
-		$subsec="subsec".$a;
-		$date_rec="date_rec".$a;
+            <tbody>
+                <tr>
+                    <th>Query No</th>
+                    <th>Query</th>
+                    <th>Reply</th>
+                    <th>Section</th>
+                    <th>Sub-Section</th>
+                    <th>Date Received</th>
+                </tr>";
+    echo "<form action=reply_form.php method=post>";
+    while( $a!=0)
+    {
+        $data3=mysqli_fetch_array($query);
+        $qno="q_no".$a;
+        $ques="ques".$a;
+        $ans="ans".$a;
+        $sec="sec".$a;
+        $subsec="subsec".$a;
+        $date_rec="date_rec".$a;
         
         $sql = "SELECT * from article_section";
         $result = $con->query($sql);
@@ -57,12 +57,12 @@
             }
         }
 ?>
-	<tr>
-		<td> <?php echo $data3['q_no']?> </td>	
-		<td> <?php echo $data3['ques']?></td>
-		<td><input  style="height:32px" type=text name=<?php echo $ans; ?>></td>
-		<td>
-			<select class="btn" style="background:white; color:black" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value, this.name);" name=<?php echo $sec; ?>>
+    <tr>
+        <td> <?php echo $data3['q_no']?> </td>  
+        <td> <?php echo $data3['ques']?></td>
+        <td><input  style="height:32px" type=text name=<?php echo $ans; ?>></td>
+        <td>
+            <select class="btn" style="background:white; color:black" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value, this.name);" name=<?php echo $sec; ?>>
                 <option value="">Select Section</option>
                 <?php if ($result->num_rows > 0) { ?>
                     <?php while($row = mysqli_fetch_assoc($result)) { ?>
@@ -94,18 +94,17 @@
         </script>
         <script language="javascript" type="text/javascript">
             function dynamicdropdown(listindex,blah1)
-            {	
-            	var x=0;
-            	for(var i=3;i<blah1.length;i++)
-            	{
-            		var b=blah1.charAt(i);
-            		x=x*10+parseInt(b);
-
-            	}
-            	var y="subsec"+x;
-            	var ele = document.getElementById(y);
-            	ele.length = 0;
-	            
+            {   
+                var x=0;
+                for(var i=3;i<blah1.length;i++)
+                {
+                    var b=blah1.charAt(i);
+                    x=x*10+parseInt(b);
+                }
+                var y="subsec"+x;
+                var ele = document.getElementById(y);
+                ele.length = 0;
+                
                 ele.options[0]=new Option("Please select sub-section","");
                 if (listindex) {
                     var lookup = {};
@@ -121,16 +120,16 @@
                 return true;
             }
         </script>
-      	</td>
-		<td><input  style="height:32px" type=date name=<?php echo $date_rec;?> placeholder=YYYY-MM-DD></td>
-	</tr>
-<?php				
-		$a--;
-	}
-	
+        </td>
+        <td><input  style="height:32px" type=date name=<?php echo $date_rec;?> placeholder=YYYY-MM-DD></td>
+    </tr>
+<?php               
+        $a--;
+    }
+    
     echo "</table>" ;
-	echo "<input type=submit name=save class=btn value='Save and Exit' >";
-	echo "</form>" ;
+    echo "<input type=submit name=save class=btn value='Save and Exit' >";
+    echo "</form>" ;
     echo "<br><br><a href='previd.php?id=".$id."' class=btn>Back</a>";
 ?>
 </div>

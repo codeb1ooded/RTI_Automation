@@ -17,6 +17,7 @@ $id=$_SESSION['prev_rti_id'];
 	
 	echo "<div class='container'>";
 	include 'config_database.php'; 
+	$b = $_POST['ques'];
 	$a=$_POST['ques'];
 	$_SESSION['q']=$a;
 	
@@ -36,7 +37,7 @@ $id=$_SESSION['prev_rti_id'];
 					<th>Date Sent</th>
 					<th></th>
 				</tr>";
-	echo "<form action=save_ques1.php method=post>";
+	echo "<form action=save_ques1.php method=post name=\"add_queries\">";
 ?>
 <script type="text/javascript">
 	function mailTo (a) {
@@ -85,19 +86,20 @@ $id=$_SESSION['prev_rti_id'];
 				<option value=Ex>Examination Division</option>
 				<option value=Ad>Administrative</option>
 				<option value=HR>Human Resource</option></span></select></th>
-			<th><input type=text style="height:32px" name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
+			<th><input type=date style="height:32px" name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
 			<th><button type="button" style="height:32px" class='btn' name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button></th>
 		</tr>
 <?php				
 		$a--;
 	}
-	echo "</table>";
-	echo "<input class='btn' type=submit name=save value='Save and Exit' >&nbsp&nbsp";
-	echo "<input class='btn' type=submit name=gen_pdf value='Generate Reply' >";
-	echo "</form>";
+?>
+	</table>
+	<input class='btn' type=submit name=save value='Save and Exit'>&nbsp&nbsp
+	<input class='btn' type=submit name=gen_pdf value='Generate Reply'>
+	</form>
+<?php
 	mysqli_close($con);
 	echo "</div>";
-
 ?>
 </body>
 </html>
