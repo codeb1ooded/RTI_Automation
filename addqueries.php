@@ -1,18 +1,17 @@
 <html>
-<head>
-	<title>Add Queries</title>
-	<link rel="stylesheet" href="css/background.css">
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<script src="bootstrap/jQuery/jquery.min.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
-</head>
+	<head>
+		<title>Add Queries</title>
+		<link rel="stylesheet" href="css/background.css">
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<script src="bootstrap/jQuery/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+	</head>
 <body>
 	<div class="container">
 		<?php
 			include 'config_database.php'; 
 			$id = $_GET['id'];
-			mysqli_select_db($con, "rti");
 			
 			echo "<form action=ques1.php method=post class='form-horizontal' role='form'>";
 			echo "<br><h3>The id of this RTI is: ".$id."</h3>";
