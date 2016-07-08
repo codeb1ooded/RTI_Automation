@@ -16,13 +16,12 @@
 	//echo $uname;
 	echo "<h2>ONGOING RTIs</h2>" ;
 	echo "<marquee><strong>CHOOSE THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
+	
 	if($uname=='ut'||$uname=='pc')
 {
 	$query=" SELECT * FROM add_rti order by date_of_receipt_cio";
     $res= mysqli_query($con, $query);
-    echo "<h2>ONGOING RTIs</h2>" ;
-	echo "<marquee><strong>CHOOSE THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
-	echo "<table  class=table table-bordered table-condensed width=100% border=2>" ;
+    echo "<table  class=table table-bordered table-condensed width=100% border=2>" ;
 	echo "<table  width=100% border=2>" ;
 	echo "<tr>
 			<th>ID</th>
@@ -125,10 +124,11 @@ else if($uname!='ut'||$uname!='pc')
 		}
 		echo "</table>";
 		$data2--;
+		
+		$_SESSION['map']=$m;
 }
 
 }
-$_SESSION['map']=$m;
 ?>
 	<br><a href="new_prev.php" class=btn>Back</a>
 </body>
