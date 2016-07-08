@@ -1,34 +1,29 @@
-<?php
-if (!isset($_SESSION)){
-	session_start();
-}
-$uname=$_SESSION['name'];
-?>
-
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Previous RTI</title>
 		<link rel="stylesheet" href="css/prev_rti.css">
 		<link rel="stylesheet" href="css/background.css">
-		<meta charset="utf-8">
 		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-		<script src="bootstrap/jQuery/jquery.min.js"></script>
-		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<meta charset="utf-8">
 	</head>
-
-	<body>
-
+<body>
 <?php
 	include 'config_database.php'; 
-	
-	echo "<div class='container'>";
+	session_start();
+    $uname=$_SESSION['name'];
+	$_SESSION['name']=$uname;
+	//echo $uname;
 	echo "<h2>ONGOING RTIs</h2>" ;
 	echo "<marquee><strong>CHOOSE THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
 	if($uname=='ut'||$uname=='pc')
-	{
+{
 	$query=" SELECT * FROM add_rti order by date_of_receipt_cio";
     $res= mysqli_query($con, $query);
-	echo "<table class='table table-bordered'>" ;
+    echo "<h2>ONGOING RTIs</h2>" ;
+	echo "<marquee><strong>CHOOSE THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
+	echo "<table  class=table table-bordered table-condensed width=100% border=2>" ;
+	echo "<table  width=100% border=2>" ;
 	echo "<tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
@@ -36,7 +31,7 @@ $uname=$_SESSION['name'];
 			<th>Last date</th>
 			<th>Days left</th>
 			<th>Mark as completed</th>
-		  </tr>";  
+		</tr>";  
 	
 	while($r=mysqli_fetch_assoc($res))
 	{
@@ -57,14 +52,14 @@ $uname=$_SESSION['name'];
 				echo "<td><a href='previd.php?id=".$r['id']."'>".$r['date_of_receipt_cio']."</a></td>"; 		
 				echo "<td><a href='previd.php?id=".$r['id']."'>".date("Y-m-d",strtotime($d2))."</a></td>"; 
 				echo "<td><a href='previd.php?id=".$r['id']."'>".$d3."</a></td>";
-				echo "<td><a href='old_rti.php?id=".$r['id']."'>Close RTI</a></td>";
+				echo "<td><a href='old_rti.php?id=".$r['id']."'>Mark as Completed</a></td>";
 			echo "</tr>";
 		}
 	}
 	echo "</table>";
 }
-else if($uname!='ut'||$uname!='pc'){	
-	$i=0;
+else if($uname!='ut'||$uname!='pc')
+{	$i=0;
 	$m='';
 	if($uname=='admin')
 		$m='Ad';
@@ -74,11 +69,13 @@ else if($uname!='ut'||$uname!='pc'){
 		$m='HR';
 	if($uname=='Academics')
 		$m='Ac';
-	$query=" SELECT * FROM t2 WHERE map='".$m."' order by id;";
-    $data=mysqli_query($con,$query);
+	//echo $m;
+	$query=" SELECT * FROM t2 WHERE map='".$m."' order by id;";// order by id";
+   //echo $query;
+	$data=mysqli_query($con,$query);
+	//echo $data;
 	$data2=mysqli_num_rows($data);
-	
-	echo "<table class='table table-bordered'>" ;
+	echo "<table  width=100% border=2>" ;
 	echo "<tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
@@ -87,12 +84,16 @@ else if($uname!='ut'||$uname!='pc'){
 			<th>Days left</th>
 			<th>Mark as completed</th>
 		</tr>";  
+		$ido = -1;
    while($data2!=0)
    {	$data3=mysqli_fetch_array($data);
 	    $i=$data3['id'];
-		$quer="SELECT * FROM add_rti WHERE id=".$i." order by date_of_receipt_cio;";
-		$res=mysqli_query($con,$quer);
-		$v=mysqli_num_rows($res);
+		//echo $i;
+  if($i!=$ido)
+	  {
+			$quer="SELECT * FROM add_rti WHERE id=".$i." order by date_of_receipt_cio;";
+			$res=mysqli_query($con,$quer);
+			$v=mysqli_num_rows($res);
 			
 	while($v!=0)
 	{
@@ -107,28 +108,28 @@ else if($uname!='ut'||$uname!='pc'){
 			$a=strtotime($d2);
 			$b=strtotime(date('Y-m-d h:i:s'));
 			$d3=floor(($a-$b)/86400);
-		echo"<table class='table table-bordered'>";	
+		echo"<table width=100% border=2>";	
 			echo "<tr>";
-				echo "<th><a href='previd.php?id=".$r['id']."'>".$r['id']." </a></th>";
-				echo "<th><a href='previd.php?id=".$r['id']."'>".$r['name']."</a></th>"; 
-				echo "<th><a href='previd.php?id=".$r['id']."'>".$r['date_of_receipt_cio']."</a></th>"; 		
-				echo "<th><a href='previd.php?id=".$r['id']."'>".date("Y-m-d",strtotime($d2))."</a></th>"; 
-				echo "<th><a href='previd.php?id=".$r['id']."'>".$d3."</a></th>";
-				echo "<th><a href='old_rti.php?id=".$r['id']."'>Mark as Completed</a></th>";
+				echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$r['id']." </a></th>";
+				echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$r['name']."</a></th>"; 
+				echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$r['date_of_receipt_cio']."</a></th>"; 		
+				echo "<th><a href='diff_dep.php?id=".$r['id']."'>".date("Y-m-d",strtotime($d2))."</a></th>"; 
+				echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$d3."</a></th>";
 			echo "</tr>";
 		echo"<table>";	
 		}
 		$v--;
 		echo "</table>";
 	}
+		$ido=$i;
+		}
 		echo "</table>";
 		$data2--;
 }
 
 }
-
+$_SESSION['map']=$m;
 ?>
 	<br><a href="new_prev.php" class=btn>Back</a>
-</div>
 </body>
 </html>
