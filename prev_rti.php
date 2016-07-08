@@ -11,6 +11,7 @@
 <?php
 	include 'config_database.php'; 
 	session_start();
+	echo "<div class='container'>";
     $uname=$_SESSION['name'];
 	$_SESSION['name']=$uname;
 	//echo $uname;
@@ -74,7 +75,7 @@ else if($uname!='ut'||$uname!='pc')
 	$data=mysqli_query($con,$query);
 	//echo $data;
 	$data2=mysqli_num_rows($data);
-	echo "<table  width=100% border=2>" ;
+	echo "<table class='table table-bordered'>" ;
 	echo "<tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
@@ -107,7 +108,7 @@ else if($uname!='ut'||$uname!='pc')
 			$a=strtotime($d2);
 			$b=strtotime(date('Y-m-d h:i:s'));
 			$d3=floor(($a-$b)/86400);
-		echo"<table width=100% border=2>";	
+		echo "<table class='table table-bordered'>" ;	
 			echo "<tr>";
 				echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$r['id']." </a></th>";
 				echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$r['name']."</a></th>"; 
@@ -131,5 +132,6 @@ else if($uname!='ut'||$uname!='pc')
 }
 ?>
 	<br><a href="new_prev.php" class=btn>Back</a>
+</div>
 </body>
 </html>

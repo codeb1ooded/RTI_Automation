@@ -14,7 +14,7 @@
 		$Id = $_GET['id'];
 		echo "<br><h3>Add Details of RTI with Id: ".$Id."</h3>";
 		include 'config_database.php';
-		$query = " SELECT * FROM section4 WHERE id=".$Id.";";
+		$query = " SELECT * FROM first_appeal WHERE id=".$Id.";";
 		$r = mysqli_query($con, $query);
 		$res = mysqli_fetch_assoc($r);
 		if($res) {

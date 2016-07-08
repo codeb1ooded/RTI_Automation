@@ -123,7 +123,7 @@
 		if($r3)
 		{
 			echo "<tr>";
-				echo "<td>Date of intimation given to appelant regarding fee u/s</br> 7(1) chargeable  and his right to review</td>";
+				echo "<td>Date of intimation given to appelant regarding fee u/s 7(1) chargeable  and his right to review</td>";
 				echo "<td>".$r3['info_fee_date']."</td>";
 			echo "</tr>";
 			echo "<tr>";
@@ -147,7 +147,7 @@
 				echo "<td>".$r4['Asent_date']."</td>";
 			echo "</tr>";
 			echo "<tr>";
-				echo "<td>To whom was it transferred</br> (mention name,designation and address)</td>";
+				echo "<td>To whom was it transferred (mention name,designation and address)</td>";
 				echo "<td>".$r4['Ainfo']."</td>";
 			echo "</tr>";
 			echo "<tr>";
