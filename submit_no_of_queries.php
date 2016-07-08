@@ -24,7 +24,7 @@
 	'$_POST[citizenship]','$_POST[date_of_receipt]','$_POST[date_of_receipt_cio]','$d3','$_POST[fee]','$_POST[fee_deposit_date]',
 	'$_POST[pay_mode]')";
 	
-	mysqli_query($con,$sql);
+	mysqli_query($con, $sql);
 	
 	$a=0;
 	$k="SELECT * FROM add_rti";
@@ -38,7 +38,7 @@
  if(isset($_POST['add'])){
 	
 	echo "RTI ID: ".$a;
-	echo "<form action=ques.php method=post>";
+	echo "<form action=submit_queries.php method=post>";
 	echo "<tr>
 		<th><h3>No. of Queries</h3></th>
 		<th><input type=text name=ques></th>
@@ -46,7 +46,7 @@
 		</tr>";	
 	}
 	else
-		include 'new_prev.php';
+		include 'select_option.php';
 	mysqli_close($con);
 ?>
 </body>

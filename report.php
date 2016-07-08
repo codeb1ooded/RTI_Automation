@@ -36,7 +36,7 @@ if(isset($_POST['name'])){
 	while($r=mysqli_fetch_assoc($res))
 	{
 		echo "<tr>";
-			echo "<td>";
+		echo "<td>";
 		echo $r['id']."</td>";
 		echo "<td>";
 		echo $r['name'];
@@ -294,7 +294,7 @@ if(isset($_POST['enter'])){
 	echo "</table>";
 }
 ?>
-<br><a href=new_prev.php class=btn>Back</a>
+<br><a href=select_option.php class=btn>Back</a>
 </div>
 </body>
 </html>

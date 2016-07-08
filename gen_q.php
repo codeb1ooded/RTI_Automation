@@ -54,7 +54,7 @@ echo"5.	The receipt of this communication may please be acknowledged.
 To,</br>".
 	$data2['map']."</br></br></br>";
 	
-	echo"<a href='new_prev.php'><input type=submit value=Exit></a>";
+	echo"<a href='select_option.php'><input type=submit value=Exit></a>";
 	echo "<button onclick='myFuction()'>Print the reply</button>";
 	
 	?>

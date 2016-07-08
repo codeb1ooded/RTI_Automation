@@ -16,14 +16,14 @@ if(isset($_POST['submit'])){
 		$res=mysqli_fetch_row($query);
 		
 		if($res){
-			header('location:new_prev.php');
+			header('location:select_option.php');
 		} else{
-			echo'You entered username or password is incorrect';  #NO effect
-			header("Location: 1.php");
+			header("Location: index.html");
+			echo 'You entered username or password is incorrect';  #NO effect
 		}
 	} else{
-		echo'Enter both username and password';  #NO effect
-		header("Location: 1.php");
+		echo 'Enter both username and password';  #NO effect
+		header("Location: index.html");
 	}
 }
 ?>

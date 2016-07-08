@@ -108,7 +108,7 @@ $uname=$_SESSION['name'];
 }
 }
 ?>
-	<br><a href="new_prev.php" class=btn >Back</a>
+	<br><a href="select_option.php" class=btn >Back</a>
 </div>
 </body>
 </html>

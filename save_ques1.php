@@ -24,7 +24,7 @@
 	}
 	mysqli_close($con);
 	if(isset($_POST['save']))
-	include 'new_prev.php';
+	include 'select_option.php';
 	if(isset($_POST['gen_pdf']))
 		include 'gen_query_pdf.php';
 

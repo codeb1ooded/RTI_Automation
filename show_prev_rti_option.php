@@ -30,7 +30,7 @@ if(isset($_GET['id']))
 	
 	
 	echo "<br>" ;
-	echo "<a class='btn' href='replyform.php?id=".$Id."'>Modify Details and Queries</a>" ;
+	echo "<a class='btn' href='modify_rti_details.php?id=".$Id."'>Modify Details and Queries</a>" ;
 	echo "<br><br>" ;
 	echo "<a class='btn' href='addqueries.php?id=".$Id."'>Add Additional Queries</a>" ; 
 	echo "<br><br>" ;

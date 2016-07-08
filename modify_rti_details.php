@@ -20,7 +20,7 @@
 		$data2 = mysqli_fetch_array($query);
 ?>
 	<h4><strong>Personal Details of RTI Applicant:</strong></h4>
-	<form action='modify.php'  method='post' name="prev_rti">
+	<form action='modify_queries.php'  method='post' name="prev_rti">
 		<input type="hidden" name="ID" value="<?php echo $Id ?>">
 		<table class="table table-bordered table-condensed">
 			<tbody>

@@ -25,7 +25,7 @@ while($a<=$d)
 }
 echo"</br></br></br>";
 echo"Your pdf is generated you can exit:";
-echo"<a href='new_prev.php'><input type=submit value=Exit></a>";
+echo"<a href='select_option.php'><input type=submit value=Exit></a>";
 
 	
 ?>

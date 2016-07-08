@@ -3,7 +3,7 @@
 	$c=$_SESSION['prev_rti_id'];
 	$b=$_SESSION['quer'];
 	
-	include 'new_prev.php';
+	include 'select_option.php';
 	include 'config_database.php'; 
 	
 	$data1="SELECT * FROM t2 WHERE id=".$c.";";

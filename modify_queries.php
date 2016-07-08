@@ -39,7 +39,7 @@ if(isset($_POST['submit'])){
 		
 	if ($con->query($data) === TRUE) {
 		echo "Record updated successfully";
-		echo "<a href='previd.php?id=".$id."'>Back</a>";
+		echo "<a href='show_prev_rti_option.php?id=".$id."'>Back</a>";
 	} else {
 		echo "Error updating record: " . $con->error;
 	}

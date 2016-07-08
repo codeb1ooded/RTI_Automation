@@ -18,10 +18,10 @@
 			<br><br><br>";
 	echo "<div class=options>";
 	if($uname=='ut'||$uname=='pc') {
-		echo"<a href='./add_rti.php'>Add New RTI</a><br><br><br>
+		echo"<a href='./add_rti.html'>Add New RTI</a><br><br><br>
 		<a href='./report.php' color=#ffffff>Generate Report</a><br><br><br>";
     }
-		echo"	<a href='./prev_rti.php' color=#ffffff>Ongoing RTIs</a><br><br><br>
+		echo"	<a href='./show_prev_rti.php' color=#ffffff>Ongoing RTIs</a><br><br><br>
 				<a href='./view_completed_rti.php' color=#ffffff>Closed RTIs</a>
 				
 	</div>
