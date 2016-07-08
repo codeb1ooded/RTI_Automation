@@ -14,9 +14,6 @@ body {
   background-image: -ms-linear-gradient(top, #092538, #088a5a);
   background-image: -o-linear-gradient(top, #092538, #088a5a);
   background-image: linear-gradient(to bottom, #092538, #088a5a);
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
   text-shadow: 1px 1px 3px #666666;
   -webkit-box-shadow: 3px 3px 5px #011824;
   -moz-box-shadow: 3px 3px 5px #011824;
@@ -24,7 +21,7 @@ body {
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
-  padding: 8px 12px 8px 12px;
+  padding: 6px 10px 6px 10px;
   text-decoration: none;
 }
 

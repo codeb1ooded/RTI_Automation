@@ -10,7 +10,7 @@
 		mysqli_query($con,$sql);
 	?>
 	<h2>RTI Closed Succesfully</h2>
-	<span><a href='prev_rti.php' class=btn >Back</a></span>
+	<span><a href='show_prev_rti.php' class=btn >Back</a></span>
 	<?php
 	mysqli_close($con);
 	?>

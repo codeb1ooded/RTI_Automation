@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+if(!isset($_SESSION)){
+session_start();
+$uname=$_SESSION['name'];
+}	
+?>
 <html>
 <head>
 	<title>Previous RTI</title>
@@ -10,11 +15,7 @@
 <body>
 	<?php
 	include 'config_database.php'; 
-	session_start();
 	echo "<div class='container'>";
-	$uname=$_SESSION['name'];
-	$_SESSION['name']=$uname;
-	//echo $uname;
 	echo "<h2>ONGOING RTIs</h2>" ;
 	echo "<marquee><strong>CHOOSE THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
 	
@@ -68,11 +69,11 @@
 				$m='HR';
 			if($uname=='Academics')
 				$m='Ac';
-	//echo $m;
+			
+	$_SESSION['map']=$m;
+	
 	$query=" SELECT * FROM t2 WHERE map='".$m."' order by id;";// order by id";
-   //echo $query;
-	$data=mysqli_query($con,$query);
-	//echo $data;
+    $data=mysqli_query($con,$query);
 	$data2=mysqli_num_rows($data);
 	echo "<table class='table table-bordered'>" ;
 	echo "<tr>
@@ -87,7 +88,6 @@
 	while($data2!=0)
 		{	$data3=mysqli_fetch_array($data);
 			$i=$data3['id'];
-		//echo $i;
 			if($i!=$ido)
 			{
 				$quer="SELECT * FROM add_rti WHERE id=".$i." order by date_of_receipt_cio;";
@@ -124,8 +124,6 @@
 			}
 			echo "</table>";
 			$data2--;
-
-			$_SESSION['map']=$m;
 		}
 
 	}

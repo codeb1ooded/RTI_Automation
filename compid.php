@@ -223,7 +223,7 @@
 	if($r1['archieve']==1)
 		echo "<a class=btn href='view_completed_rti.php'>Back</a>" ;
 	else
-		echo "<a class=btn href='previd.php?id=".$id."'>Back</a>" ;
+		echo "<a class=btn href='show_prev_rti_option.php?id=".$id."'>Back</a>" ;
 
 ?>
 </form>

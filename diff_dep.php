@@ -1,10 +1,9 @@
-
 <?php
-include 'config_database.php';
-$id=$_GET['id'];
 session_start();
 $m=$_SESSION['map'];
 
+include 'config_database.php';
+$id=$_GET['id'];
 $sql="SELECT * FROM t2 WHERE id=".$id.";";
 $s="SELECT * FROM reply_queries WHERE id=".$id.";";
 

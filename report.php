@@ -11,12 +11,11 @@
 <body>
 <div class='container'>
 <h2>Generate Report Of RTIs</h2>
-<marquee><strong>CHOOSE THE DESIRED FIELD ON WHICH RTIs NEED TO BE SORTED</strong></marquee><br>
 <form action="report.php" method="post">
-	<input type="submit" name="name" class=btn value="Name"><br><br>
-	<input type="submit" name="dept" class=btn value="Department"><br><br>
-	<input type="submit" name="date" class=btn value="Date"><br><br>
-	<input type="submit" name="close" class=btn value="Closed"><br><br>
+	<input type="submit" name="name" class=btn value="Name">
+	<input type="submit" name="dept" class=btn value="Department">
+	<input type="submit" name="date" class=btn value="Date">
+	<input type="submit" name="close" class=btn value="Closed">
 </form>
 
 <?php

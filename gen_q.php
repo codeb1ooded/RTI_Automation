@@ -1,25 +1,16 @@
 <?php
-	include 'config_database.php'; 
-	$qno=$_GET['qno'];
-	
 	session_start();
-	//$qno=$_SESSION['cc'];
 	$id=$_SESSION['id'];
 	
-	//echo" For id :".$id;
-	//echo"</br>";
-	
-	//echo "Corresponding to query:".$qno;
+	include 'config_database.php'; 
+	$qno=$_GET['qno'];
 	$data3="SELECT * FROM add_rti WHERE id=".$id.";";
     $query2=mysqli_query($con,$data3);
     $data4=mysqli_num_rows($query2);
     $b=$data4;
     $add_rtirows=mysqli_fetch_array($query2);
 	
-	//echo"</br>";
-	
 	$data1="SELECT * FROM t2 WHERE id=".$id." AND q_no=".$qno.";";
-	//echo $data1;
 	$query=mysqli_query($con,$data1);
 	$data2=mysqli_fetch_assoc($query);
 	echo"</br>";

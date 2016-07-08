@@ -25,23 +25,19 @@ $uname=$_SESSION['name'];
 	
 	if($uname=='ut'||$uname=='pc')
 	{
-	echo "<table class='table table-bordered'>" ;
-	echo "<tr>
+	echo "<table class='table table-bordered'><tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
 			<th>Address</th>
-			<th>Phone Number</th>
-		</tr>"; 	
-	while($r=mysqli_fetch_assoc($res))
-	{
-		if($r['archieve']==1)
-		{			
-			echo "<tr>";
-				echo "<td><a href='compid.php?id=".$r['id']."'>".$r['id']."</a></td>";
-				echo "<td><a href='compid.php?id=".$r['id']."'>".$r['name']."</a></td>"; 
-				echo "<td><a href='compid.php?id=".$r['id']."'>".$r['address']."</a></td>"; 		
-				echo "<td><a href='compid.php?id=".$r['id']."'>".$r['phone_no']."</a></td>";
-			echo "</tr>";
+			<th>Phone Number</th></tr>";
+			
+	while($r=mysqli_fetch_assoc($res)){
+		if($r['archieve']==1){			
+			echo "<tr>
+				<td><a href='compid.php?id=".$r['id']."'>".$r['id']."</a></td> 
+				<td><a href='compid.php?id=".$r['id']."'>".$r['name']."</a></td> 
+				<td><a href='compid.php?id=".$r['id']."'>".$r['address']."</a></td> 		
+				<td><a href='compid.php?id=".$r['id']."'>".$r['phone_no']."</a></td> </tr>";
 		}
 	}
 	echo "</table>";
@@ -57,18 +53,17 @@ $uname=$_SESSION['name'];
 		$m='HR';
 	if($uname=='Academics')
 		$m='Ac';
-	$query=" SELECT * FROM t2 WHERE map='".$m."' order by id;";// order by id";
+	$query=" SELECT * FROM t2 WHERE map='".$m."' order by id;";
     $data=mysqli_query($con,$query);
 	$data2=mysqli_num_rows($data);
-	echo "<table  width=100% border=2>" ;
+	echo "<table>" ;
 	echo "<tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
 			<th>Date of Receipt</th>
 			<th>Last date</th>
 			<th>Days left</th>
-			<th>Mark as completed</th>
-		</tr>";  
+			<th>Mark as completed</th></tr>";  
    while($data2!=0)
    {	$data3=mysqli_fetch_array($data);
 	    $i=$data3['id'];

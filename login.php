@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
 			header('location:select_option.php');
 		} else{
 			header("Location: index.html");
-			echo 'You entered username or password is incorrect';  #NO effect
+			echo 'Entered username or password is incorrect';  #NO effect
 		}
 	} else{
 		echo 'Enter both username and password';  #NO effect
