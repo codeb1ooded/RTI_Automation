@@ -4,7 +4,7 @@
 	
 	if(isset($_POST['submitSection4'])){
 	
-		include 'prev_rti.php';
+		include 'select_option.php';
 		include 'config_database.php';
 	
 		$d1=strtotime($_POST['fee_submit_date']);
@@ -17,18 +17,18 @@
 		mysqli_close($con);
 	}
 	
-	else if(isset($_POST['submitappeal'])){
-		include 'prev_rti.php';
+	/*else if(isset($_POST['submitappeal'])){
+		include 'appeal_query.php';
 		include 'config_database.php';
 		
 		$sql="INSERT INTO first_appeal (id, appeal_info, transfer_date, faa_receipt_date, meet_date) 
 		VALUES('$id','$_POST[appeal_info]','$_POST[transfer_date]','$_POST[faa_receipt_date]','$_POST[meet_date]')";
 		mysqli_query($con,$sql);
 		mysqli_close($con);
-	}
+	}*/
 		
 	else if(isset($_POST['submitresponse'])){
-		include 'prev_rti.php';
+		include 'select_option.php';
 		include 'config_database.php';
 
 		$d1=strtotime($_POST['reply_date']);

@@ -46,7 +46,7 @@ if(isset($_GET['id']))
 	echo "<br><br>" ;
 	echo "<a class='btn' href='compid.php?id=".$Id."'>Details of RTI</a>" ;
 	echo "<br><br>" ;
-	echo "<a class='btn' href='prev_rti.php'>Back</a>" ;
+	echo "<a class='btn' href='select_option.php'>Back</a>" ;
 	
 ?>
 </div>

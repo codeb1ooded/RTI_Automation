@@ -36,8 +36,8 @@
 		mysqli_close($con);
 	}
 
-	else if(isset($_POST['submitappealnew'])){
-		include 'prev_rti.php';
+	/*else if(isset($_POST['submitappealnew'])){
+		include 'appeal_query.php';
 		include 'config_database.php';
 
 		$sql="DELETE FROM first_appeal WHERE id=".$id.";";
@@ -47,5 +47,5 @@
 		VALUES('$id','$_POST[appeal_info]','$_POST[transfer_date]','$_POST[faa_receipt_date]','$_POST[meet_date]')";
 		mysqli_query($con,$sql);
 		mysqli_close($con);
-	}
+	}*/
 ?>

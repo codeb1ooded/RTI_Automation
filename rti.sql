@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 03, 2016 at 07:42 PM
--- Server version: 10.1.10-MariaDB
--- PHP Version: 5.6.15
+-- Host: localhost
+-- Generation Time: Jul 10, 2016 at 10:30 AM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 7.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -59,7 +59,28 @@ INSERT INTO `add_rti` (`id`, `name`, `gender`, `address`, `pin_code`, `state`, `
 (5, 'utkarsha', 'Female', 'abcdef', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 0),
 (6, 'woah', 'Male', 'address', 110077, 'Andhra', 'India', '25090133', '9968813151', 'ug@gmail.com', 'Indian', '2016-06-17', '2016-06-18', 1, 'yes', '2016-06-17', 'cash', NULL),
 (7, 'woah', 'Male', 'address', 110077, 'Andhra', 'India', '25090133', '9968813151', 'ug@gmail.com', 'Indian', '2016-06-17', '2016-06-18', 1, 'yes', '2016-06-17', 'cash', NULL),
-(8, 'Tia', 'Female', 'Bh-3 East shalomar Bagh', 110088, 'Delhi', 'India', '98745874', '8932865258', 's@gmail.com', 'Indian', '2016-06-22', '2016-01-01', 172, 'yes', '2016-06-05', 'DD', 1);
+(8, 'Tia', 'Female', 'Bh-3 East shalomar Bagh', 110088, 'Delhi', 'India', '98745874', '8932865258', 's@gmail.com', 'Indian', '2016-06-22', '2016-01-01', 172, 'yes', '2016-06-05', 'DD', 1),
+(9, 'tt', 'Male', 'aklSMZKAS', 110088, 'Delhi', 'India', '98258741', '2365410987', 'salonibhartia@ymail.com', 'Indian', '2016-07-08', '2016-07-09', 1, 'yes', '2016-07-08', 'DD', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `appeal_query`
+--
+
+CREATE TABLE `appeal_query` (
+  `id` int(15) NOT NULL,
+  `q_no` int(15) NOT NULL,
+  `query` varchar(100) NOT NULL,
+  `description` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `appeal_query`
+--
+
+INSERT INTO `appeal_query` (`id`, `q_no`, `query`, `description`) VALUES
+(1, 2, 'def', 'k,lwik,lowqiakiowakiow,klo');
 
 -- --------------------------------------------------------
 
@@ -106,6 +127,31 @@ INSERT INTO `article_sub_section` (`Id`, `sec_id`, `No`, `Description`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `dept_reply`
+--
+
+CREATE TABLE `dept_reply` (
+  `id` int(15) NOT NULL,
+  `query_no` int(15) NOT NULL,
+  `map` varchar(10) NOT NULL,
+  `answer` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dept_reply`
+--
+
+INSERT INTO `dept_reply` (`id`, `query_no`, `map`, `answer`) VALUES
+(1, 2, 'HR', 'shwjnsswdysu'),
+(1, 2, 'HR', 'shwjnsswdysu'),
+(1, 2, 'HR', 'shwjnsswdysu'),
+(1, 2, 'HR', 'shwjnsswdysu'),
+(1, 2, 'HR', 'shwjnsswdysu'),
+(6, 3, 'HR', 'tyrywuw');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `first_appeal`
 --
 
@@ -122,7 +168,13 @@ CREATE TABLE `first_appeal` (
 --
 
 INSERT INTO `first_appeal` (`id`, `appeal_info`, `transfer_date`, `faa_receipt_date`, `meet_date`) VALUES
-(4, 'wersdtfgyhjk', '2017-06-18', '0000-00-00', '0000-00-00');
+(1, 'dshxsdgwyshx', '2016-05-08', '2016-06-08', '2016-08-25'),
+(3, 'dsjxhujdhu', '0000-00-00', '0000-00-00', '0000-00-00'),
+(4, 'wersdtfgyhjk', '2017-06-18', '0000-00-00', '0000-00-00'),
+(5, 'ghbhytghbgy', '2016-05-08', '2016-06-08', '2016-08-25'),
+(6, 'jhuyhjnjuy', '2016-05-08', '2016-06-08', '2016-08-25'),
+(7, 'tysbsw', '2016-05-08', '2016-06-08', '2016-08-25'),
+(9, 'chjyhnsdcyudcuy', '2016-05-08', '2016-06-08', '2016-08-25');
 
 -- --------------------------------------------------------
 
@@ -168,7 +220,8 @@ INSERT INTO `login` (`name`, `password`) VALUES
 ('admin', 'xyzabc'),
 ('examination', 'exam'),
 ('Human Resource', 'HR'),
-('Academics', 'Ac');
+('Academics', 'Ac'),
+('Appellant', 'ap');
 
 -- --------------------------------------------------------
 
@@ -263,7 +316,9 @@ INSERT INTO `t2` (`id`, `q_no`, `ques`, `map`, `date_sent`) VALUES
 (7, 2, 'blah2', 'Ad', '2016-06-20'),
 (7, 3, 'blah3', 'HR', '2016-06-20'),
 (8, 1, 'hwsxbj', 'Ac', '2016-06-05'),
-(8, 2, 'gshgbj', 'Ex', '2016-06-04');
+(8, 2, 'gshgbj', 'Ex', '2016-06-04'),
+(9, 1, 'dsnsehjs', 'Ac', '2016-05-08'),
+(9, 2, 'wsjh<<HJSH', 'Ex', '2016-05-08');
 
 --
 -- Indexes for dumped tables
@@ -307,12 +362,12 @@ ALTER TABLE `section4`
 -- AUTO_INCREMENT for table `add_rti`
 --
 ALTER TABLE `add_rti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `first_appeal`
 --
 ALTER TABLE `first_appeal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `info_about_reply`
 --

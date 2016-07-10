@@ -13,9 +13,15 @@
 <?php
 
 	$uname=$_SESSION['name'];
+	if($uname=='Appellant'){
+		include 'appellant_interface.php';
+
+	}
+	else{
 	echo "<div class=new-prev>";
 	echo "<marquee scrollamount=5><strong>PLEASE SELECT ONE OF THE FOLLOWING OPTIONS:</strong></marquee> <br><br><br>";
 	echo "<div class=options>";
+
 	if($uname=='ut'||$uname=='pc') {
 		echo"<a href='./add_rti.html'>Add New RTI</a><br><br><br>
 			 <a href='./report.php'>Generate Report</a><br><br><br>";
@@ -24,5 +30,6 @@
 			 <a href='./view_completed_rti.php'>Closed RTIs</a>	
 	</div>
 	</div>";
+}
 include 'logoff.html';
 ?>
