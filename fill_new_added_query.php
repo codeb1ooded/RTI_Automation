@@ -37,7 +37,7 @@ $id=$_SESSION['prev_rti_id'];
 					<th>Date Sent</th>
 					<th></th>
 				</tr>";
-	echo "<form action=save_ques1.php method=post name=\"add_queries\">";
+	echo "<form action=save_added_ques.php method=post name=\"add_queries\">";
 ?>
 <script type="text/javascript">
 	function mailTo (a) {
