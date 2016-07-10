@@ -20,7 +20,7 @@
 		if($res) {
 	?>
 			<h4><strong>(VI) I<sup>st</sup> Appeal (where applicable):</strong></h4>
-			<form action = "replysection4.php" method ="post">
+			<form action = "appeal_query.php" method ="post">
 				<table class="table table-bordered">
 					<tr>
 						<th> Name and designation of the officer before whom <br>the 1<sup>st</sup> appeal is filed u/s 19(1)</th>
@@ -42,14 +42,14 @@
 						<th><input type="text" style="height:32px" name="meet_date" id="Name" value=<?php echo $res['meet_date']; ?> placeholder="YYYY-MM-DD"></th>
 					</tr>
 				</table>
-				<input type="submit" name="submitappealnew" id="Save_appeal" class=btn value="Save and Exit" class="btnsaveappeal"></th>
+				<input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save and Exit" class="btnsaveappeal"></th>
 			</form>
 	<?php
 			echo "<br><a class=btn href='previd.php?id=".$Id."''>Back</a>" ;
 		} else {
 	?>	
 			<h4><strong>(VI) I<sup>st</sup> Appeal (where applicable):</strong></h4>
-			<form action = "replysection4.php" method ="post">
+			<form action = "appeal_query.php" method ="post">
 				<table class="table table-bordered">
 					<tr>
 						<th> Name and designation of the officer before whom <br>the 1<sup>st</sup> appeal is filed u/s 19(1)</th>
@@ -71,10 +71,10 @@
 						<th><input type="text" style="height:32px" name="meet_date" id="Name" value="" placeholder="YYYY-MM-DD"></th>
 					</tr>
 				</table>
-				<input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save and Exit" class="btnsaveappeal"></th>
+				<input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save " class="btnsaveappeal"></th>
 			</form>
 			<?php
-			echo "&nbsp&nbsp<a class='btn' href='previd.php?id=".$Id."''>Back</a>" ;
+			echo "&nbsp&nbsp<a class='btn' href='select_option.php?id=".$Id."''>Back</a>" ;
 		}
 		?>
 	</div>
