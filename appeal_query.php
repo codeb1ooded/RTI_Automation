@@ -1,12 +1,12 @@
 <head>
-	<title>APPEAL</title>
+	<title>Save Appeal</title>
 	<link rel="stylesheet" href="css/background.css">
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<script src="bootstrap/jQuery/jquery.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
-<marquee><strong>Mark the queries for which the appeal is raised</strong></marquee>
+<br><h4><strong>Mark the queries for which the appeal is raised:</strong></h4>
 <script type="text/javascript">
 document.getElementById('desc').disabled=true;
 function test()

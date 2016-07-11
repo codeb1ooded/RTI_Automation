@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 	<head>
 		<title>Completed RTI</title>
@@ -14,7 +13,7 @@
 	include 'config_database.php'; 
 	$id=$_GET['id'];
 	
-	echo "<h4><strong>The deatils of RTI with ID: ".$id." are-</strong></h4>" ;
+	echo "<h4><strong>RTI Details for ID ".$id." are-</strong></h4>" ;
 	$query=" SELECT * FROM add_rti where id=".$id;
     $res=mysqli_query($con, $query);
 	$r1=mysqli_fetch_assoc($res);
@@ -221,9 +220,9 @@
 	}
 	echo "</table>";
 	if($r1['archieve']==1)
-		echo "<a class=btn href='view_completed_rti.php'>Back</a>" ;
+		echo "<a class=btn href='view_closed_rti.php'>Back</a>" ;
 	else
-		echo "<a class=btn href='show_prev_rti_option.php?id=".$id."'>Back</a>" ;
+		echo "<a class=btn href='ongoing_rti_option.php?id=".$id."'>Back</a>" ;
 
 ?>
 </form>

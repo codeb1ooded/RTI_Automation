@@ -137,11 +137,11 @@
 		</tbody>
 	</table>
 
-	<input type="submit" name="edit" id="addQuestions" value="Edit Queries" class="btn" onclick="return validateDate()">
-	<input type="submit" name="submit" id="addQuestions" value="Save and Exit" class="btn" onclick="return validateDate()">		
+	<input type="submit" name="edit" value="Edit Queries" class="btn" onclick="return validateDate()">
+	<input type="submit" name="submit" value="Save and Exit" class="btn" onclick="return validateDate()">		
 <?php 
 	}
-	echo "<a class='btn' href='previd.php?id=".$Id."''>Back</a>" ; 
+	echo "<a class='btn' href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ; 
 ?>
 
 </form>

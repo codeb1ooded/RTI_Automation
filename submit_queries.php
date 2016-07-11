@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	$id=$_SESSION['id'];
+	$_SESSION['no_of_queries']=$_POST['ques'];
 ?>
 <html>
 <head>
@@ -12,12 +13,9 @@
 <body>
 <?php
 	include 'config_database.php';
-	$b=$_POST['ques'];
+	$a=$_POST['ques'];
 	
-	$_SESSION['no_of_queries']=$b;
-	
-	$a=$b;
-	echo "The id of this RTI is: ".$id;
+	echo " <h3>RTI ID:".$id."</h3>";
 	echo "<table>
 			<tbody>
 				<tr>
@@ -26,7 +24,7 @@
 					<th>Map To</th>
 					<th>Date Sent</th>
 				</tr>";
-	echo "<form action=save_ques.php method=post>";
+	echo "<form action=save_queries.php method=post>";
 ?>
 
 <script type="text/javascript">
@@ -51,7 +49,7 @@
 			window.open('mailto:'+mailid+'?subject='+subject+'&body='+body);
 		}
 		else{
-			alert("Please select department first");
+			alert("Please select a department first");
 		}
 	}
 </script>
@@ -89,9 +87,11 @@
 		$a--;
 		$c++;
 	}
-	echo "<th colspan=15></th><th><input type=submit name=save  class=btn value='Save and Exit' ></th>";
-	echo "<th colspan=15></th><th><a href='select_option.php' name=exit  class=btn>Exit</a></th>";
+	echo "<th colspan=15></th><th><input class='btn' type=submit name=gen_pdf value='Generate Reply'><th>";
+	
+	echo "<th colspan=15></th><th><input type=submit name=save class=btn value='Save and Exit' ></th>";
 	echo "</form>";
+	echo "<th colspan=15></th><th><a href='select_option.php' name=exit  class=btn>Exit</a></th>";
 	mysqli_close($con);
 ?>
 </body>

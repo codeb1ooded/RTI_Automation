@@ -13,7 +13,7 @@
 			include 'config_database.php'; 
 			$id = $_GET['id'];
 			
-			echo "<form action=fill_new_added_query.php method=post class='form-horizontal' role='form'>";
+			echo "<form action=submit_queries.php method=post class='form-horizontal' role='form'>";
 			echo "<br><h3>The id of this RTI is: ".$id."</h3>";
 			echo "<h4>Enter the number of queries to be added:</h4>
 					<input style='height:32px' type=text name=ques>

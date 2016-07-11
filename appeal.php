@@ -12,7 +12,7 @@
 	<div class="container">
 	<?php
 		$Id = $_GET['id'];
-		echo "<br><h3>Add Details of RTI with Id: ".$Id."</h3>";
+		echo "<br><h3>Add First Appeal Details of RTI with Id: ".$Id."</h3>";
 		include 'config_database.php';
 		$query = " SELECT * FROM first_appeal WHERE id=".$Id.";";
 		$r = mysqli_query($con, $query);
@@ -45,8 +45,9 @@
 				<input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save and Exit" class="btnsaveappeal"></th>
 			</form>
 	<?php
-			echo "<br><a class=btn href='previd.php?id=".$Id."''>Back</a>" ;
-		} else {
+			echo "<a class=btn href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
+		} 
+		else {
 	?>	
 			<h4><strong>(VI) I<sup>st</sup> Appeal (where applicable):</strong></h4>
 			<form action = "appeal_query.php" method ="post">
@@ -74,7 +75,7 @@
 				<input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save " class="btnsaveappeal"></th>
 			</form>
 			<?php
-			echo "&nbsp&nbsp<a class='btn' href='select_option.php?id=".$Id."''>Back</a>" ;
+			echo "&nbsp&nbsp<a class='btn' href='ongoing_rti_option_option.php?id=".$Id."''>Back</a>" ;
 		}
 		?>
 	</div>

@@ -1,6 +1,6 @@
 
 <head>
-	<title>Generate Report</title>
+	<title>Report</title>
 	<link rel="stylesheet" href="css/background.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<script src="bootstrap/jQuery/jquery.min.js"></script>

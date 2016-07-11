@@ -5,7 +5,7 @@
 ?>
 <html>
 	<head>
-		<title>Submit</title>
+		<title>Save Details|Add Queries</title>
 		<link rel="stylesheet" href="css/background.css">
 		<meta charset="utf-8">
 	</head>

@@ -9,9 +9,7 @@ session_start();
 </head>
 
 <body>
-<?php
-if(isset($_POST['submit'])){
-	
+<?php	
 	include 'config_database.php'; 
 	$id = $_POST['ID'];
 	$d1=strtotime($_POST['date_of_receipt']);
@@ -36,45 +34,16 @@ if(isset($_POST['submit'])){
 			fee_deposit_date = '$_POST[fee_deposit_date]',
 			pay_mode = '$_POST[pay_mode]'
 			WHERE id=".$id;
-		
+
 	if ($con->query($data) === TRUE) {
-		echo "Record updated successfully";
-		echo "<a href='show_prev_rti_option.php?id=".$id."'>Back</a>";
-	} else {
+		echo "<b>Details of record updated successfully<b><br>";
+	} 
+	else {
 		echo "Error updating record: " . $con->error;
 	}
-	$con->close();
-}
 	
-//////////////
-
 if(isset($_POST['edit']))
 {
-	include 'config_database.php'; 
-	$id = $_POST['ID'];
-	$d1=strtotime($_POST['date_of_receipt']);
-	$d2=strtotime($_POST['date_of_receipt_cio']);
-	$d3=floor(abs($d2-$d1)/86400);
-	
-	$data = "UPDATE add_rti SET
-			name = '$_POST[name]',
-			gender = '$_POST[gender]',
-			address = '$_POST[address]',
-			pin_code = '$_POST[pin_code]',
-			state = '$_POST[state]',
-			country = '$_POST[country]',
-			phone_no = '$_POST[phone_no]',
-			mobile = '$_POST[mobile]',
-			email = '$_POST[email]',
-			citizenship = '$_POST[citizenship]',
-			date_of_receipt = '$_POST[date_of_receipt]',
-			date_of_receipt_cio = '$_POST[date_of_receipt_cio]',
-			timespan = '$d3',
-			fee_enclosed = '$_POST[fee_enclosed]',
-			fee_deposit_date = '$_POST[fee_deposit_date]',
-			pay_mode = '$_POST[pay_mode]'
-			WHERE id=".$id;
-	
 	$data1="SELECT * FROM t2 WHERE id=".$id.";";
 	$query=mysqli_query($con,$data1);
 	$data2=mysqli_num_rows($query);
@@ -90,7 +59,7 @@ if(isset($_POST['edit']))
 					<th>Map To</th>
 					<th>Date Sent</th>
 				</tr>";
-	echo "<form action=quesform.php method=post>";
+	echo "<form action=save_modified_queries.php method=post>";
 ?>
 <script type="text/javascript">
 	function mailTo (q_no) {
@@ -156,17 +125,8 @@ if(isset($_POST['edit']))
 	echo "<th colspan=15></th><th><input type=submit name=save class=btn value='Save and Exit' ></th>";
 	echo "<th colspan=15></th><th><input type=submit name=reply class=btn value='Generate Reply' ></th>";
 	echo "</form>";
-
-	if ($con->query($data) === TRUE) 
-	{
-		echo "Details of record updated successfully";
-	} 
-	else 
-	{
-		echo "Error updating record: " . $con->error;
-	}
-	$con->close();
-}
+}	
+$con->close();
 
 ?>
 </body>

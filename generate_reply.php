@@ -75,7 +75,6 @@
 			
 			echo"</table>";
 			echo "<button class='btn' onclick='myFuction()'>Print the reply</button>";
-			echo "<br><br><a class='btn' href='show_prev_rti_option.php?id=".$id."''>Back</a>";
 			?>
 			<script>
 			function myFuction(){
@@ -84,7 +83,8 @@
 			</script>
 			<?php } else{
 				echo "<h1> First reply all queries </h1>";
-				echo "<br><br><a class='btn' href='show_prev_rti_option.php?id=".$id."''>Back</a>";
-			} ?>
+			}
+			echo "<br><br><a class='btn' href='ongoing_rti_option.php?id=".$id."''>Back</a>";
+			?>
 		</body>
 		</html>
