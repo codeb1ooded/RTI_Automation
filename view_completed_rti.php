@@ -20,24 +20,23 @@ $uname=$_SESSION['name'];
     $query=" SELECT * FROM add_rti order by date_of_receipt_cio";
     $res=mysqli_query($conn,$query);
     
-	echo "<h2>CLOSED RTIs</h2>" ;
-    echo "<marquee><strong>CHOOSE THE CLOSED RTI TO BE VIEWED: </strong></marquee><br><br>";
-	
+	echo "<br><h2>CLOSED RTIs</h2><br>" ;
+  
 	if($uname=='ut'||$uname=='pc')
 	{
 	echo "<table class='table table-bordered'><tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
-			<th>Address</th>
-			<th>Phone Number</th></tr>";
+			<th>Phone Number</th>
+			<th>View Details</th></tr>";
 			
 	while($r=mysqli_fetch_assoc($res)){
 		if($r['archieve']==1){			
 			echo "<tr>
-				<td><a href='compid.php?id=".$r['id']."'>".$r['id']."</a></td> 
-				<td><a href='compid.php?id=".$r['id']."'>".$r['name']."</a></td> 
-				<td><a href='compid.php?id=".$r['id']."'>".$r['address']."</a></td> 		
-				<td><a href='compid.php?id=".$r['id']."'>".$r['phone_no']."</a></td> </tr>";
+				<td>".$r['id']."</td> 
+				<td>".$r['name']."</td> 
+				<td>".$r['phone_no']."</td> 		
+				<td><a href='compid.php?id=".$r['id']."'>View</a></td> </tr>";
 		}
 	}
 	echo "</table>";

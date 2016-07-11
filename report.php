@@ -10,7 +10,7 @@
 		
 <body>
 <div class='container'>
-<h2>Generate Report Of RTIs</h2>
+<h2>Generate RTI Report By :</h2><br>
 <form action="report.php" method="post">
 	<input type="submit" name="name" class=btn value="Name">
 	<input type="submit" name="dept" class=btn value="Department">

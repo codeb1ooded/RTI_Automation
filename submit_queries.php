@@ -90,9 +90,9 @@
 		$c++;
 	}
 	echo "<th colspan=15></th><th><input type=submit name=save  class=btn value='Save and Exit' ></th>";
+	echo "<th colspan=15></th><th><a href='select_option.php' name=exit  class=btn>Exit</a></th>";
 	echo "</form>";
 	mysqli_close($con);
-    include 'logoff.html';
 ?>
 </body>
 </html>

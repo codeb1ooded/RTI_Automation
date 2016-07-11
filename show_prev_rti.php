@@ -17,7 +17,7 @@ $uname=$_SESSION['name'];
 	include 'config_database.php'; 
 	echo "<div class='container'>";
 	echo "<h2>ONGOING RTIs</h2>" ;
-	echo "<marquee><strong>CHOOSE THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
+	echo "<marquee><strong>SELECT THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
 	
 	if($uname=='ut'||$uname=='pc'){
 		$query=" SELECT * FROM add_rti order by date_of_receipt_cio";
