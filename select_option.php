@@ -24,7 +24,8 @@
 
 	if($uname=='ut'||$uname=='pc') {
 		echo"<a href='./add_rti.html'>Add New RTI</a><br><br><br>
-			 <a href='./report.php'>Generate Report</a><br><br><br>";
+			 <a href='./report.php'>Generate Report</a><br><br><br>
+			 <a href='./backup.php'>Create Backup</a><br><br><br>";
     }
 		echo"<a href='./ongoing_rti.php'>Ongoing RTIs</a><br><br><br>
 			 <a href='./view_closed_rti.php'>Closed RTIs</a>	
