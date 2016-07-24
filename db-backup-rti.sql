@@ -106,7 +106,7 @@ CREATE TABLE `first_appeal` (
   `faa_receipt_date` date NOT NULL,
   `meet_date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 INSERT INTO  first_appeal VALUES("1","dshxsdgwyshx","2016-05-08","2016-06-08","2016-08-25");
 INSERT INTO  first_appeal VALUES("3","dsjxhujdhu","0000-00-00","0000-00-00","0000-00-00");
@@ -135,24 +135,7 @@ INSERT INTO  info_about_reply VALUES("4","0000-00-00","0000-00-00","blablah","0"
 
 
 
-DROP TABLE IF EXISTS  login;
-
-CREATE TABLE `login` (
-  `name` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-INSERT INTO  login VALUES("ut","nathu");
-INSERT INTO  login VALUES("pc","prachi");
-INSERT INTO  login VALUES("admin","xyzabc");
-INSERT INTO  login VALUES("examination","exam");
-INSERT INTO  login VALUES("Human Resource","HR");
-INSERT INTO  login VALUES("Academics","Ac");
-INSERT INTO  login VALUES("Appellant","ap");
-
-
-
-DROP TABLE IF EXISTS   	public_authority;
+DROP TABLE IF EXISTS  public_authority;
 
 CREATE TABLE `public_authority` (
   `id` int(11) NOT NULL,
@@ -182,50 +165,6 @@ INSERT INTO  reply_queries VALUES("7","3","haha3","bdfghj","2016-06-24");
 INSERT INTO  reply_queries VALUES("7","1","hahha","blah blah","2016-06-30");
 INSERT INTO  reply_queries VALUES("7","2","","blah blah","0000-00-00");
 INSERT INTO  reply_queries VALUES("7","3","","blah blah","0000-00-00");
-
-
-
-DROP TABLE IF EXISTS  section4;
-
-CREATE TABLE `section4` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `info_fee_date` date NOT NULL,
-  `info_fee` int(11) NOT NULL,
-  `fee_submit_date` date NOT NULL,
-  `given_info_date` date NOT NULL,
-  `info_time` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
-INSERT INTO  section4 VALUES("1","0000-00-00","0","0000-00-00","0000-00-00","0");
-INSERT INTO  section4 VALUES("4","0000-00-00","0","0000-00-00","0000-00-00","0");
-
-
-
-DROP TABLE IF EXISTS  t2;
-
-CREATE TABLE `t2` (
-  `id` int(11) NOT NULL,
-  `q_no` int(11) NOT NULL,
-  `ques` varchar(200) NOT NULL,
-  `map` varchar(50) NOT NULL,
-  `date_sent` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-INSERT INTO  t2 VALUES("1","1","abc","Ad","2016-07-18");
-INSERT INTO  t2 VALUES("1","2","def","HR","2016-07-18");
-INSERT INTO  t2 VALUES("0","1","rdtfgyhbunj","","0000-00-00");
-INSERT INTO  t2 VALUES("0","2","sdrtfgvybhnj","","0000-00-00");
-INSERT INTO  t2 VALUES("6","1","blah","Ac","2016-06-20");
-INSERT INTO  t2 VALUES("6","2","blah2","Ad","2016-06-20");
-INSERT INTO  t2 VALUES("6","3","","HR","2016-06-20");
-INSERT INTO  t2 VALUES("7","1","blah","Ex","2016-06-20");
-INSERT INTO  t2 VALUES("7","2","blah2","Ad","2016-06-20");
-INSERT INTO  t2 VALUES("7","3","blah3","HR","2016-06-20");
-INSERT INTO  t2 VALUES("8","1","hwsxbj","Ac","2016-06-05");
-INSERT INTO  t2 VALUES("8","2","gshgbj","Ex","2016-06-04");
-INSERT INTO  t2 VALUES("9","1","dsnsehjs","Ac","2016-05-08");
-INSERT INTO  t2 VALUES("9","2","wsjh<<HJSH","Ex","2016-05-08");
 
 
 

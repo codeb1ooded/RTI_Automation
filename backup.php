@@ -5,7 +5,88 @@
   <link rel="stylesheet" href="css/background.css">
 </head>
 <body>
-
+<?php
+if (isset($_POST['submit'])) {
+  $send = "";
+  if(isset($_POST['add_rti'])){
+    if($_POST['add_rti'] == 'yes')
+      if($send == "")
+        $send = $send."add_rti";
+      else 
+        $send = $send.", add_rti";
+  }
+  if(isset($_POST['appeal_query'])){
+    if($_POST['appeal_query'] == 'yes')
+      if($send == "")
+        $send = $send."appeal_query";
+      else 
+        $send = $send.", appeal_query";
+  }
+  if(isset($_POST['article_section'])){
+    if($_POST['article_section'] == 'yes')
+      if($send == "")
+        $send = $send."article_section";
+      else 
+        $send = $send.", article_section";
+  }
+  if(isset($_POST['article_sub_section'])){
+    if($_POST['article_sub_section'] == 'yes')
+      if($send == "")
+        $send = $send."article_sub_section";
+      else 
+        $send = $send.", article_sub_section";
+  }
+  if(isset($_POST['dept_reply'])){
+    if($_POST['dept_reply'] == 'yes')
+      if($send == "")
+        $send = $send."dept_reply";
+      else 
+        $send = $send.", dept_reply";
+  }
+  if(isset($_POST['first_appeal'])){
+    if($_POST['first_appeal'] == 'yes')
+      if($send == "")
+        $send = $send."first_appeal";
+      else 
+        $send = $send.", first_appeal";
+  }
+  if(isset($_POST['info_about_reply'])){
+    if($_POST['info_about_reply'] == 'yes')
+      if($send == "")
+        $send = $send."info_about_reply";
+      else 
+        $send = $send.", info_about_reply";
+  }
+  if(isset($_POST['public_authority'])){
+    if($_POST['public_authority'] == 'yes')
+      if($send == "")
+        $send = $send."public_authority";
+      else 
+        $send = $send.", public_authority";
+  }
+  if(isset($_POST['reply_queries'])){
+    if($_POST['reply_queries'] == 'yes')
+      if($send == "")
+        $send = $send."reply_queries";
+      else 
+        $send = $send.", reply_queries";
+  }
+  if(isset($_POST['section4'])){
+    if($_POST['section4'] == 'yes')
+      if($send == "")
+        $send = $send."section4";
+      else 
+        $send = $send.", section4";
+  }
+  if(isset($_POST['t2'])){
+    if($_POST['t2'] == 'yes')
+      if($send == "")
+        $send = $send."t2";
+      else 
+        $send = $send.", t2";
+  }
+}
+?>
   <?php
 // Report all errors
   error_reporting(E_ALL);
@@ -18,7 +99,7 @@ define("DB_PASSWORD", '');
 define("DB_NAME", 'rti');
 define("DB_HOST", 'localhost');
 define("OUTPUT_DIR", './');
-define("TABLES", 'add_rti, appeal_query, article_section, article_sub_section, dept_reply, first_appeal, info_about_reply, login,  	public_authority, reply_queries, section4, t2');
+define("TABLES", $send);
 
 /**
  * Instantiate Backup_Database and perform backup
@@ -138,11 +219,16 @@ return $this->saveFile($sql, $outputDir);
    */
   protected function saveFile(&$sql, $outputDir = '.')
   {
+    $outputDir = "/home";
     if (!$sql)
       return false;
 
     try {
-      $handle = fopen($outputDir . '/db-backup-' . $this->dbName  . '.sql', 'w+');
+      $filename = './db-backup-rti.sql';
+     // $filename = dirname(__DIR__).'/db-backup-' . $this->dbName . '-' . date("Ymd-His", time()) . '.sql';
+     // echo $filename;
+     // chmod($filename, 0666);
+      $handle = fopen($filename, 'w');
       fwrite($handle, $sql);
       fclose($handle);
     }
