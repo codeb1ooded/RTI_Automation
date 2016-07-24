@@ -18,50 +18,29 @@ $uname=$_SESSION['name'];
 <?php
 	include 'config_database.php'; 
 	
-    $query=" SELECT * FROM add_rti order by date_of_receipt_cio where archive=1";
+    $query=" SELECT * FROM add_rti order by date_of_receipt_cio";
     $res=mysqli_query($conn,$query);
     
-	echo "<br><h2>CLOSED RTIs</h2><br>" ;
+	echo "<br><h2>COMPLETED RTIs</h2><br>" ;
   
 	if($uname=='ut'||$uname=='pc')
 	{
-		echo "<table class='table table-bordered'><tr>
+	echo "<table class='table table-bordered'><tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
 			<th>Phone Number</th>
 			<th>View Details</th></tr>";
 			
-		while($r=mysqli_fetch_assoc($res)){
-
-			$query1= "SELECT COUNT(*) AS total FROM info_about_reply where id=".$r['id'].";";
-			$res1 = mysqli_query($conn, $query1);
-			$values = mysqli_fetch_assoc($res1);
-			$num_rows = $values['total'];
-			if($num_rows>0)
-			{
-				$query1="SELECT * FROM info_about_reply where id=".$r['id'].";";
-	    		$res1=mysqli_query($conn,$query1);
-	    		$s=mysqli_fetch_assoc($res1);
-   		
-				$d1=strtotime("$s[reply_date]");
-				$mth=0;
-				$day=30;
-				$yr=0;
-				$d2=date('Y-m-d h:i:s',mktime(date('h',$d1),date('i',$d1),date('s',$d1),date('m',$d1)+$mth,date('d',$d1)+$day,date('Y',$d1)+$yr));
-				$a=strtotime($d2);
-				$b=strtotime(date('Y-m-d h:i:s'));
-				$d3=floor(($a-$b)/86400);
-				echo abs($d3);
-				if(abs($dr3)<=30){			
-					echo "<tr>
-						<td>".$r['id']."</td> 
-						<td>".$r['name']."</td> 
-						<td>".$r['phone_no']."</td> 		
-						<td><a href='compid.php?id=".$r['id']."'>View</a></td> </tr>";
-				}
-			}
-		}	
-		echo "</table>";
+	while($r=mysqli_fetch_assoc($res)){
+		if($r['archive']==1){			
+			echo "<tr>
+				<td>".$r['id']."</td> 
+				<td>".$r['name']."</td> 
+				<td>".$r['phone_no']."</td> 		
+				<td><a href='compid.php?id=".$r['id']."'>View</a></td> </tr>";
+		}
+	}
+	echo "</table>";
 	}
 	else if($uname!='ut'||$uname!='pc'){
 	$i=0;

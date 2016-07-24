@@ -27,10 +27,11 @@
 			 <a href='./report.php'>Generate Report</a><br><br><br>
 			 <a href='./backup_ask_user.html'>Create Backup</a><br><br><br>";
     }
-		echo"<a href='./ongoing_rti.php'>Ongoing RTIs</a><br><br><br>
+	echo"<a href='./ongoing_rti.php'>Ongoing RTIs</a><br><br><br>
+			 <a href='./completed_rti.php'>Completed RTIs</a><br><br><br>
 			 <a href='./view_closed_rti.php'>Closed RTIs</a>	
-	</div>
-	</div>";
+		</div>
+		</div>";
 }
 include 'logoff.html';
 ?>

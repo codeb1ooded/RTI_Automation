@@ -1,12 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 body {
-  background: #feffe8;
-background: -moz-linear-gradient(left, #feffe8 0%, #d6dbbf 100%);
-background: -webkit-linear-gradient(left, #feffe8 0%,#d6dbbf 100%);
-background: linear-gradient(to right, #feffe8 0%,#d6dbbf 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffe8', endColorstr='#d6dbbf',GradientType=1 );
- 
+background: #99cfe0;
+background: -moz-linear-gradient(left, #f9cfe0 0%, #d6dbbf 100%);
+background: -webkit-linear-gradient(left, #99cfe0 0%,#d6dbbf 100%);
+background: linear-gradient(to right, #99cfe0 0%,#d6dbbf 100%);
 }
 
 .btn {
@@ -16,9 +14,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffe8', end
   background-image: -ms-linear-gradient(top, #2d2e2e, #6b696b);
   background-image: -o-linear-gradient(top, #2d2e2e, #6b696b);
   background-image: linear-gradient(to bottom, #2d2e2e, #6b696b);
-  -webkit-border-radius: 23;
-  -moz-border-radius: 23;
-  border-radius: 23px;
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
   text-shadow: 1px 1px 3px #616161;
   -webkit-box-shadow: 1px 1px 3px #666666;
   -moz-box-shadow: 1px 1px 3px #666666;
@@ -28,6 +26,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffe8', end
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .btn:hover {

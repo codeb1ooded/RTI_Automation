@@ -22,8 +22,7 @@ $uname=$_SESSION['name'];
 	if($uname=='ut'||$uname=='pc'){
 		$query=" SELECT * FROM add_rti order by date_of_receipt_cio";
 		$res= mysqli_query($con, $query);
-		echo "<table  class=table table-bordered table-condensed width=100% border=2>" ;
-		echo "<table  width=100% border=2>" ;
+		echo "<table class=table table-bordered table-condensed>" ;
 		echo "<tr>
 		<th>ID</th>
 		<th>Applicant Name</th>
@@ -36,7 +35,7 @@ $uname=$_SESSION['name'];
 
 		while($r=mysqli_fetch_assoc($res))
 		{
-			if($r['archieve']==0)
+			if($r['archive']==0)
 			{			
 				$d1=strtotime("$r[date_of_receipt_cio]");
 				$mth=0;
@@ -99,7 +98,7 @@ $uname=$_SESSION['name'];
 				while($v!=0)
 				{
 					$r=mysqli_fetch_array($res);
-					if($r['archieve']==0)
+					if($r['archive']==0)
 					{			
 						$d1=strtotime("$r[date_of_receipt_cio]");
 						$mth=0;

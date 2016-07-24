@@ -8,7 +8,7 @@
 		include "ongoing_rti.php";
 		$id=$_GET['id'];
 		include 'config_database.php'; 
-		$sql="UPDATE add_rti SET archieve=1 WHERE id=".$id;
+		$sql="UPDATE add_rti SET archive=1 WHERE id=".$id;
 		mysqli_query($con,$sql);
 	?>
 	<h3><center>RTI Closed Succesfully</center></h3>

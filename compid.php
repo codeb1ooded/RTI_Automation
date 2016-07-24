@@ -219,8 +219,8 @@
 		}while($r6);
 	}
 	echo "</table>";
-	if($r1['archieve']==1)
-		echo "<a class=btn href='view_closed_rti.php'>Back</a>" ;
+	if($r1['archive']==1)
+		echo "<a class=btn href='completed_rti.php'>Back</a>" ;
 	else
 		echo "<a class=btn href='ongoing_rti_option.php?id=".$id."'>Back</a>" ;
 
