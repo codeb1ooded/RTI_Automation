@@ -1,14 +1,17 @@
 <?php
    include 'config_database.php'; 
    session_start();
+   $result = 'No';
    if(isset($_POST['submit'])){
       if($_SERVER["REQUEST_METHOD"] == "POST") {
          // username and password sent from form 
+         $db = mysqli_connect('localhost','root','','rti');
          $myusername = mysqli_real_escape_string($con, $_POST['username']);
          $mypassword = mysqli_real_escape_string($con, $_POST['password']); 
          if($myusername == '' || $mypassword == ''){ 
-            echo "Your Login Name or Password is empty";
-            echo '<script type="text/javascript"> alert("Username or password can\'t be empty"); </script>';
+            // echo "Your Login Name or Password is empty";
+            // echo '<script type="text/javascript"> alert("Username or password can\'t be empty"); </script>';
+            $result = 'empty';
          }
          else{
             $sql = "SELECT name FROM login WHERE name = '$myusername' and password = '$mypassword'";
@@ -22,12 +25,13 @@
       
             if($count == 1) {
                // session_register("name");
-               $_SESSION['name'] = $myusername;
-               header("location: select_option.php");
+                $_SESSION['login_user'] = $myusername;
+                $result = 'Yes';
+                header("location: select_option.php");
             }else {
-               $error = "Your Login Name or Password is invalid";
-               echo "Your Login Name or Password is invalid";
-               echo '<script type="text/javascript"> alert("Username & password don\'t match"); </script>';
+               // $error = "Your Login Name or Password is invalid";
+               // echo "Your Login Name or Password is invalid";
+               $result = 'incorrect';
             }
          }
       }
@@ -46,6 +50,14 @@
          function fpassoverlay(){
             alert("Please Contact Admin");
          }
+          window.onload = function(){
+            document.getElementById('username').onclick = function(){
+              document.getElementById("message").innerHTML="";
+            }
+            document.getElementById('password').onclick = function(){
+              document.getElementById("message").innerHTML="";
+            }
+          }
       </script>
    </head>
    <body>
@@ -61,6 +73,7 @@
      <div class="form-group log-status">
        <input type="password" class="form-control" placeholder="Password" id="password" name="password">
        <i class="fa fa-lock"></i></div>
+       <div id="message" style="color:ff0000"></div>
             <input  class ="log-btn" style="
                        background-image: -webkit-linear-gradient(top, #2d2e2e, #6b696b);
                 background-image: -moz-linear-gradient(top, #2d2e2e, #6b696b);
@@ -103,4 +116,13 @@
       </div>
    </div>
    </body>
+   <?php
+
+    if($result == 'incorrect'){
+        echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Wrong username & password"; document.getElementById("message").style.color = "#ff0000";</script>';
+    }
+    if($result == 'empty'){
+        echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Empty username or password"; document.getElementById("message").style.color = "#ff0000";</script>';
+    }
+   ?>
 </html>
