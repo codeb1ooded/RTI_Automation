@@ -83,7 +83,7 @@ $uname=$_SESSION['name'];
 	<th>Date of Receipt</th>
 	<th>Last date</th>
 	<th>Days left</th>
-	<th>Mark as completed</th>
+	<th>Options</th>
 	</tr>";  
 	$ido = -1;
 	while($data2!=0)
@@ -107,26 +107,23 @@ $uname=$_SESSION['name'];
 						$d2=date('Y-m-d h:i:s',mktime(date('h',$d1),date('i',$d1),date('s',$d1),date('m',$d1)+$mth,date('d',$d1)+$day,date('Y',$d1)+$yr));
 						$a=strtotime($d2);
 						$b=strtotime(date('Y-m-d h:i:s'));
-						$d3=floor(($a-$b)/86400);
-						echo "<table class='table table-bordered'>" ;	
+						$d3=floor(($a-$b)/86400);	
 						echo "<tr>";
 						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$r['id']." </a></th>";
 						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$r['name']."</a></th>"; 
 						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$r['date_of_receipt_cio']."</a></th>"; 		
 						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".date("Y-m-d",strtotime($d2))."</a></th>"; 
 						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$d3."</a></th>";
-						echo "</tr>";
-						echo"<table>";	
+						echo "<td><a href='ongoing_rti_option.php?id=".$r['id']."'>Select this RTI</a></td>";
+						echo "</tr>";	
 					}
 					$v--;
-					echo "</table>";
 				}
 				$ido=$i;
 			}
-			echo "</table>";
 			$data2--;
 		}
-
+		echo "</table>";
 	}
 	?>
 	<br><a href="select_option.php" class=btn>Back</a>

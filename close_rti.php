@@ -5,7 +5,7 @@
 <body>
 	
 	<?php
-		include "ongoing_rti.php";
+		include "select_option.php";
 		$id=$_GET['id'];
 		include 'config_database.php'; 
 		$sql="UPDATE add_rti SET archive=1 WHERE id=".$id;

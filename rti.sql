@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 10, 2016 at 10:30 AM
+-- Generation Time: Jul 29, 2016 at 01:31 AM
 -- Server version: 10.1.13-MariaDB
--- PHP Version: 7.0.8
+-- PHP Version: 7.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -44,23 +44,22 @@ CREATE TABLE `add_rti` (
   `fee_enclosed` varchar(10) NOT NULL,
   `fee_deposit_date` date NOT NULL,
   `pay_mode` varchar(20) NOT NULL,
-  `archieve` int(11) DEFAULT NULL
+  `archive` int(11) DEFAULT NULL,
+  `closed` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `add_rti`
 --
 
-INSERT INTO `add_rti` (`id`, `name`, `gender`, `address`, `pin_code`, `state`, `country`, `phone_no`, `mobile`, `email`, `citizenship`, `date_of_receipt`, `date_of_receipt_cio`, `timespan`, `fee_enclosed`, `fee_deposit_date`, `pay_mode`, `archieve`) VALUES
-(1, 'ut', 'Female', 'abc', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 0),
-(2, 'xyz', '', '', 0, '', '', '', '', '', 'Indian', '0000-00-00', '0000-00-00', 0, '', '0000-00-00', '', 0),
-(3, 'abc', 'Female', 'esdtrgyuij', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 0),
-(4, 'blah', 'Male', '', 0, '', 'India', '', '', '', 'Indian', '0000-00-00', '0000-00-00', 0, 'yes', '0000-00-00', '', 1),
-(5, 'utkarsha', 'Female', 'abcdef', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 0),
-(6, 'woah', 'Male', 'address', 110077, 'Andhra', 'India', '25090133', '9968813151', 'ug@gmail.com', 'Indian', '2016-06-17', '2016-06-18', 1, 'yes', '2016-06-17', 'cash', NULL),
-(7, 'woah', 'Male', 'address', 110077, 'Andhra', 'India', '25090133', '9968813151', 'ug@gmail.com', 'Indian', '2016-06-17', '2016-06-18', 1, 'yes', '2016-06-17', 'cash', NULL),
-(8, 'Tia', 'Female', 'Bh-3 East shalomar Bagh', 110088, 'Delhi', 'India', '98745874', '8932865258', 's@gmail.com', 'Indian', '2016-06-22', '2016-01-01', 172, 'yes', '2016-06-05', 'DD', 1),
-(9, 'tt', 'Male', 'aklSMZKAS', 110088, 'Delhi', 'India', '98258741', '2365410987', 'salonibhartia@ymail.com', 'Indian', '2016-07-08', '2016-07-09', 1, 'yes', '2016-07-08', 'DD', NULL);
+INSERT INTO `add_rti` (`id`, `name`, `gender`, `address`, `pin_code`, `state`, `country`, `phone_no`, `mobile`, `email`, `citizenship`, `date_of_receipt`, `date_of_receipt_cio`, `timespan`, `fee_enclosed`, `fee_deposit_date`, `pay_mode`, `archive`, `closed`) VALUES
+(1, 'ut', 'Female', 'abc', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 0, NULL),
+(3, 'abc', 'Female', 'esdtrgyuij', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 1, NULL),
+(5, 'utkarsha', 'Female', 'abcdef', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 1, NULL),
+(8, 'Tia', 'Female', 'Bh-3 East shalomar Bagh', 110088, 'Delhi', 'India', '98745874', '8932865258', 's@gmail.com', 'Indian', '2016-06-22', '2016-01-01', 172, 'yes', '2016-06-05', 'DD', 1, NULL),
+(9, 'tt', 'Male', 'aklSMZKAS', 110088, 'Delhi', 'India', '98258741', '2365410987', 'salonibhartia@ymail.com', 'Indian', '2016-07-08', '2016-07-09', 1, 'yes', '2016-07-08', 'DD', NULL, NULL),
+(10, 'ut', 'Male', 'dwarka', 110077, 'Delhi', 'India', '25090133', '9968813151', 'utkarshagoswami@gmail.com', 'Indian', '2016-06-20', '2016-06-20', 0, 'yes', '2016-06-20', 'DD', 1, 1),
+(11, 'codebenderut', 'Male', 'dwarka', 110077, 'Delhi', 'India', '25090133', '9968813151', 'utkarshagoswami@gmail.com', 'Indian', '2016-06-20', '2016-06-21', 1, 'yes', '2016-06-21', 'DD', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -196,8 +195,10 @@ CREATE TABLE `info_about_reply` (
 --
 
 INSERT INTO `info_about_reply` (`id`, `holder_receipt_date`, `reply_date`, `reply_mode`, `reply_time`, `faa_info`) VALUES
-(1, '0000-00-00', '0000-00-00', 'ghjhuefy', 0, ''),
-(4, '0000-00-00', '0000-00-00', 'blablah', 0, '');
+(3, '2016-07-19', '2016-07-19', 'paper', 3, 'yes'),
+(5, '2016-07-19', '2016-07-19', 'paper', 7, 'fgj,'),
+(10, '2016-06-21', '2016-06-21', 'paper', 0, 'yes'),
+(11, '2016-06-24', '2016-06-24', 'paper', 0, 'yes');
 
 -- --------------------------------------------------------
 
@@ -362,17 +363,17 @@ ALTER TABLE `section4`
 -- AUTO_INCREMENT for table `add_rti`
 --
 ALTER TABLE `add_rti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `first_appeal`
 --
 ALTER TABLE `first_appeal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `info_about_reply`
 --
 ALTER TABLE `info_about_reply`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `section4`
 --
