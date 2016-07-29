@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 29, 2016 at 01:31 AM
+-- Generation Time: Jul 29, 2016 at 02:44 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.6
 
@@ -207,6 +207,7 @@ INSERT INTO `info_about_reply` (`id`, `holder_receipt_date`, `reply_date`, `repl
 --
 
 CREATE TABLE `login` (
+  `id` int(11) NOT NULL,
   `name` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -215,14 +216,14 @@ CREATE TABLE `login` (
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`name`, `password`) VALUES
-('ut', 'nathu'),
-('pc', 'prachi'),
-('admin', 'xyzabc'),
-('examination', 'exam'),
-('Human Resource', 'HR'),
-('Academics', 'Ac'),
-('Appellant', 'ap');
+INSERT INTO `login` (`id`, `name`, `password`) VALUES
+(1, 'ut', 'nathu'),
+(2, 'pc', 'prachi'),
+(3, 'admin', 'admin'),
+(4, 'examination', 'exam'),
+(5, 'Human Resource', 'HR'),
+(6, 'Academics', 'Ac'),
+(7, 'Appellant', 'ap');
 
 -- --------------------------------------------------------
 
@@ -344,6 +345,12 @@ ALTER TABLE `info_about_reply`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `public_authority`
 --
 ALTER TABLE `public_authority`
@@ -374,6 +381,11 @@ ALTER TABLE `first_appeal`
 --
 ALTER TABLE `info_about_reply`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `section4`
 --
