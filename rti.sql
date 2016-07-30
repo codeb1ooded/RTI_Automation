@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 29, 2016 at 02:44 AM
+-- Generation Time: Jul 30, 2016 at 06:17 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.6
 
@@ -208,22 +208,23 @@ INSERT INTO `info_about_reply` (`id`, `holder_receipt_date`, `reply_date`, `repl
 
 CREATE TABLE `login` (
   `id` int(11) NOT NULL,
+  `Account_Type` varchar(20) NOT NULL,
   `name` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`id`, `name`, `password`) VALUES
-(1, 'ut', 'nathu'),
-(2, 'pc', 'prachi'),
-(3, 'admin', 'admin'),
-(4, 'examination', 'exam'),
-(5, 'Human Resource', 'HR'),
-(6, 'Academics', 'Ac'),
-(7, 'Appellant', 'ap');
+INSERT INTO `login` (`id`, `Account_Type`, `name`, `password`) VALUES
+(1, 'Admin', 'ut', '79f274b81e12c73855b278e438a1113b31f8971bd038c779c82304ef3c689288'),
+(2, 'Admin', 'pc', '1b23b1e9ef4fc64fecf356db55295ef5d77de1374a5af7803a7981badc82b764'),
+(3, 'Admin', 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918'),
+(4, 'HOD', 'examination', '5e89e9d8544af15b204bcdff94f047b0c1b60ab8e9c70edbbdd42b3c83b4ad83'),
+(5, 'HOD', 'Human Resource', '15e68b1f46577e27d82b47596b5bb9224ec847838c53432b4ae182a4e20a04e7'),
+(6, 'HOD', 'Academics', '44296048028f384f5a5a62524326847f8105fce79dc2c32b183855a7d9a0e75c'),
+(7, 'HOD', 'Appellant', '7978f506baa16285f4f3f6cee4f425c0bd5e06883e37ede4a8d8e62c03d660ef');
 
 -- --------------------------------------------------------
 

@@ -2,35 +2,33 @@
    include 'config_database.php'; 
    session_start();
    $result = 'No';
+
+   // Php code to check validation of entered username and password
    if(isset($_POST['submit'])){
       if($_SERVER["REQUEST_METHOD"] == "POST") {
-         // username and password sent from form 
-         $db = mysqli_connect('localhost','root','','rti');
          $myusername = mysqli_real_escape_string($con, $_POST['username']);
-         $mypassword = mysqli_real_escape_string($con, $_POST['password']); 
+         $password = mysqli_real_escape_string($con, $_POST['password']);
+         $mypassword = hash('sha256', $password); 
+
+         // If username or password is empty tell user,
          if($myusername == '' || $mypassword == ''){ 
-            // echo "Your Login Name or Password is empty";
-            // echo '<script type="text/javascript"> alert("Username or password can\'t be empty"); </script>';
             $result = 'empty';
          }
          else{
-            $sql = "SELECT name FROM login WHERE name = '$myusername' and password = '$mypassword'";
-            $result = mysqli_query($db,$sql);
-            $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-            //$active = $row['active'];
-      
+            // Access database to check if entered login username and password exist
+            $sql = "SELECT Account_type FROM login WHERE name = '$myusername' and password = '$mypassword'";
+            $result = mysqli_query($db, $sql);
+            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
             $count = mysqli_num_rows($result);
       
-            // If result matched $myusername and $mypassword, table row must be 1 row
-      
+            // If result matched $myusername and $mypassword, table row must be 1 row      
             if($count == 1) {
-               // session_register("name");
-                $_SESSION['login_user'] = $myusername;
+                echo "result ".$row['Account_type'];
                 $result = 'Yes';
+                // Redirect to select_option page
                 header("location: select_option.php");
             }else {
-               // $error = "Your Login Name or Password is invalid";
-               // echo "Your Login Name or Password is invalid";
+              // Username & password are incorrect
                $result = 'incorrect';
             }
          }
@@ -50,6 +48,7 @@
          function fpassoverlay(){
             alert("Please Contact Admin");
          }
+          // Reset message in html if user click either username or password element
           window.onload = function(){
             document.getElementById('username').onclick = function(){
               document.getElementById("message").innerHTML="";
@@ -70,6 +69,7 @@
        <i class="fa fa-user"></i>
      </div>
 
+     <!-- Html to show login form -->
      <div class="form-group log-status">
        <input type="password" class="form-control" placeholder="Password" id="password" name="password">
        <i class="fa fa-lock"></i></div>
@@ -117,7 +117,7 @@
    </div>
    </body>
    <?php
-
+    // Set message as per mistake in username & password
     if($result == 'incorrect'){
         echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Wrong username & password"; document.getElementById("message").style.color = "#ff0000";</script>';
     }
