@@ -5,9 +5,10 @@ if(isset($_POST['submit'])){
 	
 	include 'config_database.php'; 
 	
-	$name=$_POST['name'];
-	$pwd=$_POST['pswd'];
-	
+	$name = $_POST['name'];
+	$upass = $_POST['pswd'];
+	$pwd = hash('sha256', $upass);;
+	echo $upass;
 	$_SESSION['name']=$name;
 			
 	if($name!='' && $pwd!=''){		

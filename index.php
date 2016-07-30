@@ -17,13 +17,13 @@
          else{
             // Access database to check if entered login username and password exist
             $sql = "SELECT Account_type FROM login WHERE name = '$myusername' and password = '$mypassword'";
-            $result = mysqli_query($db, $sql);
+            $result = mysqli_query($con, $sql);
             $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
             $count = mysqli_num_rows($result);
       
             // If result matched $myusername and $mypassword, table row must be 1 row      
             if($count == 1) {
-                echo "result ".$row['Account_type'];
+                $_SESSION['login_access'] = $row['Account_type'];
                 $result = 'Yes';
                 // Redirect to select_option page
                 header("location: select_option.php");
