@@ -1,5 +1,5 @@
 <?php
-   include 'config_database.php'; 
+   include 'config_database.php';
    session_start();
    $result = 'No';
 
@@ -8,22 +8,23 @@
       if($_SERVER["REQUEST_METHOD"] == "POST") {
          $myusername = mysqli_real_escape_string($con, $_POST['username']);
          $password = mysqli_real_escape_string($con, $_POST['password']);
-         $mypassword = hash('sha256', $password); 
+         $mypassword = hash('sha256', $password);
 
          // If username or password is empty tell user,
-         if($myusername == '' || $mypassword == ''){ 
+         if($myusername == '' || $mypassword == ''){
             $result = 'empty';
          }
          else{
             // Access database to check if entered login username and password exist
-            $sql = "SELECT Account_type FROM login WHERE name = '$myusername' and password = '$mypassword'";
+            $sql = "SELECT Account_type, DEPARTMENT FROM login WHERE name = '$myusername' and password = '$mypassword'";
             $result = mysqli_query($con, $sql);
             $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
             $count = mysqli_num_rows($result);
-      
-            // If result matched $myusername and $mypassword, table row must be 1 row      
+
+            // If result matched $myusername and $mypassword, table row must be 1 row
             if($count == 1) {
                 $_SESSION['login_access'] = $row['Account_type'];
+                $_SESSION['department'] = $row['DEPARTMENT'];
                 $result = 'Yes';
                 // Redirect to select_option page
                 header("location: select_option.php");

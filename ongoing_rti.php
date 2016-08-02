@@ -1,8 +1,8 @@
 <?php
 if(!isset($_SESSION)){
-session_start();
-$uname=$_SESSION['name'];
-}	
+	session_start();
+	$account_type = $_SESSION['login_access'];
+}
 ?>
 <html>
 <head>
@@ -14,12 +14,12 @@ $uname=$_SESSION['name'];
 </head>
 <body>
 	<?php
-	include 'config_database.php'; 
+	include 'config_database.php';
 	echo "<div class='container'>";
 	echo "<h2>ONGOING RTIs</h2>" ;
 	echo "<marquee><strong>SELECT THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
-	
-	if($uname=='ut'||$uname=='pc'){
+
+	if($account_type == 'Admin'){
 		$query=" SELECT * FROM add_rti order by date_of_receipt_cio";
 		$res= mysqli_query($con, $query);
 		echo "<table class=table table-bordered table-condensed>" ;
@@ -31,12 +31,10 @@ $uname=$_SESSION['name'];
 		<th>Days left</th>
 		<th>Options</th>
 		<th>Close RTI</th>
-		</tr>";  
+		</tr>";
 
-		while($r=mysqli_fetch_assoc($res))
-		{
-			if($r['archive']==0)
-			{			
+		while($r=mysqli_fetch_assoc($res)) {
+			if($r['archive']==0) {
 				$d1=strtotime("$r[date_of_receipt_cio]");
 				$mth=0;
 				$day=30;
@@ -48,9 +46,9 @@ $uname=$_SESSION['name'];
 
 				echo "<tr>";
 				echo "<td>".$r['id']."</td>";
-				echo "<td>".$r['name']."</td>"; 
-				echo "<td>".$r['date_of_receipt_cio']."</td>"; 		
-				echo "<td>".date("Y-m-d",strtotime($d2))."</td>"; 
+				echo "<td>".$r['name']."</td>";
+				echo "<td>".$r['date_of_receipt_cio']."</td>";
+				echo "<td>".date("Y-m-d",strtotime($d2))."</td>";
 				echo "<td>".$d3."</td>";
 				echo "<td><a href='ongoing_rti_option.php?id=".$r['id']."'>Select this RTI</a></td>";
 				echo "<td><a href='close_rti.php?id=".$r['id']."'>Close This RTI</a></td>";
@@ -59,47 +57,45 @@ $uname=$_SESSION['name'];
 		}
 		echo "</table>";
 	}
-	else if($uname!='ut'||$uname!='pc')
-		{	$i=0;
-			$m='';
-			if($uname=='admin')
-				$m='Ad';
-			if($uname=='examination')
-				$m='Ex';
-			if($uname=='Human Resource')
-				$m='HR';
-			if($uname=='Academics')
-				$m='Ac';
-			
-	$_SESSION['map']=$m;
-	
-	$query=" SELECT * FROM t2 WHERE map='".$m."' order by id;";// order by id";
-    $data=mysqli_query($con,$query);
-	$data2=mysqli_num_rows($data);
-	echo "<table class='table table-bordered'>" ;
-	echo "<tr>
-	<th>ID</th>
-	<th>Applicant Name</th>
-	<th>Date of Receipt</th>
-	<th>Last date</th>
-	<th>Days left</th>
-	<th>Options</th>
-	</tr>";  
-	$ido = -1;
-	while($data2!=0)
-		{	$data3=mysqli_fetch_array($data);
+	else if($account_type != 'Admin') {
+		$dept = $_SESSION['department'];
+		$i=0;
+		$m='';
+		if($dept == 'Admin')
+			$m='Ad';
+		if($dept == 'Examination')
+			$m='Ex';
+		if($dept == 'Human Resource')
+			$m='HR';
+		if($dept == 'Academics')
+			$m='Ac';
+
+		$_SESSION['map']=$m;
+
+		$query=" SELECT * FROM t2 WHERE map='".$m."' order by id;";// order by id";
+		$data=mysqli_query($con,$query);
+		$data2=mysqli_num_rows($data);
+		echo "<table class='table table-bordered'>" ;
+		echo "<tr>
+		<th>ID</th>
+		<th>Applicant Name</th>
+		<th>Date of Receipt</th>
+		<th>Last date</th>
+		<th>Days left</th>
+		<th>Options</th>
+		</tr>";
+		$ido = -1;
+		while($data2!=0){
+			$data3=mysqli_fetch_array($data);
 			$i=$data3['id'];
-			if($i!=$ido)
-			{
+			if($i!=$ido) {
 				$quer="SELECT * FROM add_rti WHERE id=".$i." order by date_of_receipt_cio;";
 				$res=mysqli_query($con,$quer);
 				$v=mysqli_num_rows($res);
 
-				while($v!=0)
-				{
+				while($v!=0) {
 					$r=mysqli_fetch_array($res);
-					if($r['archive']==0)
-					{			
+					if($r['archive']==0) {
 						$d1=strtotime("$r[date_of_receipt_cio]");
 						$mth=0;
 						$day=30;
@@ -107,15 +103,15 @@ $uname=$_SESSION['name'];
 						$d2=date('Y-m-d h:i:s',mktime(date('h',$d1),date('i',$d1),date('s',$d1),date('m',$d1)+$mth,date('d',$d1)+$day,date('Y',$d1)+$yr));
 						$a=strtotime($d2);
 						$b=strtotime(date('Y-m-d h:i:s'));
-						$d3=floor(($a-$b)/86400);	
+						$d3=floor(($a-$b)/86400);
 						echo "<tr>";
 						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$r['id']." </a></th>";
-						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$r['name']."</a></th>"; 
-						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$r['date_of_receipt_cio']."</a></th>"; 		
-						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".date("Y-m-d",strtotime($d2))."</a></th>"; 
+						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$r['name']."</a></th>";
+						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$r['date_of_receipt_cio']."</a></th>";
+						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".date("Y-m-d",strtotime($d2))."</a></th>";
 						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$d3."</a></th>";
 						echo "<td><a href='ongoing_rti_option.php?id=".$r['id']."'>Select this RTI</a></td>";
-						echo "</tr>";	
+						echo "</tr>";
 					}
 					$v--;
 				}
