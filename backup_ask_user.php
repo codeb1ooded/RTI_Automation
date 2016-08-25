@@ -1,3 +1,11 @@
+<?php
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+    include 'index.php';
+    echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
+?>
 <html>
 	<head>
 		<title> Backup </title>
@@ -26,7 +34,7 @@
   					<th><input type="radio" name="article_sub_section" value="yes" checked> Yes</th>
 					<th><input type="radio" name="article_sub_section" value="no"> No</th>
 			</tr>
-			<tr> 
+			<tr>
 				<th>Department Reply</th>
   					<th><input type="radio" name="dept_reply" value="yes" checked> Yes</th>
 					<th><input type="radio" name="dept_reply" value="no"> No</th>
@@ -66,4 +74,5 @@
 	</form>
 	<br><br><br><br><a href="select_option.php" class=btn>Back</a>
 	</body>
-</html> 
+</html>
+<?php } ?>

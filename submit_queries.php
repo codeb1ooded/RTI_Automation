@@ -1,5 +1,10 @@
 <?php
-	session_start();
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+		include 'index.php';
+		echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
 	$id=$_SESSION['id'];
 	$_SESSION['no_of_queries']=$_POST['ques'];
 ?>
@@ -14,7 +19,7 @@
 <?php
 	include 'config_database.php';
 	$a=$_POST['ques'];
-	
+
 	echo " <h3>RTI ID:".$id."</h3>";
 	echo "<table>
 			<tbody>
@@ -39,7 +44,7 @@
 			} else if(selected == "Ex"){
 				mailid = "examination@igdtuw.com";
 			} else if(selected == "Ad"){
-				mailid = "administrative@igdtuw.com";						
+				mailid = "administrative@igdtuw.com";
 			} else{
 				mailid = "humaresource@igdtuw.com";
 			}
@@ -67,7 +72,7 @@
 
 
 		<tr>
-			<th><input type=text name=<?php echo $c; ?> value=<?php echo $c; ?> readonly></th>	
+			<th><input type=text name=<?php echo $c; ?> value=<?php echo $c; ?> readonly></th>
 			<th><input type=text name=<?php echo $ques; ?> id=<?php echo $ques; ?>></th>
 			<th><select name=<?php echo $map; ?> id=<?php echo $dropdown;?> >
 					<span>
@@ -79,16 +84,16 @@
 					</span>
 				</select>
 			</th>
-			
+
 			<th><input type=date name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
 			<th><button type="button" name="mail_button" class=btn onclick="mailTo(<?php echo $a; ?>);">Mail</button></th>
-<?php		
-		echo '</tr>';				
+<?php
+		echo '</tr>';
 		$a--;
 		$c++;
 	}
 	echo "<th colspan=15></th><th><input class='btn' type=submit name=gen_pdf value='Generate Reply'><th>";
-	
+
 	echo "<th colspan=15></th><th><input type=submit name=save class=btn value='Save and Exit' ></th>";
 	echo "</form>";
 	echo "<th colspan=15></th><th><a href='select_option.php' name=exit  class=btn>Exit</a></th>";
@@ -96,3 +101,4 @@
 ?>
 </body>
 </html>
+<?php } ?>

@@ -1,3 +1,11 @@
+<?php
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+		include 'index.php';
+		echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
+?>
 <html>
 
 	<head>
@@ -21,25 +29,25 @@
     if($res)
     {
 ?>
-<!--Processing of RTI application and response to the appellant-->	
+<!--Processing of RTI application and response to the appellant-->
 <h4><strong>(III) Processing of RTI application and response to the appellant-</strong></h4>
 	<form action ="reply&section4.php" method ="post">
 		<table class="table table-bordered">
 			<tr>
 				<th>Date of receipt of information by the CPIO from the holder(s) of information</th>
 				<th><input type="text" style="height:32px" name="holder_receipt_date" value=<?php echo $res['holder_receipt_date']; ?> placeholder="YYYY-MM-DD"></th>
-			</tr>	
-			
+			</tr>
+
 			<tr>
 				<th>Date of reply to appellant/complaint by CPIO</th>
 				<th><input type="text" style="height:32px" name="reply_date" value="<?php echo $res['reply_date']; ?> placeholder="YYYY-MM-DD"></th></tr>
 			</tr>
-	
+
 			<tr>
 				<th>Mode of communicating reply </th>
 				<th><input type="text" style="height:32px" name="reply_mode" value=<?php echo $res['reply_mode']; ?>"></th>
 			</tr>
-			
+
 			<tr>
 				<th>Whether name and address of FAA mentioned in the reply u/s 7(8)(give particulars)</th>
 				<th><input type="text" style="height:32px" name="faa_info" value=<?php echo $res['faa_info']; ?> ></th>
@@ -59,18 +67,18 @@
 			<tr>
 				<th>Date of receipt of information by the CPIO from the holder(s) of information</th>
 				<th><input type="text" style="height:32px" name="holder_receipt_date" value="" placeholder="YYYY-MM-DD"></th>
-			</tr>	
-			
+			</tr>
+
 			<tr>
 				<th>Date of reply to appellant/complaint by CPIO</th>
 				<th><input type="text" style="height:32px" name="reply_date" value="" placeholder="YYYY-MM-DD"></th></tr>
 			</tr>
-	
+
 			<tr>
 				<th>Mode of communicating reply </th>
 				<th><input type="text" style="height:32px" name="reply_mode" maxlength="50"></th>
 			</tr>
-			
+
 			<tr>
 				<th>Whether name and address of FAA mentioned in the reply u/s 7(8)(give particulars)</th>
 				<th><input type="text" style="height:32px" name="faa_info" value="" placeholder=""></th>
@@ -85,3 +93,4 @@
 </div>
 </body>
 </html>
+<?php } ?>

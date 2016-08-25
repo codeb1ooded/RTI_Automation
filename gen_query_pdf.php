@@ -1,4 +1,12 @@
-<?php 
+<?php
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+  // echo 'session not started';
+    include 'index.php';
+    echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
+?>
+<?php
  if(!isset($_SESSION)) {
 	session_start();
 }
@@ -21,7 +29,7 @@ echo "End of queries ".$d;
 $a=$b;
 
 while($a<=$d)
-{	
+{
 		echo"<li>";
 				echo"<a href='gen_q.php?qno=".$a."' target=_blank><input type=submit name=query_btn value=query_no_is_".$a."></a>";
 		echo"</li>";
@@ -32,3 +40,4 @@ echo"<br>";
 echo"<a href='ongoing_rti.php'><input type=submit class=btn value=Exit></a>";
 ?>
 </html>
+<?php } ?>

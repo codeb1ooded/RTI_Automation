@@ -1,3 +1,11 @@
+<?php
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+    include 'index.php';
+    echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
+?>
 <html>
 <head>
 	<title>First Appeal Form</title>
@@ -46,9 +54,9 @@
 			</form>
 	<?php
 			echo "<a class=btn href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
-		} 
+		}
 		else {
-	?>	
+	?>
 			<h4><strong>(VI) I<sup>st</sup> Appeal (where applicable):</strong></h4>
 			<form action = "appeal_query.php" method ="post">
 				<table class="table table-bordered">
@@ -81,3 +89,4 @@
 	</div>
 </body>
 </html>
+<?php } ?>

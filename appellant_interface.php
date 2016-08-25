@@ -1,5 +1,10 @@
 <?php
-
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+    include 'index.php';
+    echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
 include'config_database.php';
 $sql="SELECT * FROM first_appeal ";
 $res=mysqli_query($con,$sql);
@@ -25,6 +30,7 @@ while($b!=0)
 	</tr>";
 
 $b--;
-}	
+}
 ?>
 </table>
+<<?php } ?>

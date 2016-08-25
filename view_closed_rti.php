@@ -1,5 +1,11 @@
 <?php
-session_start();
+<?php
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+		include 'index.php';
+		echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
 $account_type = $_SESSION['login_access'];
 ?>
 <html>
@@ -134,3 +140,4 @@ $account_type = $_SESSION['login_access'];
 	</div>
 </body>
 </html>
+<?php } ?>

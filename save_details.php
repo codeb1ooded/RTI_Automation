@@ -1,7 +1,10 @@
 <?php
- if(!isset($_SESSION)) {
-	session_start();
- }
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+		include 'index.php';
+		echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
 ?>
 <html>
 	<head>
@@ -9,20 +12,20 @@
 		<link rel="stylesheet" href="css/background.css">
 		<meta charset="utf-8">
 	</head>
-	
+
 <body>
-<?php	
-	include 'config_database.php'; 
-	
+<?php
+	include 'config_database.php';
+
 	$d1=strtotime($_POST['date_of_receipt']);
 	$d2=strtotime($_POST['date_of_receipt_cio']);
 	$d3=floor(abs($d2-$d1)/86400);
-	
+
 	$sql="INSERT INTO add_rti (name,gender,address,pin_code,state,country,phone_no,mobile,email,citizenship,date_of_receipt,date_of_receipt_cio,timespan,fee_enclosed,fee_deposit_date,pay_mode)
 	VALUES('$_POST[name]','$_POST[gender]','$_POST[address]','$_POST[pc]','$_POST[state]','$_POST[country]','$_POST[phone]','$_POST[mobile]','$_POST[email]','$_POST[citizenship]','$_POST[date_of_receipt]','$_POST[date_of_receipt_cio]','$d3','$_POST[fee]','$_POST[fee_deposit_date]','$_POST[pay_mode]')";
-	
+
 	mysqli_query($con, $sql);
-	
+
 	$a=0;
 	$k="SELECT * FROM add_rti";
 	$v=mysqli_query($con,$k);
@@ -31,16 +34,16 @@
 		$a=$r['id'];
 	}
 	$_SESSION['id']=$a;
-	
+
  if(isset($_POST['add'])){
-	
+
 	echo "<strong>RTI ID: </strong>".$a;
 	echo "<form action=submit_queries.php method=post>";
 	echo "<tr>
 		<th><h3>No. of Queries</h3></th>
 		<th><input type=text name=ques></th>
 		<th><input type=submit name=enter class=btn value='Enter'></th>
-		</tr>";	
+		</tr>";
 	}
 	else
 		include 'select_option.php';
@@ -48,3 +51,4 @@
 ?>
 </body>
 </html>
+<?php } ?>

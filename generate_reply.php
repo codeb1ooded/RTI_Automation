@@ -1,3 +1,11 @@
+<?php
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+		include 'index.php';
+		echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
+?>
 	<html>
 	<head>
 		<title>Generate Reply</title>
@@ -8,8 +16,8 @@
 	<body>
 		<?php
 		$id=$_GET['id'];
-		include 'config_database.php'; 
-		
+		include 'config_database.php';
+
 		$data1 = "SELECT * FROM t2 WHERE id=".$id.";";
 		$query = mysqli_query($con,$data1);
 		$data2 = mysqli_num_rows($query);
@@ -29,7 +37,7 @@
 		$query4 = mysqli_query($con, $data7);
 
 		if($data2 == $data6){
-			echo" 
+			echo"
 			Ref.: CPIO/	</br>						Dated:
 			</br></br></br>
 			To </br></br> Name: ".$add_rtirows['name']."</br></br>Address: ".$add_rtirows['address']."</br></br></br>
@@ -61,7 +69,7 @@
 				$ans="ans".$a;
 				?>
 				<tr>
-					<th>"<?php echo $t2rows['q_no']?></th>	
+					<th>"<?php echo $t2rows['q_no']?></th>
 					<th><?php echo $t2rows['ques']?></th>
 					<th><?php echo $t2rows['ans']?></th>
 				</tr>
@@ -72,7 +80,7 @@
 			Designation/CPIO
 
 			Encl.: As above.";
-			
+
 			echo"</table>";
 			echo "<button class='btn' onclick='myFuction()'>Print the reply</button>";
 			?>
@@ -88,3 +96,4 @@
 			?>
 		</body>
 		</html>
+		<?php } ?>

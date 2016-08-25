@@ -1,21 +1,26 @@
 <?php
-	session_start();
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+		include 'index.php';
+		echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
 	$id=$_SESSION['id'];
-	
-	include 'config_database.php'; 
+
+	include 'config_database.php';
 	$qno=$_GET['qno'];
 	$data3="SELECT * FROM add_rti WHERE id=".$id.";";
     $query2=mysqli_query($con,$data3);
     $data4=mysqli_num_rows($query2);
     $b=$data4;
     $add_rtirows=mysqli_fetch_array($query2);
-	
+
 	$data1="SELECT * FROM t2 WHERE id=".$id." AND q_no=".$qno.";";
 	$query=mysqli_query($con,$data1);
 	$data2=mysqli_fetch_assoc($query);
 	echo"</br>";
-	
-	echo" 
+
+	echo"
 Subject:- 	Information required under Section 6(1) of the Right to Information Act, 2005.</br></br>
 
 	Shri.".$add_rtirows['name'] . " has sought the following information:-</br></br>
@@ -44,13 +49,14 @@ echo"5.	The receipt of this communication may please be acknowledged.
 (Name and designation of CPIO)</br></br>
 To,</br>".
 	$data2['map']."</br></br></br>";
-	
+
 	echo"<a href='select_option.php'><input type=submit value=Exit></a>";
 	echo "<button onclick='myFuction()'>Print the reply</button>";
-	
+
 	?>
 	<script>
     function myFuction(){
 	                window.print();
                         }
 </script>
+<?php } ?>

@@ -1,5 +1,10 @@
 <?php
-session_start();
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+		include 'index.php';
+		echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
 ?>
 <html>
 <head>
@@ -9,13 +14,13 @@ session_start();
 </head>
 
 <body>
-<?php	
-	include 'config_database.php'; 
+<?php
+	include 'config_database.php';
 	$id = $_POST['ID'];
 	$d1=strtotime($_POST['date_of_receipt']);
 	$d2=strtotime($_POST['date_of_receipt_cio']);
 	$d3=floor(abs($d2-$d1)/86400);
-	
+
 	$data = "UPDATE add_rti SET
 			name = '$_POST[name]',
 			gender = '$_POST[gender]',
@@ -37,20 +42,20 @@ session_start();
 
 	if ($con->query($data) === TRUE) {
 		echo "<b>Details of record updated successfully<b><br>";
-	} 
+	}
 	else {
 		echo "Error updating record: " . $con->error;
 	}
-	
+
 if(isset($_POST['edit']))
 {
 	$data1="SELECT * FROM t2 WHERE id=".$id.";";
 	$query=mysqli_query($con,$data1);
 	$data2=mysqli_num_rows($query);
-	
+
 	$_SESSION['qu']= $data2;
 	$a=$data2;
-	
+
 	echo "<table>
 			<tbody>
 				<tr>
@@ -74,7 +79,7 @@ if(isset($_POST['edit']))
 			} else if(selected == "Ex"){
 				mailid = "examination@igdtuw.com";
 			} else if(selected == "Ad"){
-				mailid = "administrative@igdtuw.com";						
+				mailid = "administrative@igdtuw.com";
 			} else{
 				mailid = "humaresource@igdtuw.com";
 			}
@@ -102,7 +107,7 @@ if(isset($_POST['edit']))
 		$date_s_id= "date_s".$qno;
 ?>
 		<tr>
-			<th><input  value="<?php echo $data3['q_no']?>" type=text name=<?php echo $qno; ?>></th>	
+			<th><input  value="<?php echo $data3['q_no']?>" type=text name=<?php echo $qno; ?>></th>
 			<th><input type=text name=<?php echo $ques; ?> value="<?php echo $data3['ques'];?>" id=<?php echo $ques_id; ?>></th>
 			<th><select name=<?php echo $map; ?> id=<?php echo $map_id; ?> >
 					<span>
@@ -117,7 +122,7 @@ if(isset($_POST['edit']))
 			<th><input type=date name=<?php echo $date_s; ?> value="<?php echo $data3['date_sent'] ?>" id=<?php echo $date_s_id; ?> placeholder=YYYY-MM-DD></th>
 			<th><button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button></th>
 		</tr>
-<?php				
+<?php
 		$sql="DELETE FROM t2 WHERE id=".$id.";";
 		mysqli_query($con,$sql);
 		$a--;
@@ -125,9 +130,9 @@ if(isset($_POST['edit']))
 	echo "<th colspan=15></th><th><input type=submit name=save class=btn value='Save and Exit' ></th>";
 	echo "<th colspan=15></th><th><input type=submit name=reply class=btn value='Generate Reply' ></th>";
 	echo "</form>";
-}	
+}
 $con->close();
-
 ?>
 </body>
 </html>
+<?php } ?>

@@ -1,3 +1,11 @@
+<?php
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+		include 'index.php';
+		echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
+?>
 <html>
 	<head>
 		<title>Section 4</title>
@@ -28,23 +36,23 @@
 				<th> Date of intimation given to appelant regarding fee u/s</br> 7(1) chargeable  and his right to review</th>
 				<th><input type="text" style="height:32px" name="info_fee_date" id="Name" value=<?php echo $res['info_fee_date']; ?> placeholder="YYYY-MM-DD"></th>
 			</tr>
-			
+
 			<tr>
 				<th>Quantum of (a) Fee & (b) Further fee indicated to be charged</th>
 				<th><input type="text" style="height:32px" name="info_fee" id="Name" value=<?php echo $res['info_fee']; ?> placeholder=""></th>
 			</tr>
-			
+
 			<tr>
 				<th>(vi)Date of depositing fees by petitioner as demanded by CPIO </br>(indicate mode of depositing fee too)</th>
 				<th><input type="text" style="height:32px" name="fee_submit_date" id="Name" value=<?php echo $res['fee_submit_date']; ?> placeholder="YYYY-MM-DD"></th>
 			</tr>
-			
+
 			<tr>
 				<th>(vii)Date of furnishing information </th>
 				<th><input type="text" style="height:32px" name="given_info_date" id="Name" value=<?php echo $res['given_info_date']; ?> placeholder="YYYY-MM-DD"></th>
 			</tr>
 		</table>
-	
+
 <?php
 	echo "<input type='submit' value ='Save and Exit' class=btn name='submitSection4new'>" ;
 	echo "&nbsp&nbsp<a class='btn' href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
@@ -59,17 +67,17 @@
 				<th> Date of intimation given to appelant regarding fee u/s</br> 7(1) chargeable  and his right to review</th>
 				<th><input type="text" style="height:32px" name="info_fee_date" id="Name" value="" placeholder="YYYY-MM-DD"></th>
 			</tr>
-			
+
 			<tr>
 				<th>Quantum of (a) Fee & (b) Further fee indicated to be charged</th>
 				<th><input type="text" style="height:32px" name="info_fee" id="Name" value="" class="name" placeholder=""></th>
 			</tr>
-			
+
 			<tr>
 				<th>(vi)Date of depositing fees by petitioner as demanded by CPIO </br>(indicate mode of depositing fee too)</th>
 				<th><input type="text" style="height:32px" name="fee_submit_date" id="Name" value="" class="name" placeholder="YYYY-MM-DD"></th>
 			</tr>
-			
+
 			<tr>
 				<th>(vii)Date of furnishing information </th>
 				<th><input type="text" style="height:32px" name="given_info_date" id="Name" value="" class="name" placeholder="YYYY-MM-DD"></th>
@@ -84,3 +92,4 @@ echo "<input type='submit' value ='Save and Exit' class=btn name='submitSection4
 </div>
 </body>
 </html>
+<?php } ?>

@@ -1,3 +1,11 @@
+<?php
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+  // echo 'session not started';
+    include 'index.php';
+    echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
+?>
 <html>
 <head>
 <style type="text/css">
@@ -29,18 +37,18 @@
 	</form>
 <?php
 if(isset($_POST['submit']))
-{ 
+{
 	mysql_connect('localhost','root','') or die(mysql_error());
 	mysql_select_db('rti') or die(mysql_error());
 	$mail=$_POST['mail'];
 	$q=mysql_query("select * from login where email='".$mail."' ") or die(mysql_error());
 	$p=mysql_affected_rows();
-	if($p!=0) 
+	if($p!=0)
 	{
 		$res=mysql_fetch_array($q);
 		$to=$res['email'];
 		$subject='Remind password';
-		$message='Your password : '.$res['password']; 
+		$message='Your password : '.$res['password'];
 		$headers='From:ugbakwaas@gmail.com';
 		$m=mail($to,$subject,$message,$headers);
 		if($m)
@@ -60,3 +68,4 @@ if(isset($_POST['submit']))
 ?>
 </body>
 </html>
+<?php } ?>

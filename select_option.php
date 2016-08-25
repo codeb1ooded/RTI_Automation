@@ -1,7 +1,10 @@
 <?php
- if(!isset($_SESSION)) {
-	session_start();
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+    include 'index.php';
+    echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
 }
+else{
 ?>
 <html>
 	<head>
@@ -9,7 +12,7 @@
 		<link rel="stylesheet" href="css/new_prev.css">
 		<link rel="stylesheet" href="css/background.css">
 	</head>
-	
+
 <?php
 	// Variable $login_access defines which type of user is logged in and then give response of the page as per that
 	$login_access = $_SESSION['login_access'];
@@ -22,16 +25,17 @@
 	echo "<div class=options>";
 
 	if($login_access=='Admin') {
-		echo"<a href='./add_rti.html'>Add New RTI</a><br><br><br>
+		echo"<a href='./add_rti.php'>Add New RTI</a><br><br><br>
 			 <a href='./report.php'>Generate Report</a><br><br><br>
 			 <a href='./backup_ask_user.html'>Create Backup</a><br><br><br>
 			 <a href='./change_password.php'>Change Password</a><br><br><br>";
     }
 	echo"<a href='./ongoing_rti.php'>Ongoing RTIs</a><br><br><br>
 			 <a href='./completed_rti.php'>Completed RTIs</a><br><br><br>
-			 <a href='./view_closed_rti.php'>Closed RTIs</a>	
+			 <a href='./view_closed_rti.php'>Closed RTIs</a>
 		</div>
 		</div>";
 }
-include 'logoff.html';
+include 'logoff.php';
+}
 ?>

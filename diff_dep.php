@@ -1,5 +1,10 @@
 <?php
-session_start();
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+		include 'index.php';
+		echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
 $m=$_SESSION['map'];
 
 include 'config_database.php';
@@ -24,14 +29,14 @@ echo "<table  width=100% border=2>" ;
 			<th>Query Number</th>
 			<th>Query</th>
 			<th>Reply</th>
-		</tr>";  
+		</tr>";
 $t=1;
 while($v!=0)
 {
 	$r=mysqli_fetch_array($res);
 	$w=mysqli_fetch_array($res2);
 	if ($r['map']==$m )
-	{	
+	{
 		$q=$r['q_no'];
 		$ans="ans".$t;
 		$qno="qno".$t;
@@ -44,14 +49,15 @@ while($v!=0)
 				echo "<th><input type=text name=$ans></th>";
 		echo"</tr>";
 		$t++;
-			
+
 	}
-	
-	
+
+
 	$v--;
 	}
 echo "</table>";
 			echo"<button class=btn>Mark complete</button>";
 echo"</form>";
 $_SESSION['que']=$t;
+}
 ?>

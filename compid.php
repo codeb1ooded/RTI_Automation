@@ -1,3 +1,11 @@
+<?php
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+    include 'index.php';
+    echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
+?>
 <html>
 	<head>
 		<title>Completed RTI</title>
@@ -10,26 +18,26 @@
 <body>
 <div class='container'>
 <?php
-	include 'config_database.php'; 
+	include 'config_database.php';
 	$id=$_GET['id'];
-	
+
 	echo "<h4><strong>RTI Details for ID ".$id." are-</strong></h4>" ;
 	$query=" SELECT * FROM add_rti where id=".$id;
     $res=mysqli_query($con, $query);
 	$r1=mysqli_fetch_assoc($res);
-	
+
 	$query=" SELECT * FROM info_about_reply where id=".$id;
     $res=mysqli_query($con, $query);
 	$r2=mysqli_fetch_assoc($res);
-	
+
 	$query=" SELECT * FROM section4 where id=".$id;
     $res=mysqli_query($con, $query);
 	$r3=mysqli_fetch_assoc($res);
-	
+
 	$query=" SELECT * FROM public_authority where id=".$id;
     $res=mysqli_query($con, $query);
 	$r4=mysqli_fetch_assoc($res);
-	
+
 	$query=" SELECT * FROM first_appeal where id=".$id;
     $res=mysqli_query($con, $query);
 	$r5=mysqli_fetch_assoc($res);
@@ -37,7 +45,7 @@
 		echo "<tr>
 				<th>Field</th>
 				<th>Value</th>
-			</tr>";  
+			</tr>";
 		echo "<tr>";
 			echo "<td>RTI Id</td>";
 			echo "<td>".$r1['id']."</td>";
@@ -98,7 +106,7 @@
 			echo "<td>Mode of payment(cheque/DD,cash,IPO)</td>";
 			echo "<td>".$r1['pay_mode']."</td>";
 		echo "</tr>";
-		
+
 		if($r2)
 		{
 			echo "<tr>";
@@ -118,7 +126,7 @@
 				echo "<td>".$r2['faa_info']."</td>";
 			echo "</tr>";
 		}
-		
+
 		if($r3)
 		{
 			echo "<tr>";
@@ -138,7 +146,7 @@
 				echo "<td>".$r3['given_info_date']."</td>";
 			echo "</tr>";
 		}
-		
+
 		if($r4)
 		{
 			echo "<tr>";
@@ -154,7 +162,7 @@
 				echo "<td>".$r4['Areceived_date']."</td>";
 			echo "</tr>";
 		}
-		
+
 		if($r5)
 		{
 			echo "<tr>";
@@ -175,7 +183,7 @@
 			echo "</tr>";
 		}
 	echo "</table><br>";
-	
+
 	$query=" SELECT * FROM t2 where id=".$id;
     $res=mysqli_query($con, $query);
 	$r6=mysqli_fetch_assoc($res);
@@ -229,3 +237,4 @@
 </div>
 </body>
 </html>
+<?php } ?>

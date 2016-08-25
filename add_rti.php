@@ -1,3 +1,11 @@
+<?php
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+    include 'index.php';
+    echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
+?>
 <html>
 <head>
 	<title>RTI Application Form</title>
@@ -19,27 +27,27 @@
 						<th>Name of Applicant</th>
 						<td><input type="text" name="name" pattern="[a-zA-Z ]+" title="Only Alphabets are allowed" required></td>
 					</tr>
-					
+
 					<tr>
 						<th>Gender </th>
 						<td>
-							<input type="radio" name="gender" id="gender" checked="checked" value="Male"> Male &nbsp&nbsp                            
-							<input type="radio" name="gender" id="gender" value="Female"> Female &nbsp&nbsp                 
+							<input type="radio" name="gender" id="gender" checked="checked" value="Male"> Male &nbsp&nbsp
+							<input type="radio" name="gender" id="gender" value="Female"> Female &nbsp&nbsp
 							<input type="radio" name="gender" id="gender" value="Third Gender"> Third Gender
 						</td>
 					</tr>
-					
+
 					<tr>
 						<th> Address</th>
 						<td><input type="text" name="address" id="address1" class="address" required></td>
 					</tr>
-					
+
 					<tr>
 						<th>Pin code</th>
 						<td><input type="text" pattern="^\d{6}$" name="pc" minlength="6" maxlength="6" required></td>
 					</tr>
 
-<!-- Script to change state/country as per user line in India or Other 
+<!-- Script to change state/country as per user line in India or Other
 	And to block user editing if user is not Indian -->
 	<script type="text/javascript">
 	function test(){
@@ -76,15 +84,15 @@
 		<th>Country</th>
 		<td>
 			<input type="radio" name="country" id="chkstate" checked="checked" value="India" onclick="test();"> India &nbsp&nbsp
-			<input type="radio" name="country" id="chkcountry" value="Other" onclick="test1();"> Other                		
+			<input type="radio" name="country" id="chkcountry" value="Other" onclick="test1();"> Other
 		</td>
 	</tr>
-	
+
 	<tr>
-		<th><span id="cngStateName">State</span>				
+		<th><span id="cngStateName">State</span>
 			<td><span><input type="text" name="state" id="txtCountry" required></span></td>
-		</tr>			
-		
+		</tr>
+
 		<tr>
 			<th>Phone Number</th>
 			<td>
@@ -99,7 +107,7 @@
 				<cite>Provide a 10-digit no.</cite>
 			</td>
 		</tr>
-		
+
 		<tr>
 			<th>Email-ID</th>
 			<td><input type="email" name="email" maxlength="70" value="" id="Email" required></td>
@@ -123,22 +131,22 @@
 				<th>Date of receipt of RTI application by R & I section of public authority</th>
 				<th><input name="date_of_receipt" id="date_of_receipt" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD" 	required></th>
 			</tr>
-			
+
 			<tr>
 				<th>Date of its receipt by CPIO</th><th><input id="date_of_receipt_cpio" name="date_of_receipt_cio" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD" required></th>
 			</tr>
 		</tbody>
 	</table>
-	
+
 	<h4><strong>Fee Payment Details (Rule-3 of RTI regulation of fee and cost rules):</strong></h4>
-	
+
 	<table class="table table-bordered table-condensed">
 		<tbody>
 			<tr>
 				<th>Whether fee is enclosed with RTI application</th>
-				<th>    
-					<input type="radio" value="yes" checked="checked" name="fee" id="fee_paid" required> Yes&nbsp&nbsp                        
-					<input type="radio" value="no" name="fee" id="fee_not_paid" required> No 
+				<th>
+					<input type="radio" value="yes" checked="checked" name="fee" id="fee_paid" required> Yes&nbsp&nbsp
+					<input type="radio" value="no" name="fee" id="fee_not_paid" required> No
 				</th>
 			</tr>
 
@@ -146,7 +154,7 @@
 				<th>Date of depositing fee</th>
 				<th><input id="fee_deposit_date" name="fee_deposit_date" maxlength="50" placeholder="YYYY-MM-DD" required></th>
 			</tr>
-			
+
 			<tr>
 				<th>Mode of payment(cheque/DD/cash/IPO)</th>
 				<th><input type="text" id="pay_mode" name="pay_mode" maxlength="50" required></th>
@@ -154,9 +162,9 @@
 		</tbody>
 	</table>
 
-	<input type="submit" name="add" value="Add Queries" class="btn" onclick="return validateDate()">&nbsp&nbsp 
+	<input type="submit" name="add" value="Add Queries" class="btn" onclick="return validateDate()">&nbsp&nbsp
 	<input type="submit" name="submit" value="Save and Exit" class="btn" onclick="return validateDate()">
-	
+
 	<!-- Script to validate dates in form id user have entered them correctly -->
 	<script type="text/javascript">
 	function validateDate(){
@@ -165,11 +173,11 @@
 		if(bool1 == true){
 			bool2 = validatedate2(document.add_rti.date_of_receipt_cio);
 			if(bool2 == true){
-				bool3 = validatedate3(document.add_rti.fee_deposit_date);			
-			}		
+				bool3 = validatedate3(document.add_rti.fee_deposit_date);
+			}
 		}
 		if(bool1 == false || bool2 == false || bool3 == false){
-			return false;		
+			return false;
 		}
 	}
 	</script>
@@ -178,4 +186,5 @@
 </form>
 </div>
 </body>
-</html>		
+</html>
+<?php } ?>

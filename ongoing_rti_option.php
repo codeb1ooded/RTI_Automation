@@ -1,7 +1,10 @@
 <?php
-if(!isset($_SESSION)){
-	session_start();
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+		include 'index.php';
+		echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
 }
+else{
 ?>
 <html>
 <head>
@@ -19,21 +22,21 @@ if(isset($_GET['id']))
 	}
 else{
 	$Id=$_SESSION['prev_rti_id'];}
-	
+
 	$_SESSION['prev_rti_id']=$Id;
-	
-	include 'config_database.php'; 
+
+	include 'config_database.php';
 	$var = 'test';
-	
+
 	$query=" SELECT * FROM add_rti";
     $res=mysqli_query($con, $query);
 	echo "<center><h3> RTI Id: ".$Id."</h3></center>";
 	echo "<h4> Select an option:</h4>";
-	
+
 	echo "<br>" ;
 	echo "<a class='btn' href='modify_rti_details.php?id=".$Id."'>Modify Details and Queries</a>" ;
 	echo "<br><br>" ;
-	echo "<a class='btn' href='addqueries.php?id=".$Id."'>Add Additional Queries</a>" ; 
+	echo "<a class='btn' href='addqueries.php?id=".$Id."'>Add Additional Queries</a>" ;
 	echo "<br><br>" ;
 	echo "<a class='btn' href='reply_queries.php?id=".$Id."'>Reply Of The Queries</a>" ;
 	echo "<br><br>" ;
@@ -48,8 +51,9 @@ else{
 	echo "<a class='btn' href='compid.php?id=".$Id."'>Details of RTI</a>" ;
 	echo "<br><br>" ;
 	echo "<a class='btn' href='ongoing_rti.php'>Back</a>" ;
-	
+
 ?>
 </div>
 </body>
 </html>
+<?php } ?>

@@ -1,3 +1,11 @@
+<?php
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+		include 'index.php';
+		echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
+?>
 <html>
 <head>
 	<title>Change Password</title>
@@ -7,7 +15,7 @@
 </head>
 <body>
 <?php
-	include 'config_database.php'; 
+	include 'config_database.php';
 	echo "<div class='container'>";
 	$id=$_GET['id'];
 if(!isset($_POST['submit']) && !isset($_POST['change']))
@@ -28,7 +36,7 @@ if(isset($_POST['submit']))
 	$p=$r['password'];
 	$id=$_GET['id'];
 	if($_POST['pswd']==$p)
-	{	
+	{
 		echo "<form method=post action=forgot_password.php?id=".$id.">
   				<h4>Enter the new password:</h4> <input type=password placeholder=New_Password id=Password name=pwd>
 				<input class=btn type='submit' name ='change' value='Enter' />
@@ -53,3 +61,4 @@ echo "</div>";
 ?>
 </body>
 </html>
+<?php } ?>

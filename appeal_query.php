@@ -1,3 +1,11 @@
+<?php
+if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
+	// echo 'session not started';
+    include 'index.php';
+    echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+}
+else{
+?>
 <head>
 	<title>Save Appeal</title>
 	<link rel="stylesheet" href="css/background.css">
@@ -19,11 +27,11 @@ session_start();
 $id=$_SESSION['prev_rti_id'];
 include 'config_database.php';
 if(isset($_POST['submitappeal'])){
-		
-		$sql="INSERT INTO first_appeal (id, appeal_info, transfer_date, faa_receipt_date, meet_date) 
+
+		$sql="INSERT INTO first_appeal (id, appeal_info, transfer_date, faa_receipt_date, meet_date)
 		VALUES('$id','$_POST[appeal_info]','$_POST[transfer_date]','$_POST[faa_receipt_date]','$_POST[meet_date]')";
 		mysqli_query($con,$sql);
-		
+
 	}
 $sq_q="SELECT * FROM t2 WHERE id=".$id.";";
 $res_set=mysqli_query($con,$sq_q);
@@ -38,7 +46,7 @@ $_SESSION['n']=$num;?>
 		<th>Objection</th>
 		<th id='desc'> Description </th>
 		</tr>
-<?php 
+<?php
 while($b!=0)
 {
 	$obj="obj".$b;
@@ -57,4 +65,5 @@ while($b!=0)
 echo"</table>";
 echo"<button class=btn>Save</button>";
 echo"</form>";
+}
 ?>
