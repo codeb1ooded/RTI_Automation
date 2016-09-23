@@ -31,17 +31,7 @@
 						<th>Date of transfer of appeal by the receiving officer to FAA</th>
 						<th><input type="text" style="height:32px" name="transfer_date" id="Name" value=<?php echo $res['transfer_date']; ?> placeholder="YYYY-MM-DD"></th>
 					</tr>
-
-					<tr>
-						<th>Date of receipt of appeal by FAA(mention name of FAA)</th>
-						<th><input type="text" style="height:32px" name="faa_receipt_date" id="Name" value=<?php echo $res['faa_receipt_date']; ?> placeholder="YYYY-MM-DD"></th>
-					</tr>
-
-					<tr>
-						<th>Date of communicating decision to appelant </th>
-						<th><input type="text" style="height:32px" name="meet_date" id="Name" value=<?php echo $res['meet_date']; ?> placeholder="YYYY-MM-DD"></th>
-					</tr>
-				</table>
+		</table>
 				<input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save and Exit" class="btnsaveappeal"></th>
 			</form>
 	<?php
@@ -62,15 +52,6 @@
 						<th><input type="text" style="height:32px" name="transfer_date" id="Name" value="" placeholder="YYYY-MM-DD"></th>
 					</tr>
 
-					<tr>
-						<th>Date of receipt of appeal by FAA(mention name of FAA)</th>
-						<th><input type="text" style="height:32px" name="faa_receipt_date" id="Name" value="" placeholder="YYYY-MM-DD"></th>
-					</tr>
-
-					<tr>
-						<th>Date of communicating decision to appelant </th>
-						<th><input type="text" style="height:32px" name="meet_date" id="Name" value="" placeholder="YYYY-MM-DD"></th>
-					</tr>
 				</table>
 				<input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save " class="btnsaveappeal"></th>
 			</form>

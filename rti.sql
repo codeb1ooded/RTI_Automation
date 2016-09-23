@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Aug 02, 2016 at 04:39 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 7.0.6
+-- Host: 127.0.0.1
+-- Generation Time: Sep 23, 2016 at 07:43 PM
+-- Server version: 10.1.9-MariaDB
+-- PHP Version: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -54,13 +54,14 @@ CREATE TABLE `add_rti` (
 
 INSERT INTO `add_rti` (`id`, `name`, `gender`, `address`, `pin_code`, `state`, `country`, `phone_no`, `mobile`, `email`, `citizenship`, `date_of_receipt`, `date_of_receipt_cio`, `timespan`, `fee_enclosed`, `fee_deposit_date`, `pay_mode`, `archive`, `closed`) VALUES
 (1, 'ut', 'Female', 'abc', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 0, NULL),
-(3, 'abc', 'Female', 'esdtrgyuij', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 1, NULL),
-(5, 'utkarsha', 'Female', 'abcdef', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 1, NULL),
+(3, 'abc', 'Female', 'esdtrgyuij', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 1, 1),
+(5, 'utkarsha', 'Female', 'abcdef', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 1, 1),
 (8, 'Tia', 'Female', 'Bh-3 East shalomar Bagh', 110088, 'Delhi', 'India', '98745874', '8932865258', 's@gmail.com', 'Indian', '2016-06-22', '2016-01-01', 172, 'yes', '2016-06-05', 'DD', 1, NULL),
-(9, 'tt', 'Male', 'aklSMZKAS', 110088, 'Delhi', 'India', '98258741', '2365410987', 'salonibhartia@ymail.com', 'Indian', '2016-07-08', '2016-07-09', 1, 'yes', '2016-07-08', 'DD', NULL, NULL),
+(9, 'tt', 'Male', 'aklSMZKAS', 110088, 'Delhi', 'India', '98258741', '2365410987', 'salonibhartia@ymail.com', 'Indian', '2016-07-08', '2016-07-09', 1, 'yes', '2016-07-08', 'DD', 1, NULL),
 (10, 'ut', 'Male', 'dwarka', 110077, 'Delhi', 'India', '25090133', '9968813151', 'utkarshagoswami@gmail.com', 'Indian', '2016-06-20', '2016-06-20', 0, 'yes', '2016-06-20', 'DD', 1, 1),
 (11, 'codebenderut', 'Male', 'dwarka', 110077, 'Delhi', 'India', '25090133', '9968813151', 'utkarshagoswami@gmail.com', 'Indian', '2016-06-20', '2016-06-21', 1, 'yes', '2016-06-21', 'DD', 1, 1),
-(12, 'Mr Abcd Efgh', 'Female', 'fghfjik hjsd', 123456, 'Kerala', 'India', '12345678', '1234567890', 'abcd@domain.com', 'Indian', '2014-12-12', '2014-12-12', 0, 'yes', '2014-12-12', 'DD', NULL, NULL);
+(12, 'Mr Abcd Efgh', 'Female', 'fghfjik hjsd', 123456, 'Kerala', 'India', '12345678', '1234567890', 'abcd@domain.com', 'Indian', '2014-12-12', '2014-12-12', 0, 'yes', '2014-12-12', 'DD', 1, NULL),
+(13, 'adad', 'Male', 'adad', 110004, 'Bombay', 'India', '64652222', '9211557755', 'bhavyagarg12@gmail.com', 'Indian', '2016-01-02', '2016-01-12', 10, 'yes', '2016-01-13', 'dd', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -158,23 +159,21 @@ INSERT INTO `dept_reply` (`id`, `query_no`, `map`, `answer`) VALUES
 CREATE TABLE `first_appeal` (
   `id` int(11) NOT NULL,
   `appeal_info` varchar(50) NOT NULL,
-  `transfer_date` date NOT NULL,
-  `faa_receipt_date` date NOT NULL,
-  `meet_date` date NOT NULL
+  `transfer_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `first_appeal`
 --
 
-INSERT INTO `first_appeal` (`id`, `appeal_info`, `transfer_date`, `faa_receipt_date`, `meet_date`) VALUES
-(1, 'dshxsdgwyshx', '2016-05-08', '2016-06-08', '2016-08-25'),
-(3, 'dsjxhujdhu', '0000-00-00', '0000-00-00', '0000-00-00'),
-(4, 'wersdtfgyhjk', '2017-06-18', '0000-00-00', '0000-00-00'),
-(5, 'ghbhytghbgy', '2016-05-08', '2016-06-08', '2016-08-25'),
-(6, 'jhuyhjnjuy', '2016-05-08', '2016-06-08', '2016-08-25'),
-(7, 'tysbsw', '2016-05-08', '2016-06-08', '2016-08-25'),
-(9, 'chjyhnsdcyudcuy', '2016-05-08', '2016-06-08', '2016-08-25');
+INSERT INTO `first_appeal` (`id`, `appeal_info`, `transfer_date`) VALUES
+(1, 'dshxsdgwyshx', '2016-05-08'),
+(3, 'dsjxhujdhu', '0000-00-00'),
+(4, 'wersdtfgyhjk', '2017-06-18'),
+(5, 'ghbhytghbgy', '2016-05-08'),
+(6, 'jhuyhjnjuy', '2016-05-08'),
+(7, 'tysbsw', '2016-05-08'),
+(9, 'chjyhnsdcyudcuy', '2016-05-08');
 
 -- --------------------------------------------------------
 
@@ -266,7 +265,8 @@ INSERT INTO `reply_queries` (`id`, `q_no`, `ans`, `section`, `date_received`) VA
 (7, 3, 'haha3', 'bdfghj', '2016-06-24'),
 (7, 1, 'hahha', 'blah blah', '2016-06-30'),
 (7, 2, '', 'blah blah', '0000-00-00'),
-(7, 3, '', 'blah blah', '0000-00-00');
+(7, 3, '', 'blah blah', '0000-00-00'),
+(13, 1, 'dddddddddd', '', '2012-08-09');
 
 -- --------------------------------------------------------
 
@@ -327,7 +327,8 @@ INSERT INTO `t2` (`id`, `q_no`, `ques`, `map`, `date_sent`) VALUES
 (12, 1, '', 'Ex', '0000-00-00'),
 (12, 2, '', 'no_selection3', '0000-00-00'),
 (12, 3, '', 'no_selection2', '0000-00-00'),
-(12, 4, '', 'no_selection1', '0000-00-00');
+(12, 4, '', 'no_selection1', '0000-00-00'),
+(13, 1, 'cssdsdczczczc', 'Ex', '0000-00-00');
 
 --
 -- Indexes for dumped tables
@@ -377,7 +378,7 @@ ALTER TABLE `section4`
 -- AUTO_INCREMENT for table `add_rti`
 --
 ALTER TABLE `add_rti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `first_appeal`
 --
