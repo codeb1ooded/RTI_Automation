@@ -87,7 +87,7 @@
 		$a--;
 		$c++;
 	}
-	echo "<th colspan=15></th><th><input class='btn' type=submit name=gen_pdf value='Generate Reply'><th>";
+	//echo "<th colspan=15></th><th><input class='btn' type=submit name=gen_pdf value='Generate Reply'><th>";
 	
 	echo "<th colspan=15></th><th><input type=submit name=save class=btn value='Save and Exit' ></th>";
 	echo "</form>";

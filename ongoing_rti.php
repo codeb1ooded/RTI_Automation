@@ -30,7 +30,6 @@ if(!isset($_SESSION)){
 		<th>Last date</th>
 		<th>Days left</th>
 		<th>Options</th>
-		<th>Close RTI</th>
 		</tr>";
 
 		while($r=mysqli_fetch_assoc($res)) {
@@ -51,7 +50,6 @@ if(!isset($_SESSION)){
 				echo "<td>".date("Y-m-d",strtotime($d2))."</td>";
 				echo "<td>".$d3."</td>";
 				echo "<td><a href='ongoing_rti_option.php?id=".$r['id']."'>Select this RTI</a></td>";
-				echo "<td><a href='close_rti.php?id=".$r['id']."'>Close This RTI</a></td>";
 				echo "</tr>";
 			}
 		}
@@ -105,12 +103,12 @@ if(!isset($_SESSION)){
 						$b=strtotime(date('Y-m-d h:i:s'));
 						$d3=floor(($a-$b)/86400);
 						echo "<tr>";
-						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$r['id']." </a></th>";
-						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$r['name']."</a></th>";
-						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$r['date_of_receipt_cio']."</a></th>";
-						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".date("Y-m-d",strtotime($d2))."</a></th>";
-						echo "<th><a href='diff_dep.php?id=".$r['id']."'>".$d3."</a></th>";
-						echo "<td><a href='ongoing_rti_option.php?id=".$r['id']."'>Select this RTI</a></td>";
+						echo "<th>".$r['id']."</th>";
+						echo "<th>".$r['name']."</th>";
+						echo "<th>".$r['date_of_receipt_cio']."</th>";
+						echo "<th>".date("Y-m-d",strtotime($d2))."</th>";
+						echo "<th>".$d3."</th>";
+						echo "<td><a href='diff_dep.php?id=".$r['id']."'>View Queries for this RTI</a></td>";
 						echo "</tr>";
 					}
 					$v--;

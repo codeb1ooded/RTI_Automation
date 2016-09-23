@@ -79,7 +79,7 @@ if(isset($_POST['close'])){
 	
 	include 'config_database.php'; 
 	
-	$query="SELECT * FROM add_rti WHERE archieve=1";
+	$query="SELECT * FROM add_rti WHERE closed=1";
 	$res=mysqli_query($con,$query);
 
     echo "<table class='table table-bordered'>" ;

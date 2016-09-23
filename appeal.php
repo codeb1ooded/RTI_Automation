@@ -75,7 +75,7 @@
 				<input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save " class="btnsaveappeal"></th>
 			</form>
 			<?php
-			echo "&nbsp&nbsp<a class='btn' href='ongoing_rti_option_option.php?id=".$Id."''>Back</a>" ;
+			echo "<a class=btn href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
 		}
 		?>
 	</div>

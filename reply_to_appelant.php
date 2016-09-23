@@ -32,12 +32,12 @@
 			
 			<tr>
 				<th>Date of reply to appellant/complaint by CPIO</th>
-				<th><input type="text" style="height:32px" name="reply_date" value="<?php echo $res['reply_date']; ?> placeholder="YYYY-MM-DD"></th></tr>
+				<th><input type="text" style="height:32px" name="reply_date" value="<?php echo $res['reply_date']; ?>" placeholder="YYYY-MM-DD"></th></tr>
 			</tr>
 	
 			<tr>
 				<th>Mode of communicating reply </th>
-				<th><input type="text" style="height:32px" name="reply_mode" value=<?php echo $res['reply_mode']; ?>"></th>
+				<th><input type="text" style="height:32px" name="reply_mode" value="<?php echo $res['reply_mode']; ?>"></th>
 			</tr>
 			
 			<tr>
@@ -48,7 +48,9 @@
 		<input type="submit" name="submitresponsenew" class=btn value="Save and Exit">
 	</form>
 <?php
-	echo "<br><a class=btn href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
+		
+		echo "<td><a href='close_rti.php?id=".$Id."'>Close This RTI</a></td>";
+		echo "<br><a class=btn href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
 	}
 	else
 	{
@@ -79,6 +81,7 @@
 		<input type="submit" name="submitresponse" class=btn value="Save and Exit">
 	</form>
 <?php
+	echo "<td><a href='close_rti.php?id=".$Id."'>Close This RTI</a></td>";
 	echo "&nbsp&nbsp<a class='btn' href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
 	}
 ?>

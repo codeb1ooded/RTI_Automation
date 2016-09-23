@@ -102,7 +102,7 @@ if(isset($_POST['edit']))
 		$date_s_id= "date_s".$qno;
 ?>
 		<tr>
-			<th><input  value="<?php echo $data3['q_no']?>" type=text name=<?php echo $qno; ?>></th>	
+			<th><input  value="<?php echo $data3['q_no']?>" type=text name=<?php echo $qno; ?> readonly></th>	
 			<th><input type=text name=<?php echo $ques; ?> value="<?php echo $data3['ques'];?>" id=<?php echo $ques_id; ?>></th>
 			<th><select name=<?php echo $map; ?> id=<?php echo $map_id; ?> >
 					<span>

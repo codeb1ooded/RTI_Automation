@@ -1,3 +1,8 @@
+<head>
+<link rel="stylesheet" href="css/prev_rti.css">
+	<link rel="stylesheet" href="css/background.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
 <?php
 session_start();
 $m=$_SESSION['map'];
@@ -45,13 +50,11 @@ while($v!=0)
 		echo"</tr>";
 		$t++;
 			
-	}
-	
-	
+	}	
 	$v--;
 	}
 echo "</table>";
-			echo"<button class=btn>Mark complete</button>";
+			echo"<a class=btn href='./ongoing_rti.php'>Back</a>";
 echo"</form>";
 $_SESSION['que']=$t;
 ?>
