@@ -1,6 +1,6 @@
 <?php
-if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
-	// echo 'session not started';
+if(!isset($_SESSION) || !isset($_SESSION['database_access'])) {
+//	 echo 'session not started';
 		include 'index.php';
 		echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
 }

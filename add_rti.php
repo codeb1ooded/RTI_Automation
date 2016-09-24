@@ -1,8 +1,12 @@
 <?php
-if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
-	// echo 'session not started';
-    include 'index.php';
-    echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+
+echo '<script type="text/javascript"> alert("'. isset($_SESSION) .'");</script>';
+if(!isset($_SESSION) || !isset($_SESSION['login_access'])) {
+  //echo '<script type="text/javascript"> alert("'. $_SESSION['login_access'] .'");</script>';
+    include 'error/not_allowed.html';
+}
+elseif ($_SESSION['login_access'] != 'Admin') {
+    include 'not_allowed.html';
 }
 else{
 ?>

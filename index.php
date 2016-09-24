@@ -1,15 +1,18 @@
 <?php
-   include 'config_database.php';
    session_start();
+   $_SESSION['database_access'] = true;
+   include 'config_database.php';
+   $_SESSION['database_access'] = false;
    $result = 'No';
 
    // Php code to check validation of entered username and password
    if(isset($_POST['submit'])){
       if($_SERVER["REQUEST_METHOD"] == "POST") {
+
          $myusername = mysqli_real_escape_string($con, $_POST['username']);
          $password = mysqli_real_escape_string($con, $_POST['password']);
          $mypassword = hash('sha256', $password);
-
+//echo '<script type="text/javascript"> alert("'. $_POST['username'] .'");</script>';
          // If username or password is empty tell user,
          if($myusername == '' || $mypassword == ''){
             $result = 'empty';
@@ -26,8 +29,11 @@
                 $_SESSION['login_access'] = $row['Account_type'];
                 $_SESSION['department'] = $row['DEPARTMENT'];
                 $result = 'Yes';
+
+                echo '<script type="text/javascript"> alert("'. $_SESSION['login_access'] .'");</script>';
                 // Redirect to select_option page
-                header("location: select_option.php");
+                echo "<script type='text/javascript'> document.location = 'select_option.php'; </script>";
+
             }else {
               // Username & password are incorrect
                $result = 'incorrect';

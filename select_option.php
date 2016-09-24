@@ -1,10 +1,7 @@
 <?php
-if(!isset($_SESSION) || !isset($_SESSION['Account_type'])) {
-	// echo 'session not started';
-    include 'index.php';
-    echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+ if(!isset($_SESSION)) {
+	session_start();
 }
-else{
 ?>
 <html>
 	<head>
@@ -36,6 +33,6 @@ else{
 		</div>
 		</div>";
 }
+
 include 'logoff.php';
-}
 ?>
