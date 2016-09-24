@@ -16,22 +16,24 @@
 	if($login_access == 'Appellant'){
 		include 'appellant_interface.php';
 	}
-	else{
+	else
+	if($login_access=='Admin') {
 	echo "<div class=new-prev>";
 	echo "<marquee scrollamount=5><strong>PLEASE SELECT AN OPTION:</strong></marquee> <br><br><br>";
 	echo "<div class=options>";
-
-	if($login_access=='Admin') {
 		echo"<a href='./add_rti.html'>Add New RTI</a><br><br><br>
 			 <a href='./report.php'>Generate Report</a><br><br><br>
 			 <a href='./backup_ask_user.html'>Create Backup</a><br><br><br>
 			 <a href='./change_password.php'>Change Password</a><br><br><br>
 			 <a href='./completed_rti.php'>Completed RTIs</a><br><br><br>
-			 <a href='./view_closed_rti.php'>Closed RTIs</a><br><br><br>";
-    }
-	echo"<a href='./ongoing_rti.php'>Ongoing RTIs</a>	
-		</div>
-		</div>";
+			 <a href='./view_closed_rti.php'>Closed RTIs</a><br><br><br>
+			 <a href='./ongoing_rti.php'>Ongoing RTIs</a>	
+				</div>
+				</div>";
+				include 'logoff.html';
 }
-include 'logoff.html';
+else{
+	include 'ongoing_rti.php';
+}
+
 ?>

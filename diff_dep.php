@@ -9,11 +9,12 @@ $m=$_SESSION['map'];
 
 include 'config_database.php';
 $id=$_GET['id'];
-// session for id
 $_SESSION['id']=$id;
-$sql="SELECT * FROM t2 WHERE id=".$id.";";
-$s="SELECT * FROM reply_queries WHERE id=".$id.";";
 
+$sql="SELECT * FROM t2 WHERE id=".$id.";";
+$s="SELECT * FROM dept_reply WHERE id=".$id.";";
+
+//Values from reply queries
 $res2=mysqli_query($con,$s);
 $a=mysqli_num_rows($res2);
 
@@ -23,13 +24,15 @@ $data2=mysqli_num_rows($res);
 //Seesion for the values from t2
 $v=$data2;
 
-echo"<form action=dept_rep.php method=post>";
-echo "<table  width=100% border=2>" ;
-	echo "<tr>
+?>
+<form action=dept_rep.php method=post>
+<table  width=100% border=2>
+	<tr>
 			<th>Query Number</th>
 			<th>Query</th>
 			<th>Reply</th>
-		</tr>";  
+		</tr>
+<?php
 $t=1;
 while($v!=0)
 {
@@ -43,8 +46,8 @@ while($v!=0)
 		echo"<tr>";
 		echo"<th>$q</th>";
 			echo"<th>".$r['ques']."</th>";
-			if($r['q_no']==$w['q_no'])
-				echo"<th><input type=text name=$ans value=".$w['ans']."></th>";
+			if($r['q_no']==$w['query_no'])
+				echo"<th><input type=text name=$ans value=".$w['answer']."></th>";
 			else
 				echo "<th><input type=text name=$ans></th>";
 		echo"</tr>";
@@ -53,8 +56,13 @@ while($v!=0)
 	}	
 	$v--;
 	}
-echo "</table>";
-			echo"<a class=btn href='./ongoing_rti.php'>Back</a>";
-echo"</form>";
+
+?>
+</table>
+			<center><input type=submit name=save class=btn value='Save' ></center>
+			</form>
+			<a class=btn href='./ongoing_rti.php'>Back</a>
+
+<?php
 $_SESSION['que']=$t;
 ?>

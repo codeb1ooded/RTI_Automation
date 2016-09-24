@@ -1,8 +1,8 @@
 <?php
 if(!isset($_SESSION)){
 	session_start();
-	$account_type = $_SESSION['login_access'];
 }
+$account_type = $_SESSION['login_access'];
 ?>
 <html>
 <head>
@@ -55,12 +55,11 @@ if(!isset($_SESSION)){
 		}
 		echo "</table>";
 	}
-	else if($account_type != 'Admin') {
+	else 
+		{
 		$dept = $_SESSION['department'];
 		$i=0;
 		$m='';
-		if($dept == 'Admin')
-			$m='Ad';
 		if($dept == 'Examination')
 			$m='Ex';
 		if($dept == 'Human Resource')
@@ -120,7 +119,9 @@ if(!isset($_SESSION)){
 		echo "</table>";
 	}
 	?>
+
 	<br><a href="select_option.php" class=btn>Back</a>
+	<?php include 'logoff.html';?>
 </div>
 </body>
 </html>

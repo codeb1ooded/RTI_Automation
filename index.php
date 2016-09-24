@@ -76,7 +76,7 @@
        <i class="fa fa-lock"></i></div>
        <div id="message" style="color:ff0000"></div>
             <input  class ="log-btn" style="
-                       background-image: -webkit-linear-gradient(top, #2d2e2e, #6b696b);
+                background-image: -webkit-linear-gradient(top, #2d2e2e, #6b696b);
                 background-image: -moz-linear-gradient(top, #2d2e2e, #6b696b);
                 background-image: -ms-linear-gradient(top, #2d2e2e, #6b696b);
                 background-image: -o-linear-gradient(top, #2d2e2e, #6b696b);
