@@ -19,7 +19,6 @@
 		$res = mysqli_fetch_assoc($r);
 		if($res) {
 	?>
-			<h4><strong>(VI) I<sup>st</sup> Appeal (where applicable):</strong></h4>
 			<form action = "appeal_query.php" method ="post">
 				<table class="table table-bordered">
 					<tr>
@@ -28,7 +27,7 @@
 					</tr>
 
 					<tr>
-						<th>Date of transfer of appeal by the receiving officer to FAA</th>
+						<th>Date of transfer of appeal to FAA</th>
 						<th><input type="text" style="height:32px" name="transfer_date" id="Name" value=<?php echo $res['transfer_date']; ?> placeholder="YYYY-MM-DD"></th>
 					</tr>
 		</table>

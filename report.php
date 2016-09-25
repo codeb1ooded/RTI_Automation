@@ -22,7 +22,7 @@
 if(isset($_POST['name'])){
 	include 'config_database.php'; 
 	
-	$query="SELECT count(name),name,id FROM add_rti group by name order by id";
+	$query="SELECT count(name),name,id FROM add_rti group by name,phone_no order by id";
     $res=mysqli_query($con,$query);
 	echo "<table class='table table-bordered'>" ;
 	echo "<tr>

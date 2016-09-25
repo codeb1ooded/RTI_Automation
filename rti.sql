@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2016 at 07:43 PM
+-- Generation Time: Sep 25, 2016 at 08:06 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -53,15 +53,9 @@ CREATE TABLE `add_rti` (
 --
 
 INSERT INTO `add_rti` (`id`, `name`, `gender`, `address`, `pin_code`, `state`, `country`, `phone_no`, `mobile`, `email`, `citizenship`, `date_of_receipt`, `date_of_receipt_cio`, `timespan`, `fee_enclosed`, `fee_deposit_date`, `pay_mode`, `archive`, `closed`) VALUES
-(1, 'ut', 'Female', 'abc', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 0, NULL),
-(3, 'abc', 'Female', 'esdtrgyuij', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 1, 1),
-(5, 'utkarsha', 'Female', 'abcdef', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 1, 1),
-(8, 'Tia', 'Female', 'Bh-3 East shalomar Bagh', 110088, 'Delhi', 'India', '98745874', '8932865258', 's@gmail.com', 'Indian', '2016-06-22', '2016-01-01', 172, 'yes', '2016-06-05', 'DD', 1, NULL),
-(9, 'tt', 'Male', 'aklSMZKAS', 110088, 'Delhi', 'India', '98258741', '2365410987', 'salonibhartia@ymail.com', 'Indian', '2016-07-08', '2016-07-09', 1, 'yes', '2016-07-08', 'DD', 1, NULL),
-(10, 'ut', 'Male', 'dwarka', 110077, 'Delhi', 'India', '25090133', '9968813151', 'utkarshagoswami@gmail.com', 'Indian', '2016-06-20', '2016-06-20', 0, 'yes', '2016-06-20', 'DD', 1, 1),
-(11, 'codebenderut', 'Male', 'dwarka', 110077, 'Delhi', 'India', '25090133', '9968813151', 'utkarshagoswami@gmail.com', 'Indian', '2016-06-20', '2016-06-21', 1, 'yes', '2016-06-21', 'DD', 1, 1),
-(12, 'Mr Abcd Efgh', 'Female', 'fghfjik hjsd', 123456, 'Kerala', 'India', '12345678', '1234567890', 'abcd@domain.com', 'Indian', '2014-12-12', '2014-12-12', 0, 'yes', '2014-12-12', 'DD', 1, NULL),
-(13, 'adad', 'Male', 'adad', 110004, 'Bombay', 'India', '64652222', '9211557755', 'bhavyagarg12@gmail.com', 'Indian', '2016-01-02', '2016-01-12', 10, 'yes', '2016-01-13', 'dd', NULL, NULL);
+(1, 'Bhavya', 'Female', '4568,kamla nagar', 110004, 'Bombay', 'India', '64652222', '9211557755', 'bhavyagarg12@gmail.com', 'Indian', '2016-01-02', '2016-01-12', 10, 'yes', '2016-01-13', 'dd', NULL, NULL),
+(2, 'Pari Garg', 'Female', '4568,kamla nagar', 110006, 'Delhi', 'India', '64652222', '9211557755', 'bhavyagarg12@gmail.com', 'Indian', '2016-09-25', '2016-09-30', 5, 'yes', '2016-09-25', 'dd', 1, NULL),
+(3, 'Zara', 'Female', '4568,kamla nagar', 110004, 'USA', 'India', '64652222', '9211557755', 'bhavyagarg12@gmail.com', 'Indian', '2016-09-25', '2016-09-30', 5, 'yes', '2016-09-25', 'dd', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -75,13 +69,6 @@ CREATE TABLE `appeal_query` (
   `query` varchar(100) NOT NULL,
   `description` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `appeal_query`
---
-
-INSERT INTO `appeal_query` (`id`, `q_no`, `query`, `description`) VALUES
-(1, 2, 'def', 'k,lwik,lowqiakiowakiow,klo');
 
 -- --------------------------------------------------------
 
@@ -143,12 +130,9 @@ CREATE TABLE `dept_reply` (
 --
 
 INSERT INTO `dept_reply` (`id`, `query_no`, `map`, `answer`) VALUES
-(1, 2, 'HR', 'shwjnsswdysu'),
-(1, 2, 'HR', 'shwjnsswdysu'),
-(1, 2, 'HR', 'shwjnsswdysu'),
-(1, 2, 'HR', 'shwjnsswdysu'),
-(1, 2, 'HR', 'shwjnsswdysu'),
-(6, 3, 'HR', 'tyrywuw');
+(1, 3, 'Ex', 'Replied by department'),
+(3, 4, 'Ex', 'apple'),
+(3, 5, 'Ex', 'mango');
 
 -- --------------------------------------------------------
 
@@ -161,19 +145,6 @@ CREATE TABLE `first_appeal` (
   `appeal_info` varchar(50) NOT NULL,
   `transfer_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `first_appeal`
---
-
-INSERT INTO `first_appeal` (`id`, `appeal_info`, `transfer_date`) VALUES
-(1, 'dshxsdgwyshx', '2016-05-08'),
-(3, 'dsjxhujdhu', '0000-00-00'),
-(4, 'wersdtfgyhjk', '2017-06-18'),
-(5, 'ghbhytghbgy', '2016-05-08'),
-(6, 'jhuyhjnjuy', '2016-05-08'),
-(7, 'tysbsw', '2016-05-08'),
-(9, 'chjyhnsdcyudcuy', '2016-05-08');
 
 -- --------------------------------------------------------
 
@@ -195,10 +166,7 @@ CREATE TABLE `info_about_reply` (
 --
 
 INSERT INTO `info_about_reply` (`id`, `holder_receipt_date`, `reply_date`, `reply_mode`, `reply_time`, `faa_info`) VALUES
-(3, '2016-07-19', '2016-07-19', 'paper', 3, 'yes'),
-(5, '2016-07-19', '2016-07-19', 'paper', 7, 'fgj,'),
-(10, '2016-06-21', '2016-06-21', 'paper', 0, 'yes'),
-(11, '2016-06-24', '2016-06-24', 'paper', 0, 'yes');
+(2, '2016-10-19', '2016-10-20', 'Post', 1, 'Yes');
 
 -- --------------------------------------------------------
 
@@ -219,13 +187,11 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `Account_Type`, `DEPARTMENT`, `name`, `password`) VALUES
-(1, 'Admin', '', 'ut', '79f274b81e12c73855b278e438a1113b31f8971bd038c779c82304ef3c689288'),
-(2, 'Admin', '', 'pc', '1b23b1e9ef4fc64fecf356db55295ef5d77de1374a5af7803a7981badc82b764'),
 (3, 'Admin', 'Admin', 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918'),
 (4, 'HOD', 'Examination', 'examination', '5e89e9d8544af15b204bcdff94f047b0c1b60ab8e9c70edbbdd42b3c83b4ad83'),
 (5, 'HOD', 'Human Resource', 'Human Resource', '15e68b1f46577e27d82b47596b5bb9224ec847838c53432b4ae182a4e20a04e7'),
 (6, 'HOD', 'Academics', 'Academics', '44296048028f384f5a5a62524326847f8105fce79dc2c32b183855a7d9a0e75c'),
-(7, 'Appellant', '', 'Appellant', '7978f506baa16285f4f3f6cee4f425c0bd5e06883e37ede4a8d8e62c03d660ef');
+(7, 'Appellant', 'Appellant', 'Appellant', '7978f506baa16285f4f3f6cee4f425c0bd5e06883e37ede4a8d8e62c03d660ef');
 
 -- --------------------------------------------------------
 
@@ -260,13 +226,23 @@ CREATE TABLE `reply_queries` (
 --
 
 INSERT INTO `reply_queries` (`id`, `q_no`, `ans`, `section`, `date_received`) VALUES
-(7, 1, 'haha', 'NULL', '2016-06-23'),
-(7, 2, 'haha2', 'blah', '2016-06-23'),
-(7, 3, 'haha3', 'bdfghj', '2016-06-24'),
-(7, 1, 'hahha', 'blah blah', '2016-06-30'),
-(7, 2, '', 'blah blah', '0000-00-00'),
-(7, 3, '', 'blah blah', '0000-00-00'),
-(13, 1, 'dddddddddd', '', '2012-08-09');
+(2, 1, 'r1', 'blah', '2016-10-12'),
+(2, 2, 'r2', 'blah', '2016-10-20'),
+(1, 1, '', '', '0000-00-00'),
+(1, 2, '', '', '0000-00-00'),
+(1, 3, '', '', '0000-00-00'),
+(1, 1, '', '', '0000-00-00'),
+(1, 2, '', '', '0000-00-00'),
+(1, 3, '', '', '0000-00-00'),
+(1, 1, '', '', '0000-00-00'),
+(1, 2, '', '', '0000-00-00'),
+(1, 3, '', '', '0000-00-00'),
+(1, 1, '', '', '0000-00-00'),
+(1, 2, '', '', '0000-00-00'),
+(1, 3, '', '', '0000-00-00'),
+(1, 1, '', '', '0000-00-00'),
+(1, 2, '', '', '0000-00-00'),
+(1, 3, '', '', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -288,8 +264,7 @@ CREATE TABLE `section4` (
 --
 
 INSERT INTO `section4` (`id`, `info_fee_date`, `info_fee`, `fee_submit_date`, `given_info_date`, `info_time`) VALUES
-(1, '0000-00-00', 0, '0000-00-00', '0000-00-00', 0),
-(4, '0000-00-00', 0, '0000-00-00', '0000-00-00', 0);
+(2, '2016-10-20', 100, '2016-10-23', '2016-10-24', 1);
 
 -- --------------------------------------------------------
 
@@ -310,25 +285,16 @@ CREATE TABLE `t2` (
 --
 
 INSERT INTO `t2` (`id`, `q_no`, `ques`, `map`, `date_sent`) VALUES
-(1, 1, 'abc', 'Ad', '2016-07-18'),
-(1, 2, 'def', 'HR', '2016-07-18'),
-(0, 1, 'rdtfgyhbunj', '', '0000-00-00'),
-(0, 2, 'sdrtfgvybhnj', '', '0000-00-00'),
-(6, 1, 'blah', 'Ac', '2016-06-20'),
-(6, 2, 'blah2', 'Ad', '2016-06-20'),
-(6, 3, '', 'HR', '2016-06-20'),
-(7, 1, 'blah', 'Ex', '2016-06-20'),
-(7, 2, 'blah2', 'Ad', '2016-06-20'),
-(7, 3, 'blah3', 'HR', '2016-06-20'),
-(8, 1, 'hwsxbj', 'Ac', '2016-06-05'),
-(8, 2, 'gshgbj', 'Ex', '2016-06-04'),
-(9, 1, 'dsnsehjs', 'Ac', '2016-05-08'),
-(9, 2, 'wsjh<<HJSH', 'Ex', '2016-05-08'),
-(12, 1, '', 'Ex', '0000-00-00'),
-(12, 2, '', 'no_selection3', '0000-00-00'),
-(12, 3, '', 'no_selection2', '0000-00-00'),
-(12, 4, '', 'no_selection1', '0000-00-00'),
-(13, 1, 'cssdsdczczczc', 'Ex', '0000-00-00');
+(1, 1, 'queryA', 'Ac', '2016-01-14'),
+(1, 2, 'qB', 'Ad', '2016-01-16'),
+(1, 3, 'qC', 'Ex', '2016-01-15'),
+(2, 1, 'q1', 'Ac', '2016-09-14'),
+(2, 2, 'q2', 'Ac', '2016-10-05'),
+(3, 1, 'q1', 'Ac', '2016-10-12'),
+(3, 2, 'q2', 'Ac', '2016-10-13'),
+(3, 3, 'q3', 'Ac', '2016-10-13'),
+(3, 4, 'q4', 'Ex', '2016-09-30'),
+(3, 5, 'q5', 'Ex', '2016-10-05');
 
 --
 -- Indexes for dumped tables
@@ -378,17 +344,17 @@ ALTER TABLE `section4`
 -- AUTO_INCREMENT for table `add_rti`
 --
 ALTER TABLE `add_rti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `first_appeal`
 --
 ALTER TABLE `first_appeal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `info_about_reply`
 --
 ALTER TABLE `info_about_reply`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `login`
 --
@@ -398,7 +364,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `section4`
 --
 ALTER TABLE `section4`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

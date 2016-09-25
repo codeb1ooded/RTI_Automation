@@ -20,7 +20,7 @@ $account_type = $_SESSION['login_access'];
 	echo "<marquee><strong>SELECT THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
 
 	if($account_type == 'Admin'){
-		$query=" SELECT * FROM add_rti order by date_of_receipt_cio";
+		$query=" SELECT * FROM add_rti order by date_of_receipt";
 		$res= mysqli_query($con, $query);
 		echo "<table class=table table-bordered table-condensed>" ;
 		echo "<tr>
@@ -34,7 +34,7 @@ $account_type = $_SESSION['login_access'];
 
 		while($r=mysqli_fetch_assoc($res)) {
 			if($r['archive']==0) {
-				$d1=strtotime("$r[date_of_receipt_cio]");
+				$d1=strtotime("$r[date_of_receipt]");
 				$mth=0;
 				$day=30;
 				$yr=0;
@@ -46,7 +46,7 @@ $account_type = $_SESSION['login_access'];
 				echo "<tr>";
 				echo "<td>".$r['id']."</td>";
 				echo "<td>".$r['name']."</td>";
-				echo "<td>".$r['date_of_receipt_cio']."</td>";
+				echo "<td>".$r['date_of_receipt']."</td>";
 				echo "<td>".date("Y-m-d",strtotime($d2))."</td>";
 				echo "<td>".$d3."</td>";
 				echo "<td><a href='ongoing_rti_option.php?id=".$r['id']."'>Select this RTI</a></td>";
@@ -54,6 +54,7 @@ $account_type = $_SESSION['login_access'];
 			}
 		}
 		echo "</table>";
+		echo "<a href='select_option.php' class=btn >Back</a>";
 	}
 	else 
 		{
@@ -86,14 +87,14 @@ $account_type = $_SESSION['login_access'];
 			$data3=mysqli_fetch_array($data);
 			$i=$data3['id'];
 			if($i!=$ido) {
-				$quer="SELECT * FROM add_rti WHERE id=".$i." order by date_of_receipt_cio;";
+				$quer="SELECT * FROM add_rti WHERE id=".$i." order by date_of_receipt;";
 				$res=mysqli_query($con,$quer);
 				$v=mysqli_num_rows($res);
 
 				while($v!=0) {
 					$r=mysqli_fetch_array($res);
 					if($r['archive']==0) {
-						$d1=strtotime("$r[date_of_receipt_cio]");
+						$d1=strtotime("$r[date_of_receipt]");
 						$mth=0;
 						$day=30;
 						$yr=0;
@@ -104,7 +105,7 @@ $account_type = $_SESSION['login_access'];
 						echo "<tr>";
 						echo "<th>".$r['id']."</th>";
 						echo "<th>".$r['name']."</th>";
-						echo "<th>".$r['date_of_receipt_cio']."</th>";
+						echo "<th>".$r['date_of_receipt']."</th>";
 						echo "<th>".date("Y-m-d",strtotime($d2))."</th>";
 						echo "<th>".$d3."</th>";
 						echo "<td><a href='diff_dep.php?id=".$r['id']."'>View Queries for this RTI</a></td>";
@@ -120,7 +121,6 @@ $account_type = $_SESSION['login_access'];
 	}
 	?>
 
-	<br><a href="select_option.php" class=btn>Back</a>
 	<?php include 'logoff.html';?>
 </div>
 </body>

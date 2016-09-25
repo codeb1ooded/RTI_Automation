@@ -126,6 +126,9 @@ if(isset($_POST['edit']))
 	echo "<th colspan=15></th><th><input type=submit name=reply class=btn value='Generate Reply' ></th>";
 	echo "</form>";
 }	
+else{
+ echo"<a href='ongoing_rti_option.php'> Back </a>";
+}
 $con->close();
 
 ?>

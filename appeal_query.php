@@ -20,8 +20,8 @@ $id=$_SESSION['prev_rti_id'];
 include 'config_database.php';
 if(isset($_POST['submitappeal'])){
 		
-		$sql="INSERT INTO first_appeal (id, appeal_info, transfer_date, faa_receipt_date, meet_date) 
-		VALUES('$id','$_POST[appeal_info]','$_POST[transfer_date]','$_POST[faa_receipt_date]','$_POST[meet_date]')";
+		$sql="INSERT INTO first_appeal (id, appeal_info, transfer_date) 
+		VALUES('$id','$_POST[appeal_info]','$_POST[transfer_date]')";
 		mysqli_query($con,$sql);
 		
 	}
