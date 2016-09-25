@@ -24,9 +24,6 @@ else{
 	
 	include 'config_database.php'; 
 	$var = 'test';
-	
-	$query=" SELECT * FROM add_rti";
-    $res=mysqli_query($con, $query);
 	echo "<center><h3> RTI Id: ".$Id."</h3></center>";
 	echo "<h4> Select an option:</h4>";
 	

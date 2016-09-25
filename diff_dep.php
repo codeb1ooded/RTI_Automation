@@ -31,6 +31,7 @@ $v=$data2;
 			<th>Query Number</th>
 			<th>Query</th>
 			<th>Reply</th>
+			<th>Date of reply</th>
 		</tr>
 <?php
 $t=1;
@@ -43,13 +44,15 @@ while($v!=0)
 		$q=$r['q_no'];
 		$ans="ans".$t;
 		$qno="qno".$t;
+		$date="date".$t;
 		echo"<tr>";
 		echo"<th>$q</th>";
-			echo"<th>".$r['ques']."</th>";
-			if($r['q_no']==$w['query_no'])
+		echo"<th>".$r['ques']."</th>";
+		if($r['q_no']==$w['query_no'])
 				echo"<th><input type=text name=$ans value=".$w['answer']."></th>";
-			else
+		else
 				echo "<th><input type=text name=$ans></th>";
+		echo"<th><input name=$date maxlength=50 placeholder='YYYY-MM-DD' required></th>";
 		echo"</tr>";
 		$t++;
 			

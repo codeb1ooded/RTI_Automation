@@ -17,23 +17,16 @@ while($b<=$q && $f1 !=0)
 	if( $f['map']==$m )
 		{
 			$ans="ans".$b;
+			$date="date".$b;
 			$ans=$_POST[$ans];
-			echo " ".$ans."\n";
+			$date=$_POST[$date];
 			$qno1=$f['q_no'];
-			$qc="SELECT * FROM dept_reply WHERE id=".$id." AND query_no=".$qno1.";";
-			$rc=mysqli_query($con,$qc);
-			$cnt=mysqli_num_rows($rc);
-			echo $cnt;
-			if($cnt!=0)
-				{
-					$sssl= "UPDATE dept_reply SET 
-						map=".$m."
-						answer=".$ans."WHERE id=".$id."AND query_no=".$qno1.";";
-				}
-			else
-			{
-				$sssl="INSERT INTO dept_reply(id, query_no, map, answer) VALUES ($id, $qno1, '$m', '$ans');"; 
-			}
+			
+			$sssl="INSERT INTO dept_reply(id, query_no, map, answer,date_reply) VALUES ($id, $qno1, '$m', '$ans','$date');"; 
+			//Changes to t2 flag
+			$ql ="UPDATE t2 SET flag=1 WHERE id=".$id." AND q_no=".$qno1." AND map='".$m."';";
+
+			mysqli_query($con,$ql);
 			mysqli_query($con, $sssl);
 			$b=$b+1;
 		}

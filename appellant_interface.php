@@ -1,3 +1,11 @@
+<html>
+<head>
+	<title>Appellant</title>
+	<link rel="stylesheet" href="css/background.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<meta charset="utf-8">
+</head>
+<body>
 <?php
 
 include'config_database.php';
@@ -9,6 +17,9 @@ $b=mysqli_num_rows($res);
 	<tr>
 		<th>Id</th>
 		<th>Name</th>
+		<th>Transfer Date</th>
+		<th>Options</th>
+
 	</tr>
 
 <?php
@@ -20,11 +31,14 @@ while($b!=0)
 	$f2=mysqli_fetch_array($res2);
 
 	echo"<tr>
-		<th><a href='appellant_login_query.php?id=".$f2['id']."'>".$f2['id']."</a></th>
-		<th><a href='appellant_login_query.php?id=".$f2['id']."'>".$f2['name']."</a></th>
+		<th>".$f2['id']."</a></th>
+		<th>".$f2['name']."</a></th>
+		<th>".$f['transfer_date']."</a></th>
+		<th><a href='appeal_option.php?id=".$f2['id']."'>View Options</a></th>
 	</tr>";
 
 $b--;
-}	
+}
+echo"</table></br></br>";	
+include 'logoff.html';
 ?>
-</table>

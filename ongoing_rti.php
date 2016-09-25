@@ -70,9 +70,10 @@ $account_type = $_SESSION['login_access'];
 
 		$_SESSION['map']=$m;
 
-		$query=" SELECT * FROM t2 WHERE map='".$m."' order by id;";// order by id";
+		$query=" SELECT * FROM t2 WHERE map='".$m."' order by id;";
 		$data=mysqli_query($con,$query);
 		$data2=mysqli_num_rows($data);
+
 		echo "<table class='table table-bordered'>" ;
 		echo "<tr>
 		<th>ID</th>
@@ -82,18 +83,22 @@ $account_type = $_SESSION['login_access'];
 		<th>Days left</th>
 		<th>Options</th>
 		</tr>";
+
 		$ido = -1;
+
 		while($data2!=0){
 			$data3=mysqli_fetch_array($data);
 			$i=$data3['id'];
-			if($i!=$ido) {
+			$flag=$data3['flag'];
+			if($i!=$ido && $flag !=1) {
 				$quer="SELECT * FROM add_rti WHERE id=".$i." order by date_of_receipt;";
 				$res=mysqli_query($con,$quer);
 				$v=mysqli_num_rows($res);
 
 				while($v!=0) {
 					$r=mysqli_fetch_array($res);
-					if($r['archive']==0) {
+					if($r['archive']==0)
+					 {
 						$d1=strtotime("$r[date_of_receipt]");
 						$mth=0;
 						$day=30;
