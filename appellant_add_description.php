@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION)){
+	session_start();
+}
+	?>
 <html>
 <head>
 	<title>Add Decision</title>
@@ -9,7 +14,6 @@
 <?php
 $id=$_GET['id'];
 
-session_start();
 $_SESSION['i']=$id;
 
 include 'config_database.php';
@@ -24,7 +28,9 @@ echo "</br></br>";
 echo" <center><h3>Name of appellant: ".$res1['name']."</h3></center> ";
 echo "</br>";
 echo"<form action='save_decision.php' method=POST>";
+
 echo"<center><textarea name=decision rows=10 cols=100></textarea><center>";
+
 echo"</br></br><center><input type=submit class=btn value=Save></center>";
 echo"</form>";
 		echo "</br>" ;

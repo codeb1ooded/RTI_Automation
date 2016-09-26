@@ -20,7 +20,7 @@ if(isset($_GET['id']))
 else{
 	$Id=$_SESSION['prev_rti_id'];}
 	
-	$_SESSION['prev_rti_id']=$Id;
+	$_SESSION['id']=$Id;
 	
 	include 'config_database.php'; 
 	$var = 'test';

@@ -1,3 +1,6 @@
+<?php
+	session_start();
+	?>
 <html>
 	<head>
 		<title>Add Queries</title>

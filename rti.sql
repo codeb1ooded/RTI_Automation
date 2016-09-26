@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Sep 25, 2016 at 12:47 PM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 7.0.8
+-- Host: 127.0.0.1
+-- Generation Time: Sep 27, 2016 at 01:18 AM
+-- Server version: 10.1.9-MariaDB
+-- PHP Version: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -45,25 +45,28 @@ CREATE TABLE `add_rti` (
   `fee_deposit_date` date NOT NULL,
   `pay_mode` varchar(20) NOT NULL,
   `archive` int(11) DEFAULT NULL,
-  `closed` int(11) DEFAULT NULL
+  `closed` int(11) DEFAULT NULL,
+  `post` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `add_rti`
 --
 
-INSERT INTO `add_rti` (`id`, `name`, `gender`, `address`, `pin_code`, `state`, `country`, `phone_no`, `mobile`, `email`, `citizenship`, `date_of_receipt`, `date_of_receipt_cio`, `timespan`, `fee_enclosed`, `fee_deposit_date`, `pay_mode`, `archive`, `closed`) VALUES
-(1, 'ut', 'Female', 'abc', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 0, NULL),
-(3, 'abc', 'Female', 'esdtrgyuij', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 1, 1),
-(5, 'utkarsha', 'Female', 'abcdef', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 1, 1),
-(8, 'Tia', 'Female', 'Bh-3 East shalomar Bagh', 110088, 'Delhi', 'India', '98745874', '8932865258', 's@gmail.com', 'Indian', '2016-06-22', '2016-01-01', 172, 'yes', '2016-06-05', 'DD', 1, NULL),
-(9, 'tt', 'Male', 'aklSMZKAS', 110088, 'Delhi', 'India', '98258741', '2365410987', 'salonibhartia@ymail.com', 'Indian', '2016-07-08', '2016-07-09', 1, 'yes', '2016-07-08', 'DD', 1, NULL),
-(10, 'ut', 'Male', 'dwarka', 110077, 'Delhi', 'India', '25090133', '9968813151', 'utkarshagoswami@gmail.com', 'Indian', '2016-06-20', '2016-06-20', 0, 'yes', '2016-06-20', 'DD', 1, 1),
-(11, 'codebenderut', 'Male', 'dwarka', 110077, 'Delhi', 'India', '25090133', '9968813151', 'utkarshagoswami@gmail.com', 'Indian', '2016-06-20', '2016-06-21', 1, 'yes', '2016-06-21', 'DD', 1, 1),
-(12, 'Mr Abcd Efgh', 'Female', 'fghfjik hjsd', 123456, 'Kerala', 'India', '12345678', '1234567890', 'abcd@domain.com', 'Indian', '2014-12-12', '2014-12-12', 0, 'yes', '2014-12-12', 'DD', 1, NULL),
-(13, 'adad', 'Male', 'adad', 110004, 'Bombay', 'India', '64652222', '9211557755', 'bhavyagarg12@gmail.com', 'Indian', '2016-01-02', '2016-01-12', 10, 'yes', '2016-01-13', 'dd', NULL, NULL),
-(14, 'Try', 'Male', 'bh-109', 110099, 'delhi', 'India', '98765453', '6464646464', 's@gmail.com', 'Indian', '2016-02-06', '2016-02-06', 0, 'yes', '2016-02-06', 'dd', NULL, NULL),
-(15, 'asg', 'Male', 'nsn', 119988, 'delhi', 'India', '76546453', '2435344425', 'g@n.c', 'Indian', '2016-02-06', '2016-02-06', 0, 'yes', '2016-02-06', 'dd', NULL, NULL);
+INSERT INTO `add_rti` (`id`, `name`, `gender`, `address`, `pin_code`, `state`, `country`, `phone_no`, `mobile`, `email`, `citizenship`, `date_of_receipt`, `date_of_receipt_cio`, `timespan`, `fee_enclosed`, `fee_deposit_date`, `pay_mode`, `archive`, `closed`, `post`) VALUES
+(1, 'ut', 'Female', 'abc', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 0, NULL, '0'),
+(3, 'abc', 'Female', 'esdtrgyuij', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 1, 1, '0'),
+(5, 'utkarsha', 'Female', 'abcdef', 110077, 'UP', 'India', '9968813151', '9968813151', 'ut@gmail.com', 'Indian', '2016-07-16', '2016-07-18', 2, 'yes', '2016-07-18', 'DD', 1, 1, '0'),
+(8, 'Tia', 'Female', 'Bh-3 East shalomar Bagh', 110088, 'Delhi', 'India', '98745874', '8932865258', 's@gmail.com', 'Indian', '2016-06-22', '2016-01-01', 172, 'yes', '2016-06-05', 'DD', 1, NULL, '0'),
+(9, 'tt', 'Male', 'aklSMZKAS', 110088, 'Delhi', 'India', '98258741', '2365410987', 'salonibhartia@ymail.com', 'Indian', '2016-07-08', '2016-07-09', 1, 'yes', '2016-07-08', 'DD', 1, NULL, '0'),
+(10, 'ut', 'Male', 'dwarka', 110077, 'Delhi', 'India', '25090133', '9968813151', 'utkarshagoswami@gmail.com', 'Indian', '2016-06-20', '2016-06-20', 0, 'yes', '2016-06-20', 'DD', 1, 1, '0'),
+(11, 'codebenderut', 'Male', 'dwarka', 110077, 'Delhi', 'India', '25090133', '9968813151', 'utkarshagoswami@gmail.com', 'Indian', '2016-06-20', '2016-06-21', 1, 'yes', '2016-06-21', 'DD', 1, 1, '0'),
+(12, 'Mr Abcd Efgh', 'Female', 'fghfjik hjsd', 123456, 'Kerala', 'India', '12345678', '1234567890', 'abcd@domain.com', 'Indian', '2014-12-12', '2014-12-12', 0, 'yes', '2014-12-12', 'DD', 1, NULL, '0'),
+(13, 'adad', 'Male', 'adad', 110004, 'Bombay', 'India', '64652222', '9211557755', 'bhavyagarg12@gmail.com', 'Indian', '2016-01-02', '2016-01-12', 10, 'yes', '2016-01-13', 'dd', NULL, NULL, '0'),
+(14, 'Try', 'Male', 'bh-109', 110099, 'delhi', 'India', '98765453', '6464646464', 's@gmail.com', 'Indian', '2016-02-06', '2016-02-06', 0, 'yes', '2016-02-06', 'dd', NULL, NULL, '0'),
+(15, 'asg', 'Male', 'nsn', 119988, 'delhi', 'India', '76546453', '2435344425', 'g@n.c', 'Indian', '2016-02-06', '2016-02-06', 0, 'yes', '2016-02-06', 'dd', NULL, NULL, '0'),
+(16, 'Bhavya', 'Female', '123', 223121, 'Delhi', 'India', '64657755', '9716777777', 'abc@abc.in', 'Indian', '2016-10-21', '2016-10-21', 0, 'yes', '2016-10-21', 'dd', NULL, NULL, 'yes'),
+(17, 'Bhavya', 'Female', '123', 223121, 'Delhi', 'India', '64657755', '9716777777', 'abc@abc.in', 'Indian', '2016-10-21', '2016-10-21', 0, 'yes', '2016-10-21', 'dd', NULL, NULL, 'yes');
 
 -- --------------------------------------------------------
 
@@ -89,7 +92,16 @@ INSERT INTO `appeal_decision` (`id`, `descision`) VALUES
 (1, 'smanxnz asnsamzjwsmnxwnmsxz '),
 (1, 'smanxnz asnsamzjwsmnxwnmsxz '),
 (3, 'bnhjb nhjbn nbjhnb n'),
-(3, 'bnhjb nhjbn nbjhnb n');
+(3, 'bnhjb nhjbn nbjhnb n'),
+(9, ''),
+(9, 'done'),
+(5, 'done'),
+(5, 'de'),
+(5, ''),
+(5, 'sasa'),
+(5, 'working'),
+(5, 'perfect'),
+(1, 'final');
 
 -- --------------------------------------------------------
 
@@ -387,7 +399,13 @@ INSERT INTO `t2` (`id`, `q_no`, `ques`, `map`, `date_sent`, `flag`) VALUES
 (15, 1, 's', 'Ex', '2016-05-03', 1),
 (15, 2, 's', 'Ac', '2016-05-03', 0),
 (15, 3, 'w', 'HR', '2016-05-03', 1),
-(15, 4, 's', 'Ex', '2016-05-03', 1);
+(15, 4, 's', 'Ex', '2016-05-03', 1),
+(0, 1, '12', 'Ex', '2016-10-05', 0),
+(0, 1, '2', 'Ex', '2016-09-16', 0),
+(0, 2, '12', 'Ad', '2016-09-16', 0),
+(16, 1, '12', 'Ad', '2016-09-21', 0),
+(17, 1, 'e2', 'HR', '2016-09-21', 0),
+(17, 2, 'e1', 'Ac', '2016-09-09', 0);
 
 --
 -- Indexes for dumped tables
@@ -437,7 +455,7 @@ ALTER TABLE `section4`
 -- AUTO_INCREMENT for table `add_rti`
 --
 ALTER TABLE `add_rti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `first_appeal`
 --

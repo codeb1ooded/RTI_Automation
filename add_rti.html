@@ -94,7 +94,7 @@
 		</tr>
 
 		<tr>
-			<th>Mobile Number (For receiving SMS alerts)</th>
+			<th>Mobile Number </th>
 			<td><input type="text" name="mobile" id="cell" maxlength="15" pattern="^\d{10}$" value="" required>
 				<cite>Provide a 10-digit no.</cite>
 			</td>
@@ -135,7 +135,7 @@
 	<table class="table table-bordered table-condensed">
 		<tbody>
 			<tr>
-				<th>RTI application</th>
+				<th>Is Fee enclosed with RTI application</th>
 				<th>    
 					<input type="radio" value="yes" checked="checked" name="fee" id="fee_paid" required> Yes&nbsp&nbsp                        
 					<input type="radio" value="no" name="fee" id="fee_not_paid" required> No 
@@ -151,9 +151,19 @@
 				<th>Mode of payment(cheque/DD/cash/IPO)</th>
 				<th><input type="text" id="pay_mode" name="pay_mode" maxlength="50" required></th>
 			</tr>
+			
+			<tr>
+				<th>Whether the applicant wishes to receive the information by post</th>
+				<th>    
+					<input type="radio" value="yes" checked="checked" name="post" id="post_yes" required> Yes&nbsp&nbsp                        
+					<input type="radio" value="no" name="post" id="post_no" required> No 
+				</th>
+			</tr>
+
 		</tbody>
 	</table>
 
+	
 	<input type="submit" name="add" value="Add Queries" class="btn" onclick="return validateDate()">&nbsp&nbsp 
 	<input type="submit" name="submit" value="Save and Exit" class="btn" onclick="return validateDate()">
 	
