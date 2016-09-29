@@ -48,7 +48,6 @@
 	}
 
 	else if(isset($_POST['submitresponsenew'])){
-		include 'ongoing_rti_option.php';
 		include 'config_database.php';
 
 		$sql="DELETE FROM info_about_reply WHERE id=".$id.";";
@@ -62,6 +61,10 @@
 		VALUES('$id','$_POST[holder_receipt_date]','$_POST[reply_date]','$_POST[reply_mode]','$d3','$_POST[faa_info]')";
 		mysqli_query($con,$sql);
 		mysqli_close($con);
+		echo "<a href='close_rti.php?id=".$id."'>Close This RTI</a>";
+		echo "&nbsp&nbsp<a class='btn' href='ongoing_rti_option.php?id=".$id."''>Back</a>" ;
+	
+	
 	}
 
 ?>

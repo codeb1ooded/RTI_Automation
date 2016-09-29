@@ -1,5 +1,7 @@
+<?php	
+	session_start();
+?>
 <html>
-
 	<head>
 		<title>Reply To Appellant Form</title>
 		<link rel="stylesheet" href="css/background.css">
@@ -13,6 +15,7 @@
 		<div class="container">
 <?php
 	$Id = $_GET['id'];
+	$_SESSION['prev_rti_id']=$Id;
 	echo "<br><h3>Reply Information for RTI with Id: ".$Id."</h3>";
 	include 'config_database.php';
 	$query=" SELECT * FROM info_about_reply WHERE id=".$Id.";";
@@ -46,10 +49,8 @@
 			</tr>
 		</table>
 		<input type="submit" name="submitresponsenew" class=btn value="Save and Exit">
-	</form>
-<?php
-		
-		echo "<td><a href='close_rti.php?id=".$Id."'>Close This RTI</a></td>";
+		</form>
+<?php	
 		echo "<br><a class=btn href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
 	}
 	else
@@ -81,7 +82,6 @@
 		<input type="submit" name="submitresponse" class=btn value="Save and Exit">
 	</form>
 <?php
-	echo "<td><a href='close_rti.php?id=".$Id."'>Close This RTI</a></td>";
 	echo "&nbsp&nbsp<a class='btn' href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
 	}
 ?>

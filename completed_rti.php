@@ -28,7 +28,8 @@
 					<th>ID</th>
 					<th>Applicant Name</th>
 					<th>Phone Number</th>
-					<th>View Details</th></tr>";
+					<th>View Details</th>
+					<th>First Appeal</th></tr>";
 
 			while($r=mysqli_fetch_assoc($res)){
 				if($r['archive']==1) {
@@ -50,7 +51,8 @@
 								<td>".$r['id']."</td>
 								<td>".$r['name']."</td>
 								<td>".$r['phone_no']."</td>
-								<td><a href='compid.php?id=".$r['id']."'>View</a></td> </tr>";
+								<td><a href='compid.php?id=".$r['id']."'>View</a></td>
+								<td><a href='appeal.php?id=".$r['id']."'>First Appeal</a></td></tr>";
 						}
 						else {
 							$sql="UPDATE add_rti SET closed=1 WHERE id=".$r['id'];

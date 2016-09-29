@@ -40,8 +40,6 @@ else{
 	echo "<br><br>" ;
 	echo "<a class='btn' href='reply_to_appelant.php?id=".$Id."'>Reply Information to Applicant</a>" ;
 	echo "<br><br>" ;
-	echo "<a class='btn' href='appeal.php?id=".$Id."'>First Appeal</li></a>" ;
-	echo "<br><br>" ;
 	echo "<a class='btn' href='compid.php?id=".$Id."'>Details of RTI</a>" ;
 	echo "<br><br>" ;
 	echo "<a class='btn' href='ongoing_rti.php'>Back</a>" ;
