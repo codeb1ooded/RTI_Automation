@@ -1,3 +1,16 @@
+<?php
+  if(!isset($_SESSION)) {
+	  session_start();
+  }
+	if(!isset($_SESSION['login_access'])){
+		header("location: ../errors/no_file.php");
+	}
+	elseif ($_SESSION['login_access'] != 'Admin') {
+		header("location: ../errors/no_access.php");
+	}
+	else {
+?>
+
 <html>
 	<head>
 		<title> Backup </title>
@@ -26,7 +39,7 @@
   					<th><input type="radio" name="article_sub_section" value="yes" checked> Yes</th>
 					<th><input type="radio" name="article_sub_section" value="no"> No</th>
 			</tr>
-			<tr> 
+			<tr>
 				<th>Department Reply</th>
   					<th><input type="radio" name="dept_reply" value="yes" checked> Yes</th>
 					<th><input type="radio" name="dept_reply" value="no"> No</th>
@@ -64,6 +77,7 @@
 		</table>
 		<input type="submit" name="submit" value="Submit" />
 	</form>
-	<br><br><br><br><a href="select_option.php" class=btn>Back</a>
+	<br><br><br><br><a href="../select_option.php" class=btn>Back</a>
 	</body>
-</html> 
+</html>
+<?php } ?>
