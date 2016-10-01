@@ -1,13 +1,27 @@
+<?php
+  if(!isset($_SESSION)) {
+	  session_start();
+  }
+	if(!isset($_SESSION['login_access'])){
+		header("location: ../errors/no_file.php");
+	}
+	elseif ($_SESSION['login_access'] != 'Admin') {
+		header("location: ../errors/no_access.php");
+	}
+	else {
+?>
 <html>
 <head>
 	<title>Change Password</title>
-	<link rel="stylesheet" href="css/background.css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/background.css">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 	<meta charset="utf-8">
 </head>
 <body>
 <?php
-	include 'config_database.php'; 
+  $_SESSION['database_access'] = true;
+	include '../config_database.php';
+	$_SESSION['database_access'] = false;
 	echo "<div class='container'>";
 	echo "<h2>CHANGE PASSWORD</h2>" ;
 	echo "<marquee><strong>SELECT THE USER WHOSE PASSWORD NEEDS TO BE MODIFIED: </strong></marquee><br><br>";
@@ -18,7 +32,7 @@
 		<th>ID</th>
 		<th>User Name</th>
 		<th>Options</th>
-		</tr>";  
+		</tr>";
 
 	while($r=mysqli_fetch_assoc($res))
 	{
@@ -30,7 +44,8 @@
 	}
 	echo "</table>";
 ?>
-	<br><a href="select_option.php" class=btn>Back</a>
+	<br><a href="../select_option.php" class=btn>Back</a>
 </div>
 </body>
 </html>
+<?php } ?>
