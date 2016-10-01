@@ -21,7 +21,7 @@
 		include 'appellant_interface.php';
 	}
 	else {
-    if($login_access=='Admin') {
+    if ($login_access=='Admin') {
       echo "<div class=new-prev>";
 	    echo "<marquee scrollamount=5><strong>PLEASE SELECT AN OPTION:</strong></marquee> <br><br><br>";
 	    echo "<div class=options>";

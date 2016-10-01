@@ -59,7 +59,8 @@ if(isset($_POST['submit']))
 if(isset($_POST['change']))
 {
 	$id=$_GET['id'];
-	$query="UPDATE login SET password='".$_POST['pwd']."' WHERE id=".$id;
+  $new_password = hash('sha256', $_POST['pswd']);
+	$query="UPDATE login SET password='" . $new_password . "' WHERE id=".$id;
 	mysqli_query($con, $query);
 	echo "<br><h4>Password changed successfully!</h4>";
 	include 'change_password.php';
