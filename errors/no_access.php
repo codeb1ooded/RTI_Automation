@@ -4,6 +4,6 @@
   </head>
   <body>
     <p>The account you are logged in with does not have access to this file. Kindly login with correct account</p>
-    <?php include '../logoff.html'; ?>
+    <?php include '../logging/logoff.html'; ?>
   </body>
 </html>

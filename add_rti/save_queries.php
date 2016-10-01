@@ -1,9 +1,18 @@
 <?php
+if(!isset($_SESSION)) {
 	session_start();
+}
+if(!isset($_SESSION['login_access'])){
+	header("location: ../errors/no_file.php");
+}
+elseif ($_SESSION['login_access'] != 'Admin') {
+	header("location: ../errors/no_access.php");
+}
+else {
 	$id=$_SESSION['id'];
 	$b=$_SESSION['no_of_queries'];
 
-	include 'config_database.php';
+	include '../config_database.php';
 
 	$data1="SELECT * FROM t2 WHERE id=".$id.";";
 	$query=mysqli_query($con,$data1);
@@ -29,10 +38,11 @@
 	}
 	mysqli_close($con);
 	if ($c)
-		include 'ongoing_rti_option.php';
+		header('location: ../ongoing_rti_option.php');
 	else
-	include 'select_option.php';
+		header("location: ../select_option.php");
 
 	if(isset($_POST['gen_pdf']))
-		include 'gen_query_pdf.php';
+		header("location: ../gen_query_pdf.php");
+}
 ?>

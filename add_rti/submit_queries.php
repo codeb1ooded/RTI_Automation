@@ -3,10 +3,10 @@
 		session_start();
 	}
 	if(!isset($_SESSION['login_access'])){
-		header("location: errors/no_file.php");
+		header("location: ../errors/no_file.php");
 	}
 	elseif ($_SESSION['login_access'] != 'Admin') {
-		header("location: errors/no_access.php");
+		header("location: ../errors/no_access.php");
 	}
 	else {
 		$id=$_SESSION['id'];
@@ -15,13 +15,13 @@
 <html>
 <head>
 	<title>Queries</title>
-	<link rel="stylesheet" href="css/background.css">
+	<link rel="stylesheet" href="../css/background.css">
 	<meta charset="utf-8">
 </head>
 
 <body>
 <?php
-	include 'config_database.php';
+	include '../config_database.php';
 	$a=$_POST['ques'];
 
 	echo " <h3>RTI ID:".$id."</h3>";
@@ -100,7 +100,7 @@
 
 	echo "<th colspan=15></th><th><input type=submit name=save class=btn value='Save and Exit' ></th>";
 	echo "</form>";
-	echo "<th colspan=15></th><th><a href='select_option.php' name=exit  class=btn>Exit</a></th>";
+	echo "<th colspan=15></th><th><a href='../select_option.php' name=exit  class=btn>Exit</a></th>";
 	mysqli_close($con);
 ?>
 </body>
