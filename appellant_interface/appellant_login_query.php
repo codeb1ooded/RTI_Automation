@@ -1,28 +1,30 @@
 <html>
 	<head>
 		<title>Appealed RTI</title>
-		<link rel="stylesheet" href="css/background.css">
-		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/background.css">
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 		<meta charset="utf-8">
-		<script src="bootstrap/jQuery/jquery.min.js"></script>
-		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="../bootstrap/jQuery/jquery.min.js"></script>
+		<script src="../bootstrap/js/bootstrap.min.js"></script>
 	</head>
 <body>
 <div class='container'>
 <?php
-	include 'config_database.php'; 
+	$_SESSION['database_access'] = true;
+	include '../config_database.php';
+	$_SESSION['database_access'] = false;
 	$id=$_GET['id'];
-	
+
 	echo "<h4><strong>RTI Details for ID ".$id." are-</strong></h4>" ;
 	$query=" SELECT * FROM add_rti where id=".$id;
-    $res=mysqli_query($con, $query);
+  $res=mysqli_query($con, $query);
 	$r1=mysqli_fetch_assoc($res);
-	
+
 	echo "<table class='table table-bordered'>" ;
 		echo "<tr>
 				<th>Field</th>
 				<th>Value</th>
-			</tr>";  
+			</tr>";
 		echo "<tr>";
 			echo "<td>RTI Id</td>";
 			echo "<td>".$r1['id']."</td>";
@@ -83,9 +85,9 @@
 			echo "<td>Mode of payment(cheque/DD,cash,IPO)</td>";
 			echo "<td>".$r1['pay_mode']."</td>";
 		echo "</tr>";
-		
+
 	echo "</table><br>";
-	
+
 	$query=" SELECT * FROM appeal_query where id=".$id;
     $res=mysqli_query($con, $query);
 	$r6=mysqli_fetch_assoc($res);

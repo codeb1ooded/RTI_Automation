@@ -2,21 +2,30 @@
 if(!isset($_SESSION)){
 	session_start();
 }
+if(!isset($_SESSION['login_access'])){
+	header("location: ../errors/no_file.php");
+}
+elseif ($_SESSION['login_access'] != 'Appellant') {
+	header("location: ../errors/no_access.php");
+}
+else{
 ?>
 <html>
 <head>
 	<title>Appellant</title>
-	<link rel="stylesheet" href="css/background.css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/background.css">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 	<meta charset="utf-8">
 </head>
 <body>
 <?php
+$_SESSION['database_access'] = true;
+include '../config_database.php';
+$_SESSION['database_access'] = false;
 
-include'config_database.php';
-$sql="SELECT * FROM first_appeal ";
-$res=mysqli_query($con,$sql);
-$b=mysqli_num_rows($res);
+$sql = "SELECT * FROM first_appeal ";
+$res = mysqli_query($con,$sql);
+$b = mysqli_num_rows($res);
 ?>
 <table width=100%>
 	<tr>
@@ -44,6 +53,7 @@ while($b!=0)
 
 $b--;
 }
-echo"</table></br></br>";	
-include 'logoff.html';
+echo"</table></br></br>";
+include '../logoff.html';
+}
 ?>

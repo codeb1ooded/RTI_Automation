@@ -18,10 +18,10 @@
 	// Variable $login_access defines which type of user is logged in and then give response of the page as per that
 	$login_access = $_SESSION['login_access'];
 	if($login_access == 'Appellant'){
-		include 'appellant_interface.php';
+		header("location: appellant_interface/appellant_interface.php");
 	}
 	else {
-    if ($login_access=='Admin') {
+    if ($login_access == 'Admin') {
       echo "<div class=new-prev>";
 	    echo "<marquee scrollamount=5><strong>PLEASE SELECT AN OPTION:</strong></marquee> <br><br><br>";
 	    echo "<div class=options>";

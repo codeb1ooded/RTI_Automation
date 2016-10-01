@@ -2,13 +2,20 @@
 if(!isset($_SESSION)){
 	session_start();
 }
+if(!isset($_SESSION['login_access'])){
+	header("location: ../errors/no_file.php");
+}
+elseif ($_SESSION['login_access'] != 'Appellant') {
+	header("location: ../errors/no_access.php");
+}
+else{
 $Id=$_GET['id'];
 ?>
 <html>
 <head>
 	<title>Appealed RTI</title>
-	<link rel="stylesheet" href="css/background.css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/background.css">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 	<meta charset="utf-8">
 </head>
 <body>
@@ -16,7 +23,7 @@ $Id=$_GET['id'];
 		echo "<div class='container'>";
 		echo "<center><h3> RTI Id: ".$Id."</h3></center>";
 		echo "<h4> Select an option:</h4>";
-	
+
 		echo "</br>" ;
 		echo "<a class='btn' href='appellant_login_query.php?id=".$Id."'>View Details</a>" ;
 		echo "</br></br>" ;
@@ -26,7 +33,8 @@ $Id=$_GET['id'];
 		echo "</br>" ;
 		echo "<a class='btn' href='appellant_add_description.php?id=".$Id."'>Add Descision</a>" ;
 		echo "</br></br>" ;
-	include 'logoff.html';
+	include '../logoff.html';
 	?>
 </body>
 </html>
+<?php } ?>
