@@ -26,7 +26,7 @@
 	    echo "<marquee scrollamount=5><strong>PLEASE SELECT AN OPTION:</strong></marquee> <br><br><br>";
 	    echo "<div class=options>";
 		  echo "<a href='./add_rti.php'>Add New RTI</a><br><br><br>
-			      <a href='./report.php'>Generate Report</a><br><br><br>
+			      <a href='./report/report.php'>Generate Report</a><br><br><br>
 			      <a href='./backup/backup_ask_user.php'>Create Backup</a><br><br><br>
 			      <a href='./change_password.php'>Change Password</a><br><br><br>
 			      <a href='./completed_rti.php'>Completed RTIs</a><br><br><br>

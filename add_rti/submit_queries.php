@@ -21,7 +21,9 @@
 
 <body>
 <?php
+	$_SESSION['database_access'] = true;
 	include '../config_database.php';
+	$_SESSION['database_access'] = false;
 	$a=$_POST['ques'];
 
 	echo " <h3>RTI ID:".$id."</h3>";
