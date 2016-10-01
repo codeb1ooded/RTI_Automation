@@ -40,7 +40,7 @@ else {
 	}
 	mysqli_close($con);
 	if ($c)
-		header('location: ../ongoing_rti_option.php');
+		header('location: ../ongoing_rti/ongoing_rti_option.php');
 	else
 		header("location: ../select_option.php");
 

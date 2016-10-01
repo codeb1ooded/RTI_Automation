@@ -45,7 +45,7 @@
 				<input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save and Exit" class="btnsaveappeal"></th>
 			</form>
 	<?php
-			echo "<a class=btn href='../ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
+			echo "<a class=btn href='../ongoing_rti/ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
 		}
 		else {
 	?>
@@ -66,7 +66,7 @@
 				<input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save " class="btnsaveappeal"></th>
 			</form>
 			<?php
-			echo "<a class=btn href='../ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
+			echo "<a class=btn href='../ongoing_rti/ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
 		}
 		?>
 	</div>

@@ -227,7 +227,7 @@
 	else if ($r1['archive'] == 1)
 		echo "<a class=btn href='completed_rti.php'>Back</a>" ;
 	else
-		echo "<a class=btn href='../ongoing_rti_option.php?id=".$id."'>Back</a>" ;
+		echo "<a class=btn href='../ongoing_rti/ongoing_rti_option.php?id=".$id."'>Back</a>" ;
 
 ?>
 </form>

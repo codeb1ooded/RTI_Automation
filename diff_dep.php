@@ -40,7 +40,7 @@ while($v!=0)
 	$r=mysqli_fetch_array($res);
 	$w=mysqli_fetch_array($res2);
 	if ($r['map']==$m )
-	{	
+	{
 		$q=$r['q_no'];
 		$ans="ans".$t;
 		$qno="qno".$t;
@@ -55,8 +55,8 @@ while($v!=0)
 		echo"<th><input name=$date maxlength=50 placeholder='YYYY-MM-DD' required></th>";
 		echo"</tr>";
 		$t++;
-			
-	}	
+
+	}
 	$v--;
 	}
 
@@ -64,7 +64,7 @@ while($v!=0)
 </table>
 			<center><input type=submit name=save class=btn value='Save' ></center>
 			</form>
-			<a class=btn href='./ongoing_rti.php'>Back</a>
+			<a class=btn href='./ongoing_rti/ongoing_rti.php'>Back</a>
 
 <?php
 $_SESSION['que']=$t;

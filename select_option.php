@@ -31,13 +31,13 @@
 			      <a href='./logging/change_password.php'>Change Password</a><br><br><br>
 			      <a href='./completed_rti.php'>Completed RTIs</a><br><br><br>
 			      <a href='./view_closed_rti.php'>Closed RTIs</a><br><br><br>
-			      <a href='./ongoing_rti.php'>Ongoing RTIs</a>
+			      <a href='./ongoing_rti/ongoing_rti.php'>Ongoing RTIs</a>
 			      </div>
 			      </div>";
 		  include 'logoff.html';
     }
     else{
-      include 'ongoing_rti.php';
+      header("location: ongoing_rti/ongoing_rti.php");
     }
   }
 }
