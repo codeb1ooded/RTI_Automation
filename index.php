@@ -1,6 +1,10 @@
 <?php
+   if(!isset($_SESSION)) {
+	    session_start();
+   }
+   $_SESSION['database_access'] = true;
    include 'config_database.php';
-   session_start();
+   $_SESSION['database_access'] = false;
    $result = 'No';
 
    // Php code to check validation of entered username and password

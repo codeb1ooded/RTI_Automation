@@ -14,7 +14,9 @@ $account_type = $_SESSION['login_access'];
 </head>
 <body>
 	<?php
+	$_SESSION['database_access'] = true;
 	include 'config_database.php';
+	$_SESSION['database_access'] = false;
 	echo "<div class='container'>";
 	echo "<h2>ONGOING RTIs</h2>" ;
 	echo "<marquee><strong>SELECT THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
@@ -56,7 +58,7 @@ $account_type = $_SESSION['login_access'];
 		echo "</table>";
 		echo "<a href='select_option.php' class=btn >Back</a>";
 	}
-	else 
+	else
 		{
 		$dept = $_SESSION['department'];
 		$i=0;
