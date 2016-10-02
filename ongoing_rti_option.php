@@ -34,11 +34,11 @@ else{
 	echo "<br><br>" ;
 	echo "<a class='btn' href='queries/reply/reply_queries.php?id=".$Id."'>Reply Of The Queries</a>" ;
 	echo "<br><br>" ;
-	echo "<a class='btn' href='generate_reply.php?id=".$Id."'>Generate Reply</a>" ;
+	echo "<a class='btn' href='ongoing_rti/generate_reply.php?id=".$Id."'>Generate Reply</a>" ;
 	echo "<br><br>" ;
-	echo "<a class='btn' href='section4.php?id=".$Id."'>Section 4</a>" ;
+	echo "<a class='btn' href='ongoing_rti/section4.php?id=".$Id."'>Section 4</a>" ;
 	echo "<br><br>" ;
-	echo "<a class='btn' href='reply_to_appelant.php?id=".$Id."'>Reply Information to Applicant</a>" ;
+	echo "<a class='btn' href='ongoing_rti/reply_to_appelant.php?id=".$Id."'>Reply Information to Applicant</a>" ;
 	echo "<br><br>" ;
 	echo "<a class='btn' href='compid.php?id=".$Id."'>Details of RTI</a>" ;
 	echo "<br><br>" ;

@@ -37,7 +37,7 @@
 	mysqli_close($con);
 if(isset($_POST['save']))
 {
-	include '../ongoing_rti/ongoing_rti_option.php';
+	header('location: ../ongoing_rti/ongoing_rti_option.php');
 }
 if(isset($_POST['reply']))
 {

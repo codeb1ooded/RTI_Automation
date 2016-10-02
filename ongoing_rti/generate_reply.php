@@ -1,22 +1,33 @@
+<?php
+if(!isset($_SESSION)){
+	session_start();
+}
+if(!isset($_SESSION['login_access'])){
+	header("location: ../errors/no_file.php");
+}
+else{
+?>
 	<html>
 	<head>
 		<title>Generate Reply</title>
-		<link rel="stylesheet" href="css/background.css">
+		<link rel="stylesheet" href="../css/background.css">
 		<meta charset="utf-8">
 	</head>
 
 	<body>
 		<?php
 		$id=$_GET['id'];
-		include 'config_database.php'; 
-		
+		$_SESSION['database_access'] = true;
+		include '../db/config_database.php';
+		$_SESSION['database_access'] = false;
+
 		$data1 = "SELECT * FROM t2 WHERE id=".$id.";";
-		$query = mysqli_query($con,$data1);
+		$query = mysqli_query($con, $data1);
 		$data2 = mysqli_num_rows($query);
 		$a = $data2;
 
 		$data3 = "SELECT * FROM add_rti WHERE id=".$id.";";
-		$query2 = mysqli_query($con,$data3);
+		$query2 = mysqli_query($con, $data3);
 		$data4 = mysqli_num_rows($query2);
 		$b = $data4;
 		$add_rtirows = mysqli_fetch_array($query2);
@@ -29,7 +40,7 @@
 		$query4 = mysqli_query($con, $data7);
 
 		if($data2 == $data6){
-			echo" 
+			echo"
 			Ref.: CPIO/	</br>						Dated:
 			</br></br></br>
 			To </br></br> Name: ".$add_rtirows['name']."</br></br>Address: ".$add_rtirows['address']."</br></br></br>
@@ -61,7 +72,7 @@
 				$ans="ans".$a;
 				?>
 				<tr>
-					<th>"<?php echo $t2rows['q_no']?></th>	
+					<th>"<?php echo $t2rows['q_no']?></th>
 					<th><?php echo $t2rows['ques']?></th>
 					<th><?php echo $t2rows['ans']?></th>
 				</tr>
@@ -72,7 +83,7 @@
 			Designation/CPIO
 
 			Encl.: As above.";
-			
+
 			echo"</table>";
 			echo "<button class='btn' onclick='myFuction()'>Print the reply</button>";
 			?>
@@ -88,3 +99,4 @@
 			?>
 		</body>
 		</html>
+<?php } ?>

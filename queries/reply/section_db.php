@@ -1,9 +1,18 @@
+<?php
+ if(!isset($_SESSION)) {
+	session_start();
+ }
+ if(!isset($_SESSION['login_access'])){
+   header("location: ../../errors/no_file.php");
+ }
+ else {
+?>
 <html>
 	<head>
 		<title>Section Information</title>
-		<link rel="stylesheet" href="css/background.css">
+		<link rel="stylesheet" href="../../css/background.css">
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
 	</head>
 
 	<body>
@@ -54,3 +63,4 @@
 		</table>
 	</body>
 </html>
+<?php } ?>

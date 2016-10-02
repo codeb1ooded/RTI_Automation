@@ -5,6 +5,7 @@ if(!isset($_SESSION)){
 if(!isset($_SESSION['login_access'])){
 	header("location: ../errors/no_file.php");
 }
+else{
 ?>
 <html>
 <head>
@@ -42,7 +43,7 @@ else{
 	echo "<br><br>" ;
 	echo "<a class='btn' href='section4.php?id=".$Id."'>Section 4</a>" ;
 	echo "<br><br>" ;
-	echo "<a class='btn' href='reply_to_appelant.php?id=".$Id."'>Reply Information to Applicant</a>" ;
+	echo "<a class='btn' href='../appellant_interface/reply_to_appelant.php?id=".$Id."'>Reply Information to Applicant</a>" ;
 	echo "<br><br>" ;
 	echo "<a class='btn' href='compid.php?id=".$Id."'>Details of RTI</a>" ;
 	echo "<br><br>" ;
@@ -52,3 +53,4 @@ else{
 </div>
 </body>
 </html>
+<?php } ?>

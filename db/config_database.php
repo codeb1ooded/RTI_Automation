@@ -1,10 +1,10 @@
 <?php
-/**if(!isset($_SESSION) || !isset($_SESSION['database_access']) || $_SESSION['database_access'] != true) {
+if(!isset($_SESSION) || !isset($_SESSION['database_access']) || $_SESSION['database_access'] != true) {
 //	 echo 'session not started';
 		include 'index.php';
 		echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
 }
-else{ **/
+else{
 	$con = mysqli_connect("localhost","root","");
 	if (!$con) {
 		die('Could not connect: ' . mysqli_error());
@@ -19,5 +19,5 @@ else{ **/
 	$db = mysqli_select_db($conn, "rti");
 	if(!$db)
 		echo " Connection to the database failed ";
-//}
+}
 ?>
