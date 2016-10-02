@@ -24,7 +24,7 @@ $id=$_GET['id'];
 $_SESSION['i']=$id;
 
 $_SESSION['database_access'] = true;
-include '../config_database.php';
+include '../db/config_database.php';
 $_SESSION['database_access'] = false;
 
 echo"<center><h3>Corresponding to Appeal for id ". $id." add decision</h3></center>";

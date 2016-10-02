@@ -25,7 +25,7 @@ else{
 
 	$_SESSION['id']=$Id;
 	$_SESSION['database_access'] = true;
-	include '../config_database.php';
+	include '../db/config_database.php';
 	$_SESSION['database_access'] = false;
 	$var = 'test';
 	echo "<center><h3> RTI Id: ".$Id."</h3></center>";

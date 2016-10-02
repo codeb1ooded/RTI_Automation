@@ -20,7 +20,7 @@
 <body>
 <?php
   $_SESSION['database_access'] = true;
-	include '../config_database.php';
+	include '../db/config_database.php';
   $_SESSION['database_access'] = false;
 
 	$d1=strtotime($_POST['date_of_receipt']);

@@ -32,7 +32,7 @@ $Id=$_GET['id'];
 
 	<?php
 
-		include '../config_database.php';
+		include '../db/config_database.php';
 
 		$q='SELECT * FROM add_rti WHERE id='.$Id.";";
 		$sql=mysqli_query($con,$q);
@@ -45,7 +45,7 @@ $Id=$_GET['id'];
 	?>
 	<h5 style="margin:40 0 0 900px">Date:</h5>
 	</br>
-	<h5 style="margin:-2 0 0 900px">Appeal No:<?php echo " ".$Id; ?></h5> 
+	<h5 style="margin:-2 0 0 900px">Appeal No:<?php echo " ".$Id; ?></h5>
 	<?php echo "<h6><b>Name of appellant: </b>".$data3['name']."</h6> ";?>
 	<h6><b>Address of appellant: </b><?php echo " ".$data3['address'];?></h6>
 	<p>
@@ -54,21 +54,21 @@ $Id=$_GET['id'];
 
 	   </br>
 	  <u><b>Facts:</b></u>
-	  	
+
 	  	</br>
 
-			2.	Shri/Smt./Ms <u><?php echo " ".$data3['name'];?></u>, the applicant, vide application dated <u><?php echo" ".$data3['date_of_receipt']; ?></u>. sought the following information under the RTI Act, 2005 from the CPIO, . . . . . . . . . . . . . . . .  . . . . . … . (name of Department/Organisation), 
+			2.	Shri/Smt./Ms <u><?php echo " ".$data3['name'];?></u>, the applicant, vide application dated <u><?php echo" ".$data3['date_of_receipt']; ?></u>. sought the following information under the RTI Act, 2005 from the CPIO, . . . . . . . . . . . . . . . .  . . . . . … . (name of Department/Organisation),
 			Public Authority:
-	
+
 	</br>
 		<b><u>Decision:</u></b>
 	</br>
-		8.	The Appellant in paragraph ....... of his appeal dated <?php echo" ".$data2['transfer_date']; ?> has stated that ..  ..  ..  ..  (observation)/(reasoning), the decision/direction of the CPIO u/s …….. of the Right to Information Act, 2005, is upheld/not upheld. The CPIO is hereby directed to disclose/provide the information within 10 working days from the date of receipt of this order. 
+		8.	The Appellant in paragraph ....... of his appeal dated <?php echo" ".$data2['transfer_date']; ?> has stated that ..  ..  ..  ..  (observation)/(reasoning), the decision/direction of the CPIO u/s …….. of the Right to Information Act, 2005, is upheld/not upheld. The CPIO is hereby directed to disclose/provide the information within 10 working days from the date of receipt of this order.
 	</br>
 		9.	The Appeal is disposed of accordingly.
 	</br>
 		10.	A copy of this order be forwarded to the Appellant and the CPIO.
-	</p>		
+	</p>
 	 </br>
 	 </br>
 	 </br>

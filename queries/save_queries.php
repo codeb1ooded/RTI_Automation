@@ -13,7 +13,7 @@ else {
 	$b=$_SESSION['no_of_queries'];
 
 	$_SESSION['database_access'] = true;
-	include '../config_database.php';
+	include '../db/config_database.php';
 	$_SESSION['database_access'] = false;
 
 	$data1="SELECT * FROM t2 WHERE id=".$id.";";

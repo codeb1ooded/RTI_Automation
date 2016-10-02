@@ -32,7 +32,7 @@
 <?php
 if(isset($_POST['name'])){
   $_SESSION['database_access'] = true;
-	include '../config_database.php';
+	include '../db/config_database.php';
 	$_SESSION['database_access'] = false;
 
 	$query="SELECT count(name),name,id FROM add_rti group by name,phone_no order by id";
@@ -62,7 +62,7 @@ if(isset($_POST['name'])){
 if(isset($_POST['dept'])){
 
 	$_SESSION['database_access'] = true;
-	include '../config_database.php';
+	include '../db/config_database.php';
 	$_SESSION['database_access'] = false;
 
 	$query="SELECT count(map),map,id FROM t2 group by map order by id";
@@ -93,7 +93,7 @@ if(isset($_POST['dept'])){
 if(isset($_POST['close'])){
 
 	$_SESSION['database_access'] = true;
-	include '../config_database.php';
+	include '../db/config_database.php';
 	$_SESSION['database_access'] = false;
 
 	$query="SELECT * FROM add_rti WHERE closed=1";
@@ -283,7 +283,7 @@ function validatedate2(inputText)  {
 <?php
 if(isset($_POST['enter'])){
 	$_SESSION['database_access'] = true;
-	include '../config_database.php';
+	include '../db/config_database.php';
 	$_SESSION['database_access'] = false;
 
 	$d1=$_POST['d1'];

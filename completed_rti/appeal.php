@@ -23,7 +23,7 @@
 		$Id = $_GET['id'];
 		echo "<br><h3>Add First Appeal Details of RTI with Id: ".$Id."</h3>";
 		$_SESSION['database_access'] = true;
-		include '../config_database.php';
+		include '../db/config_database.php';
 		$_SESSION['database_access'] = false;
 		$query = " SELECT * FROM first_appeal WHERE id=".$Id.";";
 		$r = mysqli_query($con, $query);

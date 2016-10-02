@@ -18,7 +18,7 @@ if(!isset($_SESSION['login_access'])){
 <body>
 	<?php
 	$_SESSION['database_access'] = true;
-	include '../config_database.php';
+	include '../db/config_database.php';
 	$_SESSION['database_access'] = false;
 	echo "<div class='container'>";
 	echo "<h2>ONGOING RTIs</h2>" ;

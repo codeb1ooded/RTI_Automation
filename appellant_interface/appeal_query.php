@@ -25,13 +25,13 @@ $id=$_GET['id'];
 session_start();
 $_SESSION['id']=$id;
 
-include '../config_database.php';
+include '../db/config_database.php';
 if(isset($_POST['submitappeal'])){
-		
-		$sql="INSERT INTO first_appeal (id, appeal_info, transfer_date) 
+
+		$sql="INSERT INTO first_appeal (id, appeal_info, transfer_date)
 		VALUES('$id','$_POST[appeal_info]','$_POST[transfer_date]')";
 		mysqli_query($con,$sql);
-		
+
 	}
 $sq_q="SELECT * FROM t2 WHERE id=".$id.";";
 $res_set=mysqli_query($con,$sq_q);
@@ -46,7 +46,7 @@ $_SESSION['n']=$num;?>
 		<th>Objection</th>
 		<th id='desc'> Description </th>
 		</tr>
-<?php 
+<?php
 while($b!=0)
 {
 	$obj="obj".$b;
@@ -55,7 +55,7 @@ while($b!=0)
 	echo"<tr>";
 	echo "<th>".$v['q_no']."</th>";
 	echo "<th>".$v['ques']."</th>";
-	?> 
+	?>
 	<!-- in order to disable an input box disabled='disabled'-->
 	<th><input type='checkbox' id='chckbox' name=<?php echo $obj;?> onclick="test(this)"/>Objection</th>
 	<th><input type='text' name=<?php echo $desc;?> id='desc'></th>

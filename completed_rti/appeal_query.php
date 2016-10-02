@@ -25,7 +25,7 @@
 <?php
 $id = $_SESSION['prev_rti_id'];
 $_SESSION['database_access'] = true;
-include '../config_database.php';
+include '../db/config_database.php';
 $_SESSION['database_access'] = false;
 if(isset($_POST['submitappeal'])){
 

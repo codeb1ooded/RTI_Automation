@@ -13,7 +13,7 @@ else{
   $I = $_SESSION['i'];
   include 'appellant_interface.php';
   $_SESSION['database_access'] = true;
-  include '../config_database.php';
+  include '../db/config_database.php';
   $_SESSION['database_access'] = true;
   $ans = $_POST['decision'];
   $sql = "INSERT INTO appeal_decision VALUES($I,'$ans');";
