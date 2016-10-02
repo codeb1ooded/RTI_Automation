@@ -1,16 +1,24 @@
 <?php
-session_start();
+ if(!isset($_SESSION)) {
+	session_start();
+ }
+ if(!isset($_SESSION['login_access'])){
+   header("location: ../errors/no_file.php");
+ }
+ else {
 ?>
 <html>
 <head>
 	<title>Modified</title>
-	<link rel="stylesheet" href="css/background.css">
+	<link rel="stylesheet" href="../css/background.css">
 	<meta charset="utf-8">
 </head>
 
 <body>
 <?php
-	include 'config_database.php';
+	$_SESSION['database_access'] = true;
+	include '../config_database.php';
+	$_SESSION['database_access'] = false;
 	$id = $_POST['ID'];
 	$d1=strtotime($_POST['date_of_receipt']);
 	$d2=strtotime($_POST['date_of_receipt_cio']);
@@ -44,9 +52,9 @@ session_start();
 
 if(isset($_POST['edit']))
 {
-	$data1="SELECT * FROM t2 WHERE id=".$id.";";
-	$query=mysqli_query($con,$data1);
-	$data2=mysqli_num_rows($query);
+	$data1 = "SELECT * FROM t2 WHERE id=".$id.";";
+	$query = mysqli_query($con, $data1);
+	$data2 = mysqli_num_rows($query);
 
 	$_SESSION['qu']= $data2;
 	$a=$data2;
@@ -127,10 +135,11 @@ if(isset($_POST['edit']))
 	echo "</form>";
 }
 else{
- echo"<a href='ongoing_rti_option.php'> Back </a>";
+ echo"<a href='../ongoing_rti/ongoing_rti_option.php'> Back </a>";
 }
 $con->close();
 
 ?>
 </body>
 </html>
+<?php } ?>

@@ -35,7 +35,7 @@
 					<th>Map To</th>
 					<th>Date Sent</th>
 				</tr>";
-	echo "<form action=save_queries.php method=post>";
+	echo "<form action=../queries/save_queries.php method=post>";
 ?>
 
 <script type="text/javascript">

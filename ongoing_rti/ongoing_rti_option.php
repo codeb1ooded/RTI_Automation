@@ -34,9 +34,9 @@ else{
 	echo "<br>" ;
 	echo "<a class='btn' href='modify_rti_details.php?id=".$Id."'>Modify Details and Queries</a>" ;
 	echo "<br><br>" ;
-	echo "<a class='btn' href='addqueries.php?id=".$Id."'>Add Additional Queries</a>" ;
+	echo "<a class='btn' href='../queries/addqueries.php?id=".$Id."'>Add Additional Queries</a>" ;
 	echo "<br><br>" ;
-	echo "<a class='btn' href='reply_queries.php?id=".$Id."'>Reply Of The Queries</a>" ;
+	echo "<a class='btn' href='../queries/reply/reply_queries.php?id=".$Id."'>Reply Of The Queries</a>" ;
 	echo "<br><br>" ;
 	echo "<a class='btn' href='generate_reply.php?id=".$Id."'>Generate Reply</a>" ;
 	echo "<br><br>" ;

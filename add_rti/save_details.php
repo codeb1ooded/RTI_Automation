@@ -44,7 +44,7 @@
  if(isset($_POST['add'])){
 
 	echo "<strong>RTI ID: </strong>".$a;
-	echo "<form action=submit_queries.php method=post>";
+	echo "<form action=../queries/submit_queries.php method=post>";
 	echo "<tr>
 		<th><h3>No. of Queries</h3></th>
 		<th><input type=text name=ques></th>
