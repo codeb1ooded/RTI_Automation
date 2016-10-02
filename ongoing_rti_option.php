@@ -19,20 +19,20 @@ if(isset($_GET['id']))
 	}
 else{
 	$Id=$_SESSION['prev_rti_id'];}
-	
+
 	$_SESSION['id']=$Id;
-	
-	include 'config_database.php'; 
+
+	include 'config_database.php';
 	$var = 'test';
 	echo "<center><h3> RTI Id: ".$Id."</h3></center>";
 	echo "<h4> Select an option:</h4>";
-	
+
 	echo "<br>" ;
-	echo "<a class='btn' href='modify_rti_details.php?id=".$Id."'>Modify Details and Queries</a>" ;
+	echo "<a class='btn' href='ongoing_rti/modify_rti_details.php?id=".$Id."'>Modify Details and Queries</a>" ;
 	echo "<br><br>" ;
-	echo "<a class='btn' href='addqueries.php?id=".$Id."'>Add Additional Queries</a>" ; 
+	echo "<a class='btn' href='queries/addqueries.php?id=".$Id."'>Add Additional Queries</a>" ;
 	echo "<br><br>" ;
-	echo "<a class='btn' href='reply_queries.php?id=".$Id."'>Reply Of The Queries</a>" ;
+	echo "<a class='btn' href='queries/reply/reply_queries.php?id=".$Id."'>Reply Of The Queries</a>" ;
 	echo "<br><br>" ;
 	echo "<a class='btn' href='generate_reply.php?id=".$Id."'>Generate Reply</a>" ;
 	echo "<br><br>" ;
@@ -43,7 +43,7 @@ else{
 	echo "<a class='btn' href='compid.php?id=".$Id."'>Details of RTI</a>" ;
 	echo "<br><br>" ;
 	echo "<a class='btn' href='ongoing_rti.php'>Back</a>" ;
-	
+
 ?>
 </div>
 </body>
