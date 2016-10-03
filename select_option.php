@@ -29,8 +29,8 @@
 			      <a href='./report/report.php'>Generate Report</a><br><br><br>
 			      <a href='./backup/backup_ask_user.php'>Create Backup</a><br><br><br>
 			      <a href='./logging/change_password.php'>Change Password</a><br><br><br>
-			      <a href='./completed_rti.php'>Completed RTIs</a><br><br><br>
-			      <a href='./view_closed_rti.php'>Closed RTIs</a><br><br><br>
+			      <a href='./completed_rti/completed_rti.php'>Completed RTIs</a><br><br><br>
+			      <a href='./completed_rti/view_closed_rti.php'>Closed RTIs</a><br><br><br>
 			      <a href='./ongoing_rti/ongoing_rti.php'>Ongoing RTIs</a>
 			      </div>
 			      </div>";

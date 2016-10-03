@@ -30,7 +30,7 @@
 		$res = mysqli_fetch_assoc($r);
 		if($res) {
 	?>
-			<form action = "appeal_query.php" method ="post">
+			<form action = "../appellant_interface/appeal_query.php" method ="post">
 				<table class="table table-bordered">
 					<tr>
 						<th> Name and designation of the officer before whom <br>the 1<sup>st</sup> appeal is filed u/s 19(1)</th>

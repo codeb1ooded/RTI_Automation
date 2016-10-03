@@ -23,7 +23,7 @@ $Id=$_GET['id'];
 		echo "<div class='container'>";
 		echo "<center><h3> RTI Id: ".$Id."</h3></center>";
 		echo "<h4> Select an option:</h4>";
-	
+
 		echo "</br>" ;
 		echo "<a class='btn' href='appeal_query.php?id=".$Id."'>Add Description</a>" ;
 		echo "</br></br>" ;
@@ -38,8 +38,8 @@ $Id=$_GET['id'];
 		echo "</br>" ;
 
 		echo "<a class='btn' href='appellant_add_description.php?id=".$Id."'>Add Descision</a>" ;
-		
-		echo "<center><a class=btn href='./select_option.php'>Back</a></center>";
+
+		echo "<center><a class=btn href='../select_option.php'>Back</a></center>";
 		echo "</br></br>" ;
 
 	include '../logoff.html';

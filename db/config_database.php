@@ -1,8 +1,7 @@
 <?php
-if(!isset($_SESSION) || !isset($_SESSION['database_access']) || $_SESSION['database_access'] != true) {
+if(!isset($_SESSION) || !isset($_SESSION['database_access'])) {
 //	 echo 'session not started';
-		include 'index.php';
-		echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Please login first"; document.getElementById("message").style.color = "#ff0000";</script>';
+	//	include '../index.php';
 }
 else{
 	$con = mysqli_connect("localhost","root","");

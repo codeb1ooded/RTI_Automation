@@ -45,6 +45,6 @@ else {
 		header("location: ../select_option.php");
 
 	if(isset($_POST['gen_pdf']))
-		header("location: ../gen_query_pdf.php");
+		header("location: ../ongoing_rti/gen_query_pdf.php");
 }
 ?>

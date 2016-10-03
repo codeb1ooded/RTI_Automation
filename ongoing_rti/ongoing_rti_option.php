@@ -45,7 +45,7 @@ else{
 	echo "<br><br>" ;
 	echo "<a class='btn' href='../appellant_interface/reply_to_appelant.php?id=".$Id."'>Reply Information to Applicant</a>" ;
 	echo "<br><br>" ;
-	echo "<a class='btn' href='compid.php?id=".$Id."'>Details of RTI</a>" ;
+	echo "<a class='btn' href='../completed_rti/compid.php?id=".$Id."'>Details of RTI</a>" ;
 	echo "<br><br>" ;
 	echo "<a class='btn' href='ongoing_rti.php'>Back</a>" ;
 

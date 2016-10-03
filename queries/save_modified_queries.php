@@ -41,7 +41,7 @@ if(isset($_POST['save']))
 }
 if(isset($_POST['reply']))
 {
-	include '../gen_query_pdf.php';
+	include '../ongoing_rti/gen_query_pdf.php';
 }
 }
 ?>
