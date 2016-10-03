@@ -3,7 +3,7 @@
 	    session_start();
    }
    $_SESSION['database_access'] = true;
-   include 'config_database.php';
+   include 'db/config_database.php';
    $_SESSION['database_access'] = false;
    $result = 'No';
 

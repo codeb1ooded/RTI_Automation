@@ -28,7 +28,7 @@ else{
 	$_SESSION['database_access'] = true;
 	include '../db/config_database.php';
 	$_SESSION['database_access'] = false;
-	
+
 	$query=" SELECT * FROM info_about_reply WHERE id=".$Id.";";
     $r= mysqli_query($con, $query);
     $res=mysqli_fetch_assoc($r);
@@ -62,7 +62,7 @@ else{
 		<input type="submit" name="submitresponsenew" class=btn value="Save and Exit">
 		</form>
 <?php
-		echo "<br><a class=btn href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
+		echo "<br><a class=btn href='../ongoing_rti/ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
 	}
 	else
 	{
@@ -93,7 +93,7 @@ else{
 		<input type="submit" name="submitresponse" class=btn value="Save and Exit">
 	</form>
 <?php
-	echo "&nbsp&nbsp<a class='btn' href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
+	echo "&nbsp&nbsp<a class='btn' href='../ongoing_rti/ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
 	}
 ?>
 </div>

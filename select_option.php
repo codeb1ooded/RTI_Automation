@@ -34,7 +34,7 @@
 			      <a href='./ongoing_rti/ongoing_rti.php'>Ongoing RTIs</a>
 			      </div>
 			      </div>";
-		  include 'logoff.html';
+		  include 'logging/logoff.html';
     }
     else{
       header("location: ongoing_rti/ongoing_rti.php");

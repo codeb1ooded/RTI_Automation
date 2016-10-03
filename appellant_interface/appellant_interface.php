@@ -54,6 +54,6 @@ while($b!=0)
 $b--;
 }
 echo"</table></br></br>";
-include '../logoff.html';
+include '../logging/logoff.html';
 }
 ?>

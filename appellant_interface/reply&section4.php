@@ -10,7 +10,7 @@ else{
 
 	if(isset($_POST['submitSection4'])){
 
-		include 'ongoing_rti_option.php';
+		include '../ongoing_rti/ongoing_rti_option.php';
 		$_SESSION['database_access'] = true;
 		include '../db/config_database.php';
 		$_SESSION['database_access'] = false;
@@ -80,7 +80,7 @@ else{
 		mysqli_query ($con, $sql);
 		mysqli_close ($con);
 		echo "<a href='close_rti.php?id=".$id."'>Close This RTI</a>";
-		echo "&nbsp&nbsp<a class='btn' href='ongoing_rti_option.php?id=".$id."''>Back</a>" ;
+		echo "&nbsp&nbsp<a class='btn' href='../ongoing_rti/ongoing_rti_option.php?id=".$id."''>Back</a>" ;
 	}
 }
 ?>

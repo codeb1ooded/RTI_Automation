@@ -26,8 +26,8 @@ else {
 	echo "<marquee><strong>SELECT THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
 
 	if($account_type == 'Admin'){
-		$query=" SELECT * FROM add_rti order by date_of_receipt";
-		$res= mysqli_query($con, $query);
+		$query = " SELECT * FROM add_rti order by date_of_receipt";
+		$res = mysqli_query($con, $query);
 		echo "<table class=table table-bordered table-condensed>" ;
 		echo "<tr>
 		<th>ID</th>
@@ -38,16 +38,16 @@ else {
 		<th>Options</th>
 		</tr>";
 
-		while($r=mysqli_fetch_assoc($res)) {
-			if($r['archive']==0) {
-				$d1=strtotime("$r[date_of_receipt]");
-				$mth=0;
-				$day=30;
-				$yr=0;
-				$d2=date('Y-m-d h:i:s',mktime(date('h',$d1),date('i',$d1),date('s',$d1),date('m',$d1)+$mth,date('d',$d1)+$day,date('Y',$d1)+$yr));
-				$a=strtotime($d2);
-				$b=strtotime(date('Y-m-d h:i:s'));
-				$d3=floor(($a-$b)/86400);
+		while ($r = mysqli_fetch_assoc($res)) {
+			if ($r['archive'] == 0) {
+				$d1 = strtotime("$r[date_of_receipt]");
+				$mth = 0;
+				$day = 30;
+				$yr = 0;
+				$d2 = date('Y-m-d h:i:s',mktime(date('h',$d1),date('i',$d1),date('s',$d1),date('m',$d1)+$mth,date('d',$d1)+$day,date('Y',$d1)+$yr));
+				$a = strtotime($d2);
+				$b = strtotime(date('Y-m-d h:i:s'));
+				$d3 = floor(($a-$b)/86400);
 
 				echo "<tr>";
 				echo "<td>".$r['id']."</td>";
@@ -65,20 +65,20 @@ else {
 	else
 		{
 		$dept = $_SESSION['department'];
-		$i=0;
-		$m='';
+		$i = 0;
+		$m = '';
 		if($dept == 'Examination')
-			$m='Ex';
+			$m = 'Ex';
 		if($dept == 'Human Resource')
-			$m='HR';
+			$m = 'HR';
 		if($dept == 'Academics')
-			$m='Ac';
+			$m = 'Ac';
 
 		$_SESSION['map']=$m;
 
-		$query=" SELECT * FROM t2 WHERE map='".$m."' order by id;";
-		$data=mysqli_query($con,$query);
-		$data2=mysqli_num_rows($data);
+		$query = " SELECT * FROM t2 WHERE map='".$m."' order by id;";
+		$data = mysqli_query ($con, $query);
+		$data2 = mysqli_num_rows ($data);
 
 		echo "<table class='table table-bordered'>" ;
 		echo "<tr>
@@ -92,27 +92,26 @@ else {
 
 		$ido = -1;
 
-		while($data2!=0){
-			$data3=mysqli_fetch_array($data);
-			$i=$data3['id'];
-			$flag=$data3['flag'];
-			if($i!=$ido && $flag !=1) {
-				$quer="SELECT * FROM add_rti WHERE id=".$i." order by date_of_receipt;";
-				$res=mysqli_query($con,$quer);
-				$v=mysqli_num_rows($res);
+		while ($data2 != 0){
+			$data3 = mysqli_fetch_array ($data);
+			$i = $data3['id'];
+			$flag = $data3['flag'];
+			if ($i != $ido && $flag != 1) {
+				$quer = "SELECT * FROM add_rti WHERE id=".$i." order by date_of_receipt;";
+				$res = mysqli_query ($con, $quer);
+				$v = mysqli_num_rows ($res);
 
-				while($v!=0) {
-					$r=mysqli_fetch_array($res);
-					if($r['archive']==0)
-					 {
-						$d1=strtotime("$r[date_of_receipt]");
-						$mth=0;
-						$day=30;
-						$yr=0;
-						$d2=date('Y-m-d h:i:s',mktime(date('h',$d1),date('i',$d1),date('s',$d1),date('m',$d1)+$mth,date('d',$d1)+$day,date('Y',$d1)+$yr));
-						$a=strtotime($d2);
-						$b=strtotime(date('Y-m-d h:i:s'));
-						$d3=floor(($a-$b)/86400);
+				while ($v != 0) {
+					$r = mysqli_fetch_array ($res);
+					if ($r['archive'] == 0) {
+						$d1 = strtotime("$r[date_of_receipt]");
+						$mth = 0;
+						$day = 30;
+						$yr = 0;
+						$d2 = date('Y-m-d h:i:s',mktime(date('h',$d1),date('i',$d1),date('s',$d1),date('m',$d1)+$mth,date('d',$d1)+$day,date('Y',$d1)+$yr));
+						$a = strtotime($d2);
+						$b = strtotime(date('Y-m-d h:i:s'));
+						$d3 = floor(($a-$b)/86400);
 						echo "<tr>";
 						echo "<th>".$r['id']."</th>";
 						echo "<th>".$r['name']."</th>";
@@ -124,7 +123,7 @@ else {
 					}
 					$v--;
 				}
-				$ido=$i;
+				$ido = $i;
 			}
 			$data2--;
 		}
@@ -132,7 +131,7 @@ else {
 	}
 	?>
 
-	<?php include '../logoff.html';?>
+	<?php include '../logging/logoff.html';?>
 </div>
 </body>
 </html>

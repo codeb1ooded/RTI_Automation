@@ -42,7 +42,7 @@ $Id=$_GET['id'];
 		echo "<center><a class=btn href='../select_option.php'>Back</a></center>";
 		echo "</br></br>" ;
 
-	include '../logoff.html';
+	include '../logging/logoff.html';
 	?>
 
 </body>
