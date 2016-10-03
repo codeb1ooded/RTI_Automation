@@ -1,14 +1,14 @@
 <?php
-if(!isset($_SESSION)){
-	session_start();
-}
-if(!isset($_SESSION['login_access'])){
-	header("location: ../errors/no_file.php");
-}
-elseif ($_SESSION['login_access'] != 'Appellant') {
-	header("location: ../errors/no_access.php");
-}
-else{
+	if(!isset($_SESSION)){
+		session_start();
+	}
+	if(!isset($_SESSION['login_access'])){
+		header("location: ../errors/no_file.php");
+	}
+	elseif ($_SESSION['login_access'] != 'Appellant') {
+		header("location: ../errors/no_access.php");
+	}
+	else{
 $Id=$_GET['id'];
 ?>
 <html>

@@ -1,8 +1,12 @@
 <?php
-if(!isset($_SESSION)){
-	session_start();
-}
-$Id=$_GET['id'];
+	if(!isset($_SESSION)){
+		session_start();
+	}
+	if(!isset($_SESSION['login_access'])){
+		header("location: ../errors/no_file.php");
+	}
+	else{
+		$Id = $_GET['id'];
 ?>
 <html>
 <head>
@@ -17,7 +21,7 @@ $Id=$_GET['id'];
 		var selected = map.options[map.selectedIndex].value;
 				mailid1 = "cpio@igdtuw.com";
 				mailid2 = "appellant@igdtuw.com";
-			var subject="Date and place fixed ";
+			var subject = "Date and place fixed ";
 			//var body="Query: " + document.getElementById(ques).value + " \ndated on:" + document.getElementById("date_s"+a).value;
 			window.open('mailto:'+mailid1+mailid2+'?subject='+subject+'&body='+body);
 		}
@@ -30,9 +34,10 @@ $Id=$_GET['id'];
 	}
 </script>
 
-	<?php
-
+<?php
+		$_SESSION['database_access'] = true;
 		include '../db/config_database.php';
+		$_SESSION['database_access'] = false;
 
 		$q='SELECT * FROM add_rti WHERE id='.$Id.";";
 		$sql=mysqli_query($con,$q);
@@ -41,12 +46,11 @@ $Id=$_GET['id'];
 		$q2='SELECT * FROM first_appeal WHERE id='.$Id.";";
 		$sql2=mysqli_query($con,$q2);
 		$data2=mysqli_fetch_array($sql2);
-
-	?>
+?>
 	<h5 style="margin:40 0 0 900px">Date:</h5>
 	</br>
 	<h5 style="margin:-2 0 0 900px">Appeal No:<?php echo " ".$Id; ?></h5>
-	<?php echo "<h6><b>Name of appellant: </b>".$data3['name']."</h6> ";?>
+<?php echo "<h6><b>Name of appellant: </b>".$data3['name']."</h6> ";?>
 	<h6><b>Address of appellant: </b><?php echo " ".$data3['address'];?></h6>
 	<p>
 		The present appeal dated <?php echo" ".$data2['transfer_date']; ?> has been preferred by Shri/Smt./Ms <?php echo" ".$data3['name']; ?> , hereinafter referred to
@@ -84,3 +88,4 @@ $Id=$_GET['id'];
 	<button style="margin:0 0 0 50px" type="button" name="print_button" class=btn onclick="print();">Print</button>
 </body>
 </html>
+<?php } ?>

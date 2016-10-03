@@ -1,12 +1,12 @@
 <?php
-if(!isset($_SESSION)){
-	session_start();
-}
-$account_type = $_SESSION['login_access'];
-if(!isset($_SESSION['login_access'])){
-	header("location: ../errors/no_file.php");
-}
-else{
+	if(!isset($_SESSION)){
+		session_start();
+	}
+	$account_type = $_SESSION['login_access'];
+	if(!isset($_SESSION['login_access'])){
+		header("location: ../errors/no_file.php");
+	}
+	else {
 ?>
 <html>
 	<head>
@@ -21,19 +21,18 @@ else{
 	<body>
 		<div class="container">
 <?php
-	$Id = $_GET['id'];
-	$_SESSION['prev_rti_id']=$Id;
-	echo "<br><h3>Reply Information for RTI with Id: ".$Id."</h3>";
+		$Id = $_GET['id'];
+		$_SESSION['prev_rti_id'] = $Id;
+		echo "<br><h3>Reply Information for RTI with Id: ".$Id."</h3>";
 
-	$_SESSION['database_access'] = true;
-	include '../db/config_database.php';
-	$_SESSION['database_access'] = false;
+		$_SESSION['database_access'] = true;
+		include '../db/config_database.php';
+		$_SESSION['database_access'] = false;
 
-	$query=" SELECT * FROM info_about_reply WHERE id=".$Id.";";
+		$query=" SELECT * FROM info_about_reply WHERE id=".$Id.";";
     $r= mysqli_query($con, $query);
     $res=mysqli_fetch_assoc($r);
-    if($res)
-    {
+    if($res){
 ?>
 <!--Processing of RTI application and response to the appellant-->
 <h4><strong>(III) Processing of RTI application and response to the appellant-</strong></h4>

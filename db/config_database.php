@@ -4,7 +4,7 @@ if(!isset($_SESSION) || !isset($_SESSION['database_access'])) {
 	//	include '../index.php';
 }
 else{
-	$con = mysqli_connect("localhost","root","");
+	$con = mysqli_connect("localhost", "root", "");
 	if (!$con) {
 		die('Could not connect: ' . mysqli_error());
 	}

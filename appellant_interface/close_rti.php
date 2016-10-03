@@ -1,12 +1,12 @@
 <?php
-if(!isset($_SESSION)){
-	session_start();
-}
-$account_type = $_SESSION['login_access'];
-if(!isset($_SESSION['login_access'])){
-	header("location: ../errors/no_file.php");
-}
-else {
+	if(!isset($_SESSION)){
+		session_start();
+	}
+	$account_type = $_SESSION['login_access'];
+	if(!isset($_SESSION['login_access'])){
+		header("location: ../errors/no_file.php");
+	}
+	else {
 ?>
 <html>
 	<head>

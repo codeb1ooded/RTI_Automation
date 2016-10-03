@@ -1,3 +1,12 @@
+<?php
+	if(!isset($_SESSION)){
+		session_start();
+	}
+	if(!isset($_SESSION['login_access'])){
+		header("location: ../errors/no_file.php");
+	}
+	else{
+?>
 <head>
 <link rel="stylesheet" href="../css/prev_rti.css">
 	<link rel="stylesheet" href="../css/background.css">
@@ -63,5 +72,6 @@
 			<a class=btn href='../ongoing_rti/ongoing_rti.php'>Back</a>
 
 <?php
-	$_SESSION['que']=$t;
+		$_SESSION['que']=$t;
+	}
 ?>

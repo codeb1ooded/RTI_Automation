@@ -1,8 +1,14 @@
 <?php
+	if(!isset($_SESSION)){
+		session_start();
+	}
+	if(!isset($_SESSION['login_access'])){
+		header("location: ../errors/no_file.php");
+	}
+	else{
 		$_SESSION['database_access'] = true;
 		include '../db/config_database.php';
 		$_SESSION['database_access'] = false;
-		session_start();
 		$q = $_SESSION['que'];
 		$m = $_SESSION['map'];
 
@@ -32,4 +38,5 @@
 			$f1--;
 		}
 		header ('location: ../select_option.php');
+	}
 ?>
