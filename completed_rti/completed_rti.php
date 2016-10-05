@@ -94,29 +94,29 @@
 					<th>Last date</th>
 					<th>Days left</th>
 					<th>Mark as completed</th></tr>";
-		   while($data2!=0) {
-		   		$data3=mysqli_fetch_array($data);
-			    $i=$data3['id'];
-		   		$quer="SELECT * FROM add_rti WHERE id=".$i." order by date_of_receipt_cio;";
-				$res=mysqli_query($con,$quer);
-				$v=mysqli_num_rows($res);
+		   while ($data2 != 0) {
+		   	$data3 = mysqli_fetch_array($data);
+			  $i = $data3['id'];
+		   	$quer = "SELECT * FROM add_rti WHERE id=".$i." order by date_of_receipt_cio;";
+				$res = mysqli_query($con,$quer);
+				$v = mysqli_num_rows($res);
 
 				while($v!=0) {
-					$r=mysqli_fetch_array($res);
-					if($r['archive']==1) {
+					$r = mysqli_fetch_array($res);
+					if ($r['archive'] == 1) {
 						$query1= "SELECT COUNT(*) AS total FROM info_about_reply where id=".$r['id'].";";
 						$res1 = mysqli_query($conn, $query1);
 						$values = mysqli_fetch_assoc($res1);
 						$num_rows = $values['total'];
 						if($num_rows>0) {
-							$query1="SELECT * FROM info_about_reply where id=".$r['id'].";";
-							$res1=mysqli_query($conn,$query1);
-							$s=mysqli_fetch_assoc($res1);
+							$query1 = "SELECT * FROM info_about_reply where id=".$r['id'].";";
+							$res1 = mysqli_query( $conn, $query1);
+							$s = mysqli_fetch_assoc($res1);
 							$now = time();
-				     		$your_date = strtotime("$s[reply_date]");
+				     		$your_date = strtotime ("$s[reply_date]");
 				     		$datediff = $now - $your_date;
-				     		$d4=floor($datediff/(60*60*24));
-							if($d4<=30) {
+				     		$d4 = floor($datediff/(60*60*24));
+							if ($d4 <= 30) {
 								echo "<tr>
 									<td>".$r['id']."</td>
 									<td>".$r['name']."</td>
@@ -124,7 +124,7 @@
 									<td><a href='compid.php?id=".$r['id']."'>View</a></td> </tr>";
 							}
 							else {
-								$sql="UPDATE add_rti SET closed=1 WHERE id=".$r['id'];
+								$sql = "UPDATE add_rti SET closed=1 WHERE id=".$r['id'];
 								mysqli_query($conn,$sql);
 							}
 						}

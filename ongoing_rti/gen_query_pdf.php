@@ -14,16 +14,17 @@
 <html>
 <head>
 		<title>PDF</title>
-		<link rel="stylesheet" href="css/background.css">
+		<link rel="stylesheet" href="../css/background.css">
+		<script src="../bootstrap/js/bootstrap.min.js"></script>
 	</head>
 <?php
     echo "Start of queries ".$b;
-    echo "End of queries ".$d;
+    echo "</br>End of queries ".$d."</br></br></br>";
     $a = $b;
 
     while($a<=$d){
 		    echo "<li>";
-				echo "<a href='gen_q.php?qno=".$a."' target=_blank><input type=submit name=query_btn value=query_no_is_".$a."></a>";
+				echo "<a href='gen_q.php?qno=".$a."' target=_blank><input type=submit name=query_btn class=btn value='Query number is ".$a."''></a>";
 		    echo "</li>";
 		    echo "</br></br></br>";
 	      $a = $a+1;

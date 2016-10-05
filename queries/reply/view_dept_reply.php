@@ -20,14 +20,14 @@
 	<body>
 	<?php
 		$_SESSION['database_access'] = true;
-    include '../../config_database.php';
+    include '../../db/config_database.php';
     $_SESSION['database_access'] = false;
 
 		$k = "SELECT * FROM dept_reply WHERE id=".$id.";";
 		$query = mysqli_query($con,$k);
 		$data2 = mysqli_num_rows($query);
 		$a = $data2;
-    
+
 		echo "<table class='table table-bordered'>
 				<tbody>
 					<tr>

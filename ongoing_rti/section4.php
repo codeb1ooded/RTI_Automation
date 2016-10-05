@@ -35,7 +35,7 @@ else{
 
 ?>
 	<h4><strong>(IV)Reference u/s 7 of RTI Act (where applicable):</strong></h4>
-	<form action='reply&section4.php' method=post>
+	<form action='../appellant_interface/reply&section4.php' method=post>
 		<table class="table table-bordered">
 			<tr>
 				<th> Date of intimation given to appelant regarding fee u/s</br> 7(1) chargeable  and his right to review</th>
@@ -66,7 +66,7 @@ else{
 	{
 ?>
 	<h4><strong>(IV)Reference u/s 7 of RTI Act (where applicable):</strong></h4>
-	<form action='reply&section4.php' method=post>
+	<form action='../appellant_interface/reply&section4.php' method=post>
 		<table class="table table-bordered">
 			<tr>
 				<th> Date of intimation given to appelant regarding fee u/s</br> 7(1) chargeable  and his right to review</th>

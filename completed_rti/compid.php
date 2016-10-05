@@ -180,7 +180,7 @@
 	echo "</table><br>";
 
 	$query=" SELECT * FROM t2 where id=".$id;
-    $res=mysqli_query($con, $query);
+  $res=mysqli_query($con, $query);
 	$r6=mysqli_fetch_assoc($res);
 	$query=" SELECT * FROM reply_queries where id=".$id;
     $res1=mysqli_query($con, $query);

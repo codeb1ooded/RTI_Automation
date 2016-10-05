@@ -37,7 +37,7 @@
       header('location: ../ongoing_rti/ongoing_rti_option.php');
     }
     if (isset($_POST['reply'])) {
-      include '../ongoing_rti/gen_query_pdf.php';
+      header ('location: ../ongoing_rti/gen_query_pdf.php');
     }
   }
 ?>

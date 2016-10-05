@@ -27,6 +27,7 @@
 
             // If result matched $myusername and $mypassword, table row must be 1 row
             if($count == 1) {
+                $_SESSION['user_name'] = $myusername;
                 $_SESSION['login_access'] = $row['Account_type'];
                 $_SESSION['department'] = $row['DEPARTMENT'];
                 $result = 'Yes';

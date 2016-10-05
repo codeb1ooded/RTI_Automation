@@ -114,13 +114,6 @@ define("OUTPUT_DIR", './');
 define("TABLES", $send);
 
 /**
- * Instantiate Backup_Database and perform backup
- */
-$backupDatabase = new Backup_Database(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-$status         = $backupDatabase->backupTables(TABLES, OUTPUT_DIR) ? 'OK' : 'KO';
-echo "<br /><br /><br />Backup result: " . $status;
-
-/**
  * The Backup_Database class
  */
 class Backup_Database {
@@ -209,8 +202,8 @@ class Backup_Database {
               }
 
               $sql .= ");\n";
-}
-}
+          }
+        }
 
 $sql .= "\n\n\n";
 
@@ -224,6 +217,7 @@ catch (Exception $e) {
 
 return $this->saveFile($sql, $outputDir);
 }
+
 
   /**
    * Save SQL to file
@@ -252,6 +246,14 @@ return $this->saveFile($sql, $outputDir);
     return true;
   }
 }
+
+
+/**
+ * Instantiate Backup_Database and perform backup
+ */
+$backupDatabase = new Backup_Database(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$status         = $backupDatabase->backupTables(TABLES, OUTPUT_DIR) ? 'OK' : 'KO';
+echo "<br /><br /><br />Backup result: " . $status;
 ?>
 <br><br><br><br><a href=../select_option.php class=btn>Back</a>
 </body>

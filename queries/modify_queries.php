@@ -20,9 +20,9 @@
 	include '../db/config_database.php';
 	$_SESSION['database_access'] = false;
 	$id = $_POST['ID'];
-	$d1=strtotime($_POST['date_of_receipt']);
-	$d2=strtotime($_POST['date_of_receipt_cio']);
-	$d3=floor(abs($d2-$d1)/86400);
+	$d1 = strtotime($_POST['date_of_receipt']);
+	$d2 = strtotime($_POST['date_of_receipt_cio']);
+	$d3 = floor(abs($d2-$d1)/86400);
 
 	$data = "UPDATE add_rti SET
 			name = '$_POST[name]',
@@ -126,7 +126,7 @@ if(isset($_POST['edit']))
 			<th><button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button></th>
 		</tr>
 <?php
-		$sql="DELETE FROM t2 WHERE id=".$id.";";
+		$sql = "DELETE FROM t2 WHERE id=".$id.";";
 		mysqli_query($con,$sql);
 		$a--;
 	}
@@ -135,7 +135,7 @@ if(isset($_POST['edit']))
 	echo "</form>";
 }
 else{
- echo"<a href='../ongoing_rti/ongoing_rti_option.php'> Back </a>";
+ echo "<a href='../ongoing_rti/ongoing_rti_option.php'> Back </a>";
 }
 $con->close();
 

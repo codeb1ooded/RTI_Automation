@@ -35,8 +35,8 @@ if(isset($_POST['name'])){
 	include '../db/config_database.php';
 	$_SESSION['database_access'] = false;
 
-	$query="SELECT count(name),name,id FROM add_rti group by name,phone_no order by id";
-  $res=mysqli_query($con,$query);
+	$query = "SELECT count(name),name,id FROM add_rti group by name,phone_no order by id";
+  $res = mysqli_query($con,$query);
 	echo "<table class='table table-bordered'>" ;
 	echo "<tr>
 			<th>ID</th>
@@ -45,7 +45,7 @@ if(isset($_POST['name'])){
 		</tr>";
 
 
-	while($r=mysqli_fetch_assoc($res))
+	while ( $r=mysqli_fetch_assoc($res) )
 	{
 		echo "<tr>";
 		echo "<td>";

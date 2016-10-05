@@ -66,14 +66,13 @@
 </script>
 
 <?php
-	$c=1;
-	while($a!=0)
-	{
-		$ques="ques".$a;
-		$map="map".$a;
-		$date_s="date_s".$a;
-		$no_selection="no_selection".$a;
-		$dropdown="dropdown".$a;
+	$c = 1;
+	while($a != 0) {
+		$ques = "ques".$a;
+		$map = "map".$a;
+		$date_s = "date_s".$a;
+		$no_selection = "no_selection".$a;
+		$dropdown = "dropdown".$a;
 ?>
 
 
@@ -98,7 +97,6 @@
 		$a--;
 		$c++;
 	}
-	//echo "<th colspan=15></th><th><input class='btn' type=submit name=gen_pdf value='Generate Reply'><th>";
 
 	echo "<th colspan=15></th><th><input type=submit name=save class=btn value='Save and Exit' ></th>";
 	echo "</form>";

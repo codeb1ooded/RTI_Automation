@@ -9,7 +9,7 @@
 ?>
 <html>
 	<head>
-		<link rel="stylesheet" href="css/background.css">
+		<link rel="stylesheet" href="../css/background.css">
 	</head>
 <body>
 

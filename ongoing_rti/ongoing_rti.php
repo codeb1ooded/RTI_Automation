@@ -60,7 +60,7 @@ else {
 			}
 		}
 		echo "</table>";
-		echo "<a href='select_option.php' class=btn >Back</a>";
+		echo "<a href='../select_option.php' class=btn >Back</a>";
 	}
 	else
 		{

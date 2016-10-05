@@ -26,16 +26,16 @@ CREATE TABLE `add_rti` (
   `closed` int(11) DEFAULT NULL,
   `post` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
-INSERT INTO add_rti VALUES("1","ut","Female","abc","110077","UP","India","9968813151","9968813151","ut@gmail.com","Indian","2016-07-16","2016-07-18","2","yes","2016-07-18","DD","0","","0");
+INSERT INTO add_rti VALUES("1","ut","Female","abc","110077","UP","India","9968813151","9968813151","ut@gmail.com","Indian","2016-07-16","2016-07-18","2","yes","2016-07-18","DD","0","1","0");
 INSERT INTO add_rti VALUES("3","abc","Female","esdtrgyuij","110077","UP","India","9968813151","9968813151","ut@gmail.com","Indian","2016-07-16","2016-07-18","2","yes","2016-07-18","DD","1","1","0");
 INSERT INTO add_rti VALUES("5","utkarsha","Female","abcdef","110077","UP","India","9968813151","9968813151","ut@gmail.com","Indian","2016-07-16","2016-07-18","2","yes","2016-07-18","DD","1","1","0");
-INSERT INTO add_rti VALUES("8","Tia","Female","Bh-3 East shalomar Bagh","110088","Delhi","India","98745874","8932865258","s@gmail.com","Indian","2016-06-22","2016-01-01","172","yes","2016-06-05","DD","1","","0");
+INSERT INTO add_rti VALUES("7","Tia","Female","Bh-3 East shalomar Bagh","110088","Delhi","India","98745874","8932865258","s@gmail.com","Indian","2016-06-22","2016-01-01","172","yes","2016-06-05","DD","0","","0");
 INSERT INTO add_rti VALUES("9","tt","Male","aklSMZKAS","110088","Delhi","India","98258741","2365410987","salonibhartia@ymail.com","Indian","2016-07-08","2016-07-09","1","yes","2016-07-08","DD","1","","0");
 INSERT INTO add_rti VALUES("10","ut","Male","dwarka","110077","Delhi","India","25090133","9968813151","utkarshagoswami@gmail.com","Indian","2016-06-20","2016-06-20","0","yes","2016-06-20","DD","1","1","0");
 INSERT INTO add_rti VALUES("11","codebenderut","Male","dwarka","110077","Delhi","India","25090133","9968813151","utkarshagoswami@gmail.com","Indian","2016-06-20","2016-06-21","1","yes","2016-06-21","DD","1","1","0");
-INSERT INTO add_rti VALUES("12","Mr Abcd Efgh","Female","fghfjik hjsd","123456","Kerala","India","12345678","1234567890","abcd@domain.com","Indian","2014-12-12","2014-12-12","0","yes","2014-12-12","DD","1","","0");
+INSERT INTO add_rti VALUES("12","Mr Abcd Efgh","Female","fghfjik hjsd","123456","Kerala","India","12345678","1234567890","abcd@domain.com","Indian","2014-12-12","2014-12-12","0","yes","2014-12-12","DD","1","1","0");
 INSERT INTO add_rti VALUES("13","adad","Male","adad","110004","Bombay","India","64652222","9211557755","bhavyagarg12@gmail.com","Indian","2016-01-02","2016-01-12","10","yes","2016-01-13","dd","","","0");
 INSERT INTO add_rti VALUES("14","Try","Male","bh-109","110099","delhi","India","98765453","6464646464","s@gmail.com","Indian","2016-02-06","2016-02-06","0","yes","2016-02-06","dd","","","0");
 INSERT INTO add_rti VALUES("15","asg","Male","nsn","119988","delhi","India","76546453","2435344425","g@n.c","Indian","2016-02-06","2016-02-06","0","yes","2016-02-06","dd","","","0");
@@ -47,6 +47,9 @@ INSERT INTO add_rti VALUES("25","Megha Agg","Female","asbhab","111111","adb","In
 INSERT INTO add_rti VALUES("26","Megha Agg","Female","asbhab","111111","adb","India","11111111","1111111111","me@h.c","Indian","2012-12-12","2012-12-12","0","yes","2012-12-12","dd","","","yes");
 INSERT INTO add_rti VALUES("27","Megha Agg","Female","asbhab","111111","adb","India","11111111","1111111111","me@h.c","Indian","2012-12-12","2012-12-12","0","yes","2012-12-12","dd","","","yes");
 INSERT INTO add_rti VALUES("28","Megha Agg","Female","asbhab","111111","adb","India","11111111","1111111111","me@h.c","Indian","2012-12-12","2012-12-12","0","yes","2012-12-12","dd","","","yes");
+INSERT INTO add_rti VALUES("29","Megha","Female","hshdba","111111","111dhh","India","11112222","1111111111","me@g","Indian","2012-12-13","2012-12-13","0","yes","2012-12-13","DD","","","yes");
+INSERT INTO add_rti VALUES("30","Megha","Female","hshdba","111111","111dhh","India","11112222","1111111111","me@g","Indian","2012-12-13","2012-12-13","0","yes","2012-12-13","DD","","","yes");
+INSERT INTO add_rti VALUES("31"," Megha","Female","hshdba","111111","111dhh","India","11112222","1111111111","me@g","Indian","2012-12-13","2012-12-13","0","yes","2012-12-13","DD","","","yes");
 
 
 
@@ -59,6 +62,7 @@ CREATE TABLE `appeal_query` (
   `description` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO  appeal_query VALUES("1","1","abc","");
 
 
 
@@ -133,6 +137,7 @@ INSERT INTO  dept_reply VALUES("15","3","HR","SXKXJNS","0000-00-00");
 INSERT INTO  dept_reply VALUES("1","2","HR","SDMKLSC","0000-00-00");
 INSERT INTO  dept_reply VALUES("15","1","Ex","xsn","2016-05-03");
 INSERT INTO  dept_reply VALUES("15","4","Ex","vgvg","2016-05-03");
+INSERT INTO  dept_reply VALUES("7","1","Ex","abcde","0000-00-00");
 
 
 
@@ -143,12 +148,18 @@ CREATE TABLE `first_appeal` (
   `appeal_info` varchar(50) NOT NULL,
   `transfer_date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 INSERT INTO  first_appeal VALUES("1","dshxsdgwyshx","2016-05-08");
 INSERT INTO  first_appeal VALUES("3","dsjxhujdhu","0000-00-00");
 INSERT INTO  first_appeal VALUES("5","ghbhytghbgy","2016-05-08");
 INSERT INTO  first_appeal VALUES("9","chjyhnsdcyudcuy","2016-05-08");
+INSERT INTO  first_appeal VALUES("10","dsjxhujdhu","0000-00-00");
+INSERT INTO  first_appeal VALUES("11","dsjxhujdhu","0000-00-00");
+INSERT INTO  first_appeal VALUES("12","dsjxhujdhu","0000-00-00");
+INSERT INTO  first_appeal VALUES("13","dsjxhujdhu","0000-00-00");
+INSERT INTO  first_appeal VALUES("14","dsjxhujdhu","0000-00-00");
+INSERT INTO  first_appeal VALUES("15","dsjxhujdhu","0000-00-00");
 
 
 
@@ -162,12 +173,15 @@ CREATE TABLE `info_about_reply` (
   `reply_time` int(11) NOT NULL,
   `faa_info` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
-INSERT INTO  info_about_reply VALUES("3","2016-07-19","2016-07-19","paper","3","yes");
+INSERT INTO  info_about_reply VALUES("3","2016-07-19","2016-09-19","paper","3","yes");
 INSERT INTO  info_about_reply VALUES("5","2016-07-19","2016-07-19","paper","7","fgj,");
 INSERT INTO  info_about_reply VALUES("10","2016-06-21","2016-06-21","paper","0","yes");
 INSERT INTO  info_about_reply VALUES("11","2016-06-24","2016-06-24","paper","0","yes");
+INSERT INTO  info_about_reply VALUES("12","0000-00-00","0000-00-00","","0","");
+INSERT INTO  info_about_reply VALUES("13","0000-00-00","0000-00-00","","0","");
+INSERT INTO  info_about_reply VALUES("28","0000-00-00","0000-00-00","","0","");
 
 
 
@@ -219,10 +233,15 @@ CREATE TABLE `section4` (
   `given_info_date` date NOT NULL,
   `info_time` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 INSERT INTO  section4 VALUES("1","0000-00-00","0","0000-00-00","0000-00-00","0");
 INSERT INTO  section4 VALUES("4","0000-00-00","0","0000-00-00","0000-00-00","0");
+INSERT INTO  section4 VALUES("5","0000-00-00","0","0000-00-00","0000-00-00","0");
+INSERT INTO  section4 VALUES("6","0000-00-00","0","0000-00-00","0000-00-00","0");
+INSERT INTO  section4 VALUES("7","0000-00-00","0","0000-00-00","0000-00-00","0");
+INSERT INTO  section4 VALUES("8","0000-00-00","0","0000-00-00","0000-00-00","0");
+INSERT INTO  section4 VALUES("9","0000-00-00","0","0000-00-00","0000-00-00","0");
 
 
 
@@ -244,7 +263,7 @@ INSERT INTO  t2 VALUES("0","2","sdrtfgvybhnj","","0000-00-00","0");
 INSERT INTO  t2 VALUES("6","1","blah","Ac","2016-06-20","0");
 INSERT INTO  t2 VALUES("6","2","blah2","Ad","2016-06-20","0");
 INSERT INTO  t2 VALUES("6","3","","HR","2016-06-20","0");
-INSERT INTO  t2 VALUES("7","1","blah","Ex","2016-06-20","0");
+INSERT INTO  t2 VALUES("7","1","blah","Ex","2016-06-20","1");
 INSERT INTO  t2 VALUES("7","2","blah2","Ad","2016-06-20","0");
 INSERT INTO  t2 VALUES("7","3","blah3","HR","2016-06-20","0");
 INSERT INTO  t2 VALUES("8","1","hwsxbj","Ac","2016-06-05","0");
@@ -281,6 +300,24 @@ INSERT INTO  t2 VALUES("27","2","bafsgga","Ac","0000-00-00","0");
 INSERT INTO  t2 VALUES("27","3","cjsdgg","Ac","0000-00-00","0");
 INSERT INTO  t2 VALUES("28","1","","no_selection2","0000-00-00","0");
 INSERT INTO  t2 VALUES("28","2","","no_selection1","0000-00-00","0");
+INSERT INTO  t2 VALUES("0","1","abcde","no_selection1","0000-00-00","0");
+INSERT INTO  t2 VALUES("0","1","abcde","no_selection1","0000-00-00","0");
+INSERT INTO  t2 VALUES("0","1","abcde","no_selection1","0000-00-00","0");
+INSERT INTO  t2 VALUES("0","1","abcde","Ac","0000-00-00","0");
+INSERT INTO  t2 VALUES("0","2","abcde","no_selectioq_no1","0000-00-00","0");
+INSERT INTO  t2 VALUES("0","1","abcde","Ac","0000-00-00","0");
+INSERT INTO  t2 VALUES("0","1","","no_selection2","0000-00-00","0");
+INSERT INTO  t2 VALUES("0","2","","no_selection1","0000-00-00","0");
+INSERT INTO  t2 VALUES("0","1","abcde","Ac","0000-00-00","0");
+INSERT INTO  t2 VALUES("0","1","","no_selection2","0000-00-00","0");
+INSERT INTO  t2 VALUES("0","2","","no_selection1","0000-00-00","0");
+INSERT INTO  t2 VALUES("0","2","abcde","no_selectioq_no1","0000-00-00","0");
+INSERT INTO  t2 VALUES("0","0","","","0000-00-00","0");
+INSERT INTO  t2 VALUES("31","1","","Ex","0000-00-00","0");
+INSERT INTO  t2 VALUES("31","2","","no_selection4","0000-00-00","0");
+INSERT INTO  t2 VALUES("31","3","","no_selection3","0000-00-00","0");
+INSERT INTO  t2 VALUES("31","4","","no_selection2","0000-00-00","0");
+INSERT INTO  t2 VALUES("31","5","","no_selection1","0000-00-00","0");
 
 
 

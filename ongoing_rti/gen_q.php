@@ -14,15 +14,23 @@
 
 		$qno = $_GET['qno'];
 		$data3 = "SELECT * FROM add_rti WHERE id=".$id.";";
-    $query2 = mysqli_query($con,$data3);
+    $query2 = mysqli_query($con, $data3);
     $data4 = mysqli_num_rows($query2);
     $b = $data4;
     $add_rtirows = mysqli_fetch_array($query2);
 
 		$data1 = "SELECT * FROM t2 WHERE id=".$id." AND q_no=".$qno.";";
-		$query = mysqli_query($con,$data1);
+		$query = mysqli_query($con, $data1);
 		$data2 = mysqli_fetch_assoc($query);
-
+?>
+<html>
+	<head>
+		<title>PDF</title>
+		<link rel="stylesheet" href="../css/background.css">
+		<script src="../bootstrap/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+<?php
 		echo "</br>";
 		echo "
 				 Subject:- 	Information required under Section 6(1) of the Right to Information Act, 2005.</br></br>
@@ -46,12 +54,14 @@
 					(Name and designation of CPIO)</br></br>
 					To,</br>".
 					$data2['map']."</br></br></br>";
-		echo"<a href='select_option.php'><input type=submit value=Exit></a>";
-		echo "<button onclick='myFuction()'>Print the reply</button>";
+		echo "<a href='../select_option.php'><input type=submit value=Exit class=btn></a>";
+		echo "<button onclick='myFuction()' class=btn>Print the reply</button>";
 	?>
 	<script>
     function myFuction(){
 	    window.print();
     }
 	</script>
+</body>
+</html>
 <?php } ?>
