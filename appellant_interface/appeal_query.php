@@ -17,14 +17,12 @@
 </head>
 <br><h4><strong>Mark the queries for which the appeal is raised:</strong></h4>
 <script type="text/javascript">
-
-function test(chckbox)
-{
-	var txtfield = document.getElementById('desc');
-	txtfield.disabled = chckbox.checked?false:true;
-	if(!txtfield.disabled) {
-		txtfield.focus();
-	}
+function checkbox_input (checkbox_id, description_id){
+	if (document.getElementById(checkbox_id).checked) {
+    document.getElementById(description_id).disabled=true;
+  } else {
+    document.getElementById(description_id).disabled=false;
+  }
 }
 </script>
 <?php
@@ -58,14 +56,14 @@ function test(chckbox)
 		while ($b != 0) {
 			$obj = "obj".$b;
 			$desc = "desc".$b;
-			$v = mysqli_fetch_array($res_set);
+			$v = mysqli_fetch_array ($res_set);
 			echo "<tr>";
 			echo "<th>".$v['q_no']."</th>";
 			echo "<th>".$v['ques']."</th>";
 ?>
 	<!-- in order to disable an input box disabled='disabled'-->
-	<th><input type='checkbox' id='chckbox' name=<?php echo $obj;?> onclick="test(this)"/>Objection</th>
-	<th><input type='text' name=<?php echo $desc;?> id='desc'></th>
+	<th><input type='checkbox' id=<?php echo "checkbox".$b; ?> name=<?php echo $obj;?> onclick="checkbox_input ('<?php echo "checkbox".$b; ?>', '<?php echo "description".$b; ?>')"/>Objection</th>
+	<th><input type='text' name=<?php echo $desc;?> id=<?php echo "description".$b; ?>></th>
 	<?php
 			echo "</tr>";
 			$b--;

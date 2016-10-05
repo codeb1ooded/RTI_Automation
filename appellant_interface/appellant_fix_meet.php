@@ -17,20 +17,16 @@
 </head>
 <body>
 	<script type="text/javascript">
-	function mailTo () {
-		var selected = map.options[map.selectedIndex].value;
-				mailid1 = "cpio@igdtuw.com";
-				mailid2 = "appellant@igdtuw.com";
-			var subject = "Date and place fixed ";
-			//var body="Query: " + document.getElementById(ques).value + " \ndated on:" + document.getElementById("date_s"+a).value;
-			window.open('mailto:'+mailid1+mailid2+'?subject='+subject+'&body='+body);
-		}
-		else{
-			alert("Please select a department first");
-		}
-	}
 	function print(){
 		window.print();
+	}
+	function mailTo() {
+		var	mailid1 = "cpio@igdtuw.com";
+		var mailid2 = "appellant@igdtuw.com";
+		var subject = "Date and place fixed ";
+		var body = "PUT BODY HERE";
+		//var body="Query: " + document.getElementById(ques).value + " \ndated on:" + document.getElementById("date_s"+a).value;
+		window.open ('mailto:' + mailid1 + mailid2 + '?subject=' + subject + '&body='+body);
 	}
 </script>
 
@@ -39,31 +35,26 @@
 		include '../db/config_database.php';
 		$_SESSION['database_access'] = false;
 
-		$q='SELECT * FROM add_rti WHERE id='.$Id.";";
-		$sql=mysqli_query($con,$q);
-		$data3=mysqli_fetch_array($sql);
+		$q = 'SELECT * FROM add_rti WHERE id='.$Id.";";
+		$sql = mysqli_query($con,$q);
+		$data3 = mysqli_fetch_array($sql);
 
-		$q2='SELECT * FROM first_appeal WHERE id='.$Id.";";
-		$sql2=mysqli_query($con,$q2);
-		$data2=mysqli_fetch_array($sql2);
+		$q2 = 'SELECT * FROM first_appeal WHERE id='.$Id.";";
+		$sql2 = mysqli_query($con,$q2);
+		$data2 = mysqli_fetch_array($sql2);
 ?>
 	<h5 style="margin:40 0 0 900px">Date:</h5>
 	</br>
 	<h5 style="margin:-2 0 0 900px">Appeal No:<?php echo " ".$Id; ?></h5>
 <?php echo "<h6><b>Name of appellant: </b>".$data3['name']."</h6> ";?>
 	<h6><b>Address of appellant: </b><?php echo " ".$data3['address'];?></h6>
-	<p>
-		The present appeal dated <?php echo" ".$data2['transfer_date']; ?> has been preferred by Shri/Smt./Ms <?php echo" ".$data3['name']; ?> , hereinafter referred to
-	    as the Appellant, against the order bearing reference No. . . . . . …… dated <?php echo" ".$data2['transfer_date']; ?>. of Shri/Smt./Ms <?php echo" ".$data3['name']; ?>, CPIO, Public Authority.
-
-	   </br>
-	  <u><b>Facts:</b></u>
-
-	  	</br>
-
+	<p> The present appeal dated <?php echo" ".$data2['transfer_date']; ?> has been preferred by Shri/Smt./Ms <?php echo" ".$data3['name']; ?> , hereinafter referred to
+	  as the Appellant, against the order bearing reference No. . . . . . …… dated <?php echo" ".$data2['transfer_date']; ?>. of Shri/Smt./Ms <?php echo" ".$data3['name']; ?>, CPIO, Public Authority.
+	</br>
+	<u><b>Facts:</b></u>
+	</br>
 			2.	Shri/Smt./Ms <u><?php echo " ".$data3['name'];?></u>, the applicant, vide application dated <u><?php echo" ".$data3['date_of_receipt']; ?></u>. sought the following information under the RTI Act, 2005 from the CPIO, . . . . . . . . . . . . . . . .  . . . . . … . (name of Department/Organisation),
 			Public Authority:
-
 	</br>
 		<b><u>Decision:</u></b>
 	</br>

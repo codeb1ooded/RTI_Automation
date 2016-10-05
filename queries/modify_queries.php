@@ -97,17 +97,17 @@ if(isset($_POST['edit']))
 	}
 </script>
 <?php
-	while( $a!=0)
+	while ($a!=0)
 	{
-		$data3=mysqli_fetch_array($query);
-		$qno="q_no".$a;
-		$ques="ques".$a;
-		$no_selection="no_selectio".$qno;
-		$map="map".$a;
-		$date_s="date_s".$a;
-		$ques_id= "ques".$qno;
-		$map_id= "map".$qno;
-		$date_s_id= "date_s".$qno;
+		$data3 = mysqli_fetch_array($query);
+		$qno = "q_no".$a;
+		$ques = "ques".$a;
+		$no_selection = "no_selectio".$qno;
+		$map = "map".$a;
+		$date_s = "date_s".$a;
+		$ques_id = "ques".$qno;
+		$map_id = "map".$qno;
+		$date_s_id = "date_s".$qno;
 ?>
 		<tr>
 			<th><input  value="<?php echo $data3['q_no']?>" type=text name=<?php echo $qno; ?> readonly></th>
