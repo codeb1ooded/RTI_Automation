@@ -21,8 +21,9 @@ if(isset($_GET['id']))
 	{
 		$Id = $_GET['id'];
 	}
-else{
-	$Id=$_SESSION['prev_rti_id'];}
+//else{
+// #	$Id=$_SESSION['prev_rti_id'];
+// #}
 
 	$_SESSION['id']=$Id;
 	$_SESSION['database_access'] = true;

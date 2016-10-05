@@ -27,7 +27,9 @@
 		$res = mysqli_query($con, $sql);
 		$b = mysqli_num_rows($res);
 ?>
-<table width=100%>
+<div class=container>
+<h2>List of RTIs that raised first appeal  <h2>
+<table  class="table table-bordered table-condensed">
 	<tr>
 		<th>Id</th>
 		<th>Name</th>
@@ -44,14 +46,18 @@
 			$f2 = mysqli_fetch_array($res2);
 
 			echo "<tr>
-						<th>".$f2['id']."</a></th>
-						<th>".$f2['name']."</a></th>
-						<th>".$f['transfer_date']."</a></th>
-						<th><a href='appeal_option.php?id=".$f2['id']."'>View Options</a></th>
+						<td>".$f2['id']."</a></td>
+						<td>".$f2['name']."</a></td>
+						<td>".$f['transfer_date']."</a></td>
+						<td><a href='appeal_option.php?id=".$f2['id']."'>View Options</a></td>
 						</tr>";
 			$b--;
 		}
-		echo "</table></br></br>";
+		echo "</table> </br></br>";
+		
 		include '../logging/logoff.html';
 	}
 ?>
+</div>
+</body>
+</html>

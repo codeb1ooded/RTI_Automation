@@ -14,6 +14,10 @@
 <html>
 	<head>
 		<title> Backup </title>
+		<link rel="stylesheet" href="../css/background.css">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	
 	</head>
 	<body>
 		<p>Select All Tables for which you want backup</p>

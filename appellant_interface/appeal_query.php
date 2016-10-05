@@ -19,9 +19,9 @@
 <script type="text/javascript">
 function checkbox_input (checkbox_id, description_id){
 	if (document.getElementById(checkbox_id).checked) {
-    document.getElementById(description_id).disabled=true;
-  } else {
     document.getElementById(description_id).disabled=false;
+  } else {
+    document.getElementById(description_id).disabled=true;
   }
 }
 </script>

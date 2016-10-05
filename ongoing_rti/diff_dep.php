@@ -13,7 +13,6 @@
 	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 </head>
 <?php
-		session_start();
 		$m = $_SESSION['map'];
 		$_SESSION['database_access'] = true;
 		include '../db/config_database.php';
