@@ -11,11 +11,10 @@ else {
 <html>
 <head>
 	<title>Ongoing RTI</title>
-	<link rel="stylesheet" href="../css/new_prev.css">
-	<link rel="stylesheet" href="../css/background.css">
 	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 	<script src="../bootstrap/jQuery/jquery.min.js"></script>
 	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../css/background.css">
 	<meta charset="utf-8">
 </head>
 <body>

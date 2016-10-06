@@ -15,7 +15,6 @@
 <html>
 <head>
 	<title>Queries</title>
-	<link rel="stylesheet" href="../css/prev_rti.css">
 	<link rel="stylesheet" href="../css/background.css">
 	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 	<script src="../bootstrap/jQuery/jquery.min.js"></script>
@@ -78,12 +77,10 @@ echo "<div class=container>";
 		$no_selection = "no_selection".$a;
 		$dropdown = "dropdown".$a;
 ?>
-
-
 		<tr>
-			<th><input type=text name=<?php echo $c; ?> value=<?php echo $c; ?> readonly></th>
-			<th><input type=text name=<?php echo $ques; ?> id=<?php echo $ques; ?>></th>
-			<th><select name=<?php echo $map; ?> id=<?php echo $dropdown;?> >
+			<td><input type=text name=<?php echo $c; ?> value=<?php echo $c; ?> readonly></td>
+			<td><input type=text name=<?php echo $ques; ?> id=<?php echo $ques; ?>></td>
+			<td><select name=<?php echo $map;?> id=<?php echo $dropdown;?>
 					<span>
 						<option value=<?php echo $no_selection; ?>>--Select--</option>
 						<option value=Ac>Academics</option>
@@ -92,10 +89,9 @@ echo "<div class=container>";
 						<option value=HR>Human Resource</option>
 					</span>
 				</select>
-			</th>
-
-			<th><input type=date name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></th>
-			<th><button type="button" name="mail_button" class=btn onclick="mailTo(<?php echo $a; ?>);">Mail</button></th>
+			</td>
+			<td><input type=date name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD></td>
+			<td><button type="button" name="mail_button" class=btn onclick="mailTo(<?php echo $a; ?>);">Mail</button></td>
 <?php
 		echo '</tr>';
 		$a--;

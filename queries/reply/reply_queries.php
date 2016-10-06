@@ -129,7 +129,7 @@
 				}
 			</script>
 			</td>
-			<td><input  style="height:32px" type=date name=<?php echo $date_rec;?> placeholder=YYYY-MM-DD></td>
+			<td><input  style="height:32px" type=date name=<?php echo $date_rec;?> placeholder=YYYY-MM-DD required></td>
 		</tr>
 	<?php
 			$a--;

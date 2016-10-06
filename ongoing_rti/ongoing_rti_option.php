@@ -10,10 +10,12 @@ else{
 <html>
 <head>
 	<title>Ongoing RTI</title>
+	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/background.css">
 	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-	<meta charset="utf-8">
-</head>
+	<script src="../bootstrap/jQuery/jquery.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	</head>
 <body>
 <?php
 echo "<div class='container'>";

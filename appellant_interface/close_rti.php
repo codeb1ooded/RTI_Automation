@@ -10,7 +10,11 @@
 ?>
 <html>
 	<head>
-		<link rel="stylesheet" href="../css/background.css">
+	<link rel="stylesheet" href="../css/background.css">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<script src="../bootstrap/jQuery/jquery.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<meta charset="utf-8">	
 	</head>
 <body>
 

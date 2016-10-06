@@ -47,8 +47,8 @@
       <meta charset="UTF-8">
       <title> Login </title>
       <link rel="stylesheet" href="css/login.css">
-      <link rel="stylesheet" href="css/background.css">
-      <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+      <link rel="stylesheet" href="css/background.css"> 
+	  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
       <link rel="stylesheet" href="css/style.css">
       <script type="text/javascript">
          function fpassoverlay(){
@@ -66,6 +66,7 @@
       </script>
    </head>
    <body>
+   <br>
       <h2><center>RTI APPLICATION SYSTEM</center></h2>
       <div class="login-page">
       <div class="form">
