@@ -32,12 +32,14 @@
 		echo "<br><h2>COMPLETED RTIs</h2><br>" ;
 
 		if ($account_type == 'Admin') {
-			echo "<table class='table table-bordered'><tr>
+			echo "<table class='table table-hover table-bordered'>
+				<tr>
 					<th>ID</th>
 					<th>Applicant Name</th>
 					<th>Phone Number</th>
 					<th>View Details</th>
-					<th>First Appeal</th></tr>";
+					<th>First Appeal</th>
+				</tr>";
 
 			while ($r = mysqli_fetch_assoc($res)){
 				if ($r['archive'] == 1) {
@@ -56,11 +58,12 @@
 			     	$d4 = floor ($datediff/(60*60*24));
 						if ($d4 <= 30) {
 							echo "<tr>
-								<td>".$r['id']."</td>
-								<td>".$r['name']."</td>
-								<td>".$r['phone_no']."</td>
-								<td><a href='compid.php?id=".$r['id']."'>View</a></td>
-								<td><a href='appeal.php?id=".$r['id']."'>Raise Appeal</a></td></tr>";
+									<td>".$r['id']."</td>
+									<td>".$r['name']."</td>
+									<td>".$r['phone_no']."</td>
+									<td><a href='compid.php?id=".$r['id']."'>View</a></td>
+									<td><a href='appeal.php?id=".$r['id']."'>Raise Appeal</a></td>
+								</tr>";
 						}
 						else {
 							$sql="UPDATE add_rti SET closed=1 WHERE id=".$r['id'];
@@ -86,7 +89,7 @@
 			$query=" SELECT * FROM t2 WHERE map='".$m."' order by id;";
 		  $data=mysqli_query($con,$query);
 			$data2=mysqli_num_rows($data);
-			echo "<table class='table table-bordered>" ;
+			echo "<table class='table table-hover table-bordered>" ;
 			echo "<tr>
 					<th>ID</th>
 					<th>Applicant Name</th>

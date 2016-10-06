@@ -59,13 +59,14 @@
 			</tr>
 		</table>
 		<input type="submit" name="submitresponsenew" class=btn value="Save and Exit">
-		</form>
+		
 <?php
 		echo "<br><a class=btn href='../ongoing_rti/ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
 	}
 	else
 	{
 ?>
+</form>
 <h4><strong> Processing of RTI application and response to the appellant-</strong></h4>
 	<form action ="reply&section4.php" method ="post">
 		<table class="table table-bordered">
@@ -90,11 +91,11 @@
 			</tr>
 		</table>
 		<input type="submit" name="submitresponse" class=btn value="Save and Exit">
-	</form>
 <?php
 	echo "&nbsp&nbsp<a class='btn' href='../ongoing_rti/ongoing_rti_option.php?id=".$Id."''>Back</a>";
 	}
 ?>
+</form>
 </div>
 </body>
 </html>

@@ -11,9 +11,11 @@ else {
 <html>
 <head>
 	<title>Ongoing RTI</title>
-	<link rel="stylesheet" href="../css/prev_rti.css">
+	<link rel="stylesheet" href="../css/new_prev.css">
 	<link rel="stylesheet" href="../css/background.css">
 	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<script src="../bootstrap/jQuery/jquery.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
 </head>
 <body>
@@ -28,7 +30,7 @@ else {
 	if($account_type == 'Admin'){
 		$query = " SELECT * FROM add_rti order by date_of_receipt";
 		$res = mysqli_query($con, $query);
-		echo "<table class=table table-bordered table-condensed>" ;
+		echo "<table class='table table-hover table-bordered'>" ;
 		echo "<tr>
 		<th>ID</th>
 		<th>Applicant Name</th>
@@ -80,7 +82,7 @@ else {
 		$data = mysqli_query ($con, $query);
 		$data2 = mysqli_num_rows ($data);
 
-		echo "<table class='table table-bordered'>" ;
+		echo "<table class='table table-condensed table-bordered'>" ;
 		echo "<tr>
 		<th>ID</th>
 		<th>Applicant Name</th>
@@ -113,11 +115,11 @@ else {
 						$b = strtotime(date('Y-m-d h:i:s'));
 						$d3 = floor(($a-$b)/86400);
 						echo "<tr>";
-						echo "<th>".$r['id']."</th>";
-						echo "<th>".$r['name']."</th>";
-						echo "<th>".$r['date_of_receipt']."</th>";
-						echo "<th>".date("Y-m-d",strtotime($d2))."</th>";
-						echo "<th>".$d3."</th>";
+						echo "<td>".$r['id']."</td>";
+						echo "<td>".$r['name']."</td>";
+						echo "<td>".$r['date_of_receipt']."</td>";
+						echo "<td>".date("Y-m-d",strtotime($d2))."</td>";
+						echo "<td>".$d3."</td>";
 						echo "<td><a href='diff_dep.php?id=".$r['id']."'>View Queries for this RTI</a></td>";
 						echo "</tr>";
 					}

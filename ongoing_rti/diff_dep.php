@@ -10,8 +10,11 @@
 <head>
 <link rel="stylesheet" href="../css/prev_rti.css">
 	<link rel="stylesheet" href="../css/background.css">
-	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-</head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+		<script src="../bootstrap/jQuery/jquery.min.js"></script>
+		<script src="../bootstrap/js/bootstrap.min.js"></script>
+	</head>
 <?php
 		$m = $_SESSION['map'];
 		$_SESSION['database_access'] = true;
@@ -33,9 +36,12 @@
 		//Session for the values from t2
 		$v = $data2;
 ?>
+<div class=container>
 <form action=dept_rep.php method=post>
+<h2>Queries for this Id :</h2>
 <table  width=100% border=2>
-	<tr>
+		
+		<tr>
 			<th>Query Number</th>
 			<th>Query</th>
 			<th>Reply</th>
@@ -64,13 +70,18 @@
 		}
 		$v--;
 	}
+	
 ?>
-</table>
-			<center><input type=submit name=save class=btn value='Save' ></center>
+</table>	
+	<br><input type=submit name=save class=btn value='Save' >
 			</form>
 			<a class=btn href='../ongoing_rti/ongoing_rti.php'>Back</a>
+
 
 <?php
 		$_SESSION['que']=$t;
 	}
 ?>
+</div>
+</body>
+</html>

@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 body {
+font-family: Lora;	
 background: #99cfe0;
 background: -moz-linear-gradient(left, #f9cfe0 0%, #d6dbbf 100%);
 background: -webkit-linear-gradient(left, #99cfe0 0%,#d6dbbf 100%);
@@ -27,6 +28,10 @@ background: linear-gradient(to right, #99cfe0 0%,#d6dbbf 100%);
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   cursor: pointer;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #43C8BA !important;
 }
 
 .btn:hover {

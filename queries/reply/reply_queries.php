@@ -136,11 +136,11 @@
 		}
 
 		echo "</table>" ;
-		echo "<input type=submit name=save class=btn value='Save and Exit' >";
+		echo "<a href='section_db.php' target='_blank' class=btn>View Section Information</a>&nbsp&nbsp";
+		echo "<a href='view_dept_reply.php' target='_blank' class=btn>View Department Replies</a>";
+		echo "<br><br><input type=submit name=save class=btn value='Save and Exit' >&nbsp&nbsp";
 		echo "</form>" ;
-		echo "<br><br><a href='section_db.php' target='_blank' class=btn>View Section Information</a>";
-		echo "<br><br><a href='view_dept_reply.php' target='_blank' class=btn>View Department Replies</a>";
-		echo "<br><br><a href='../../ongoing_rti/ongoing_rti_option.php?id=".$id."' class=btn>Back</a>";
+		echo "<a href='../../ongoing_rti/ongoing_rti_option.php?id=".$id."' class=btn>Back</a>";
 	?>
 	</div>
 	</body>

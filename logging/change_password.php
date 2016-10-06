@@ -29,7 +29,7 @@
 	echo "<marquee><strong>SELECT THE USER WHOSE PASSWORD NEEDS TO BE MODIFIED: </strong></marquee><br><br>";
 	$query = "SELECT * FROM login;";
 	$res = mysqli_query($con, $query);
-	echo "<table class='table table-bordered table-condensed'>" ;
+	echo "<table class='table table-bordered'>" ;
 	echo "<tr>
 		<th>ID</th>
 		<th>User Name</th>

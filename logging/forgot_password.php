@@ -20,6 +20,7 @@
 	<meta charset="utf-8">
 </head>
 <body>
+<div class="container">
 <?php
   $_SESSION['database_access'] = true;
 	include '../db/config_database.php';
@@ -28,11 +29,12 @@
 	$id=$_GET['id'];
 if (!isset($_POST['submit']) && !isset($_POST['change'])) {
 	echo "<h2>CHANGE PASSWORD</h2><br>" ;
-	echo "<form  method=post action=forgot_password.php?id=".$id.">
-  			<b>Enter Administrator password to proceed:<b><br><br> <input type=password placeholder=Password id=Passwod name=pswd>
-			&nbsp&nbsp<input class=btn type='submit' name ='submit' value='Enter' />
-			</form>";
-	echo "&nbsp<a href=change_password.php class=btn>Back</a>";
+	echo "<form method=post class='form-horizontal' action=forgot_password.php?id=".$id.">
+			<h4>Enter Administrator password to proceed:</h4><br><br> 
+			<input type=password placeholder=Password id=Passwod name=pswd>
+			<input class=btn type='submit' name ='submit' value='Enter' />";
+	echo "&nbsp<a href=change_password.php class=btn>Back</a>
+		</form>";
 }
 if(isset($_POST['submit'])) {
 	echo "<h2>CHANGE PASSWORD</h2><br><br>" ;
@@ -43,10 +45,11 @@ if(isset($_POST['submit'])) {
 	$id = $_GET['id'];
   $mypassword = hash('sha256', $_POST['pswd']);
 	if($mypassword == $p) {
-		echo "<form method=post action=forgot_password.php?id=".$id.">
-  				<h4>Enter the new password:</h4> <input type=password placeholder=New_Password id=Password name=pwd>
-				<input class=btn type='submit' name ='change' value='Enter' />
-			</form>";
+		echo "<form method=post class='form-horizontal' action=forgot_password.php?id=".$id.">
+					<h4>Enter the new password:</h4>
+						<input type=password placeholder=New_Password id=Password name=pwd>
+						<input class=btn type='submit' name ='change' value='Enter' />
+				</form>";
 	}
 	else {
 
@@ -65,6 +68,7 @@ if (isset($_POST['change'])) {
 }
 echo "</div>";
 ?>
+</div>
 </body>
 </html>
 <?php } ?>

@@ -30,7 +30,7 @@
 		$res = mysqli_query($conn, $query);
 		echo "<br><h2>CLOSED RTIs</h2><br>" ;
 		if($account_type == 'Admin'){
-			echo "<table class='table table-bordered'><tr>
+			echo "<table class='table table-hover table-bordered'><tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
 			<th>Phone Number</th>
@@ -84,7 +84,7 @@
 			$query=" SELECT * FROM t2 WHERE map='".$m."' order by id;";
 			$data=mysqli_query($con, $query);
 			$data2=mysqli_num_rows ($data);
-			echo "<table class='table table-bordered'>" ;
+			echo "<table class='table table-hover table-bordered'>" ;
 			echo "<tr>
 			<th>ID</th>
 			<th>Applicant Name</th>
