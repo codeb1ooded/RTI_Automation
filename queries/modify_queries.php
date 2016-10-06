@@ -10,11 +10,16 @@
 <html>
 <head>
 	<title>Modified</title>
+	<link rel="stylesheet" href="../css/prev_rti.css">
 	<link rel="stylesheet" href="../css/background.css">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<script src="../bootstrap/jQuery/jquery.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
-</head>
+	</head>
 
 <body>
+<div class=container>
 <?php
 	$_SESSION['database_access'] = true;
 	include '../db/config_database.php';
@@ -109,10 +114,10 @@ if(isset($_POST['edit']))
 		$map_id = "map".$qno;
 		$date_s_id = "date_s".$qno;
 ?>
-		<tr>
-			<th><input  value="<?php echo $data3['q_no']?>" type=text name=<?php echo $qno; ?> readonly></th>
-			<th><input type=text name=<?php echo $ques; ?> value="<?php echo $data3['ques'];?>" id=<?php echo $ques_id; ?>></th>
-			<th><select name=<?php echo $map; ?> id=<?php echo $map_id; ?> >
+		<table><tr>
+			<td><input  value="<?php echo $data3['q_no']?>" type=text name=<?php echo $qno; ?> readonly></td>
+			<td><input type=text name=<?php echo $ques; ?> value="<?php echo $data3['ques'];?>" id=<?php echo $ques_id; ?>></td>
+			<td><select name=<?php echo $map; ?> id=<?php echo $map_id; ?> >
 					<span>
 						<option value=<?php echo $no_selection; ?> <?php if(strcmp($data3['map'], "") == 0){ echo "selected=\"selected\""; }?> >--Select--</option>
 						<option value=Ac <?php if(strcmp($data3['map'], "Ac") == 0){ echo "selected=\"selected\""; }?>>Academics</option>
@@ -121,25 +126,26 @@ if(isset($_POST['edit']))
 						<option value=HR <?php if(strcmp($data3['map'], "HR") == 0){ echo "selected=\"selected\""; }?>>Human Resource</option>
 					</span>
 				</select>
-			</th>
-			<th><input type=date name=<?php echo $date_s; ?> value="<?php echo $data3['date_sent'] ?>" id=<?php echo $date_s_id; ?> placeholder=YYYY-MM-DD></th>
-			<th><button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button></th>
-		</tr>
+			</td>
+			<td><input type=date name=<?php echo $date_s; ?> value="<?php echo $data3['date_sent'] ?>" id=<?php echo $date_s_id; ?> placeholder=YYYY-MM-DD></td>
+			<td><button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button></td>
+		</tr></table>
 <?php
 		$sql = "DELETE FROM t2 WHERE id=".$id.";";
 		mysqli_query($con,$sql);
 		$a--;
 	}
-	echo "<th colspan=15></th><th><input type=submit name=save class=btn value='Save and Exit' ></th>";
-	echo "<th colspan=15></th><th><input type=submit name=reply class=btn value='Generate Reply' ></th>";
+	echo "<br><td><input type=submit name=save class=btn value='Save and Exit' >";
+	echo "&nbsp<a href='../ongoing_rti/ongoing_rti_option.php' class=btn  >Exit</td>";
 	echo "</form>";
 }
 else{
- echo "<a href='../ongoing_rti/ongoing_rti_option.php'> Back </a>";
+ echo "<a href='../ongoing_rti/ongoing_rti_option.php' class=btn> Back </a>";
 }
 $con->close();
 
 ?>
+</div>
 </body>
 </html>
 <?php } ?>

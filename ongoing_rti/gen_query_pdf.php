@@ -14,9 +14,14 @@
 <html>
 <head>
 		<title>PDF</title>
-		<link rel="stylesheet" href="../css/background.css">
-		<script src="../bootstrap/js/bootstrap.min.js"></script>
-	</head>
+		<link rel="stylesheet" href="../css/prev_rti.css">
+	<link rel="stylesheet" href="../css/background.css">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<script src="../bootstrap/jQuery/jquery.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<meta charset="utf-8">
+	
+		</head>
 <?php
     echo "Start of queries ".$b;
     echo "</br>End of queries ".$d."</br></br></br>";

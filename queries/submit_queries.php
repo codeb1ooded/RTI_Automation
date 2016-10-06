@@ -15,9 +15,13 @@
 <html>
 <head>
 	<title>Queries</title>
+	<link rel="stylesheet" href="../css/prev_rti.css">
 	<link rel="stylesheet" href="../css/background.css">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<script src="../bootstrap/jQuery/jquery.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
-</head>
+	</head>
 
 <body>
 <?php
@@ -25,7 +29,7 @@
 	include '../db/config_database.php';
 	$_SESSION['database_access'] = false;
 	$a=$_POST['ques'];
-
+echo "<div class=container>";
 	echo " <h3>RTI ID:".$id."</h3>";
 	echo "<table>
 			<tbody>
@@ -98,11 +102,12 @@
 		$c++;
 	}
 
-	echo "<th colspan=15></th><th><input type=submit name=save class=btn value='Save and Exit' ></th>";
+	echo "<td><input type=submit name=save class=btn value='Save and Exit' >";
 	echo "</form>";
-	echo "<th colspan=15></th><th><a href='../select_option.php' name=exit  class=btn>Exit</a></th>";
+	echo "&nbsp<a href='../ongoing_rti/ongoing_rti_option.php' class=btn>Exit</a></td>";
 	mysqli_close($con);
 ?>
+</div>
 </body>
 </html>
 <?php } ?>

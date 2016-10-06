@@ -10,9 +10,14 @@ else{
 	<html>
 	<head>
 		<title>Generate Reply</title>
-		<link rel="stylesheet" href="../css/background.css">
-		<meta charset="utf-8">
-	</head>
+		<link rel="stylesheet" href="../css/prev_rti.css">
+	<link rel="stylesheet" href="../css/background.css">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<script src="../bootstrap/jQuery/jquery.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<meta charset="utf-8">
+	
+		</head>
 
 	<body>
 		<?php

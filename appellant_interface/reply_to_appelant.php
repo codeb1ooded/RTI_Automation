@@ -66,7 +66,7 @@
 	else
 	{
 ?>
-<h4><strong>(III) Processing of RTI application and response to the appellant-</strong></h4>
+<h4><strong> Processing of RTI application and response to the appellant-</strong></h4>
 	<form action ="reply&section4.php" method ="post">
 		<table class="table table-bordered">
 			<tr>
@@ -92,7 +92,7 @@
 		<input type="submit" name="submitresponse" class=btn value="Save and Exit">
 	</form>
 <?php
-	echo "&nbsp&nbsp<a class='btn' href='../ongoing_rti/ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
+	echo "&nbsp&nbsp<a class='btn' href='../ongoing_rti/ongoing_rti_option.php?id=".$Id."''>Back</a>";
 	}
 ?>
 </div>

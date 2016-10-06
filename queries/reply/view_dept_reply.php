@@ -18,6 +18,7 @@
 		</head>
 
 	<body>
+	<div class=container>
 	<?php
 		$_SESSION['database_access'] = true;
     include '../../db/config_database.php';
@@ -27,7 +28,7 @@
 		$query = mysqli_query($con,$k);
 		$data2 = mysqli_num_rows($query);
 		$a = $data2;
-
+		echo "<h3> Received Department Replies</h3>";
 		echo "<table class='table table-bordered'>
 				<tbody>
 					<tr>
@@ -46,6 +47,7 @@
 			</tr>
 		<?php
 		} ?>
+		</div>
 	</body>
 </html>
 <?php } ?>
