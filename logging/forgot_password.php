@@ -15,6 +15,8 @@
 	<title>Change Password</title>
 	<link rel="stylesheet" href="../css/background.css">
 	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<script src="../bootstrap/jQuery/jquery.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
 </head>
 <body>
@@ -25,12 +27,12 @@
 	echo "<div class='container'>";
 	$id=$_GET['id'];
 if (!isset($_POST['submit']) && !isset($_POST['change'])) {
-	echo "<h2>CHANGE PASSWORD</h2><br><br>" ;
+	echo "<h2>CHANGE PASSWORD</h2><br>" ;
 	echo "<form  method=post action=forgot_password.php?id=".$id.">
-  			<h4>Enter the admin password again to change the password:</h4> <input type=password placeholder=Password id=Passwod name=pswd>
-			<input class=btn type='submit' name ='submit' value='Enter' />
+  			<b>Enter Administrator password to proceed:<b><br><br> <input type=password placeholder=Password id=Passwod name=pswd>
+			&nbsp&nbsp<input class=btn type='submit' name ='submit' value='Enter' />
 			</form>";
-	echo "<br><a href=change_password.php class=btn>Back</a>";
+	echo "&nbsp<a href=change_password.php class=btn>Back</a>";
 }
 if(isset($_POST['submit'])) {
 	echo "<h2>CHANGE PASSWORD</h2><br><br>" ;

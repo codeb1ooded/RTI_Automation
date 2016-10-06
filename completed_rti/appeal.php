@@ -21,7 +21,7 @@
 	<div class="container">
 	<?php
 		$Id = $_GET['id'];
-		echo "<br><h3>Add First Appeal Details of RTI with Id: ".$Id."</h3>";
+		echo "<h2>Add First Appeal Details of RTI with Id: ".$Id."</h2>";
 		$_SESSION['database_access'] = true;
 		include '../db/config_database.php';
 		$_SESSION['database_access'] = false;
@@ -33,40 +33,39 @@
 			<form action = "../appellant_interface/appeal_query.php" method ="post">
 				<table class="table table-bordered">
 					<tr>
-						<th> Name and designation of the officer before whom <br>the 1<sup>st</sup> appeal is filed u/s 19(1)</th>
-						<th><input type="text" style="height:32px" name="appeal_info" id="Name" value=<?php echo $res['appeal_info']; ?>></th>
+						<td> Name and designation of the officer before whom <br>the 1<sup>st</sup> appeal is filed u/s 19(1)</td>
+						<td><input type="text" style="height:32px" name="appeal_info" id="Name" value=<?php echo $res['appeal_info']; ?>></td>
 					</tr>
 
 					<tr>
-						<th>Date of transfer of appeal to FAA</th>
-						<th><input type="text" style="height:32px" name="transfer_date" id="Name" value=<?php echo $res['transfer_date']; ?> placeholder="YYYY-MM-DD"></th>
+						<td>Date of transfer of appeal to FAA</td>
+						<td><input type="text" style="height:32px" name="transfer_date" id="Name" value=<?php echo $res['transfer_date']; ?> placeholder="YYYY-MM-DD"></td>
 					</tr>
-		</table>
-				<input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save and Exit" class="btnsaveappeal"></th>
+				</table>
+				<input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save and Exit" class="btnsaveappeal">
 			</form>
 	<?php
 			echo "<a class=btn href='../ongoing_rti/ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
 		}
 		else {
 	?>
-			<h4><strong>(VI) I<sup>st</sup> Appeal (where applicable):</strong></h4>
 			<form action = "appeal_query.php" method ="post">
 				<table class="table table-bordered">
 					<tr>
-						<th> Name and designation of the officer before whom <br>the 1<sup>st</sup> appeal is filed u/s 19(1)</th>
-						<th><input type="text" style="height:32px" name="appeal_info" id="Name" value="" placeholder=""></th>
+						<td> Name and designation of the officer before whom <br>the 1<sup>st</sup> appeal is filed u/s 19(1)</td>
+						<td><input type="text" style="height:32px" name="appeal_info" id="Name" value="" placeholder=""></td>
 					</tr>
 
 					<tr>
-						<th>Date of transfer of appeal by the receiving officer to FAA</th>
-						<th><input type="text" style="height:32px" name="transfer_date" id="Name" value="" placeholder="YYYY-MM-DD"></th>
+						<td>Date of transfer of appeal by the receiving officer to FAA</td>
+						<td><input type="text" style="height:32px" name="transfer_date" id="Name" value="" placeholder="YYYY-MM-DD"></td>
 					</tr>
 
 				</table>
-				<input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save " class="btnsaveappeal"></th>
+				<input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save " class="btnsaveappeal">
 			</form>
 			<?php
-			echo "<a class=btn href='../ongoing_rti/ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
+			echo "<a class=btn href='../completed_rti/completed_rti.php'>Back</a>" ;
 		}
 		?>
 	</div>

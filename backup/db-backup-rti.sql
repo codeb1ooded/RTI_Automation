@@ -43,7 +43,47 @@ INSERT INTO add_rti VALUES("16","Bhavya","Female","123","223121","Delhi","India"
 INSERT INTO add_rti VALUES("17","Bhavya","Female","123","223121","Delhi","India","64657755","9716777777","abc@abc.in","Indian","2016-10-21","2016-10-21","0","yes","2016-10-21","dd","1","","yes");
 INSERT INTO add_rti VALUES("18","Pari","Female","4568,kamla nagar","110004","Bombay","India","64652222","9211557755","bhavyagarg12@gmail.com","Indian","2016-11-25","2016-11-30","5","yes","2016-11-25","dd","1","","yes");
 INSERT INTO add_rti VALUES("19","Pari","Female","4568,kamla nagar","110004","Bombay","India","64652222","9211557755","bhavyagarg12@gmail.com","Indian","2016-09-25","2016-09-30","5","yes","2016-09-25","dd","","","yes");
-INSERT INTO add_rti VALUES("20"," Pari","Female","4568,kamla nagar","110004","USA","Other","64652222","9211557755","bhavyagarg12@gmail.com","Indian","2016-11-25","2016-11-30","5","yes","2016-11-25","dd","","","no");
+INSERT INTO add_rti VALUES("20"," Pari","Female","4568,kamla nagar","110004","USA","India","64652222","9211557755","bhavyagarg12@gmail.com","Indian","2016-11-25","2016-11-30","5","yes","2016-11-25","dd","","","no");
+
+
+
+DROP TABLE IF EXISTS  appeal_query;
+
+CREATE TABLE `appeal_query` (
+  `id` int(15) NOT NULL,
+  `q_no` int(15) NOT NULL,
+  `query` varchar(100) NOT NULL,
+  `description` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+
+DROP TABLE IF EXISTS  article_section;
+
+CREATE TABLE `article_section` (
+  `Id` int(11) NOT NULL,
+  `No` varchar(10) NOT NULL,
+  `Description` varchar(350) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO  article_section VALUES("1","1(a)","tfc edfrygvubhn");
+INSERT INTO  article_section VALUES("2","1(b)","sdctfgvyubhi");
+
+
+
+DROP TABLE IF EXISTS  article_sub_section;
+
+CREATE TABLE `article_sub_section` (
+  `Id` int(11) NOT NULL,
+  `sec_id` varchar(11) NOT NULL,
+  `No` varchar(10) NOT NULL,
+  `Description` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO  article_sub_section VALUES("1","1","1(a)(a)","blah");
+INSERT INTO  article_sub_section VALUES("2","1","1(a)(b)","blah blah");
+INSERT INTO  article_sub_section VALUES("3","2","1(b)(a)","bdfghj");
 
 
 
@@ -90,6 +130,7 @@ INSERT INTO  dept_reply VALUES("15","3","HR","SXKXJNS","0000-00-00");
 INSERT INTO  dept_reply VALUES("1","2","HR","SDMKLSC","0000-00-00");
 INSERT INTO  dept_reply VALUES("15","1","Ex","xsn","2016-05-03");
 INSERT INTO  dept_reply VALUES("15","4","Ex","vgvg","2016-05-03");
+INSERT INTO  dept_reply VALUES("20","2","Ex","reply12","2016-12-12");
 
 
 
@@ -230,8 +271,8 @@ INSERT INTO  t2 VALUES("0","2","12","Ad","2016-09-16","0");
 INSERT INTO  t2 VALUES("16","1","12","Ad","2016-09-21","0");
 INSERT INTO  t2 VALUES("17","1","e2","HR","2016-09-21","0");
 INSERT INTO  t2 VALUES("17","2","e1","Ac","2016-09-09","0");
-INSERT INTO  t2 VALUES("20","1","q1","Ac","2016-11-30","0");
-INSERT INTO  t2 VALUES("20","2","q2","Ex","2016-11-30","0");
+INSERT INTO  t2 VALUES("0","1","q1","Ac","2016-11-30","0");
+INSERT INTO  t2 VALUES("0","2","q2","Ex","2016-11-30","0");
 
 
 

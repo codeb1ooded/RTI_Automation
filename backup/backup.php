@@ -13,10 +13,14 @@
 <html>
 <head>
   <title>Backup</title>
-  <link rel="stylesheet" href="../css/new_prev.css">
   <link rel="stylesheet" href="../css/background.css">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<script src="../bootstrap/jQuery/jquery.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<meta charset="utf-8">
 </head>
 <body>
+<div class=container>
 <?php
 if (isset($_POST['submit'])) {
   $send = "";
@@ -253,9 +257,10 @@ return $this->saveFile($sql, $outputDir);
  */
 $backupDatabase = new Backup_Database(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 $status         = $backupDatabase->backupTables(TABLES, OUTPUT_DIR) ? 'OK' : 'KO';
-echo "<br /><br /><br />Backup result: " . $status;
+echo "<br><b>Backup result: </b>" . $status;
 ?>
-<br><br><br><br><a href=../select_option.php class=btn>Back</a>
+<br><br><a href=../select_option.php class=btn>Back</a>
+</div>
 </body>
 </html>
 <?php } ?>
