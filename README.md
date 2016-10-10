@@ -24,16 +24,8 @@ Don't forget to import database present in extras folder and configure database 
 <th> Password </th>
 </tr>
 <tr>
-<td> ut </td>
-<td> nathu </td>
-</tr>
-<tr>
-<td> pc </td>
-<td> prachi </td>
-</tr>
-<tr>
+<td> Administrator </td>
 <td> admin </td>
-<td> xyzabc </td>
 </tr>
 </table>
 </li>
@@ -46,7 +38,7 @@ Department Privilege
 <th> Password </th>
 </tr>
 <tr>
-<td> examination </td>
+<td> Examination </td>
 <td> exam </td>
 </tr>
 <tr>

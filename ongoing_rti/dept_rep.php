@@ -5,7 +5,7 @@
 	if(!isset($_SESSION['login_access'])){
 		header("location: ../errors/no_file.php");
 	}
-	else{
+	else {
 		$_SESSION['database_access'] = true;
 		include '../db/config_database.php';
 		$_SESSION['database_access'] = false;

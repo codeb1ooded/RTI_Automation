@@ -8,7 +8,7 @@
 	elseif ($_SESSION['login_access'] != 'Appellant') {
 		header("location: ../errors/no_access.php");
 	}
-	else{
+	else {
 		$id = $_SESSION['prev_rti_id'];
 		$data = $_SESSION['n'];
 
@@ -24,14 +24,14 @@
 			$m = $f['q_no'];
 			$que = $f['ques'];
 			$obj = "obj".$data;
-  		$desc = "desc".$data;
-  		$o = $_POST[$obj];
-  		$d = $_POST[$desc];
-  		if ($o ==' on') {
-    		$sql = "INSERT INTO appeal_query(id, q_no, query, description) VALUES( $id , $m , '$que','$d');";
-    		mysqli_query($con, $sql);
-  		}
-  		$data--;
+			$desc = "desc".$data;
+			$o = $_POST[$obj];
+			$d = $_POST[$desc];
+			if ($o ==' on') {
+				$sql = "INSERT INTO appeal_query(id, q_no, query, description) VALUES( $id , $m , '$que','$d');";
+				mysqli_query($con, $sql);
+			}
+			$data--;
  		}
 		header ('location: ../select_option.php');
 	}
