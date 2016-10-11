@@ -11,12 +11,12 @@
 			<head>
 				<title>Home</title>
 				<link rel="stylesheet" href="css/new_prev.css">
-				<link rel="stylesheet" href="css/background.css">	
-				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-				<script src="../bootstrap/jQuery/jquery.min.js"></script>
-				<script src="../bootstrap/js/bootstrap.min.js"></script>
-				<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
-				</head>
+				<link rel="stylesheet" href="css/background.css">
+				<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+				<script src="bootstrap/jQuery/jquery.min.js"></script>
+				<script src="bootstrap/js/bootstrap.min.js"></script>
+				<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+			</head>
 
 			<?php
 				// Variable $login_access defines which type of user is logged in and then give response of the page as per that
@@ -38,11 +38,11 @@
 									<a href='./ongoing_rti/ongoing_rti.php'>Ongoing RTIs</a>
 							</div>
 						</div>";
-						include 'logging/logoff.html';
 					}
 					else {
 						header("location: ongoing_rti/ongoing_rti.php");
 					}
+					echo"<center><a class=btn href='logout.php'>Logout</a></center>";
 				}
 	}
 			?>

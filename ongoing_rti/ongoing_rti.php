@@ -122,7 +122,7 @@
 							$data2--;
 						}
 						echo "</table><br>";
-						include '../logging/logoff.html';
+						echo"<center><a class=btn href='../logout.php'>Logout</a></center>";
 					}
 			?>
 				</div>
