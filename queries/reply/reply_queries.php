@@ -10,9 +10,9 @@
 		<html>
 			<head>
 				<title>Reply Queries</title>
+				<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
 				<link rel="stylesheet" href="../../css/background.css">
 				<meta charset="utf-8">
-				<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
 				<script src="../../bootstrap/jQuery/jquery.min.js"></script>
 				<script src="../../bootstrap/js/bootstrap.min.js"></script>
 			</head>
@@ -65,33 +65,36 @@
 						<tr>
 							<td> <?php echo $data3['q_no']?> </td>
 							<td> <?php echo $data3['ques']?></td>
-							<td><input  style="height:32px" type=text name=<?php echo $ans; ?>></td>
+							<td><input style="height:32px" type=text name=<?php echo $ans; ?>></td>
+							
+							<!-- select menu for section -->
 							<td>
 								<select class="btn" style="background:white; color:black" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value, this.name);" name=<?php echo $sec; ?>>
 									<option value="">Select Section</option>
-									<?php if ($result->num_rows > 0) { ?>
-									<?php while($row = mysqli_fetch_assoc($result)) { ?>
-									<option value="<?php echo $row['Id']; ?>"> <?php echo $row['No']; ?></option>
-									<?php } ?>
-									<?php } ?>
+									<?php 
+										if ($result->num_rows > 0) 
+										{ 
+									?>
+									<?php
+											while($row = mysqli_fetch_assoc($result)) 
+											{ 
+									?>
+												<option value="<?php echo $row['Id']; ?>"><?php echo $row['No']; ?></option>
+									<?php 
+											} 
+									?>
+									<?php 
+										} 
+									?>
 								</select>
 							</td>
-							<script type='text/javascript'>
-								var blah="<?php echo $subsec; ?>";
-							</script>
+
+							<!-- select menu for sub-section -->
 							<td>
 								<div>
-									<script type="text/javascript" language="JavaScript">
-										document.write('<select class="btn" style="background:white; color:black" name="subsec" id="subsec" ><option value="">Please select sub-section</option></select>')
-										document.getElementById("subsec").name=blah;
-										document.getElementById("subsec").id=blah;
-									</script>
-
-									<noscript>
-										<select class="btn" style="background:white; color:black" name=<?php echo $subsec; ?> id=<?php echo $subsec; ?>>
+									<select class="btn" style="background:white; color:black" id=<?php echo $subsec; ?> name=<?php echo $subsec; ?>>
 											<option value="">Please select sub-section</option>
-										</select>
-									</noscript>
+									</select>
 								</div>
 
 								<script language="javascript" type="text/javascript">
@@ -99,32 +102,28 @@
 								</script>
 				
 								<script language="javascript" type="text/javascript">
-									function dynamicdropdown(listindex,blah1) {
+									function dynamicdropdown(listindex,name) {
 										var x=0;
-										for(var i=3;i<blah1.length;i++) {
-											var b=blah1.charAt(i);
+										for(var i=3;i<name.length;i++) {
+											var b=name.charAt(i);
 											x=x*10+parseInt(b);
 										}
 										var y="subsec"+x;
 										var ele = document.getElementById(y);
 										ele.length = 0;
-
 										ele.options[0]=new Option("Please select sub-section","");
 										if (listindex) {
 											var lookup = {};
 											var j = 1;
-											for (var i = 0, len = rowFrameworkResultInJs.length; i < len; i++) {
-												if (rowFrameworkResultInJs[i].sec_id == listindex) {
-													ele.options[j]=new Option(rowFrameworkResultInJs[i].No,rowFrameworkResultInJs[i].Id);
-													j = j+1;
-												}
-											}
+											for (var i = 0, len = rowFrameworkResultInJs.length; i < len; i++)
+												if (rowFrameworkResultInJs[i].sec_id == listindex)
+													ele.options[j++]=new Option(rowFrameworkResultInJs[i].No,rowFrameworkResultInJs[i].Id);
 										}
 										return true;
 									}
 								</script>
 							</td>
-							<td><input  style="height:32px" type=date name=<?php echo $date_rec;?> placeholder=YYYY-MM-DD required></td>
+							<td><input style="height:32px" type=date name=<?php echo $date_rec;?> placeholder=YYYY-MM-DD required></td>
 						</tr>
 						<?php
 							$a--;

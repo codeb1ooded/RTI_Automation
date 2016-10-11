@@ -33,8 +33,10 @@
 				$desc1=mysqli_fetch_assoc($row);
 				$desc=$desc1['Description'];
 				if(!$desc)
-					$desc="NULL";
+					$desc="No Description";
 			}
+			else
+				$desc="";
 			$sql="INSERT INTO reply_queries VALUES('$c','$qno','$ans1','$desc','$date_rec1');";
 			mysqli_query($con,$sql);
 			$b--;

@@ -3020,9 +3020,19 @@ select[multiple].input-lg {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  background: #2d2e2e;
+  background-image: -webkit-linear-gradient(top, #2d2e2e, #6b696b);
+  background-image: -moz-linear-gradient(top, #2d2e2e, #6b696b);
+  background-image: -ms-linear-gradient(top, #2d2e2e, #6b696b);
+  background-image: -o-linear-gradient(top, #2d2e2e, #6b696b);
+  background-image: linear-gradient(to bottom, #2d2e2e, #6b696b);
+  text-shadow: 1px 1px 3px #616161;
+  box-shadow: 1px 1px 3px #666666;
+  font-family: Lora;
+  color: #ffffff;
+  text-decoration: none;
 }
 .btn:focus,
 .btn:active:focus,
@@ -3037,7 +3047,7 @@ select[multiple].input-lg {
 .btn:hover,
 .btn:focus,
 .btn.focus {
-  color: #333;
+  color: #96958d;
   text-decoration: none;
 }
 .btn:active,

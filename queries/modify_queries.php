@@ -126,14 +126,16 @@
 												<td><input type=date name=<?php echo $date_s; ?> value="<?php echo $data3['date_sent'] ?>" id=<?php echo $date_s_id; ?> placeholder=YYYY-MM-DD>
 												<button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button> </td>
 											</tr>
-									</table>
 									<?php
 										$sql = "DELETE FROM t2 WHERE id=".$id.";";
 										mysqli_query($con,$sql);
 										$a--;
 								}
-								echo "<tr><br><input type=submit name=save class=btn value='Save and Exit' >";
-								echo "&nbsp<a href='../ongoing_rti/ongoing_rti_option.php' class=btn>Exit</tr>";
+								?>
+								</table>
+								<?php
+								echo "<br><input type=submit name=save class=btn value='Save and Exit' >";
+								echo "&nbsp<a class=btn href='../ongoing_rti/ongoing_rti_option.php'>Exit</a>";
 								echo "</form>";
 							}
 							else {

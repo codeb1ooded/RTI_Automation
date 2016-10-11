@@ -7,7 +7,6 @@
 	}
 	else {
 ?>
-
 		<html>
 			<head>
 				<title>Completed RTI</title>

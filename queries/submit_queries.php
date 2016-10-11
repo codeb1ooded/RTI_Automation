@@ -30,13 +30,12 @@
 					echo "<div class=container>";
 						echo "<h3>RTI ID:".$id."</h3>";
 						echo "<table class='table table-bordered table-condensed'>
-								<tbody>
-									<tr>
-										<th>Query No</th>
-										<th>Query</th>
-										<th>Map To</th>
-										<th>Date Sent</th>
-									</tr>";
+								<tr>
+									<th>Query No</th>
+									<th>Query</th>
+									<th>Map To</th>
+									<th>Date Sent</th>
+								</tr>";
 					echo "<form action=../queries/save_queries.php method=post>";
 				?>
 
@@ -95,12 +94,12 @@
 							<td><input type=date name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD>&nbsp&nbsp&nbsp&nbsp
 							<button type="button" name="mail_button" class=btn onclick="mailTo(<?php echo $a; ?>);">Mail</button></td>
 						</tr>
-					</tbody>
-				</table>
 						<?php
 							$a--;
 							$c++;
-					}
+					}?>
+				</table>
+				<?php
 				echo "<input type=submit name=save class=btn value='Save and Exit'>";
 				echo "</form>";
 				echo "&nbsp<a href='../ongoing_rti/ongoing_rti_option.php' class=btn>Exit</a></td>";
