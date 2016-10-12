@@ -50,6 +50,10 @@
 		<link rel="stylesheet" href="css/background.css"> 
 		<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+		<script src="../bootstrap/jQuery/jquery.min.js"></script>
+		<script src="../bootstrap/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 		<script type="text/javascript">
 			function fpassoverlay(){
 				alert("Please Contact Admin");

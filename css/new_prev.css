@@ -6,7 +6,7 @@ body{
   z-index: 1;
   background: #f2f2e0;
   max-width: 360px;
-  margin: 0 auto 100px;
+  margin: 0 auto 20px;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -14,8 +14,9 @@ body{
   
 .new-prev {
   width: 360px;
-  padding: 2% 0 0;
+  padding-top:2%;
   margin: auto;
+  height:auto;
 }
 
 button {

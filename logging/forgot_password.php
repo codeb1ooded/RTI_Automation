@@ -15,6 +15,7 @@
 				<title>Change Password</title>
 				<link rel="stylesheet" href="../css/background.css">
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+				<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 				<script src="../bootstrap/jQuery/jquery.min.js"></script>
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
 				<meta charset="utf-8">
@@ -61,7 +62,7 @@
 							$new_password = hash('sha256', $_POST['pwd']);
 							$query = "UPDATE login SET password='" . $new_password . "' WHERE id=".$id;
 							mysqli_query ($con, $query);
-							echo "<br><h4>Password changed successfully!</h4>";
+							echo "<br><h4> Password changed successfully!</h4>";
 							include 'change_password.php';
 						}		
 					?>

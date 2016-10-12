@@ -14,6 +14,7 @@
 			<link rel="stylesheet" href="../css/prev_rti.css">
 			<link rel="stylesheet" href="../css/background.css">
 			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+			<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 			<script src="../bootstrap/jQuery/jquery.min.js"></script>
 			<script src="../bootstrap/js/bootstrap.min.js"></script>
 			<meta charset="utf-8">
@@ -27,6 +28,7 @@
 					$query = " SELECT * FROM add_rti order by date_of_receipt_cio;";
 					$res = mysqli_query($conn, $query);
 					echo "<br><h2>CLOSED RTIs</h2><br>" ;
+					echo "<marquee><strong>SELECT THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
 					if($account_type == 'Admin') {
 						echo "<table class='table table-hover table-bordered'><tr>
 						<th>ID</th>

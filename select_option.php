@@ -27,7 +27,7 @@
 				else {
 					if ($login_access == 'Admin') {
 						echo "<div class=new-prev>";
-							echo "<marquee scrollamount=5><strong>PLEASE SELECT AN OPTION:</strong></marquee> <br><br><br>";
+							echo "<marquee scrollamount=5><strong>PLEASE SELECT AN OPTION:</strong></marquee> <br><br>";
 							echo "<div class=options>";
 								echo "<a href='./add_rti/add_rti.php'>Add New RTI</a><br><br><br>
 									<a href='./report/report.php'>Generate Report</a><br><br><br>
@@ -37,7 +37,7 @@
 									<a href='./completed_rti/view_closed_rti.php'>Closed RTIs</a><br><br><br>
 									<a href='./ongoing_rti/ongoing_rti.php'>Ongoing RTIs</a>
 							</div>
-						</div>";
+						</div><br>";
 					}
 					else {
 						header("location: ongoing_rti/ongoing_rti.php");

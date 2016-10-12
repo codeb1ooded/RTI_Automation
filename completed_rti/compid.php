@@ -12,6 +12,7 @@
 				<title>Completed RTI</title>
 				<link rel="stylesheet" href="../css/background.css">
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+				<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 				<meta charset="utf-8">
 				<script src="../bootstrap/jQuery/jquery.min.js"></script>
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -213,11 +214,11 @@
 							}
 						echo "</table>";
 						if ($r1['closed'] == 1)
-							echo "<a class=btn href='view_closed_rti.php'>Back</a>" ;
+							echo "<a class=btn href='view_closed_rti.php'>Back</a></br>" ;
 						else if ($r1['archive'] == 1)
-							echo "<a class=btn href='completed_rti.php'>Back</a>" ;
+							echo "<a class=btn href='completed_rti.php'>Back</a></br>" ;
 						else
-							echo "<a class=btn href='../ongoing_rti/ongoing_rti_option.php?id=".$id."'>Back</a>" ;
+							echo "<a class=btn href='../ongoing_rti/ongoing_rti_option.php?id=".$id."'>Back</a></br>" ;
 					?>
 				</div>
 			</body>
