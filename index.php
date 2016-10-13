@@ -70,6 +70,7 @@
 		</script>
 	</head>
 	<body>
+	<div class="container">
 		<br>
 		<h2><center>RTI APPLICATION SYSTEM</center></h2>
 		<div class="login-page">
@@ -129,6 +130,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</body>
 	<?php
 		// Set message as per mistake in username & password

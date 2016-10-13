@@ -33,12 +33,12 @@
 						echo "<br><h3>RTI ID: ".$id."</h3><br>";
 						echo "<table class='table table-bordered'>
 								<tr>
-									<th>Query No</th>
-									<th>Query</th>
-									<th>Reply</th>
-									<th>Section</th>
-									<th>Sub-Section</th>
-									<th>Date Received</th>
+									<th><center>Query No</center></th>
+									<th><center>Query</center></th>
+									<th><center>Reply</center></th>
+									<th><center>Section</center></th>
+									<th><center>Sub-Section</center></th>
+									<th><center>Date Received</center></th>
 								</tr>";
 						echo "<form action=save_replies.php method=post>";
 						while( $a!=0) {
@@ -63,12 +63,12 @@
 							}
 					?>
 						<tr>
-							<td> <?php echo $data3['q_no']?> </td>
-							<td> <?php echo $data3['ques']?></td>
-							<td><input style="height:32px" type=text name=<?php echo $ans; ?>></td>
+							<td><br><?php echo $data3['q_no']?> </td>
+							<td><br><?php echo $data3['ques']?></td>
+							<td><textarea style="width:400px; resize:none" rows="3" type=text name=<?php echo $ans; ?>></textarea></td>
 							
 							<!-- select menu for section -->
-							<td>
+							<td><br>
 								<select class="btn" style="background:white; color:black" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value, this.name);" name=<?php echo $sec; ?>>
 									<option value="">Select Section</option>
 									<?php 
@@ -90,7 +90,7 @@
 							</td>
 
 							<!-- select menu for sub-section -->
-							<td>
+							<td><br>
 								<div>
 									<select class="btn" style="background:white; color:black" id=<?php echo $subsec; ?> name=<?php echo $subsec; ?>>
 											<option value="">Please select sub-section</option>
@@ -123,7 +123,7 @@
 									}
 								</script>
 							</td>
-							<td><input style="height:32px" type=date name=<?php echo $date_rec;?> placeholder=YYYY-MM-DD required></td>
+							<td><br><input style="height:32px" type=date name=<?php echo $date_rec;?> placeholder=YYYY-MM-DD required></td>
 						</tr>
 						<?php
 							$a--;

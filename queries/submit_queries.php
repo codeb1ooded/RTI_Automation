@@ -32,10 +32,10 @@
 						echo "<br><h4>Enter queries for RTI ID:".$id."</h4>";
 						echo "<table class='table table-bordered table-condensed'>
 								<tr>
-									<th>Query No</th>
-									<th>Query</th>
-									<th>Map To</th>
-									<th>Date Sent</th>
+									<th><center>Query No</center></th>
+									<th><center>Query</center></th>
+									<th><center>Map To</center></th>
+									<th><center>Date Sent</center></th>
 								</tr>";
 						echo "<form action=../queries/save_queries.php method=post>";
 					?>
@@ -79,9 +79,9 @@
 							$dropdown = "dropdown".$a;
 					?>
 							<tr>
-								<td><input type=text name=<?php echo $c; ?> value=<?php echo $c; ?> readonly></td>
-								<td><input type=text name=<?php echo $ques; ?> id=<?php echo $ques; ?>></td>
-								<td>
+								<td><br><input type=text name=<?php echo $c; ?> value=<?php echo $c; ?> hidden><center><?php echo $c; ?></center></td>
+								<td><textarea rows="3" style="width:570px; resize:none" type=text name=<?php echo $ques; ?> id=<?php echo $ques; ?>></textarea></td>
+								<td><br>
 									<select name=<?php echo $map;?> id=<?php echo $dropdown;?>
 										<span>
 											<option value=<?php echo $no_selection; ?>>--Select--</option>
@@ -92,7 +92,7 @@
 										</span>
 									</select>
 								</td>
-								<td><input type=date name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD>&nbsp&nbsp&nbsp&nbsp
+								<td><br><input type=date name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD>&nbsp&nbsp&nbsp&nbsp
 								<button type="button" name="mail_button" class=btn onclick="mailTo(<?php echo $a; ?>);">Mail</button></td>
 							</tr>
 							<?php

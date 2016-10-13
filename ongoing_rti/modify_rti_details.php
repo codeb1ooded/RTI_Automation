@@ -12,6 +12,7 @@
 				<title>RTI Application Form</title>
 				<link rel="stylesheet" href="../css/background.css">
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+				<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 				<script src="../bootstrap/jQuery/jquery.min.js"></script>
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
 				<meta charset="utf-8">
@@ -52,7 +53,7 @@
 										</tr>
 										<tr>
 											<th>Address*</th>
-											<th><input type="text" name="address" id="address1" class="address" maxlength="100" value="<?php echo $data2['address']?>" required></th>
+											<th><textarea style="width:200px; resize:none" rows="3" type="text" name="address" id="address" maxlength="100" required><?php echo $data2['address']?></textarea></th>
 										</tr>
 										<tr>
 											<th>Pin code*</th>
@@ -72,13 +73,13 @@
 										</tr>
 
 										<tr>
-											<th>Phone Number*</th>
-											<th><input type="text" name="phone_no" id="phone" maxlength="18" onkeydown="return isNumeric(event.keyCode);" class="numeric" value="<?php echo $data2['phone_no']?>" required><cite> Provide STD code with zero eg.01123456789</cite></th>
+											<th>Phone Number<cite> (Provide STD code with zero eg.01123456789)</cite>*</th>
+											<th><input type="text" name="phone_no" id="phone" maxlength="18" onkeydown="return isNumeric(event.keyCode);" class="numeric" value="<?php echo $data2['phone_no']?>" required></th>
 										</tr>
 
 										<tr>
-											<th>Mobile Number<cite>(For receiving SMS alerts)*</cite></th>
-											<th><input type="text" name="mobile" id="cell" maxlength="15" class="numeric" onkeydown="return isNumeric(event.keyCode);" value="<?php echo $data2['mobile']?>" required><cite> Provide Country code eg. +910123456789</cite></th>
+											<th>Mobile Number<cite>(For receiving SMS alerts. Provide Country code eg. +910123456789)*</cite></th>
+											<th><input type="text" name="mobile" id="cell" maxlength="15" class="numeric" onkeydown="return isNumeric(event.keyCode);" value="<?php echo $data2['mobile']?>" required></th>
 										</tr>
 
 										<tr>

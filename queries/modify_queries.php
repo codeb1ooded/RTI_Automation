@@ -13,6 +13,7 @@
 				<link rel="stylesheet" href="../css/prev_rti.css">
 				<link rel="stylesheet" href="../css/background.css">
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+				<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 				<script src="../bootstrap/jQuery/jquery.min.js"></script>
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
 				<meta charset="utf-8">
@@ -49,7 +50,7 @@
 							WHERE id=".$id;
 
 							if ($con->query($data) === TRUE) {
-								echo "<br>Details of record updated successfully<br>";
+								echo "<br><h3>Details of record updated successfully</h3><br>";
 							}
 							else {
 								echo "Error updating record: " . $con->error;
@@ -64,10 +65,10 @@
 								echo "<form action=save_modified_queries.php method=post>";
 									echo "<table class='table table-bordered table-condensed'>
 										<tr>
-											<th>Query No</th>
-											<th>Query</th>
-											<th>Map To</th>
-											<th>Date Sent</th>
+											<th><center>Query No</center></th>
+											<th><center>Query</center></th>
+											<th><center>Map To</center></th>
+											<th><center>Date Sent</center></th>
 										</tr>";
 					?>
 										<script type="text/javascript">
@@ -110,9 +111,9 @@
 											$date_s_id = "date_s".$qno;
 										?>
 											<tr>
-												<td><input  value="<?php echo $data3['q_no']?>" type=text name=<?php echo $qno; ?> readonly></td>
-												<td><input type=text name=<?php echo $ques; ?> value="<?php echo $data3['ques'];?>" id=<?php echo $ques_id; ?>></td>
-												<td>
+												<td><br><center><input value="<?php echo $data3['q_no']?>" type=text name=<?php echo $qno; ?> hidden><?php echo $qno; ?></center></td>
+												<td><textarea rows="3" style="width:570px; resize:none" type=text name=<?php echo $ques; ?> id=<?php echo $ques_id; ?>><?php echo $data3['ques'];?></textarea></td>
+												<td><br>
 													<select name=<?php echo $map; ?> id=<?php echo $map_id; ?> >
 														<span>
 															<option value=<?php echo $no_selection; ?> <?php if(strcmp($data3['map'], "") == 0){ echo "selected=\"selected\""; }?> >--Select--</option>
@@ -123,7 +124,7 @@
 														</span>
 													</select>
 												</td>
-												<td><input type=date name=<?php echo $date_s; ?> value="<?php echo $data3['date_sent'] ?>" id=<?php echo $date_s_id; ?> placeholder=YYYY-MM-DD>
+												<td><br><input type=date name=<?php echo $date_s; ?> value="<?php echo $data3['date_sent'] ?>" id=<?php echo $date_s_id; ?> placeholder=YYYY-MM-DD>
 												<button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button> </td>
 											</tr>
 									<?php

@@ -27,7 +27,7 @@
 				$date = $_POST[$date];
 				$qno1 = $f['q_no'];
 
-				$sssl = "INSERT INTO dept_reply(id, query_no, map, answer,date_reply) VALUES ($id, $qno1, '$m', '$ans','$date');";
+				$sssl="INSERT INTO dept_reply(id, query_no, map, answer,date_reply) VALUES ($id, $qno1, '$m', '$ans','$date');";
 				//Changes to t2 flag
 				$ql = "UPDATE t2 SET flag=1 WHERE id=".$id." AND q_no=".$qno1." AND map='".$m."';";
 

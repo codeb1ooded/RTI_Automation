@@ -16,6 +16,7 @@
 			<link rel="stylesheet" href="../css/background.css">
 			<meta charset="utf-8">
 			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+			<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 			<script src="../bootstrap/jQuery/jquery.min.js"></script>
 			<script src="../bootstrap/js/bootstrap.min.js"></script>
 		</head>
@@ -43,7 +44,7 @@
 							
 							<tr>
 								<th> Address</th>
-								<td><input type="text" name="address" id="address1" class="address" required></td>
+								<td><textarea type="text" name="address" id="address1" rows="3" columns="6" style="width:180px; resize:none" required></textarea></td>
 							</tr>
 
 							<tr>
@@ -95,15 +96,13 @@
 							</tr>
 
 							<tr>
-								<th>Phone Number</th>
-								<td><input type="text" name="phone" id="phone" maxlength="18" pattern="^\d{8}$" class="numeric" value="" required>
-								<cite>Do not provide STD code eg.23456789</cite></td>
+								<th>Phone Number <cite>(Do not provide STD code eg.23456789)</cite></th>
+								<td><input type="text" name="phone" id="phone" maxlength="18" pattern="^\d{8}$" class="numeric" value="" required></td>
 							</tr>
 
 							<tr>
-								<th>Mobile Number </th>
-								<td><input type="text" name="mobile" id="cell" maxlength="15" pattern="^\d{10}$" value="" required>
-									<cite>Provide a 10-digit no.</cite></td>
+								<th>Mobile Number <cite>(Provide a 10-digit no.)</cite></th>
+								<td><input type="text" name="mobile" id="cell" maxlength="15" pattern="^\d{10}$" value="" required></td>
 							</tr>
 
 							<tr>
