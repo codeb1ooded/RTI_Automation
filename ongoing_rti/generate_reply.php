@@ -39,22 +39,24 @@
 					$query3 = mysqli_query($con, $data5);
 					$data6 = mysqli_num_rows($query3);
 
-					$data7 = "SELECT map, ques, ans, t2.q_no FROM t2, reply_queries WHERE t2.id=".$id." AND reply_queries.id=".$id." AND t2.q_no = reply_queries.qno;";
+					$data7= "SELECT q_no, ques, map FROM t2 WHERE id=".$id.";";
 					$query4 = mysqli_query($con, $data7);
+					
 
 					if($data2 == $data6){
 					echo"
 						Ref.: CPIO/	 						Dated:
 						To <br><br> Name: ".$add_rtirows['name']."<br><br>Address: ".$add_rtirows['address']."<br><br><br>
 					Subject:-	Information required under Section 6(1) of the Right to Information Act, 2005.
+					<br><br><br>
 					Sir/Madam,
-
+					<br><br>
 					Please refer to your application dated  ".$add_rtirows['date_of_receipt'].", on the subject mentioned above.
-
+					<br><br>
 					2.	The information sought by you is enclosed.
-
+					<br><br>
 					3.	You are requested to acknowledge the receipt of this letter.
-
+					<br><br>
 					Yours faithfully,
 					";
 					echo"<table>";
@@ -64,13 +66,18 @@
 						<th>Reply</th>
 						</tr>";
 					while( $a!=0) {
-						$t2rows = mysqli_fetch_array($query4);
+						$t2_result = mysqli_fetch_array($query4);
+
+						$data8 = "SELECT ans FROM reply_queries WHERE id=".$id." AND q_no =".$t2_result['q_no'].";";
+						$query5 = mysqli_query($con, $data8);
+						$ans_result = mysqli_fetch_array($query5);
+
 						$ans="ans".$a;
 				?>
 						<tr>
-							<th>"<?php echo $t2rows['q_no']?></th>
-							<th><?php echo $t2rows['ques']?></th>
-							<th><?php echo $t2rows['ans']?></th>
+							<th>"<?php echo $t2_result['q_no']?></th>
+							<th><?php echo $t2_result['ques']?></th>
+							<th><?php echo $ans_result['ans']?></th>
 						</tr>
 						<?php
 							$a--;
