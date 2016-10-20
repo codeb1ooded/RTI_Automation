@@ -10,13 +10,11 @@
 		<html>
 			<head>
 				<title>Home</title>
-				<link rel="stylesheet" href="css/new_prev.css">
-				<link rel="stylesheet" href="css/background.css">
-				<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 				<script src="bootstrap/jQuery/jquery.min.js"></script>
 				<script src="bootstrap/js/bootstrap.min.js"></script>
 				<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-			</head>
+				<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+				</head>
 
 			<?php
 				// Variable $login_access defines which type of user is logged in and then give response of the page as per that
@@ -26,18 +24,23 @@
 				}
 				else {
 					if ($login_access == 'Admin') {
-						echo "<div class=new-prev>";
-							echo "<marquee scrollamount=5><strong>PLEASE SELECT AN OPTION:</strong></marquee> <br><br>";
-							echo "<div class=options>";
-								echo "<a href='./add_rti/add_rti.php'>Add New RTI</a><br><br><br>
-									<a href='./report/report.php'>Generate Report</a><br><br><br>
-									<a href='./backup/backup_ask_user.php'>Create Backup</a><br><br><br>
-									<a href='./logging/change_password.php'>Change Password</a><br><br><br>
-									<a href='./completed_rti/completed_rti.php'>Completed RTIs</a><br><br><br>
-									<a href='./completed_rti/view_closed_rti.php'>Closed RTIs</a><br><br><br>
-									<a href='./ongoing_rti/ongoing_rti.php'>Ongoing RTIs</a>
-							</div>
-						</div><br>";
+						echo "<br><marquee scrollamount=5><h4>PLEASE SELECT AN OPTION:</h4></marquee><br><br>";
+						echo "<div style='position: relative;
+									z-index: 1;
+									background: #f2f2e0;
+									max-width: 360px;
+									margin: 0 auto 20px;
+									padding: 45px;
+									text-align: center;
+									box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);'>";
+							echo "<a href='./add_rti/add_rti.php'>Add New RTI</a><br><br><br>
+								<a href='./report/report.php'>Generate Report</a><br><br><br>
+								<a href='./backup/backup_ask_user.php'>Create Backup</a><br><br><br>
+								<a href='./logging/change_password.php'>Change Password</a><br><br><br>
+								<a href='./completed_rti/completed_rti.php'>Completed RTIs</a><br><br><br>
+								<a href='./completed_rti/view_closed_rti.php'>Closed RTIs</a><br><br><br>
+								<a href='./ongoing_rti/ongoing_rti.php'>Ongoing RTIs</a>
+							</div>";
 					}
 					else {
 						header("location: ongoing_rti/ongoing_rti.php");

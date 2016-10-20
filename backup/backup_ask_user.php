@@ -13,14 +13,14 @@
 		<html>
 			<head>
 				<title> Backup </title>
-				<link rel="stylesheet" href="../css/background.css">
+				<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<script src="../bootstrap/jQuery/jquery.min.js"></script>
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
 				<meta charset="utf-8">
 			</head>
 			<body>
-				<h3>Select All Tables for which you want backup</h3>
+				<h3><center>Select all tables for which you want Backup</center></h3>
 				<div class="container">	
 					<form method="post" action="backup.php">
 						<br><table class="table table-bordered table-condensed">

@@ -10,7 +10,7 @@
 		<html>
 			<head>
 				<title>Section 4</title>
-				<link rel="stylesheet" href="../css/background.css">
+				<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 				<meta charset="utf-8">
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<script src="../bootstrap/jQuery/jquery.min.js"></script>
@@ -20,7 +20,7 @@
 				<div class="container">
 					<?php
 						$Id = $_GET['id'];
-						echo "<br><h3>Add Details of RTI with Id: ".$Id."</h3>";
+						echo "<h2>RTI Id: ".$Id."</h2>";
 
 						$_SESSION['database_access'] = true;
 						include '../db/config_database.php';
@@ -31,24 +31,24 @@
 						$res=mysqli_fetch_assoc($r);
 						if($res) {
 					?>
-							<h4><strong>(IV)Reference u/s 7 of RTI Act (where applicable):</strong></h4>
+							<h4><b>Reference u/s 7 of RTI Act (where applicable):</b></h4>
 							<form action='../appellant_interface/reply&section4.php' method=post>
 								<table class="table table-bordered">
 									<tr>
-										<th> Date of intimation given to appelant regarding fee u/s</br> 7(1) chargeable  and his right to review</th>
-										<th><input type="text" style="height:32px" name="info_fee_date" id="Name" value=<?php echo $res['info_fee_date']; ?> placeholder="YYYY-MM-DD"></th>
+										<td> Date of intimation given to appelant regarding fee u/s</br> 7(1) chargeable  and his right to review</td>
+										<td><input type="text" style="height:32px" name="info_fee_date" id="Name" value=<?php echo $res['info_fee_date']; ?> placeholder="YYYY-MM-DD"></td>
 									</tr>
 									<tr>
-										<th>Quantum of (a) Fee & (b) Further fee indicated to be charged</th>
-										<th><input type="text" style="height:32px" name="info_fee" id="Name" value=<?php echo $res['info_fee']; ?> placeholder=""></th>
+										<td>Quantum of (a) Fee & (b) Further fee indicated to be charged</td>
+										<td><input type="text" style="height:32px" name="info_fee" id="Name" value=<?php echo $res['info_fee']; ?> placeholder=""></td>
 									</tr>
 									<tr>
-										<th>(vi)Date of depositing fees by petitioner as demanded by CPIO </br>(indicate mode of depositing fee too)</th>
-										<th><input type="text" style="height:32px" name="fee_submit_date" id="Name" value=<?php echo $res['fee_submit_date']; ?> placeholder="YYYY-MM-DD"></th>
+										<td>Date of depositing fees by petitioner as demanded by CPIO </br>(indicate mode of depositing fee too)</td>
+										<td><input type="text" style="height:32px" name="fee_submit_date" id="Name" value=<?php echo $res['fee_submit_date']; ?> placeholder="YYYY-MM-DD"></td>
 									</tr>
 									<tr>
-										<th>(vii)Date of furnishing information </th>
-										<th><input type="text" style="height:32px" name="given_info_date" id="Name" value=<?php echo $res['given_info_date']; ?> placeholder="YYYY-MM-DD"></th>
+										<td>Date of furnishing information </td>
+										<td><input type="text" style="height:32px" name="given_info_date" id="Name" value=<?php echo $res['given_info_date']; ?> placeholder="YYYY-MM-DD"></td>
 									</tr>
 								</table>
 								<?php
@@ -58,24 +58,24 @@
 						}
 						else {
 								?>
-							<h4><strong>(IV)Reference u/s 7 of RTI Act (where applicable):</strong></h4>
+							<h4><b>Reference u/s 7 of RTI Act (where applicable):</b></h4>
 							<form action='../appellant_interface/reply&section4.php' method=post>
 								<table class="table table-bordered">
 									<tr>
-										<th> Date of intimation given to appelant regarding fee u/s</br> 7(1) chargeable  and his right to review</th>
-										<th><input type="text" style="height:32px" name="info_fee_date" id="Name" value="" placeholder="YYYY-MM-DD"></th>
+										<td> Date of intimation given to appelant regarding fee u/s</br> 7(1) chargeable  and his right to review</td>
+										<td><input type="text" style="height:32px" name="info_fee_date" id="Name" value="" placeholder="YYYY-MM-DD"></td>
 									</tr>
 									<tr>
-										<th>Quantum of (a) Fee & (b) Further fee indicated to be charged</th>
-										<th><input type="text" style="height:32px" name="info_fee" id="Name" value="" class="name" placeholder=""></th>
+										<td>Quantum of (a) Fee & (b) Further fee indicated to be charged</td>
+										<td><input type="text" style="height:32px" name="info_fee" id="Name" value="" class="name" placeholder=""></td>
 									</tr>
 									<tr>
-										<th>(vi)Date of depositing fees by petitioner as demanded by CPIO </br>(indicate mode of depositing fee too)</th>
-										<th><input type="text" style="height:32px" name="fee_submit_date" id="Name" value="" class="name" placeholder="YYYY-MM-DD"></th>
+										<td>Date of depositing fees by petitioner as demanded by CPIO </br>(indicate mode of depositing fee too)</td>
+										<td><input type="text" style="height:32px" name="fee_submit_date" id="Name" value="" class="name" placeholder="YYYY-MM-DD"></td>
 									</tr>
 									<tr>
-										<th>(vii)Date of furnishing information </th>
-										<th><input type="text" style="height:32px" name="given_info_date" id="Name" value="" class="name" placeholder="YYYY-MM-DD"></th>
+										<td>Date of furnishing information </td>
+										<td><input type="text" style="height:32px" name="given_info_date" id="Name" value="" class="name" placeholder="YYYY-MM-DD"></td>
 									</tr>
 								</table>
 								<?php

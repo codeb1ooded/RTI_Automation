@@ -10,8 +10,8 @@
 		<html>
 			<head>
 				<title>First Appeal Form</title>
-				<link rel="stylesheet" href="../css/background.css">
 				<meta charset="utf-8">
+				<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<script src="../bootstrap/jQuery/jquery.min.js"></script>
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -21,7 +21,8 @@
 				<div class="container">
 					<?php
 						$Id = $_GET['id'];
-						echo "<h2>Add First Appeal Details of RTI with Id: ".$Id."</h2>";
+						echo "<h2><center>Raise First Appeal</center></h2>";
+						echo "<h3>Add First Appeal Details of RTI with Id: ".$Id."</h3>";
 						$_SESSION['database_access'] = true;
 						include '../db/config_database.php';
 						$_SESSION['database_access'] = false;
@@ -61,11 +62,12 @@
 									</tr>
 								</table>
 								<input type="submit" name="submitappeal" id="Save_appeal" class=btn value="Save " class="btnsaveappeal">
-							</form>
 							<?php
 								echo "<a class=btn href='../completed_rti/completed_rti.php'>Back</a>" ;
 						}
 							?>
+							</form>
+						
 				</div>
 			</body>
 		</html>

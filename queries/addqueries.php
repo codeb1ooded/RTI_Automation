@@ -10,8 +10,7 @@
 		<html>
 			<head>
 				<title>Add Queries</title>
-				<link rel="stylesheet" href="../css/prev_rti.css">
-				<link rel="stylesheet" href="../css/background.css">
+				<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<script src="../bootstrap/jQuery/jquery.min.js"></script>
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -26,7 +25,7 @@
 						$id = $_GET['id'];
 
 						echo "<form action=submit_queries.php method=post class='form-horizontal' role='form'>";
-							echo "<br><h3>RTI Id: ".$id."</h3>";
+							echo "<h2>RTI Id: ".$id."</h2>";
 							echo "<h4>Enter the number of queries to be added:</h4>
 								<input style='height:32px' type=text name=ques>
 								&nbsp<input type=submit name=enter class='btn' value='Enter'>

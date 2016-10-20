@@ -13,18 +13,17 @@
 	<html>
 		<head>
 			<title>RTI Application Form</title>
-			<link rel="stylesheet" href="../css/background.css">
 			<meta charset="utf-8">
-			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 			<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 			<script src="../bootstrap/jQuery/jquery.min.js"></script>
 			<script src="../bootstrap/js/bootstrap.min.js"></script>
 		</head>
 
 		<body>
 			<div class="container">
-				<h2><strong>New RTI</strong></h2>
-				<h4><strong>Personal Details of RTI Applicant:</strong></h4>
+				<h2>New RTI</h2>
+				<center><h4><strong>Personal Details of RTI Applicant:</strong></h4>
 				<form action="save_details.php" method="post" class="form-horizontal" name="add_rti" role="form">
 					<table class="table table-bordered table-condensed">
 						<tbody>
@@ -168,7 +167,7 @@
 					</table>
 
 					<input type="submit" name="add" value="Add Queries" class="btn" onclick="return validateDate()">&nbsp&nbsp
-					<input type="submit" name="submit" value="Save and Exit" class="btn" onclick="return validateDate()">
+					<input type="submit" name="submit" value="Save and Exit" class="btn" onclick="return validateDate()"></center>
 
 					<!-- Script to validate dates in form id user have entered them correctly -->
 					<script type="text/javascript">

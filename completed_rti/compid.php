@@ -10,9 +10,8 @@
 		<html>
 			<head>
 				<title>Completed RTI</title>
-				<link rel="stylesheet" href="../css/background.css">
-				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<meta charset="utf-8">
 				<script src="../bootstrap/jQuery/jquery.min.js"></script>
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -25,7 +24,7 @@
 						$_SESSION['database_access'] = false;
 						$id = $_GET['id'];
 
-						echo "<h4><strong>RTI Details for ID " . $id . " are-</strong></h4>" ;
+						echo "<center><h3>RTI Details for Id <b>" . $id . "</b></h3></center>" ;
 						$query = " SELECT * FROM add_rti where id=" . $id;
 						$res = mysqli_query($con, $query);
 						$r1 = mysqli_fetch_assoc($res);

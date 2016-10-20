@@ -11,11 +11,10 @@
 	<html>
 		<head>
 			<title>Ongoing RTI</title>
-			<link rel="stylesheet" href="../css/background.css">
-			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+			<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 			<script src="../bootstrap/jQuery/jquery.min.js"></script>
 			<script src="../bootstrap/js/bootstrap.min.js"></script>
-			<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 			<meta charset="utf-8">
 		</head>
 		<body>
@@ -24,8 +23,8 @@
 				include '../db/config_database.php';
 				$_SESSION['database_access'] = false;
 				echo "<div class='container'>";
-					echo "<h2>ONGOING RTIs</h2>" ;
-					echo "<marquee><strong>SELECT THE RTI TO BE MODIFIED/VIEWED: </strong></marquee><br><br>";
+					echo "<h2><center>List of Active RTI</center></h2>" ;
+					echo "<marquee>SELECT THE RTI TO BE MODIFIED/VIEWED:</marquee><br><br>";
 
 					if($account_type == 'Admin'){
 						$query = " SELECT * FROM add_rti order by date_of_receipt";

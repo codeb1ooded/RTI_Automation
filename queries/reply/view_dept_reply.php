@@ -11,7 +11,7 @@
 		<html>
 			<head>
 				<title>Department Replies</title>
-				<link rel="stylesheet" href="../../css/background.css">
+				<link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
 				<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
 				<script src="../../bootstrap/jQuery/jquery.min.js"></script>
 				<script src="../../bootstrap/js/bootstrap.min.js"></script>
@@ -28,16 +28,14 @@
 						$query = mysqli_query($con,$k);
 						$data2 = mysqli_num_rows($query);
 						$a = $data2;
-						echo "<h3> Received Department Replies</h3>";
+						echo "<h2> Received Department Replies</h2>";
 						echo "<table class='table table-bordered'>
 								<tbody>
 									<tr>
 										<th>Query No</th>
 										<th>Department</th>
 										<th>Reply</th>
-									</tr>
-								</tbody>
-							</table>";
+									</tr>";
 						while( $a!=0){
 							$a--;
 							$data3=mysqli_fetch_array($query);
@@ -47,6 +45,8 @@
 								<td> <?php echo $data3['map']?> </td>
 								<td> <?php echo $data3['answer']?> </td>
 							</tr>
+						</tbody>
+					</table>
 					<?php
 						} 
 					?>

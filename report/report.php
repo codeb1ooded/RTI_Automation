@@ -13,9 +13,8 @@
 	<html>
 		<head>
 			<title>Report</title>
-			<link rel="stylesheet" href="../css/background.css">
-			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 			<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 			<script src="../bootstrap/jQuery/jquery.min.js"></script>
 			<script src="../bootstrap/js/bootstrap.min.js"></script>
 			<meta charset="utf-8">
@@ -23,13 +22,15 @@
 
 		<body>
 			<div class='container'>
-				<h2>Generate RTI Report By :</h2><br>
-				<form action="report.php" method="post">
-					<input type="submit" name="name" class=btn value="Name">
-					<input type="submit" name="dept" class=btn value="Department">
-					<input type="submit" name="date" class=btn value="Date">
-					<input type="submit" name="close" class=btn value="Closed">
-				</form>
+				<center>
+					<h3>Generate Report By :</h3><br>
+					<form action="report.php" method="post">
+						<input type="submit" name="name" class=btn value="Name">
+						<input type="submit" name="dept" class=btn value="Department">
+						<input type="submit" name="date" class=btn value="Date">
+						<input type="submit" name="close" class=btn value="Closed">
+					</form>
+				</center>
 
 				<?php
 					if(isset($_POST['name'])){

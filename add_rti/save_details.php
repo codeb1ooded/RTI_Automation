@@ -13,9 +13,8 @@
 		<html>
 			<head>
 				<title>Save Details|Add Queries</title>
-				<link rel="stylesheet" href="../css/background.css">
-				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<script src="../bootstrap/jQuery/jquery.min.js"></script>
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
 				<meta charset="utf-8">
@@ -38,7 +37,7 @@
 								'$_POST[phone]', '$_POST[mobile]', '$_POST[email]', '$_POST[citizenship]', '$_POST[date_of_receipt]',
 								'$_POST[date_of_receipt_cio]', '$d3', '$_POST[fee]', '$_POST[fee_deposit_date]', '$_POST[pay_mode]', '$_POST[post]')";
 
-						echo "<h3>Your RTI has been saved successfully!!</h3><br>";
+						echo "<h3>RTI Saved Successfully!!</h3><br>";
 						mysqli_query($con, $sql);
 
 						$a = 0;

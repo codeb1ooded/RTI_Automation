@@ -10,8 +10,8 @@
 		<html>
 			<head>
 				<title>Reply Queries</title>
+				<link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
 				<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
-				<link rel="stylesheet" href="../../css/background.css">
 				<meta charset="utf-8">
 				<script src="../../bootstrap/jQuery/jquery.min.js"></script>
 				<script src="../../bootstrap/js/bootstrap.min.js"></script>
@@ -30,7 +30,7 @@
 						$_SESSION['quer']=$data2;
 
 						$a=$data2;
-						echo "<br><h3>RTI ID: ".$id."</h3><br>";
+						echo "<h2>RTI ID: ".$id."</h2>";
 						echo "<table class='table table-bordered'>
 								<tr>
 									<th><center>Query No</center></th>
@@ -129,8 +129,8 @@
 							$a--;
 					}
 					echo "</table>" ;
-					echo "<a href='section_db.php' target='_blank' class=btn>View Section Information</a>&nbsp&nbsp";
-					echo "<a href='view_dept_reply.php' target='_blank' class=btn>View Department Replies</a>";
+					echo "<center><a href='section_db.php' target='_blank' class=btn>View Section Information</a>&nbsp&nbsp";
+					echo "<a href='view_dept_reply.php' target='_blank' class=btn>View Department Replies</a></center>";
 					echo "<br><br><input type=submit name=save class=btn value='Save and Exit' >&nbsp&nbsp";
 					echo "</form>" ;
 					echo "<a href='../../ongoing_rti/ongoing_rti_option.php?id=".$id."' class=btn>Back</a>";

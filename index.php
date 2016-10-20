@@ -46,14 +46,12 @@
    <head>
 		<meta charset="UTF-8">
 		<title> Login </title>
-		<link rel="stylesheet" href="css/login.css">
-		<link rel="stylesheet" href="css/background.css"> 
 		<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-		<script src="../bootstrap/jQuery/jquery.min.js"></script>
-		<script src="../bootstrap/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+		<script src="bootstrap/jQuery/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
 			function fpassoverlay(){
 				alert("Please Contact Admin");
@@ -72,8 +70,7 @@
 	<body>
 	<div class="container">
 		<br>
-		<h2><center>RTI APPLICATION SYSTEM</center></h2>
-		<div class="login-page">
+		<h2>RTI APPLICATION SYSTEM</h2><br><br>
 			<div class="form">
 				<form  method="post" action="">
 					<div class="form-group ">
@@ -129,7 +126,6 @@
 					text-decoration: none;" id="fpass" onclick="fpassoverlay()">Forgot Password?
 				</div>
 			</div>
-		</div>
 	</div>
 	</body>
 	<?php

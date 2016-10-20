@@ -10,20 +10,19 @@
 		<html>
 			<head>
 				<title>RTI Application Form</title>
-				<link rel="stylesheet" href="../css/background.css">
-				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<script src="../bootstrap/jQuery/jquery.min.js"></script>
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
 				<meta charset="utf-8">
 			</head>
 			<body>
 				<?php
-					echo "<br>
+					echo "
 					<div class='container'>";
 						if(isset($_GET['id'])) {
 							$Id = $_GET['id'];
-							echo "<h4>Modify Details of RTI with Id: ".$Id."</h4>";
+							echo "<h2>RTI Id: ".$Id."</h2>";
 						}
 						$_SESSION['database_access'] = true;
 						include '../db/config_database.php';
@@ -34,7 +33,7 @@
 							$query = mysqli_query($con, $data);
 							$data2 = mysqli_fetch_array($query);
 				?>
-							<h4><strong>Personal Details of RTI Applicant:</strong></h4>
+							<center><h4><strong>Personal Details of RTI Applicant:</strong></h4>
 							<form action='../queries/modify_queries.php'  method='post' name="prev_rti">
 								<input type="hidden" name="ID" value="<?php echo $Id ?>">
 								<table class="table table-bordered table-condensed">
@@ -145,7 +144,7 @@
 								<input type="submit" name="submit" value="Save and Exit" class="btn" onclick="return validateDate()">
 							<?php
 						}
-						echo "<a class='btn' href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
+						echo "<a class='btn' href='ongoing_rti_option.php?id=".$Id."''>Back</center></a>" ;
 							?>
 						</form>
 					</div>

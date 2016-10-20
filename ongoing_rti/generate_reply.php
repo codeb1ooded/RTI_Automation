@@ -10,8 +10,7 @@
 		<html>
 			<head>
 				<title>Generate Reply</title>
-				<link rel="stylesheet" href="../css/prev_rti.css">
-				<link rel="stylesheet" href="../css/background.css">
+				<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<script src="../bootstrap/jQuery/jquery.min.js"></script>
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -87,7 +86,7 @@
 		
 					Encl.: As above.";
 	
-					echo"</table>";
+					echo"</table><br>";
 						echo "<button class='btn' onclick='myFuction()'>Print the reply</button>";
 						?>
 					<script>
@@ -100,7 +99,7 @@
 					else {
 						echo "<h1> First reply all queries </h1>";
 					}
-					echo "<br><br><a class='btn' href='ongoing_rti_option.php?id=".$id."''>Back</a>";
+					echo "<a class='btn' href='ongoing_rti_option.php?id=".$id."''>Back</a>";
 					?>
 			</body>
 		</html>

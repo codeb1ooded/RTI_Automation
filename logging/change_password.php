@@ -13,9 +13,8 @@
 		<html>
 			<head>
 				<title>Change Password</title>
-				<link rel="stylesheet" href="../css/background.css">
-				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<script src="../bootstrap/jQuery/jquery.min.js"></script>
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
 				<meta charset="utf-8">
@@ -26,8 +25,8 @@
 					include '../db/config_database.php';
 					$_SESSION['database_access'] = false;
 					echo "<div class=container>";
-						echo "<h2>CHANGE PASSWORD</h2>" ;
-						echo "<marquee><strong>SELECT THE USER WHOSE PASSWORD NEEDS TO BE MODIFIED: </strong></marquee><br><br>";
+						echo "<h2><center>Change Password</center></h2>" ;
+						echo "<marquee>SELECT THE USER WHOSE PASSWORD NEEDS TO BE MODIFIED:</marquee><br><br>";
 						$query = "SELECT * FROM login;";
 						$res = mysqli_query($con, $query);
 						echo "<table class='table table-bordered'>" ;
