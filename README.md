@@ -11,7 +11,7 @@ You need to install xampp on your system to setup this project.(Refer to online 
 Go to htdocs folder of your system. For linux it is /opt/lampp/htdocs/ <br />
 Open terminal in your htdocs folder and clone the repository <br/>
 Don't forget to import database present in extras folder and configure database file db/config_database.php with your system specific credentials <br/>
-#### git clone https://github.com/megha-code/BMSU.git
+#### git clone https://github.com/codeb1ooded/BMSU.git
 <br/>
 ### Working demo:
 #### http://rti_igdtuw.site88.net/index.php
