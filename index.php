@@ -85,46 +85,9 @@
 					</div>
 					
 					<div id="message" style="color:ff0000"></div>
-					<input  class ="log-btn" style="
-						background-image: -webkit-linear-gradient(top, #2d2e2e, #6b696b);
-						background-image: -moz-linear-gradient(top, #2d2e2e, #6b696b);
-						background-image: -ms-linear-gradient(top, #2d2e2e, #6b696b);
-						background-image: -o-linear-gradient(top, #2d2e2e, #6b696b);
-						background-image: linear-gradient(to bottom, #2d2e2e, #6b696b);
-						-webkit-border-radius: 8;
-						-moz-border-radius: 8;
-						border-radius: 8px;
-						text-shadow: 1px 1px 3px #616161;
-						-webkit-box-shadow: 1px 1px 3px #666666;
-						-moz-box-shadow: 1px 1px 3px #666666;
-						box-shadow: 1px 1px 3px #666666;
-						font-family: Georgia;
-						color: #ffffff;
-						cursor: pointer;
-						font-size: 20px;
-						padding: 10px 20px 10px 20px;
-						text-decoration: none;" type='submit' name ='submit' value='Log in' />
+					<input class="btn" type='submit' name ='submit' value='Log in' />
 				</form>
-				<div style="background: #2d2e2e;
-					background-image: -webkit-linear-gradient(top, #2d2e2e, #6b696b);
-					background-image: -moz-linear-gradient(top, #2d2e2e, #6b696b);
-					background-image: -ms-linear-gradient(top, #2d2e2e, #6b696b);
-					background-image: -o-linear-gradient(top, #2d2e2e, #6b696b);
-					background-image: linear-gradient(to bottom, #2d2e2e, #6b696b);
-					-webkit-border-radius: 8;
-					-moz-border-radius: 8;
-					border-radius: 8px;
-					text-shadow: 1px 1px 3px #616161;
-					-webkit-box-shadow: 1px 1px 3px #666666;
-					-moz-box-shadow: 1px 1px 3px #666666;
-					box-shadow: 1px 1px 3px #666666;
-					font-family: Georgia;
-					color: #ffffff;
-					font-size: 20px;
-					cursor: pointer;
-					padding: 10px 20px 10px 20px;
-					text-decoration: none;" id="fpass" onclick="fpassoverlay()">Forgot Password?
-				</div>
+				<input class="btn" id="fpass" onclick="fpassoverlay()" value='Forgot Password?' />
 			</div>
 	</div>
 	</body>

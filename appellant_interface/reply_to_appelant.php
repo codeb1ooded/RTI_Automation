@@ -57,7 +57,7 @@
 								</table>
 								<input type="submit" name="submitresponsenew" class=btn value="Save and Exit">
 								<?php
-									echo "&nbsp&nbsp&nbsp<a class=btn href='../ongoing_rti/ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
+									echo "&nbsp&nbsp&nbsp<a class=btn href='../ongoing_rti/ongoing_rti_option.php?id=".$Id.">Back".$Id."</a>" ;
 							echo"</form>";
 						}
 						else
@@ -84,8 +84,8 @@
 									</tr>
 								</table>
 								<input type="submit" name="submitresponse" class=btn value="Save and Exit">
-								<a class=btn href="../ongoing_rti/ongoing_rti_option.php?id=".$Id.">Back</a>
 								<?php
+								echo "<a class=btn href='../ongoing_rti/ongoing_rti_option.php?id=".$Id."'>Back</a>";
 						}
 								?>
 							</form>
