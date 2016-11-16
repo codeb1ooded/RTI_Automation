@@ -44,12 +44,13 @@
 								<td> <?php echo $data3['query_no']?> </td>
 								<td> <?php echo $data3['map']?> </td>
 								<td> <?php echo $data3['answer']?> </td>
-							</tr>
-						</tbody>
-					</table>
 					<?php
 						} 
 					?>
+								</tr>
+						</tbody>
+					</table>
+				
 				</div>
 			</body>
 		</html>

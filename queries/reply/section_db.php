@@ -18,51 +18,38 @@
 			</head>
 			<body>
 				<div class=container>
-					<h3>Section Information</h3>
-					<table class='table table-bordered'>
-						<tr>
-							<th>S.No</th>
-							<th>Section</th>
-							<th>SubSection</th>
-							<th>Description</th>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td>Section 8</td>
-							<td>Subsection 8.a</td>
-							<td>Description</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>Section 8</td>
-							<td>Subsection 8.b</td>
-							<td>Description</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>Section 8</td>
-							<td>Subsection 8.c</td>
-							<td>Description </td>
-						</tr>
-						<tr>
-							<td>4</td>
-							<td>Section 9</td>
-							<td>Subsection 9.a</td>
-							<td>Description</td>
-						</tr>
-						<tr>
-							<td>5</td>
-							<td>Section 9</td>
-							<td>Subsection 9.b</td>
-							<td>Description</td>
-						</tr>
-						<tr>
-							<td>6</td>
-							<td>Section 9</td>
-							<td>Subsection 9.c</td>
-							<td>Description</td>
-						</tr>
+					<?php
+						$_SESSION['database_access'] = true;
+						include '../../db/config_database.php';
+						$_SESSION['database_access'] = false;
+
+						$k = "SELECT * FROM article_sub_section;";
+						$query = mysqli_query($con,$k);
+						$data2 = mysqli_num_rows($query);
+						$a = $data2;
+						echo "<h2> Section Database</h2>";
+						echo "<table class='table table-bordered'>
+								<tbody>
+									<tr>
+										<th>S.No.</th>
+										<th>Section-Subsection</th>
+										<th>Description</th>
+									</tr>";
+						while( $a!=0){
+							$a--;
+							$data3=mysqli_fetch_array($query);
+					?>
+							<tr>
+								<td> <?php echo $data3['Id']?> </td>
+								<td> <?php echo $data3['No']?> </td>
+								<td> <?php echo $data3['Description']?> </td>
+					<?php
+						} 
+					?>
+								</tr>
+						</tbody>
 					</table>
+				
 				</div>
 			</body>
 		</html>

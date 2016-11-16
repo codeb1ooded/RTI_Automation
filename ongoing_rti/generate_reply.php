@@ -58,7 +58,8 @@
 					<br><br>
 					Yours faithfully,
 					";
-					echo"<table>";
+					echo "<div class='container'>";
+					echo"<table >";
 					echo"<tr>
 						<th>Query no:</th>
 						<th>Query</th>
@@ -74,9 +75,9 @@
 						$ans="ans".$a;
 				?>
 						<tr>
-							<th>"<?php echo $t2_result['q_no']?></th>
-							<th><?php echo $t2_result['ques']?></th>
-							<th><?php echo $ans_result['ans']?></th>
+							<td>"<?php echo $t2_result['q_no']?></td>
+							<td><?php echo $t2_result['ques']?></td>
+							<td><?php echo $ans_result['ans']?></td>
 						</tr>
 						<?php
 							$a--;
@@ -86,7 +87,8 @@
 		
 					Encl.: As above.";
 	
-					echo"</table><br>";
+					echo"</table><br></div>";
+					
 						echo "<button class='btn' onclick='myFuction()'>Print the reply</button>";
 						?>
 					<script>
@@ -97,7 +99,7 @@
 					<?php 
 					} 
 					else {
-						echo "<h1> First reply all queries </h1>";
+						echo "<h3> First reply all queries </h3>";
 					}
 					echo "<a class='btn' href='ongoing_rti_option.php?id=".$id."''>Back</a>";
 					?>

@@ -140,7 +140,7 @@
 									</tbody>
 								</table>
 
-								<input type="submit" name="edit" value="Edit Queries" class="btn" onclick="return validateDate()">
+								<!--<input type="submit" name="edit" value="Edit Queries" class="btn" onclick="return validateDate()"> -->
 								<input type="submit" name="submit" value="Save and Exit" class="btn" onclick="return validateDate()">
 							<?php
 						}

@@ -43,7 +43,7 @@
 							
 							<tr>
 								<th> Address</th>
-								<td><textarea type="text" name="address" id="address1" rows="3" columns="6" style="width:180px; resize:none" required></textarea></td>
+								<td><textarea type="text" name="address" id="address1" rows="3" columns="6" style="width:280px; resize:none" required></textarea></td>
 							</tr>
 
 							<tr>
@@ -95,7 +95,7 @@
 							</tr>
 
 							<tr>
-								<th>Phone Number <cite>(Do not provide STD code eg.23456789)</cite></th>
+								<th>Phone Number <cite>(Do not provide STD code) (Eg.23456789)</cite></th>
 								<td><input type="text" name="phone" id="phone" maxlength="18" pattern="^\d{8}$" class="numeric" value="" required></td>
 							</tr>
 

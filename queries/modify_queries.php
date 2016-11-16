@@ -123,7 +123,7 @@
 													</select>
 												</td>
 												<td><br><input type=date name=<?php echo $date_s; ?> value="<?php echo $data3['date_sent'] ?>" id=<?php echo $date_s_id; ?> placeholder=YYYY-MM-DD>
-												<button type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button> </td>
+												<button class=btn type="button" name="mail_button" onclick="mailTo(<?php echo $a; ?>);">Mail</button> </td>
 											</tr>
 									<?php
 										$sql = "DELETE FROM t2 WHERE id=".$id.";";

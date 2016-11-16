@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2016 at 01:26 PM
+-- Generation Time: Nov 16, 2016 at 11:40 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -48,15 +48,6 @@ CREATE TABLE `add_rti` (
   `closed` int(11) DEFAULT NULL,
   `post` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `add_rti`
---
-
-INSERT INTO `add_rti` (`id`, `name`, `gender`, `address`, `pin_code`, `state`, `country`, `phone_no`, `mobile`, `email`, `citizenship`, `date_of_receipt`, `date_of_receipt_cio`, `timespan`, `fee_enclosed`, `fee_deposit_date`, `pay_mode`, `archive`, `closed`, `post`) VALUES
-(1, ' Zara Ahuja', 'Female', '4568,karol bagh', 110004, 'Bombay', 'India', '64652222', '9211557755', 'zara1234@gmail.com', 'Indian', '2016-10-10', '2016-10-10', 0, 'yes', '2016-10-10', 'DD', 1, NULL, 'yes'),
-(2, ' Sarthak', 'Male', '4568,kamla nagar', 110007, 'USA', 'Other', '64652222', '9211557755', 'sarthak324@gmail.com', 'Indian', '2016-10-12', '2016-10-13', 1, 'yes', '2016-10-13', 'DD', NULL, NULL, 'no'),
-(4, ' Ayaan', 'Male', '4568,kamla nagar', 110007, 'Bombay', 'India', '64652222', '9211557755', 'aya324@gmail.com', 'Indian', '2016-09-25', '2016-09-25', 0, 'no', '2016-09-25', '2016-9-25', NULL, NULL, 'no');
 
 -- --------------------------------------------------------
 
@@ -120,9 +111,9 @@ CREATE TABLE `article_sub_section` (
 --
 
 INSERT INTO `article_sub_section` (`Id`, `sec_id`, `No`, `Description`) VALUES
-(1, '1', '1(a)(a)', 'sub section desc 1'),
-(2, '1', '1(a)(b)', 'sub section description2'),
-(3, '2', '1(b)(a)', 'sub section desc 1');
+(1, '1', '1(a)(a)', 'sub section desc a1'),
+(2, '1', '1(a)(b)', 'sub section desc a2'),
+(3, '2', '1(b)(a)', 'sub section desc b1');
 
 -- --------------------------------------------------------
 
@@ -137,13 +128,6 @@ CREATE TABLE `dept_reply` (
   `answer` varchar(100) NOT NULL,
   `date_reply` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `dept_reply`
---
-
-INSERT INTO `dept_reply` (`id`, `query_no`, `map`, `answer`, `date_reply`) VALUES
-(4, 1, 'Ex', 'replied by dept', '2016-10-12');
 
 -- --------------------------------------------------------
 
@@ -172,13 +156,6 @@ CREATE TABLE `info_about_reply` (
   `faa_info` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `info_about_reply`
---
-
-INSERT INTO `info_about_reply` (`id`, `holder_receipt_date`, `reply_date`, `reply_mode`, `reply_time`, `faa_info`) VALUES
-(1, '2016-10-19', '2016-10-30', '      Post 									', 11, ' Yes ');
-
 -- --------------------------------------------------------
 
 --
@@ -202,7 +179,7 @@ INSERT INTO `login` (`id`, `Account_Type`, `DEPARTMENT`, `name`, `password`) VAL
 (4, 'HOD', 'Examination', 'Examination', '5e89e9d8544af15b204bcdff94f047b0c1b60ab8e9c70edbbdd42b3c83b4ad83'),
 (5, 'HOD', 'Human Resource', 'Human Resource', '15e68b1f46577e27d82b47596b5bb9224ec847838c53432b4ae182a4e20a04e7'),
 (6, 'HOD', 'Academics', 'Academics', '44296048028f384f5a5a62524326847f8105fce79dc2c32b183855a7d9a0e75c'),
-(7, 'Appellant', '', 'Appellant', '7978f506baa16285f4f3f6cee4f425c0bd5e06883e37ede4a8d8e62c03d660ef');
+(7, 'Appellant', 'Appellant', 'Appellant', '7978f506baa16285f4f3f6cee4f425c0bd5e06883e37ede4a8d8e62c03d660ef');
 
 -- --------------------------------------------------------
 
@@ -232,14 +209,6 @@ CREATE TABLE `reply_queries` (
   `date_received` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `reply_queries`
---
-
-INSERT INTO `reply_queries` (`id`, `q_no`, `ans`, `section`, `date_received`) VALUES
-(4, 1, 'reply1', 'sub section desc 1', '2016-10-30'),
-(4, 2, 'reply2', 'sub section desc 1', '2016-10-30');
-
 -- --------------------------------------------------------
 
 --
@@ -255,13 +224,6 @@ CREATE TABLE `section4` (
   `info_time` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `section4`
---
-
-INSERT INTO `section4` (`id`, `info_fee_date`, `info_fee`, `fee_submit_date`, `given_info_date`, `info_time`) VALUES
-(1, '2016-10-20', 1000, '2016-10-23', '2016-10-24', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -276,14 +238,6 @@ CREATE TABLE `t2` (
   `date_sent` date NOT NULL,
   `flag` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `t2`
---
-
-INSERT INTO `t2` (`id`, `q_no`, `ques`, `map`, `date_sent`, `flag`) VALUES
-(4, 1, 'query1', 'Ex', '2016-09-30', 1),
-(4, 2, 'query2', 'Ac', '2016-09-30', 0);
 
 --
 -- Indexes for dumped tables
@@ -345,7 +299,7 @@ ALTER TABLE `section4`
 -- AUTO_INCREMENT for table `add_rti`
 --
 ALTER TABLE `add_rti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `first_appeal`
 --
@@ -355,7 +309,7 @@ ALTER TABLE `first_appeal`
 -- AUTO_INCREMENT for table `info_about_reply`
 --
 ALTER TABLE `info_about_reply`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `login`
 --
@@ -365,7 +319,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `section4`
 --
 ALTER TABLE `section4`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

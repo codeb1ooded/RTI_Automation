@@ -131,10 +131,10 @@
 	<?php
 		// Set message as per mistake in username & password
 		if($result == 'incorrect'){
-			echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Wrong username & password"; document.getElementById("message").style.color = "#ff0000";</script>';
+			echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Wrong Username or Password"; document.getElementById("message").style.color = "#ff0000";</script>';
 		}
 		if($result == 'empty'){
-			echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Empty username or password"; document.getElementById("message").style.color = "#ff0000";</script>';
+			echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Empty Username & Password"; document.getElementById("message").style.color = "#ff0000";</script>';
 		}
 	?>
 </html>

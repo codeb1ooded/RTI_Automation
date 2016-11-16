@@ -26,11 +26,8 @@ CREATE TABLE `add_rti` (
   `closed` int(11) DEFAULT NULL,
   `post` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO add_rti VALUES("1"," Zara Ahuja","Female","4568,karol bagh","110004","Bombay","India","64652222","9211557755","zara1234@gmail.com","Indian","2016-10-10","2016-10-10","0","yes","2016-10-10","DD","1","","yes");
-INSERT INTO add_rti VALUES("2"," Sarthak","Male","4568,kamla nagar","110007","USA","Other","64652222","9211557755","sarthak324@gmail.com","Indian","2016-10-12","2016-10-13","1","yes","2016-10-13","DD","","","no");
-INSERT INTO add_rti VALUES("4"," Ayaan","Male","4568,kamla nagar","110007","Bombay","India","64652222","9211557755","aya324@gmail.com","Indian","2016-09-25","2016-09-25","0","no","2016-09-25","2016-9-25","","","no");
 
 
 
@@ -70,9 +67,9 @@ CREATE TABLE `article_sub_section` (
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO  article_sub_section VALUES("1","1","1(a)(a)","sub section desc 1");
-INSERT INTO  article_sub_section VALUES("2","1","1(a)(b)","sub section description2");
-INSERT INTO  article_sub_section VALUES("3","2","1(b)(a)","sub section desc 1");
+INSERT INTO  article_sub_section VALUES("1","1","1(a)(a)","sub section desc a1");
+INSERT INTO  article_sub_section VALUES("2","1","1(a)(b)","sub section desc a2");
+INSERT INTO  article_sub_section VALUES("3","2","1(b)(a)","sub section desc b1");
 
 
 
@@ -86,7 +83,6 @@ CREATE TABLE `dept_reply` (
   `date_reply` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO  dept_reply VALUES("4","1","Ex","replied by dept","2016-10-12");
 
 
 
@@ -112,9 +108,8 @@ CREATE TABLE `info_about_reply` (
   `reply_time` int(11) NOT NULL,
   `faa_info` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO  info_about_reply VALUES("1","2016-10-19","2016-10-30","      Post 									","11"," Yes ");
 
 
 
@@ -142,8 +137,6 @@ CREATE TABLE `reply_queries` (
   `date_received` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO  reply_queries VALUES("4","1","reply1","sub section desc 1","2016-10-30");
-INSERT INTO  reply_queries VALUES("4","2","reply2","sub section desc 1","2016-10-30");
 
 
 
@@ -157,9 +150,8 @@ CREATE TABLE `section4` (
   `given_info_date` date NOT NULL,
   `info_time` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO  section4 VALUES("1","2016-10-20","1000","2016-10-23","2016-10-24","1");
 
 
 
@@ -174,8 +166,6 @@ CREATE TABLE `t2` (
   `flag` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO  t2 VALUES("4","1","query1","Ex","2016-09-30","1");
-INSERT INTO  t2 VALUES("4","2","query2","Ac","2016-09-30","0");
 
 
 
