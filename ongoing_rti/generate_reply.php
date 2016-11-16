@@ -43,8 +43,17 @@
 					
 
 					if($data2 == $data6){
-					echo"
-						Ref.: CPIO/	 						Dated:
+					echo"<table class='table table-bordered table-condensed'>
+						<tbody>
+						<tr><td>Ref.: CPIO/</td>	 						<td>Dated:</td></tr>
+						</tbody>
+					</table>
+					</br>
+					</br>
+					<table class='table table-bordered table-condensed'style='align:center'>
+						<tbody>
+						<tr >
+						<td>
 						To <br><br> Name: ".$add_rtirows['name']."<br><br>Address: ".$add_rtirows['address']."<br><br><br>
 					Subject:-	Information required under Section 6(1) of the Right to Information Act, 2005.
 					<br><br><br>
@@ -57,7 +66,10 @@
 					3.	You are requested to acknowledge the receipt of this letter.
 					<br><br>
 					Yours faithfully,
-					";
+					</td>
+					</tr>
+					</tbody>
+					</table>";
 					echo "<div class='container'>";
 					echo"<table >";
 					echo"<tr>
