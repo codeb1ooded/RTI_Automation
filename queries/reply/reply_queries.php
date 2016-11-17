@@ -27,15 +27,9 @@
 						$query=mysqli_query($con,$k);
 						$data2=mysqli_num_rows($query);
 
-						$k2 = "SELECT * FROM reply_queries WHERE id=".$id.";";
-						$query2=mysqli_query($con,$k2);
-						$data22=mysqli_num_rows($query2);
-
 						$_SESSION['quer']=$data2;
 
 						$a=$data2;
-						$f=$data22;
-
 						echo "<h2>RTI ID: ".$id."</h2>";
 						echo "<table class='table table-bordered'>
 								<tr>
@@ -49,16 +43,24 @@
 						echo "<form action=save_replies.php method=post>";
 						while( $a!=0) {
 							$data3=mysqli_fetch_array($query);
-							$data33=mysqli_fetch_array($query2);
-
+							$query_no = $data3['q_no'];
+							
+							$query_reply = "SELECT * FROM reply_queries WHERE q_no=".$query_no." AND id=".$id;
+							$mysqli_query_reply = mysqli_query($con, $query_reply);
+							$data5=mysqli_num_rows($mysqli_query_reply);
+							echo $data5;
+							$data4=mysqli_fetch_array($mysqli_query_reply);
+							$data_reply = "";
+//							if ($data_reply = mysqli_fetch_array($mysqli_fetch_array){
+							
+	//						}	
 							$qno="q_no".$a;
 							$ques="ques".$a;
-
-							$ans="ans".$f;
-							$sec="sec".$f;
-							$subsec="subsec".$f;
-							$date_rec="date_rec".$f;
-
+							$ans="ans".$a;
+							$sec="sec".$a;
+							$subsec="subsec".$a;
+							$date_rec="date_rec".$a;
+							
 							$sql = "SELECT * from article_section";
 							$result = $con->query($sql);
 
@@ -74,7 +76,7 @@
 						<tr>
 							<td><br><?php echo $data3['q_no']?> </td>
 							<td><br><?php echo $data3['ques']?></td>
-							<td><textarea style="width:400px; resize:none" rows="3" type=text name=<?php echo $ans; ?> ><?php echo $data33['ans'] ?></textarea></td>
+							<td><textarea style="width:400px; resize:none" rows="3" type=text name=<?php echo $ans; ?>><?php echo $data4['ans']; ?></textarea></td>
 							
 							<!-- select menu for section -->
 							<td><br>
@@ -96,7 +98,7 @@
 										} 
 									?>
 								</select>
-							</td>
+							</td>	
 
 							<!-- select menu for sub-section -->
 							<td><br>
