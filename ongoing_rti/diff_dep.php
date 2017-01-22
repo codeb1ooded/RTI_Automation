@@ -9,10 +9,8 @@
 ?>
 	<html>
 		<head>
-			<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 			<meta charset="utf-8">
 			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-			<script src="../bootstrap/jQuery/jquery.min.js"></script>
 			<script src="../bootstrap/js/bootstrap.min.js"></script>
 		</head>
 		<body>

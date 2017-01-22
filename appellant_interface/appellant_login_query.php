@@ -11,10 +11,8 @@
 		<html>
 			<head>
 				<title>Appealed RTI</title>
-				<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<meta charset="utf-8">
-				<script src="../bootstrap/jQuery/jquery.min.js"></script>
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
 			</head>
 			<body>

@@ -11,8 +11,6 @@
 	<html>
 		<head>
 			<title>Ongoing RTI</title>
-			<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
-			<script src="../bootstrap/jQuery/jquery.min.js"></script>
 			<script src="../bootstrap/js/bootstrap.min.js"></script>
 			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 			<meta charset="utf-8">

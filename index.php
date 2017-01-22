@@ -47,10 +47,8 @@
 		<meta charset="UTF-8">
 		<title> Login </title>
 		<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
-		<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
-		<script src="bootstrap/jQuery/jquery.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
 			function fpassoverlay(){
