@@ -26,8 +26,9 @@ CREATE TABLE `add_rti` (
   `closed` int(11) DEFAULT NULL,
   `post` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
+INSERT INTO add_rti VALUES("1"," Sarthak","Male","dssffsf","110007","88888888","India","22222222","9999911111","vddgd@gmail.com","Indian","2016-11-17","2016-11-17","0","yes","2016-11-17","Cash","","","yes");
 
 
 
@@ -137,6 +138,8 @@ CREATE TABLE `reply_queries` (
   `date_received` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO  reply_queries VALUES("1","1","xxx","","2016-11-17");
+INSERT INTO  reply_queries VALUES("1","2","ssss","","2016-11-17");
 
 
 
@@ -166,6 +169,8 @@ CREATE TABLE `t2` (
   `flag` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO  t2 VALUES("1","1","qwerty","Ac","2016-11-17","0");
+INSERT INTO  t2 VALUES("1","2","qwerty2","Ex","2016-11-17","0");
 
 
 

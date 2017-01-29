@@ -13,6 +13,7 @@
 			<title>Completed RTI</title>
 			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 			<script src="../bootstrap/js/bootstrap.min.js"></script>
+			<link rel=stylesheet href='../css/a.css'>
 			<meta charset="utf-8">
 		</head>
 		<body>
@@ -24,7 +25,7 @@
 					$query = " SELECT * FROM add_rti order by date_of_receipt_cio;";
 					$res = mysqli_query($conn, $query);
 					echo "<center><h2>List of Closed RTI</h2></center>" ;
-					echo "<marquee>SELECT THE RTI TO BE MODIFIED/VIEWED:</marquee><br><br>";
+					echo "<h3>Select The RTI To Be Modified/Viewed:</h3><br>";
 					if($account_type == 'Admin') {
 						echo "<table class='table table-bordered'><tr>
 						<th>ID</th>
@@ -136,7 +137,7 @@
 						echo "</table>";
 					}
 				?>
-				<a href="../select_option.php" class=btn >Back</a>
+				<a href="../select_option.php" class='btn btn-log' >Back</a>
 			</div>
 		</body>
 	</html>

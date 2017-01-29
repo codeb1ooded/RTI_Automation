@@ -49,6 +49,7 @@
 		<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
 		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/a.css">
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
 			function fpassoverlay(){
@@ -68,10 +69,10 @@
 	<body>
 	<div class="container">
 		<br>
-		<h2>RTI APPLICATION SYSTEM</h2><br><br>
+		<h2>RTI APPLICATION SYSTEM</h2><br>
 			<div class="form">
 				<form  method="post" action="">
-					<div class="form-group ">
+					<div class="form-group">
 						<input type="text" class="form-control" placeholder="Username " id="username" name="username">
 						<i class="fa fa-user"></i>
 					</div>
@@ -82,13 +83,11 @@
 						<i class="fa fa-lock"></i>
 					</div>
 					
-					<div id="message" style="color:ff0000"></div>
-					<input class="btn" type='submit' name ='submit' value='Log in' />
+					<input class="btn btn-log" type='submit' name ='submit' value='Log in' />
 				</form>
-				<input class="btn" id="fpass" onclick="fpassoverlay()" value='Forgot Password?' />
+				<input class="btn btn-log" id="fpass" onclick="fpassoverlay()" value='Forgot Password?' />
 			</div>
 	</div>
-	</body>
 	<?php
 		// Set message as per mistake in username & password
 		if($result == 'incorrect'){
@@ -98,4 +97,5 @@
 			echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Empty Username & Password"; document.getElementById("message").style.color = "#ff0000";</script>';
 		}
 	?>
+	</body>
 </html>

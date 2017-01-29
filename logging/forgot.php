@@ -62,7 +62,7 @@
 							}
 						}
 						else {
-							echo'You entered mail id is not present';
+							echo'Email Id not present';
 						}
 					}
 				?>

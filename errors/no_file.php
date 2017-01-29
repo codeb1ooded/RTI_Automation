@@ -3,6 +3,7 @@
 		<title>No File</title>
 	</head>
 	<body>
-		<p>No such file exists. Kindly login or check the url.</p>
+		<h1>No such file exists.<br>
+			Kindly check the url or Login again.</h1>
 	</body>
 </html>

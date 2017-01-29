@@ -15,6 +15,7 @@
 				<title>Appellant</title>
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
+				<link rel=stylesheet href='../css/a.css'>
 				<meta charset="utf-8">
 			</head>
 			<body>
@@ -28,14 +29,13 @@
 					$b = mysqli_num_rows($res);
 				?>
 				<div class=container>
-					<h2>List of RTIs that raised first appeal  <h2>
-					<table  class="table table-bordered table-condensed">
+					<h2>List of RTIs for first appeal :</h2>
+					<table  class="table table-bordered">
 						<tr>
 							<th>Id</th>
 							<th>Name</th>
 							<th>Transfer Date</th>
 							<th>Options</th>
-
 						</tr>
 						<?php
 							while ($b != 0) {
@@ -51,8 +51,8 @@
 									</tr>";
 								$b--;
 							}
-							echo "</table> <br>";
-							echo"<center><a class=btn href='../logout.php'>Logout</a></center>";
+							echo "</table>";
+							echo"<a class='btn btn-log' href='../logout.php'>Logout</a>";
 						?>
 				</div>
 			</body>

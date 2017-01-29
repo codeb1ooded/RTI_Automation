@@ -15,18 +15,19 @@
 			<title>Report</title>
 			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 			<script src="../bootstrap/js/bootstrap.min.js"></script>
+			<link rel = "stylesheet" type = "text/css" href = "../css/a.css" />
 			<meta charset="utf-8">
 		</head>
 
 		<body>
-			<div class='container'>
+			<div class=container>
 				<center>
-					<h3>Generate Report By :</h3><br>
+					<br><h2>Generate Report By :</h2><br>
 					<form action="report.php" method="post">
-						<input type="submit" name="name" class=btn value="Name">
-						<input type="submit" name="dept" class=btn value="Department">
-						<input type="submit" name="date" class=btn value="Date">
-						<input type="submit" name="close" class=btn value="Closed">
+						<input type="submit" name="name" class='btn btn-primary' value="Name">&nbsp
+						<input type="submit" name="dept" class='btn btn-primary' value="Department">&nbsp
+						<input type="submit" name="date" class='btn btn-primary' value="Date">&nbsp
+						<input type="submit" name="close" class='btn btn-primary' value="Closed">&nbsp
 					</form>
 				</center>
 
@@ -38,7 +39,7 @@
 
 						$query = "SELECT count(name),name,id FROM add_rti group by name,phone_no order by id";
 						$res = mysqli_query($con,$query);
-						echo "<br><table class='table table-bordered'>" ;
+						echo "<br><table class='table'>" ;
 						echo "<tr>
 							<th>ID</th>
 							<th>Applicant Name</th>
@@ -66,12 +67,12 @@
 						$query="SELECT count(map),map,id FROM t2 group by map order by id";
 						$res=mysqli_query($con,$query);
 
-						echo "<br><table class='table table-bordered'>" ;
+						echo "<br><table class='table'>" ;
 						echo "<tr>
-							<th>ID</th>
-							<th>Department Name</th>
-							<th>No. of Queries</th>
-						</tr>";
+								<th>ID</th>
+								<th>Department Name</th>
+								<th>No. of Queries</th>
+							</tr>";
 
 						while($r=mysqli_fetch_assoc($res))
 						{
@@ -97,7 +98,7 @@
 						$query="SELECT * FROM add_rti WHERE closed=1";
 						$res=mysqli_query($con,$query);
 
-						echo "<br><table class='table table-bordered'>" ;
+						echo "<br><table class='table'>" ;
 						echo "<tr>
 								<th>ID</th>
 								<th>Applicant Name</th>
@@ -122,12 +123,15 @@
 					}
 					if(isset($_POST['date'])){
 						echo "
-						<form method=post action='./report.php' name='report_rti'><th>Start Date</th>
+						<center>
+						<form method=post action='./report.php' name='report_rti'>
+							<th>Start Date</th>
 							<td><input type=text name=d1 placeholder=YYYY-MM-DD></td>
 							<th>End Date</th>
 							<td><input type=text name=d2 placeholder=YYYY-MM-DD></td>
-							<input type=submit name=enter class=btn value=Enter onclick=\"return validateDate()\">
-						</form>";
+							<input type=submit name=enter value=Enter onclick=\"return validateDate()\" class='btn btn-log'>
+						</form>
+						</center>";
 						echo "</table>";
 					}
 				?>
@@ -285,11 +289,12 @@
 						$query="SELECT * FROM add_rti where (date_of_receipt_cio>='".$d1."' and date_of_receipt_cio<='".$d2."');";
 						$res=mysqli_query($con,$query);
 
-						echo "<br><table class='table table-bordered'>" ;
-						echo "<tr>
-							<th>ID</th>
-							<th>Applicant Name</th>
-						</tr>";
+						echo"<div>
+								<table class='table'>
+								<tr>
+									<th>ID</th>
+									<th>Applicant Name</th>
+								</tr>";
 
 						while($r=mysqli_fetch_assoc($res)) {
 							echo "<tr>";
@@ -298,12 +303,12 @@
 							echo "</td>";
 							echo "<td>";
 							echo $r['name'];
-							echo "</td>";
+							echo "</td></tr>";
 						}
-						echo "</table>";
+						echo "</table></div>";
 					}
 				?>
-				<br><a href=../select_option.php class=btn>Back</a>
+				<center><a href=../select_option.php class='btn btn-log'>Back</a></center>
 			</div>
 		</body>
 	</html>
