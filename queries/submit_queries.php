@@ -17,6 +17,7 @@
 				<title>Queries</title>
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
+				<link rel=stylesheet href='../css/a.css'>
 				<meta charset="utf-8">
 			</head>	
 			<body>
@@ -27,7 +28,7 @@
 						$_SESSION['database_access'] = false;
 						$a=$_POST['ques'];
 						echo "<br><h4>Enter queries for RTI ID:".$id."</h4>";
-						echo "<table class='table table-bordered table-condensed'>
+						echo "<table class='table table-bordered'>
 								<tr>
 									<th><center>Query No</center></th>
 									<th><center>Query</center></th>
@@ -90,7 +91,7 @@
 									</select>
 								</td>
 								<td><br><input type=date name=<?php echo $date_s; ?> id=<?php echo $date_s; ?> placeholder=YYYY-MM-DD>&nbsp&nbsp&nbsp&nbsp
-								<button type="button" name="mail_button" class=btn onclick="mailTo(<?php echo $a; ?>);">Mail</button></td>
+								<button name="mail_button" class='btn btn-secondary' onclick="mailTo(<?php echo $a; ?>);">Mail</button></td>
 							</tr>
 							<?php
 								$a--;
@@ -98,9 +99,9 @@
 						}?>
 					</table>
 					<?php
-						echo "<input type=submit name=save class=btn value='Save and Exit'>";
+						echo "<input type=submit name=save class='btn btn-primary' value='Save and Exit'>";
 						echo "</form>";
-						echo "&nbsp<a href='../ongoing_rti/ongoing_rti_option.php' class=btn>Exit</a></td>";
+						echo "&nbsp<a href='../ongoing_rti/ongoing_rti_option.php' class='btn btn-log'>Exit</a>";
 						mysqli_close($con);
 					?>
 				</div>

@@ -12,6 +12,7 @@
 				<title>Generate Reply</title>
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
+				<link rel=stylesheet href='../css/a.css'>
 				<meta charset="utf-8">
 			</head>
 			<body>
@@ -111,7 +112,7 @@
 					else {
 						echo "<h3> First reply all queries </h3>";
 					}
-					echo "<a class='btn' href='ongoing_rti_option.php?id=".$id."''>Back</a>";
+					echo "<a class='btn btn-log' href='ongoing_rti_option.php?id=".$id."''>Back</a>";
 					?>
 			</body>
 		</html>

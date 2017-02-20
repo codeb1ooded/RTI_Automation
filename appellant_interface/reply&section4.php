@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 		<script src="../bootstrap/js/bootstrap.min.js"></script>	
+		<link rel=stylesheet href='../css/a.css'>
 	</head>
 	<body>
 		<?php
@@ -84,8 +85,8 @@
 							',' $d3 ',' $_POST[faa_info] ')";
 					mysqli_query ($con, $sql);
 					mysqli_close ($con);
-					echo "<br><a class=btn href='close_rti.php?id=".$id."'>Close This RTI</a>";
-					echo "&nbsp&nbsp<a class='btn' href='../ongoing_rti/ongoing_rti_option.php?id=".$id."''>Back</a>" ;
+					echo "<br><a class='btn btn-log' href='close_rti.php?id=".$id."'>Close This RTI</a>";
+					echo "&nbsp&nbsp<a class='btn btn-log' href='../ongoing_rti/ongoing_rti_option.php?id=".$id."''>Back</a>" ;
 				}
 			}
 		?>

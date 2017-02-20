@@ -13,6 +13,7 @@
 			<title>Ongoing RTI</title>
 			<script src="../bootstrap/js/bootstrap.min.js"></script>
 			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+			<link rel=stylesheet href='../css/a.css'>
 			<meta charset="utf-8">
 		</head>
 		<body>
@@ -22,7 +23,7 @@
 				$_SESSION['database_access'] = false;
 				echo "<div class='container'>";
 					echo "<h2><center>List of Active RTI</center></h2>" ;
-					echo "<marquee>SELECT THE RTI TO BE MODIFIED/VIEWED:</marquee><br><br>";
+					echo "<h4>Select an RTI to be Modified/Viewed:</h4>";
 
 					if($account_type == 'Admin'){
 						$query = " SELECT * FROM add_rti order by date_of_receipt";
@@ -53,12 +54,12 @@
 								echo "<td>".$r['date_of_receipt']."</td>";
 								echo "<td>".date("Y-m-d",strtotime($d2))."</td>";
 								echo "<td>".$d3."</td>";
-								echo "<td><a href='ongoing_rti_option.php?id=".$r['id']."'>Select this RTI</a></td>";
+								echo "<td><a href='ongoing_rti_option.php?id=".$r['id']."' class='btn btn-primary'>Select this RTI</a></td>";
 								echo "</tr>";
 							}
 						}
 						echo "</table>";
-						echo "<a href='../select_option.php' class=btn >Back</a>";
+						echo "<a href='../select_option.php' class='btn btn-log' >Back</a>";
 					}
 					else {
 						$dept = $_SESSION['department'];
@@ -74,7 +75,7 @@
 						$query = " SELECT * FROM t2 WHERE map='".$m."' order by id;";
 						$data = mysqli_query ($con, $query);
 						$data2 = mysqli_num_rows ($data);
-						echo "<table class='table table-condensed table-bordered'>" ;
+						echo "<table class='table table-hover table-bordered'>" ;
 						echo "<tr>
 								<th>ID</th>
 								<th>Applicant Name</th>

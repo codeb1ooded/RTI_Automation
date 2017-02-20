@@ -12,6 +12,7 @@
 				<title>Modified</title>
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
+				<link rel=stylesheet href='../css/a.css'>
 				<meta charset="utf-8">
 			</head>
 
@@ -136,7 +137,7 @@
 								echo "</form>";
 							}
 							else {
-								echo "<a href='../ongoing_rti/ongoing_rti_option.php' class=btn> Back </a>";
+								echo "<a href='../ongoing_rti/ongoing_rti_option.php' class='btn btn-log'> Back </a>";
 							}
 							$con->close();
 									?>

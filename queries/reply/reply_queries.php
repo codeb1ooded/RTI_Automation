@@ -13,6 +13,7 @@
 				<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
 				<meta charset="utf-8">
 				<script src="../../bootstrap/js/bootstrap.min.js"></script>
+				<link rel=stylesheet href='../../css/a.css'>
 			</head>
 			<body>
 				<div class="container">
@@ -46,12 +47,8 @@
 							$query_reply = "SELECT * FROM reply_queries WHERE q_no=".$query_no." AND id=".$id;
 							$mysqli_query_reply = mysqli_query($con, $query_reply);
 							$data5=mysqli_num_rows($mysqli_query_reply);
-							echo $data5;
 							$data4=mysqli_fetch_array($mysqli_query_reply);
 							$data_reply = "";
-//							if ($data_reply = mysqli_fetch_array($mysqli_fetch_array){
-							
-	//						}	
 							$qno="q_no".$a;
 							$ques="ques".$a;
 							$ans="ans".$a;
@@ -138,11 +135,11 @@
 							$a--;
 					}
 					echo "</table>" ;
-					echo "<center><a href='section_db.php' target='_blank' class=btn>View Section Information</a>&nbsp&nbsp";
-					echo "<a href='view_dept_reply.php' target='_blank' class=btn>View Department Replies</a></center>";
-					echo "<br><br><input type=submit name=save class=btn value='Save and Exit' >&nbsp&nbsp";
+					echo "<center><a href='section_db.php' target='_blank' class='btn btn-secondary'>View Section Information</a>&nbsp&nbsp";
+					echo "<a href='view_dept_reply.php' target='_blank' class='btn btn-secondary'>View Department Replies</a></center>";
+					echo "<br><br><input type=submit name=save class='btn btn-primary' value='Save and Exit' >&nbsp&nbsp";
 					echo "</form>" ;
-					echo "<a href='../../ongoing_rti/ongoing_rti_option.php?id=".$id."' class=btn>Back</a>";
+					echo "<a href='../../ongoing_rti/ongoing_rti_option.php?id=".$id."' class='btn btn-log'>Back</a>";
 						?>
 				</div>
 			</body>

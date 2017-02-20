@@ -13,6 +13,7 @@
 				<title>Reply To Appellant Form</title>
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
+				<link rel=stylesheet href='../css/a.css'>
 				<meta charset="utf-8">
 			</head>
 
@@ -21,7 +22,7 @@
 					<?php
 						$Id = $_GET['id'];
 						$_SESSION['prev_rti_id'] = $Id;
-						echo "<h3>RTI Id:<b> ".$Id."</b></h3>";
+						echo "<h2>RTI Id: ".$Id."</h2>";
 
 						$_SESSION['database_access'] = true;
 						include '../db/config_database.php';
@@ -33,7 +34,7 @@
 						if($res){
 					?>
 							<!--Processing of RTI application and response to the appellant-->
-							<h4><b> Processing of RTI application and response to the appellant:</b></h4>
+							<h4> Processing of RTI application and response to the appellant:</h4>
 							<form action ="reply&section4.php" method ="post">
 								<table class="table table-bordered">
 									<tr>
@@ -53,15 +54,15 @@
 										<td><input type="text" style="height:32px" name="faa_info" value=<?php echo $res['faa_info']; ?> ></td>
 									</tr>
 								</table>
-								<input type="submit" name="submitresponsenew" class=btn value="Save and Exit">
+								<input type="submit" name="submitresponsenew" class='btn btn-primary' value="Save and Exit">
 								<?php
-									echo "&nbsp&nbsp&nbsp<a class=btn href='../ongoing_rti/ongoing_rti_option.php?id=".$Id.">Back".$Id."</a>" ;
+									echo "&nbsp&nbsp&nbsp<a class='btn btn-log' href='../ongoing_rti/ongoing_rti_option.php?id=".$Id." >Back".$Id."</a>" ;
 							echo"</form>";
 						}
 						else
 						{
 								?>
-							<h4><b> Processing of RTI application and response to the appellant :</b></h4>
+							<h4> Processing of RTI application and response to the appellant :</h4>
 							<form action ="reply&section4.php" method ="post">
 								<table class="table table-bordered">
 									<tr>
@@ -81,9 +82,9 @@
 										<td><input type="text" style="height:32px" name="faa_info" value="" placeholder=""></td>
 									</tr>
 								</table>
-								<input type="submit" name="submitresponse" class=btn value="Save and Exit">
+								<input type="submit" name="submitresponse" class='btn btn-primary' value="Save and Exit">
 								<?php
-								echo "<a class=btn href='../ongoing_rti/ongoing_rti_option.php?id=".$Id."'>Back</a>";
+								echo "<a class='btn btn-log' href='../ongoing_rti/ongoing_rti_option.php?id=".$Id."'>Back</a>";
 						}
 								?>
 							</form>

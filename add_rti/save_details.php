@@ -15,6 +15,7 @@
 				<title>Save Details|Add Queries</title>
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
+				<link rel=stylesheet href='../css/a.css'>
 				<meta charset="utf-8">
 			</head>
 
@@ -35,7 +36,7 @@
 								'$_POST[phone]', '$_POST[mobile]', '$_POST[email]', '$_POST[citizenship]', '$_POST[date_of_receipt]',
 								'$_POST[date_of_receipt_cio]', '$d3', '$_POST[fee]', '$_POST[fee_deposit_date]', '$_POST[pay_mode]', '$_POST[post]')";
 
-						echo "<h3>RTI Saved Successfully!!</h3><br>";
+						echo "<h3>RTI Saved Successfully!!</h3>";
 						mysqli_query($con, $sql);
 
 						$a = 0;
@@ -47,11 +48,11 @@
 						$_SESSION['id'] = $a;
 
 						if (isset($_POST['add'])) {
-							echo "<h3>RTI ID: ".$a."</h3>";
+							echo "<h2>RTI ID: ".$a."</h2>";
 							echo "<form action=../queries/submit_queries.php method=post>";
 							echo "	<h4>Please enter the number of Queries:</h4>
 									<input type=text name=ques>
-									<input type=submit name=enter class=btn value='Enter'>";
+									<input type=submit name=enter class='btn btn-log' value='Enter'>";
 						}
 						else
 							header("location: ../select_option.php");

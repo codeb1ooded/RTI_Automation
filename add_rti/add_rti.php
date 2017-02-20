@@ -16,6 +16,7 @@
 			<meta charset="utf-8">
 			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 			<script src="../bootstrap/js/bootstrap.min.js"></script>
+			<link rel=stylesheet href='../css/a.css'>
 		</head>
 
 		<body>
@@ -23,7 +24,7 @@
 				<h2>New RTI</h2>
 				<center><h4><strong>Personal Details of RTI Applicant:</strong></h4>
 				<form action="save_details.php" method="post" class="form-horizontal" name="add_rti" role="form">
-					<table class="table table-bordered table-condensed">
+					<table class="table table-bordered table-hover">
 						<tbody>
 							<tr>
 								<th>Name of Applicant</th>
@@ -119,7 +120,7 @@
 					</table>
 
 					<h4><strong>Receipt of RTI Application (Section 7):</strong></h4>
-					<table class="table table-bordered table-condensed">
+					<table class='table table-hover table-bordered'>
 						<tbody>
 							<tr>
 								<th>Application Submission Date</th>
@@ -134,7 +135,7 @@
 					</table>
 
 					<h4><strong>Fee Payment Details :</strong></h4>
-					<table class="table table-bordered table-condensed">
+					<table class="table table-bordered table-hover">
 						<tbody>
 							<tr>
 								<th>Is Fee enclosed with RTI application</th>
@@ -164,8 +165,8 @@
 						</tbody>
 					</table>
 
-					<input type="submit" name="add" value="Add Queries" class="btn" onclick="return validateDate()">&nbsp&nbsp
-					<input type="submit" name="submit" value="Save and Exit" class="btn" onclick="return validateDate()"></center>
+					<input type="submit" name="add" value="Add Queries" class='btn btn-secondary' onclick="return validateDate()">&nbsp&nbsp
+					<input type="submit" name="submit" value="Save and Exit" class='btn btn-primary' onclick="return validateDate()"></center>
 
 					<!-- Script to validate dates in form id user have entered them correctly -->
 					<script type="text/javascript">

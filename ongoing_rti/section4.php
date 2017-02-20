@@ -13,6 +13,7 @@
 				<meta charset="utf-8">
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
+				<link rel=stylesheet href='../css/a.css'>
 			</head>
 			<body>
 				<div class="container">
@@ -29,7 +30,7 @@
 						$res=mysqli_fetch_assoc($r);
 						if($res) {
 					?>
-							<h4><b>Reference u/s 7 of RTI Act (where applicable):</b></h4>
+							<h4>Reference u/s 7 of RTI Act (where applicable):</h4>
 							<form action='../appellant_interface/reply&section4.php' method=post>
 								<table class="table table-bordered">
 									<tr>
@@ -50,9 +51,10 @@
 									</tr>
 								</table>
 								<?php
-								echo "<input type='submit' value ='Save and Exit' class=btn name='submitSection4new'>
-							</form>" ;
-							echo "&nbsp&nbsp<a class='btn' href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
+								echo "<input type='submit' value ='Save and Exit' class='btn btn-primary' name='submitSection4new'>
+							" ;
+							echo "&nbsp&nbsp<a class='btn btn-log' href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
+							echo "</form>";
 						}
 						else {
 								?>
@@ -77,8 +79,8 @@
 									</tr>
 								</table>
 								<?php
-								echo "<input type='submit' value ='Save and Exit' class=btn name='submitSection4'>" ;
-								echo "&nbsp&nbsp<a class='btn' href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
+								echo "<input type='submit' value ='Save and Exit' class='btn btn-primary' name='submitSection4'>" ;
+								echo "&nbsp&nbsp<a class='btn btn-log' href='ongoing_rti_option.php?id=".$Id."''>Back</a>" ;
 						}
 								?>
 							</form>

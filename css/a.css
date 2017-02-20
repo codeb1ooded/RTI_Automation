@@ -1,0 +1,45 @@
+				.btn {
+  			border: none;
+		  	font-size: 15px;
+		  	font-weight: normal;
+		  	line-height: 1.4;
+		  	border-radius: 4px;
+		  	padding: 10px 15px;
+		   -webkit-font-smoothing: subpixel-antialiased;
+		   -webkit-transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+          	transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+          	}
+			.btn:hover,
+			.btn:focus {
+			  outline: none;
+			  color: #ffffff;
+			}
+			.btn-primary {
+		 	 color: #ffffff;
+		 	 background-color: #1abc9c;
+			}
+			.btn-secondary {
+			  color: #ffffff;
+			  background-color: #2ecc71;
+			}
+			.btn-log {
+			  color: #ffffff;
+			  background-color: #34495e;
+			}
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			.h1,
+			.h2,
+			.h3,
+			.h4,
+			.h5,
+			.h6 {
+			  font-family: inherit;
+			  font-weight: 700;
+			  line-height: 1.1;
+			  color: inherit;
+}
