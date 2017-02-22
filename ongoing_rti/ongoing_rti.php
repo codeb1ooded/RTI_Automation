@@ -28,8 +28,8 @@
 					if($account_type == 'Admin'){
 						$query = " SELECT * FROM add_rti order by date_of_receipt";
 						$res = mysqli_query($con, $query);
-						echo "<table class='table table-hover table-bordered'>" ;
-						echo "<tr>
+						echo "<table class='table table-bordered'>" ;
+						echo "<tr class='tor'>
 							<th>ID</th>
 							<th>Applicant Name</th>
 							<th>Date of Receipt</th>
@@ -75,8 +75,8 @@
 						$query = " SELECT * FROM t2 WHERE map='".$m."' order by id;";
 						$data = mysqli_query ($con, $query);
 						$data2 = mysqli_num_rows ($data);
-						echo "<table class='table table-hover table-bordered'>" ;
-						echo "<tr>
+						echo "<table class='table table-bordered'>" ;
+						echo "<tr class='tor'>
 								<th>ID</th>
 								<th>Applicant Name</th>
 								<th>Date of Receipt</th>

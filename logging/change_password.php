@@ -28,8 +28,8 @@
 						echo "<h3><center>List of Active Users :</center></h3>";
 						$query = "SELECT * FROM login;";
 						$res = mysqli_query($con, $query);
-						echo "<table class='table'>" ;
-						echo "<tr>
+						echo "<table class='table table-bordered'>" ;
+						echo "<tr class='tor'>
 								<th>ID</th>
 								<th>User Name</th>
 								<th>Select</th>

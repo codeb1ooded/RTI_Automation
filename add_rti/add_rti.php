@@ -24,7 +24,7 @@
 				<h2>New RTI</h2>
 				<center><h4><strong>Personal Details of RTI Applicant:</strong></h4>
 				<form action="save_details.php" method="post" class="form-horizontal" name="add_rti" role="form">
-					<table class="table table-bordered table-hover">
+					<table class="table table-bordered">
 						<tbody>
 							<tr>
 								<th>Name of Applicant</th>
@@ -120,47 +120,47 @@
 					</table>
 
 					<h4><strong>Receipt of RTI Application (Section 7):</strong></h4>
-					<table class='table table-hover table-bordered'>
+					<table class='table table-bordered'>
 						<tbody>
 							<tr>
 								<th>Application Submission Date</th>
-								<th><input name="date_of_receipt" id="date_of_receipt" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD" required></th>
+								<td><input name="date_of_receipt" id="date_of_receipt" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD" required></td>
 							</tr>
 
 							<tr>
 								<th>Date of its receipt by PIO</th>
-								<th><input id="date_of_receipt_cpio" name="date_of_receipt_cio" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD" required></th>
+								<td><input id="date_of_receipt_cpio" name="date_of_receipt_cio" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD" required></td>
 							</tr>
 						</tbody>
 					</table>
 
 					<h4><strong>Fee Payment Details :</strong></h4>
-					<table class="table table-bordered table-hover">
+					<table class="table table-bordered">
 						<tbody>
 							<tr>
 								<th>Is Fee enclosed with RTI application</th>
-								<th>
+								<td>
 									<input type="radio" value="yes" checked="checked" name="fee" id="fee_paid" required> Yes&nbsp&nbsp
 									<input type="radio" value="no" name="fee" id="fee_not_paid" required> No
-								</th>
+								</td>
 							</tr>
 
 							<tr>
 								<th>Date of depositing fee</th>
-								<th><input id="fee_deposit_date" name="fee_deposit_date" maxlength="50" placeholder="YYYY-MM-DD" required></th>
+								<td><input id="fee_deposit_date" name="fee_deposit_date" maxlength="50" placeholder="YYYY-MM-DD" required></td>
 							</tr>
 
 							<tr>
 								<th>Mode of payment(cheque/DD/cash/IPO)</th>
-								<th><input type="text" id="pay_mode" name="pay_mode" maxlength="50" required></th>
+								<td><input type="text" id="pay_mode" name="pay_mode" maxlength="50" required></td>
 							</tr>
 
 							<tr>
 								<th>Whether the applicant wishes to receive the information by post</th>
-								<th>
+								<td>
 									<input type="radio" value="yes" checked="checked" name="post" id="post_yes" required> Yes&nbsp&nbsp
 									<input type="radio" value="no" name="post" id="post_no" required> No
-								</th>
+								</td>
 							</tr>
 						</tbody>
 					</table>

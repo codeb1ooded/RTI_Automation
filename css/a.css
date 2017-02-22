@@ -20,7 +20,7 @@
 			}
 			.btn-secondary {
 			  color: #ffffff;
-			  background-color: #2ecc71;
+			  background-color: #009688;
 			}
 			.btn-log {
 			  color: #ffffff;
@@ -42,4 +42,11 @@
 			  font-weight: 700;
 			  line-height: 1.1;
 			  color: inherit;
+}
+
+
+.tor{
+   	color: #fff ;
+    background-color: #1abc9c;
+}
 }

@@ -29,7 +29,7 @@
 						$a=$_POST['ques'];
 						echo "<br><h4>Enter queries for RTI ID:".$id."</h4>";
 						echo "<table class='table table-bordered'>
-								<tr>
+								<tr class=tor>
 									<th><center>Query No</center></th>
 									<th><center>Query</center></th>
 									<th><center>Map To</center></th>

@@ -44,7 +44,7 @@
 						$res = mysqli_query($con, $query);
 						$r5 = mysqli_fetch_assoc($res);
 						echo "<table class='table table-bordered'>" ;
-							echo "<tr>
+							echo "<tr class='tor'>
 								<th>Field</th>
 								<th>Value</th>
 							</tr>";
@@ -181,7 +181,7 @@
 						$r7=mysqli_fetch_assoc($res1);
 						echo "<h4><strong>Queries<strong></h4>";
 						echo "<table class='table table-bordered'>
-								<tr>
+								<tr class='tor'>
 									<th>Query Number</th>
 									<th>Queries</th>
 									<th>Mapped To</th>

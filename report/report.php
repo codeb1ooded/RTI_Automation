@@ -39,8 +39,8 @@
 
 						$query = "SELECT count(name),name,id FROM add_rti group by name,phone_no order by id";
 						$res = mysqli_query($con,$query);
-						echo "<br><table class='table'>" ;
-						echo "<tr>
+						echo "<br><table class='table table-bordered'>" ;
+						echo "<tr class='tor'>
 							<th>ID</th>
 							<th>Applicant Name</th>
 							<th>No. of Applications filed</th>
@@ -67,8 +67,8 @@
 						$query="SELECT count(map),map,id FROM t2 group by map order by id";
 						$res=mysqli_query($con,$query);
 
-						echo "<br><table class='table'>" ;
-						echo "<tr>
+						echo "<br><table class='table table-bordered' >" ;
+						echo "<tr class='tor' >
 								<th>ID</th>
 								<th>Department Name</th>
 								<th>No. of Queries</th>
@@ -98,8 +98,8 @@
 						$query="SELECT * FROM add_rti WHERE closed=1";
 						$res=mysqli_query($con,$query);
 
-						echo "<br><table class='table'>" ;
-						echo "<tr>
+						echo "<br><table class='table table-bordered'>" ;
+						echo "<tr class='tor'>
 								<th>ID</th>
 								<th>Applicant Name</th>
 								<th>Reply Date</th>
@@ -290,8 +290,8 @@
 						$res=mysqli_query($con,$query);
 
 						echo"<div>
-								<table class='table'>
-								<tr>
+								<table class='table table-bordered'>
+								<tr class='tor'>
 									<th>ID</th>
 									<th>Applicant Name</th>
 								</tr>";

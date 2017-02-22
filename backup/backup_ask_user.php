@@ -22,8 +22,8 @@
 				<h3><center>Select all tables for which you want Backup</center></h3>
 				<div class="container">	
 					<form method="post" action="backup.php">
-						<br><table class="table">
-							<tr>
+						<br><table class="table table-bordered">
+							<tr class='tor'>
 								<th>Table Name</th>
 								<th>Backup: Yes</th>
 								<th>Backup: No</th>

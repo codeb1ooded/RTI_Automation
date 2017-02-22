@@ -26,9 +26,14 @@ CREATE TABLE `add_rti` (
   `closed` int(11) DEFAULT NULL,
   `post` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 INSERT INTO add_rti VALUES("1"," Sarthak","Male","dssffsf","110007","88888888","India","22222222","9999911111","vddgd@gmail.com","Indian","2016-11-17","2016-11-17","0","yes","2016-11-17","Cash","","","yes");
+INSERT INTO add_rti VALUES("2"," mrx","Male","sss","110004","Delhi","India","64652222","9211557755","bhavyagarg12@gmail.com","Indian","2016-11-25","2016-11-30","5","yes","2016-10-10","DD","","","yes");
+INSERT INTO add_rti VALUES("3"," ","","","0","","","","","","","0000-00-00","0000-00-00","0","","0000-00-00","","","","");
+INSERT INTO add_rti VALUES("4"," mrx","Male","ss","110004","Closed","Other","64652222","9211557755","bhavyagarg12@gmail.com","Indian","2016-10-10","2016-10-10","0","yes","2016-11-25","DD","","","yes");
+INSERT INTO add_rti VALUES("5"," b","Male","df`","110004","-","India","64652222","9211557755","bhavyagarg12@gmail.com","Indian","2016-10-12","2016-10-13","1","yes","2016-10-13","DD","","","yes");
+INSERT INTO add_rti VALUES("6"," mrx","Male","xxx","110004","Closed","India","64652222","9211557755","bhavyagarg12@gmail.com","Indian","2016-09-25","2016-09-25","0","no","2016-09-25","DD","1","1","yes");
 
 
 
@@ -109,8 +114,9 @@ CREATE TABLE `info_about_reply` (
   `reply_time` int(11) NOT NULL,
   `faa_info` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
+INSERT INTO  info_about_reply VALUES("6","2016-10-03","2016-10-03","    Post 										","0"," Yes ");
 
 
 
@@ -153,8 +159,9 @@ CREATE TABLE `section4` (
   `given_info_date` date NOT NULL,
   `info_time` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
+INSERT INTO  section4 VALUES("6","2016-10-20","1000","2016-10-23","2016-10-24","1");
 
 
 
@@ -171,6 +178,7 @@ CREATE TABLE `t2` (
 
 INSERT INTO  t2 VALUES("1","1","qwerty","Ac","2016-11-17","0");
 INSERT INTO  t2 VALUES("1","2","qwerty2","Ex","2016-11-17","0");
+INSERT INTO  t2 VALUES("6","1","eee","Ac","2016-10-30","0");
 
 
 

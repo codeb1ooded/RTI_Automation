@@ -35,7 +35,7 @@
 						$a=$data2;
 						echo "<h2>RTI ID: ".$id."</h2>";
 						echo "<table class='table table-bordered'>
-								<tr>
+								<tr class=tor>
 									<th><center>Query No</center></th>
 									<th><center>Query</center></th>
 									<th><center>Reply</center></th>

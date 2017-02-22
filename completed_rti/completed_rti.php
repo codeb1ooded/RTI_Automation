@@ -26,8 +26,8 @@
 						$res = mysqli_query($conn, $query);
 						echo "<h2><center>List of Completed RTI</center></h2>" ;
 						echo "<h3>Select The RTI To Be Modified/Viewed:</h3>";
-						echo "<br><table class='table table-bordered table-condensed'>";
-							echo"<tr>
+						echo "<br><table class='table table-bordered '>";
+							echo"<tr class='tor'>
 								<th>ID</th>
 								<th>Applicant Name</th>
 								<th>Phone Number</th>
@@ -80,8 +80,8 @@
 							$query=" SELECT * FROM t2 WHERE map='".$m."' order by id;";
 							$data=mysqli_query($con,$query);
 							$data2=mysqli_num_rows($data);
-							echo "<table class='table table-hover table-bordered>" ;
-							echo "<tr>
+							echo "<table class='table table-bordered>" ;
+							echo "<tr class='tor'>
 									<th>ID</th>
 									<th>Applicant Name</th>
 									<th>Date of Receipt</th>

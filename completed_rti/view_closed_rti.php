@@ -27,7 +27,8 @@
 					echo "<center><h2>List of Closed RTI</h2></center>" ;
 					echo "<h3>Select The RTI To Be Modified/Viewed:</h3><br>";
 					if($account_type == 'Admin') {
-						echo "<table class='table table-bordered'><tr>
+						echo "<table class='table table-bordered'>
+						<tr class='tor'>
 						<th>ID</th>
 						<th>Applicant Name</th>
 						<th>Phone Number</th>
@@ -82,8 +83,8 @@
 						$query=" SELECT * FROM t2 WHERE map='".$m."' order by id;";
 						$data=mysqli_query($con, $query);
 						$data2=mysqli_num_rows ($data);
-						echo "<table class='table table-hover table-bordered'>" ;
-						echo "<tr>
+						echo "<table class='table table-bordered'>" ;
+						echo "<tr class='tor'>
 							<th>ID</th>
 							<th>Applicant Name</th>
 							<th>Date of Receipt</th>
