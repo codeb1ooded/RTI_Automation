@@ -16,7 +16,11 @@
 				<link rel=stylesheet href='../../css/a.css'>
 			</head>
 			<body>
+
 				<div class="container">
+					<br><a href='section_db.php' target='_blank' class='btn btn-secondary'>View Section Information</a>&nbsp&nbsp
+					<a href='view_dept_reply.php' target='_blank' class='btn btn-secondary'>View Department Replies</a>
+				
 					<?php
 						$_SESSION['database_access'] = true;
 						include '../../db/config_database.php';
@@ -135,11 +139,9 @@
 							$a--;
 					}
 					echo "</table>" ;
-					echo "<center><a href='section_db.php' target='_blank' class='btn btn-secondary'>View Section Information</a>&nbsp&nbsp";
-					echo "<a href='view_dept_reply.php' target='_blank' class='btn btn-secondary'>View Department Replies</a></center>";
-					echo "<br><br><input type=submit name=save class='btn btn-primary' value='Save and Exit' >&nbsp&nbsp";
+					echo "<center><br><input type=submit name=save class='btn btn-primary' value='Save and Exit' >&nbsp&nbsp";
 					echo "</form>" ;
-					echo "<a href='../../ongoing_rti/ongoing_rti_option.php?id=".$id."' class='btn btn-log'>Back</a>";
+					echo "<a href='../../ongoing_rti/ongoing_rti_option.php?id=".$id."' class='btn btn-log'>Back</a></center>";
 						?>
 				</div>
 			</body>

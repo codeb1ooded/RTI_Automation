@@ -129,7 +129,7 @@
 							<td><input type=text name=d1 placeholder=YYYY-MM-DD></td>
 							<th>End Date</th>
 							<td><input type=text name=d2 placeholder=YYYY-MM-DD></td>
-							<input type=submit name=enter value=Enter onclick=\"return validateDate()\" class='btn btn-log'>
+							<input type=submit name=enter value=Enter onclick=\"return validateDate()\" class='btn btn-secondary'>
 						</form>
 						</center>";
 						echo "</table>";

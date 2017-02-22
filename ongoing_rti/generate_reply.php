@@ -100,7 +100,7 @@
 	
 					echo"</table><br></div>";
 					
-						echo "<button class='btn' onclick='myFuction()'>Print the reply</button>";
+						echo "<center><button class='btn btn-primary' onclick='myFuction()'>Print the reply</button>";
 						?>
 					<script>
 						function myFuction(){
@@ -112,7 +112,7 @@
 					else {
 						echo "<h3> First reply all queries </h3>";
 					}
-					echo "<a class='btn btn-log' href='ongoing_rti_option.php?id=".$id."''>Back</a>";
+					echo "<a class='btn btn-log' href='ongoing_rti_option.php?id=".$id."''>Back</a></center>";
 					?>
 			</body>
 		</html>

@@ -84,8 +84,8 @@
 								<td><input type="radio" name="t2" value="no"></td>
 							</tr>
 						</table>
-						<input class='btn btn-log' type="submit" name="submit" value="Submit" />
-						<a href="../select_option.php" class='btn btn-log'>Back</a>
+						<center><input class='btn btn-primary' type="submit" name="submit" value="Submit" />
+						<a href="../select_option.php" class='btn btn-log'>Back</a></center>
 					</form>
 				</div>
 			</body>

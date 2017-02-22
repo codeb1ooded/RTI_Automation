@@ -13,6 +13,7 @@
 				<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 				<meta charset="utf-8">
 				<script src="../bootstrap/js/bootstrap.min.js"></script>
+				<link rel=stylesheet href="../css/a.css">
 			</head>
 			<body>
 				<div class='container'>
@@ -22,7 +23,7 @@
 						$_SESSION['database_access'] = false;
 						$id = $_GET['id'];
 
-						echo "<center><h3>RTI Details for Id <b>" . $id . "</b></h3></center>" ;
+						echo "<center><h3>RTI Details for Id" . $id . "</h3></center>" ;
 						$query = " SELECT * FROM add_rti where id=" . $id;
 						$res = mysqli_query($con, $query);
 						$r1 = mysqli_fetch_assoc($res);
@@ -211,11 +212,11 @@
 							}
 						echo "</table>";
 						if ($r1['closed'] == 1)
-							echo "<a class=btn href='view_closed_rti.php'>Back</a></br>" ;
+							echo "<a class='btn btn-log' href='view_closed_rti.php'>Back</a></br>" ;
 						else if ($r1['archive'] == 1)
-							echo "<a class=btn href='completed_rti.php'>Back</a></br>" ;
+							echo "<a class='btn btn-log' href='completed_rti.php'>Back</a></br>" ;
 						else
-							echo "<a class=btn href='../ongoing_rti/ongoing_rti_option.php?id=".$id."'>Back</a></br>" ;
+							echo "<a class='btn btn-log' href='../ongoing_rti/ongoing_rti_option.php?id=".$id."'>Back</a></br>" ;
 					?>
 				</div>
 			</body>

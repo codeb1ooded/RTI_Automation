@@ -38,7 +38,7 @@
 									<td>".$r['id']."</td>
 									<td>".$r['name']."</td>
 									<td>".$r['phone_no']."</td>
-									<td><a href='compid.php?id=".$r['id']."'>View</a></td> 
+									<td><a class='btn btn-primary' href='compid.php?id=".$r['id']."'>View</a></td> 
 								</tr>";
 							}
 							else if($r['archive'] == 1) {
