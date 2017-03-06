@@ -4,7 +4,8 @@ RTI management in goverment institutions is pen and paper based. Due to this it 
 
 ###Languages required
 Front-end : HTML, CSS, JS <br />
-Back-end: PHP, Databases from php
+Back-end: PHP, Databases from php <br />
+Hosting service: 000webhost.com
 
 ###Setup
 You need to install xampp on your system to setup this project.(Refer to online guides for installing xampp for your Operating System) <br />
@@ -14,7 +15,7 @@ Don't forget to import database present in extras folder and configure database 
 #### git clone https://github.com/codeb1ooded/BMSU.git
 <br/>
 ### Working demo:
-#### http://rti_igdtuw.site88.net/index.php
+#### https://rti-igdtuw.000webhostapp.com
 #### Portal to login will appear. There are three different use cases. Username and passwords to the same are mentioned below.
 <ol> 
 <li>Admin privilege
