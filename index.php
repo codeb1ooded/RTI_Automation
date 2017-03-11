@@ -3,10 +3,12 @@
 		session_start();
 	}
 	$_SESSION['database_access'] = true;
+
 	include 'db/config_database.php';
+
 	$_SESSION['database_access'] = false;
 	$result = 'No';
-   
+
 	// Php code to check validation of entered username and password
 	if(isset($_POST['submit'])){
 		if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -42,6 +44,8 @@
 		}
 	}
 ?>
+
+
 <html>
    <head>
 		<meta charset="UTF-8">
@@ -52,6 +56,7 @@
 		<link rel="stylesheet" href="css/a.css">
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
+
 			function fpassoverlay(){
 				alert("Please Contact Admin");
 			}
@@ -64,6 +69,19 @@
 					document.getElementById("message").innerHTML="";
 				}
 			}
+
+			//On clicking button demo table is shown
+			function show_demo_table() {
+				var x = document.getElementById('Demo_Table');
+				if (x.style.display === 'none') {
+				   											x.style.display = 'block';
+				}
+
+				else {
+															x.style.display = 'none';
+							  }
+				}
+
 		</script>
 	</head>
 	<body>
@@ -76,18 +94,32 @@
 						<input type="text" class="form-control" placeholder="Username " id="username" name="username">
 						<i class="fa fa-user"></i>
 					</div>
-					
+
 					<!-- Html to show login form -->
 					<div class="form-group log-status">
 						<input type="password" class="form-control" placeholder="Password" id="password" name="password">
 						<i class="fa fa-lock"></i>
 					</div>
-					
-					<input class="btn btn-log" type='submit' name ='submit' value='Log in' />
+
+					<button class="btn btn-log" type='submit' name ='submit' value='Log in' >Log in</button>
 				</form>
-				<input class="btn btn-log" id="fpass" onclick="fpassoverlay()" value='Forgot Password?' />
+				<button class="btn btn-log" id="fpass" onclick="fpassoverlay()"> Forgot Password?</button>
+
 			</div>
+				<br>
+				<br>
+
+				<div class="demo" style="position: absolute; right: 120; top: 10; width: 200px; height: 100px;">
+				<!--Showing Demo table-->
+				<div class="btn btn-log" id="button_demo" onclick="show_demo_table()" value='Demo Table for Login'>Demo Table for Login</div>
+
+				<div id="Demo_Table" style="display:none">
+					<img src ="table/demo.png" alt='Demo Table'></img>
+				</div>
+			</div>
+
 	</div>
+
 	<?php
 		// Set message as per mistake in username & password
 		if($result == 'incorrect'){
@@ -97,5 +129,6 @@
 			echo '<script type="text/javascript"> document.getElementById("message").innerHTML="Empty Username & Password"; document.getElementById("message").style.color = "#ff0000";</script>';
 		}
 	?>
+
 	</body>
 </html>
