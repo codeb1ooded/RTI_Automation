@@ -1,11 +1,10 @@
 # Automation of RTI Management System
 ### AIM
-RTI management in goverment institutions is pen and paper based. Due to this it creates lot of issues like mismanagement, diffulty in analysis & report generateion, redundancy, storage problems, etc. This project focuses on automating this RTI system in government institutions to get rid of most of the problems caused by pen and paper based system.
+RTI management in Goverment Institutions is pen-paper based. Due to this it creates a lot of issues like mismanagement, difficulty in analysis & report generation, redundancy, storage problems, etc. This project focuses on automating this RTI system in government institutions to get rid of most of the problems caused by the existing system.
 
 ###Languages required
 Front-end : HTML, CSS, JS <br />
-Back-end: PHP, Databases from php <br />
-Hosting service: 000webhost.com
+Back-end: PHP, MySQL <br />
 
 ###Setup
 You need to install xampp on your system to setup this project.(Refer to online guides for installing xampp for your Operating System) <br />
@@ -14,9 +13,10 @@ Open terminal in your htdocs folder and clone the repository <br/>
 Don't forget to import database present in extras folder and configure database file db/config_database.php with your system specific credentials <br/>
 #### git clone https://github.com/codeb1ooded/BMSU.git
 <br/>
-### Working demo:
+## Working demo:
 #### https://rti-igdtuw.000webhostapp.com
-#### Portal to login will appear. There are three different use cases. Username and passwords to the same are mentioned below.
+
+#### Login-There are three different use cases. Username and passwords to the same are mentioned below.
 <ol> 
 <li>Admin privilege
 <table>
