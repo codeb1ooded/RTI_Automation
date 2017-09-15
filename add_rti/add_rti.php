@@ -1,28 +1,28 @@
 <?php
-	if(!isset($_SESSION)) {
-		session_start();
-	}
-	if(!isset($_SESSION['login_access'])){
-		header("location: ../errors/no_file.php");
-	}
-	elseif($_SESSION['login_access'] != 'Admin') {
-		header("location: ../errors/no_access.php");
-	}
-	else {
-?>
+if(!isset($_SESSION)) {
+	session_start();
+}
+if(!isset($_SESSION['login_access'])){
+	header("location: ../errors/no_file.php");
+}
+elseif($_SESSION['login_access'] != 'Admin') {
+	header("location: ../errors/no_access.php");
+}
+else {
+	?>
 	<html>
-		<head>
-			<title>RTI Application Form</title>
-			<meta charset="utf-8">
-			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-			<script src="../bootstrap/js/bootstrap.min.js"></script>
-			<link rel=stylesheet href='../css/a.css'>
-		</head>
+	<head>
+		<title>RTI Application Form</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+		<script src="../bootstrap/js/bootstrap.min.js"></script>
+		<link rel=stylesheet href='../css/a.css'>
+	</head>
 
-		<body>
-			<div class="container">
-				<h2>New RTI</h2>
-				<center><h4><strong>Personal Details of RTI Applicant:</strong></h4>
+	<body>
+		<div class="container">
+			<h2>New RTI</h2>
+			<center><h4><strong>Personal Details of RTI Applicant:</strong></h4>
 				<form action="save_details.php" method="post" class="form-horizontal" name="add_rti" role="form">
 					<table class="table table-bordered">
 						<tbody>
@@ -39,7 +39,7 @@
 									<input type="radio" name="gender" id="gender" value="Third Gender"> Third Gender
 								</td>
 							</tr>
-							
+
 							<tr>
 								<th> Address</th>
 								<td><textarea type="text" name="address" id="address1" rows="3" columns="6" style="width:280px; resize:none" required></textarea></td>
@@ -85,110 +85,110 @@
 							<tr>
 								<th>Country</th>
 								<td><input type="radio" name="country" id="chkstate" checked="checked" value="India" onclick="test();"> India &nbsp&nbsp
-								<input type="radio" name="country" id="chkcountry" value="Other" onclick="test1();"> Other</td>
-							</tr>
-							
-							<tr>
-								<th><span id="cngStateName">State</span>
-								<td><span><input type="text" name="state" id="txtCountry" required></span></td>
-							</tr>
+									<input type="radio" name="country" id="chkcountry" value="Other" onclick="test1();"> Other</td>
+								</tr>
 
-							<tr>
-								<th>Phone Number <cite>(Do not provide STD code) (Eg.23456789)</cite></th>
-								<td><input type="text" name="phone" id="phone" maxlength="18" pattern="^\d{8}$" class="numeric" value="" required></td>
-							</tr>
+								<tr>
+									<th><span id="cngStateName">State</span>
+										<td><span><input type="text" name="state" id="txtCountry" required></span></td>
+									</tr>
 
-							<tr>
-								<th>Mobile Number <cite>(Provide a 10-digit no.)</cite></th>
-								<td><input type="text" name="mobile" id="cell" maxlength="15" pattern="^\d{10}$" value="" required></td>
-							</tr>
+									<tr>
+										<th>Phone Number <cite>(Do not provide STD code) (Eg.23456789)</cite></th>
+										<td><input type="text" name="phone" id="phone" maxlength="18" pattern="^\d{8}$" class="numeric" value="" required></td>
+									</tr>
 
-							<tr>
-								<th>Email-ID</th>
-								<td><input type="email" name="email" maxlength="70" value="" id="Email" required></td>
-							</tr>
+									<tr>
+										<th>Mobile Number <cite>(Provide a 10-digit no.)</cite></th>
+										<td><input type="text" name="mobile" id="cell" maxlength="15" pattern="^\d{10}$" value="" required></td>
+									</tr>
 
-							<tr>
-								<th>Citizenship (Only Indian citizens can file RTI Request application)</th>
-								<td>
-									<select class="btn" style="background:white; color:black" name="citizenship" id="citizenship" onchange="chkCitizenship(this);" required>
-									<option value="Indian" id="IndianCitizenship">Indian</option>
-									<option value="Other" id="OtherCitizenship">Other</option></select>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+									<tr>
+										<th>Email-ID</th>
+										<td><input type="email" name="email" maxlength="70" value="" id="Email" required></td>
+									</tr>
 
-					<h4><strong>Receipt of RTI Application (Section 7):</strong></h4>
-					<table class='table table-bordered'>
-						<tbody>
-							<tr>
-								<th>Application Submission Date</th>
-								<td><input name="date_of_receipt" id="date_of_receipt" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD" required></td>
-							</tr>
+									<tr>
+										<th>Citizenship (Only Indian citizens can file RTI Request application)</th>
+										<td>
+											<select class="btn" style="background:white; color:black" name="citizenship" id="citizenship" onchange="chkCitizenship(this);" required>
+												<option value="Indian" id="IndianCitizenship">Indian</option>
+												<option value="Other" id="OtherCitizenship">Other</option></select>
+											</td>
+										</tr>
+									</tbody>
+								</table>
 
-							<tr>
-								<th>Date of its receipt by PIO</th>
-								<td><input id="date_of_receipt_cpio" name="date_of_receipt_cio" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD" required></td>
-							</tr>
-						</tbody>
-					</table>
+								<h4><strong>Receipt of RTI Application (Section 7):</strong></h4>
+								<table class='table table-bordered'>
+									<tbody>
+										<tr>
+											<th>Application Submission Date</th>
+											<td><input name="date_of_receipt" id="date_of_receipt" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD" required></td>
+										</tr>
 
-					<h4><strong>Fee Payment Details :</strong></h4>
-					<table class="table table-bordered">
-						<tbody>
-							<tr>
-								<th>Is Fee enclosed with RTI application</th>
-								<td>
-									<input type="radio" value="yes" checked="checked" name="fee" id="fee_paid" required> Yes&nbsp&nbsp
-									<input type="radio" value="no" name="fee" id="fee_not_paid" required> No
-								</td>
-							</tr>
+										<tr>
+											<th>Date of its receipt by PIO</th>
+											<td><input id="date_of_receipt_cpio" name="date_of_receipt_cio" maxlength="50" value="" class="name" placeholder="YYYY-MM-DD" required></td>
+										</tr>
+									</tbody>
+								</table>
 
-							<tr>
-								<th>Date of depositing fee</th>
-								<td><input id="fee_deposit_date" name="fee_deposit_date" maxlength="50" placeholder="YYYY-MM-DD" required></td>
-							</tr>
+								<h4><strong>Fee Payment Details :</strong></h4>
+								<table class="table table-bordered">
+									<tbody>
+										<tr>
+											<th>Is Fee enclosed with RTI application</th>
+											<td>
+												<input type="radio" value="yes" checked="checked" name="fee" id="fee_paid" required> Yes&nbsp&nbsp
+												<input type="radio" value="no" name="fee" id="fee_not_paid" required> No
+											</td>
+										</tr>
 
-							<tr>
-								<th>Mode of payment(cheque/DD/cash/IPO)</th>
-								<td><input type="text" id="pay_mode" name="pay_mode" maxlength="50" required></td>
-							</tr>
+										<tr>
+											<th>Date of depositing fee</th>
+											<td><input id="fee_deposit_date" name="fee_deposit_date" maxlength="50" placeholder="YYYY-MM-DD" required></td>
+										</tr>
 
-							<tr>
-								<th>Whether the applicant wishes to receive the information by post</th>
-								<td>
-									<input type="radio" value="yes" checked="checked" name="post" id="post_yes" required> Yes&nbsp&nbsp
-									<input type="radio" value="no" name="post" id="post_no" required> No
-								</td>
-							</tr>
-						</tbody>
-					</table>
+										<tr>
+											<th>Mode of payment(cheque/DD/cash/IPO)</th>
+											<td><input type="text" id="pay_mode" name="pay_mode" maxlength="50" required></td>
+										</tr>
 
-					<input type="submit" name="add" value="Add Queries" class='btn btn-secondary' onclick="return validateDate()">&nbsp&nbsp
-					<input type="submit" name="submit" value="Save and Exit" class='btn btn-primary' onclick="return validateDate()"></center>
+										<tr>
+											<th>Whether the applicant wishes to receive the information by post</th>
+											<td>
+												<input type="radio" value="yes" checked="checked" name="post" id="post_yes" required> Yes&nbsp&nbsp
+												<input type="radio" value="no" name="post" id="post_no" required> No
+											</td>
+										</tr>
+									</tbody>
+								</table>
 
-					<!-- Script to validate dates in form id user have entered them correctly -->
-					<script type="text/javascript">
-						function validateDate(){
-							var bool1 = validatedate1(document.add_rti.date_of_receipt);
-							var bool2, bool3;
-							if(bool1 == true){
-								bool2 = validatedate2(document.add_rti.date_of_receipt_cio);
-								if(bool2 == true){
-									bool3 = validatedate3(document.add_rti.fee_deposit_date);
-								}
-							}
-							if(bool1 == false || bool2 == false || bool3 == false){
-								return false;
-							}
-						}
-					</script>
-					<script src="date_validation_add_rti.js"></script>
-				</form>
-			</div>
-		</body>
-	</html>
-<?php
-	}
-?>
+								<input type="submit" name="add" value="Add Queries" class='btn btn-secondary' onclick="return validateDate()">&nbsp&nbsp
+								<input type="submit" name="submit" value="Save and Exit" class='btn btn-primary' onclick="return validateDate()"></center>
+
+								<!-- Script to validate dates in form id user have entered them correctly -->
+								<script type="text/javascript">
+									function validateDate(){
+										var bool1 = validatedate1(document.add_rti.date_of_receipt);
+										var bool2, bool3;
+										if(bool1 == true){
+											bool2 = validatedate2(document.add_rti.date_of_receipt_cio);
+											if(bool2 == true){
+												bool3 = validatedate3(document.add_rti.fee_deposit_date);
+											}
+										}
+										if(bool1 == false || bool2 == false || bool3 == false){
+											return false;
+										}
+									}
+								</script>
+								<script src="date_validation_add_rti.js"></script>
+							</form>
+						</div>
+					</body>
+					</html>
+					<?php
+				}
+				?>

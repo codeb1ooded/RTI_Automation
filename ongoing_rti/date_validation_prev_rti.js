@@ -1,35 +1,35 @@
 function chkCitizenship(citizenship){
-		var strCitizenship = citizenship.options[citizenship.selectedIndex].value;
-		if(strCitizenship == 'Indian'){
-			document.getElementById('date_of_receipt').disabled=false;
-			document.getElementById('date_of_receipt_cpio').disabled=false;
-			document.getElementById('time').disabled=false;
-			document.getElementById('fee_enclosed').disabled=false;
-			document.getElementById('fee_deposit_date').disabled=false;
-			document.getElementById('pay_mode').disabled=false;
-		}
-		else if(strCitizenship == 'Other'){
-			document.getElementById('date_of_receipt').disabled=true;
-			document.getElementById('date_of_receipt_cpio').disabled=true;
-			document.getElementById('time').disabled=true;
-			document.getElementById('fee_enclosed').disabled=true;
-			document.getElementById('fee_deposit_date').disabled=true;
-			document.getElementById('pay_mode').disabled=true;
-		}
+	var strCitizenship = citizenship.options[citizenship.selectedIndex].value;
+	if(strCitizenship == 'Indian'){
+		document.getElementById('date_of_receipt').disabled=false;
+		document.getElementById('date_of_receipt_cpio').disabled=false;
+		document.getElementById('time').disabled=false;
+		document.getElementById('fee_enclosed').disabled=false;
+		document.getElementById('fee_deposit_date').disabled=false;
+		document.getElementById('pay_mode').disabled=false;
 	}
-	function validateDate(){
-		var bool1 = validatedate1(document.prev_rti.date_of_receipt);
-		var bool2, bool3;
-		if(bool1 == true){
-			bool2 = validatedate2(document.prev_rti.date_of_receipt_cio);
-			if(bool2 == true){
-				bool3 = validatedate3(document.prev_rti.fee_deposit_date);			
-			}		
-		}
-		if(bool1 == false || bool2 == false || bool3 == false){
-			return false;		
-		}
+	else if(strCitizenship == 'Other'){
+		document.getElementById('date_of_receipt').disabled=true;
+		document.getElementById('date_of_receipt_cpio').disabled=true;
+		document.getElementById('time').disabled=true;
+		document.getElementById('fee_enclosed').disabled=true;
+		document.getElementById('fee_deposit_date').disabled=true;
+		document.getElementById('pay_mode').disabled=true;
 	}
+}
+function validateDate(){
+	var bool1 = validatedate1(document.prev_rti.date_of_receipt);
+	var bool2, bool3;
+	if(bool1 == true){
+		bool2 = validatedate2(document.prev_rti.date_of_receipt_cio);
+		if(bool2 == true){
+			bool3 = validatedate3(document.prev_rti.fee_deposit_date);			
+		}		
+	}
+	if(bool1 == false || bool2 == false || bool3 == false){
+		return false;		
+	}
+}
 
 function validatedate1(inputText)  {  
 	var dateformat = /^(\d{4})-(\d{1,2})-(\d{1,2})/;  
@@ -37,12 +37,12 @@ function validatedate1(inputText)  {
 	// Match the date format through regular expression  
 	if(inputText.value.match(dateformat)) {  
 		document.prev_rti.date_of_receipt.focus();  
- 
+		
   		//Test which seperator is used '/' or '-'  
-		var opera1 = inputText.value.split('/');  
-		var opera2 = inputText.value.split('-');  
-		lopera1 = opera1.length;  
-		lopera2 = opera2.length;  
+  		var opera1 = inputText.value.split('/');  
+  		var opera2 = inputText.value.split('-');  
+  		lopera1 = opera1.length;  
+  		lopera2 = opera2.length;  
 
 		// Extract the string into month, date and year  
 		if (lopera1>1) {  
@@ -80,7 +80,7 @@ function validatedate1(inputText)  {
 				alert('Date exceeded!!! \nInvalid date format!');  
 				document.prev_rti.date_of_receipt.focus();
 				return false;  
-  			}  
+			}  
 			else if ((lyear==true) && (dd>29)) {  
 				alert('Date exceeded!!! \nInvalid date format!');  
 				document.prev_rti.date_of_receipt.focus(); 
@@ -104,12 +104,12 @@ function validatedate2(inputText)  {
 	// Match the date format through regular expression  
 	if(inputText.value.match(dateformat)) {  
 		document.prev_rti.date_of_receipt_cio.focus();  
- 
+		
   		//Test which seperator is used '/' or '-'  
-		var opera1 = inputText.value.split('/');  
-		var opera2 = inputText.value.split('-');  
-		lopera1 = opera1.length;  
-		lopera2 = opera2.length;  
+  		var opera1 = inputText.value.split('/');  
+  		var opera2 = inputText.value.split('-');  
+  		lopera1 = opera1.length;  
+  		lopera2 = opera2.length;  
 
 		// Extract the string into month, date and year  
 		if (lopera1>1) {  
@@ -147,7 +147,7 @@ function validatedate2(inputText)  {
 				alert('Date exceeded!!! \nInvalid date format!');  
 				document.prev_rti.date_of_receipt_cio.focus();
 				return false;  
-  			}  
+			}  
 			else if ((lyear==true) && (dd>29)) {  
 				alert('Date exceeded!!! \nInvalid date format!');  
 				document.prev_rti.date_of_receipt_cio.focus(); 
@@ -171,12 +171,12 @@ function validatedate3(inputText)  {
 	// Match the date format through regular expression  
 	if(inputText.value.match(dateformat)) {  
 		document.prev_rti.fee_deposit_date.focus();  
- 
+		
   		//Test which seperator is used '/' or '-'  
-		var opera1 = inputText.value.split('/');  
-		var opera2 = inputText.value.split('-');  
-		lopera1 = opera1.length;  
-		lopera2 = opera2.length;  
+  		var opera1 = inputText.value.split('/');  
+  		var opera2 = inputText.value.split('-');  
+  		lopera1 = opera1.length;  
+  		lopera2 = opera2.length;  
 
 		// Extract the string into month, date and year  
 		if (lopera1>1) {  
@@ -214,7 +214,7 @@ function validatedate3(inputText)  {
 				alert('Date exceeded!!! \nInvalid date format!');  
 				document.prev_rti.fee_deposit_date.focus();
 				return false;  
-  			}  
+			}  
 			else if ((lyear==true) && (dd>29)) {  
 				alert('Date exceeded!!! \nInvalid date format!');  
 				document.prev_rti.fee_deposit_date.focus(); 

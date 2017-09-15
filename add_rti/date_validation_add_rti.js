@@ -4,12 +4,12 @@ function validatedate1(inputText)  {
 	// Match the date format through regular expression  
 	if(inputText.value.match(dateformat)) {  
 		document.add_rti.date_of_receipt.focus();  
- 
+		
   		//Test which seperator is used '/' or '-'  
-		var opera1 = inputText.value.split('/');  
-		var opera2 = inputText.value.split('-');  
-		lopera1 = opera1.length;  
-		lopera2 = opera2.length;  
+  		var opera1 = inputText.value.split('/');  
+  		var opera2 = inputText.value.split('-');  
+  		lopera1 = opera1.length;  
+  		lopera2 = opera2.length;  
 
 		// Extract the string into month, date and year  
 		if (lopera1>1) {  
@@ -47,7 +47,7 @@ function validatedate1(inputText)  {
 				alert('Date exceeded!!! \nInvalid date format!');  
 				document.add_rti.date_of_receipt.focus();
 				return false;  
-  			}  
+			}  
 			else if ((lyear==true) && (dd>29)) {  
 				alert('Date exceeded!!! \nInvalid date format!');  
 				document.add_rti.date_of_receipt.focus(); 
@@ -71,12 +71,12 @@ function validatedate2(inputText)  {
 	// Match the date format through regular expression  
 	if(inputText.value.match(dateformat)) {  
 		document.add_rti.date_of_receipt_cio.focus();  
- 
+		
   		//Test which seperator is used '/' or '-'  
-		var opera1 = inputText.value.split('/');  
-		var opera2 = inputText.value.split('-');  
-		lopera1 = opera1.length;  
-		lopera2 = opera2.length;  
+  		var opera1 = inputText.value.split('/');  
+  		var opera2 = inputText.value.split('-');  
+  		lopera1 = opera1.length;  
+  		lopera2 = opera2.length;  
 
 		// Extract the string into month, date and year  
 		if (lopera1>1) {  
@@ -114,7 +114,7 @@ function validatedate2(inputText)  {
 				alert('Date exceeded!!! \nInvalid date format!');  
 				document.add_rti.date_of_receipt_cio.focus();
 				return false;  
-  			}  
+			}  
 			else if ((lyear==true) && (dd>29)) {  
 				alert('Date exceeded!!! \nInvalid date format!');  
 				document.add_rti.date_of_receipt_cio.focus(); 
@@ -138,12 +138,12 @@ function validatedate3(inputText)  {
 	// Match the date format through regular expression  
 	if(inputText.value.match(dateformat)) {  
 		document.add_rti.fee_deposit_date.focus();  
- 
+		
   		//Test which seperator is used '/' or '-'  
-		var opera1 = inputText.value.split('/');  
-		var opera2 = inputText.value.split('-');  
-		lopera1 = opera1.length;  
-		lopera2 = opera2.length;  
+  		var opera1 = inputText.value.split('/');  
+  		var opera2 = inputText.value.split('-');  
+  		lopera1 = opera1.length;  
+  		lopera2 = opera2.length;  
 
 		// Extract the string into month, date and year  
 		if (lopera1>1) {  
@@ -181,7 +181,7 @@ function validatedate3(inputText)  {
 				alert('Date exceeded!!! \nInvalid date format!');  
 				document.add_rti.fee_deposit_date.focus();
 				return false;  
-  			}  
+			}  
 			else if ((lyear==true) && (dd>29)) {  
 				alert('Date exceeded!!! \nInvalid date format!');  
 				document.add_rti.fee_deposit_date.focus(); 

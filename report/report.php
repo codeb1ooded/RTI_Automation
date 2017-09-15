@@ -1,153 +1,153 @@
 <?php
-	if(!isset($_SESSION)) {
-		session_start();
-	}
-	if(!isset($_SESSION['login_access'])){
-		header("location: ../errors/no_file.php");
-	}
-	elseif ($_SESSION['login_access'] != 'Admin') {
-		header("location: ../errors/no_access.php");
-	}
-	else {
-?>
+if(!isset($_SESSION)) {
+	session_start();
+}
+if(!isset($_SESSION['login_access'])){
+	header("location: ../errors/no_file.php");
+}
+elseif ($_SESSION['login_access'] != 'Admin') {
+	header("location: ../errors/no_access.php");
+}
+else {
+	?>
 	<html>
-		<head>
-			<title>Report</title>
-			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-			<script src="../bootstrap/js/bootstrap.min.js"></script>
-			<link rel = "stylesheet" type = "text/css" href = "../css/a.css" />
-			<meta charset="utf-8">
-		</head>
+	<head>
+		<title>Report</title>
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+		<script src="../bootstrap/js/bootstrap.min.js"></script>
+		<link rel = "stylesheet" type = "text/css" href = "../css/a.css" />
+		<meta charset="utf-8">
+	</head>
 
-		<body>
-			<div class=container>
-				<center>
-					<br><h2>Generate Report By :</h2><br>
-					<form action="report.php" method="post">
-						<input type="submit" name="name" class='btn btn-primary' value="Name">&nbsp
-						<input type="submit" name="dept" class='btn btn-primary' value="Department">&nbsp
-						<input type="submit" name="date" class='btn btn-primary' value="Date">&nbsp
-						<input type="submit" name="close" class='btn btn-primary' value="Closed">&nbsp
-					</form>
-				</center>
+	<body>
+		<div class=container>
+			<center>
+				<br><h2>Generate Report By :</h2><br>
+				<form action="report.php" method="post">
+					<input type="submit" name="name" class='btn btn-primary' value="Name">&nbsp
+					<input type="submit" name="dept" class='btn btn-primary' value="Department">&nbsp
+					<input type="submit" name="date" class='btn btn-primary' value="Date">&nbsp
+					<input type="submit" name="close" class='btn btn-primary' value="Closed">&nbsp
+				</form>
+			</center>
 
-				<?php
-					if(isset($_POST['name'])){
-						$_SESSION['database_access'] = true;
-						include '../db/config_database.php';
-						$_SESSION['database_access'] = false;
+			<?php
+			if(isset($_POST['name'])){
+				$_SESSION['database_access'] = true;
+				include '../db/config_database.php';
+				$_SESSION['database_access'] = false;
 
-						$query = "SELECT count(name),name,id FROM add_rti group by name,phone_no order by id";
-						$res = mysqli_query($con,$query);
-						echo "<br><table class='table table-bordered'>" ;
-						echo "<tr class='tor'>
-							<th>ID</th>
-							<th>Applicant Name</th>
-							<th>No. of Applications filed</th>
-						</tr>";
+				$query = "SELECT count(name),name,id FROM add_rti group by name,phone_no order by id";
+				$res = mysqli_query($con,$query);
+				echo "<br><table class='table table-bordered'>" ;
+				echo "<tr class='tor'>
+				<th>ID</th>
+				<th>Applicant Name</th>
+				<th>No. of Applications filed</th>
+			</tr>";
 
-						while ( $r=mysqli_fetch_assoc($res) ) {
-							echo "<tr>";
-							echo "<td>";
-							echo $r['id']."</td>";
-							echo "<td>";
-							echo $r['name'];
-							echo "</td>";
-							echo "<td>";
-							echo $r['count(name)'];
-							echo "</td></tr>";
-						}
-						echo "</table>";
-					}
-					if(isset($_POST['dept'])){
-						$_SESSION['database_access'] = true;
-						include '../db/config_database.php';
-						$_SESSION['database_access'] = false;
+			while ( $r=mysqli_fetch_assoc($res) ) {
+				echo "<tr>";
+				echo "<td>";
+				echo $r['id']."</td>";
+				echo "<td>";
+				echo $r['name'];
+				echo "</td>";
+				echo "<td>";
+				echo $r['count(name)'];
+				echo "</td></tr>";
+			}
+			echo "</table>";
+		}
+		if(isset($_POST['dept'])){
+			$_SESSION['database_access'] = true;
+			include '../db/config_database.php';
+			$_SESSION['database_access'] = false;
 
-						$query="SELECT count(map),map,id FROM t2 group by map order by id";
-						$res=mysqli_query($con,$query);
+			$query="SELECT count(map),map,id FROM t2 group by map order by id";
+			$res=mysqli_query($con,$query);
 
-						echo "<br><table class='table table-bordered' >" ;
-						echo "<tr class='tor' >
-								<th>ID</th>
-								<th>Department Name</th>
-								<th>No. of Queries</th>
-							</tr>";
+			echo "<br><table class='table table-bordered' >" ;
+			echo "<tr class='tor' >
+			<th>ID</th>
+			<th>Department Name</th>
+			<th>No. of Queries</th>
+		</tr>";
 
-						while($r=mysqli_fetch_assoc($res))
-						{
-							echo "<tr>";
-							echo "<td>";
-							echo $r['id'];
-							echo "</td>";
-							echo "<td>";
-							echo $r['map'];
-							echo "</td>";
-							echo "<td>";
-							echo $r['count(map)'];
-							echo "</td></tr>";
-						}
-						echo "</table>";
-					}
-					if(isset($_POST['close'])){
+		while($r=mysqli_fetch_assoc($res))
+		{
+			echo "<tr>";
+			echo "<td>";
+			echo $r['id'];
+			echo "</td>";
+			echo "<td>";
+			echo $r['map'];
+			echo "</td>";
+			echo "<td>";
+			echo $r['count(map)'];
+			echo "</td></tr>";
+		}
+		echo "</table>";
+	}
+	if(isset($_POST['close'])){
 
-						$_SESSION['database_access'] = true;
-						include '../db/config_database.php';
-						$_SESSION['database_access'] = false;
+		$_SESSION['database_access'] = true;
+		include '../db/config_database.php';
+		$_SESSION['database_access'] = false;
 
-						$query="SELECT * FROM add_rti WHERE closed=1";
-						$res=mysqli_query($con,$query);
+		$query="SELECT * FROM add_rti WHERE closed=1";
+		$res=mysqli_query($con,$query);
 
-						echo "<br><table class='table table-bordered'>" ;
-						echo "<tr class='tor'>
-								<th>ID</th>
-								<th>Applicant Name</th>
-								<th>Reply Date</th>
-							</tr>";
-						while($r=mysqli_fetch_assoc($res)) {
-							echo "<tr>";
-							echo "<td>";
-							echo $r['id'];
-							echo "</td>";
-							echo "<td>";
-							echo $r['name'];
-							echo "</td>";
-							$que="SELECT * FROM info_about_reply WHERE id=".$r['id'].";";
-							$ut=mysqli_query($con,$que);
-							$ut1=mysqli_fetch_assoc($ut);
-							echo "<td>";
-							echo $ut1['reply_date'];
-							echo "</td></tr>";
-						}
-						echo "</table>";
-					}
-					if(isset($_POST['date'])){
-						echo "
-						<center>
-						<form method=post action='./report.php' name='report_rti'>
-							<th>Start Date</th>
-							<td><input type=text name=d1 placeholder=YYYY-MM-DD></td>
-							<th>End Date</th>
-							<td><input type=text name=d2 placeholder=YYYY-MM-DD></td>
-							<input type=submit name=enter value=Enter onclick=\"return validateDate()\" class='btn btn-secondary'>
-						</form>
-						</center>";
-						echo "</table>";
-					}
-				?>
-				<script type="text/javascript">
-					function validateDate(){
-						var bool1 = validatedate1(document.report_rti.d1);
-						var bool2;
-						if(bool1 == true){
-							bool2 = validatedate2(document.report_rti.d2);
-						}
-						if(bool1 == false || bool2 == false){
-							return false;
-						}
-					}
-					function validatedate1(inputText) {
-						var dateformat = /^(\d{4})-(\d{1,2})-(\d{1,2})/;
+		echo "<br><table class='table table-bordered'>" ;
+		echo "<tr class='tor'>
+		<th>ID</th>
+		<th>Applicant Name</th>
+		<th>Reply Date</th>
+	</tr>";
+	while($r=mysqli_fetch_assoc($res)) {
+		echo "<tr>";
+		echo "<td>";
+		echo $r['id'];
+		echo "</td>";
+		echo "<td>";
+		echo $r['name'];
+		echo "</td>";
+		$que="SELECT * FROM info_about_reply WHERE id=".$r['id'].";";
+		$ut=mysqli_query($con,$que);
+		$ut1=mysqli_fetch_assoc($ut);
+		echo "<td>";
+		echo $ut1['reply_date'];
+		echo "</td></tr>";
+	}
+	echo "</table>";
+}
+if(isset($_POST['date'])){
+	echo "
+	<center>
+		<form method=post action='./report.php' name='report_rti'>
+			<th>Start Date</th>
+			<td><input type=text name=d1 placeholder=YYYY-MM-DD></td>
+			<th>End Date</th>
+			<td><input type=text name=d2 placeholder=YYYY-MM-DD></td>
+			<input type=submit name=enter value=Enter onclick=\"return validateDate()\" class='btn btn-secondary'>
+		</form>
+	</center>";
+	echo "</table>";
+}
+?>
+<script type="text/javascript">
+	function validateDate(){
+		var bool1 = validatedate1(document.report_rti.d1);
+		var bool2;
+		if(bool1 == true){
+			bool2 = validatedate2(document.report_rti.d2);
+		}
+		if(bool1 == false || bool2 == false){
+			return false;
+		}
+	}
+	function validatedate1(inputText) {
+		var dateformat = /^(\d{4})-(\d{1,2})-(\d{1,2})/;
 						// Match the date format through regular expression
 						if(inputText.value.match(dateformat)) {
 							document.report_rti.d1.focus();
@@ -279,22 +279,22 @@
 					}
 				</script>
 				<?php
-					if(isset($_POST['enter'])){
-						$_SESSION['database_access'] = true;
-						include '../db/config_database.php';
-						$_SESSION['database_access'] = false;
+				if(isset($_POST['enter'])){
+					$_SESSION['database_access'] = true;
+					include '../db/config_database.php';
+					$_SESSION['database_access'] = false;
 
-						$d1=$_POST['d1'];
-						$d2=$_POST['d2'];
-						$query="SELECT * FROM add_rti where (date_of_receipt_cio>='".$d1."' and date_of_receipt_cio<='".$d2."');";
-						$res=mysqli_query($con,$query);
+					$d1=$_POST['d1'];
+					$d2=$_POST['d2'];
+					$query="SELECT * FROM add_rti where (date_of_receipt_cio>='".$d1."' and date_of_receipt_cio<='".$d2."');";
+					$res=mysqli_query($con,$query);
 
-						echo"<div>
-								<table class='table table-bordered'>
-								<tr class='tor'>
-									<th>ID</th>
-									<th>Applicant Name</th>
-								</tr>";
+					echo"<div>
+					<table class='table table-bordered'>
+						<tr class='tor'>
+							<th>ID</th>
+							<th>Applicant Name</th>
+						</tr>";
 
 						while($r=mysqli_fetch_assoc($res)) {
 							echo "<tr>";
@@ -307,11 +307,11 @@
 						}
 						echo "</table></div>";
 					}
-				?>
-				<center><a href=../select_option.php class='btn btn-log'>Back</a></center>
-			</div>
-		</body>
-	</html>
-<?php 
-	} 
-?>
+					?>
+					<center><a href=../select_option.php class='btn btn-log'>Back</a></center>
+				</div>
+			</body>
+			</html>
+			<?php 
+		} 
+		?>
