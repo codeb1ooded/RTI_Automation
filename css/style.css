@@ -16,11 +16,19 @@
 	text-align: center;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+<<<<<<< HEAD
 .form input {
 	font-family: "Roboto", sans-serif;
 	outline: 0;
 	width: 100%;
 	font-size: 14px;
+=======
+.form input button {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  width: 100%;
+  font-size: 14px;
+>>>>>>> 6ff9b252fa1b7fe492e43ee41913053db993b9f7
 }
 
 h2 {

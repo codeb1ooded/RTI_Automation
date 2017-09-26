@@ -28,12 +28,10 @@ CREATE TABLE `add_rti` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
-INSERT INTO add_rti VALUES("1"," Sarthak","Male","dssffsf","110007","88888888","India","22222222","9999911111","vddgd@gmail.com","Indian","2016-11-17","2016-11-17","0","yes","2016-11-17","Cash","","","yes");
-INSERT INTO add_rti VALUES("2"," mrx","Male","sss","110004","Delhi","India","64652222","9211557755","bhavyagarg12@gmail.com","Indian","2016-11-25","2016-11-30","5","yes","2016-10-10","DD","","","yes");
-INSERT INTO add_rti VALUES("3"," ","","","0","","","","","","","0000-00-00","0000-00-00","0","","0000-00-00","","","","");
-INSERT INTO add_rti VALUES("4"," mrx","Male","ss","110004","Closed","Other","64652222","9211557755","bhavyagarg12@gmail.com","Indian","2016-10-10","2016-10-10","0","yes","2016-11-25","DD","","","yes");
-INSERT INTO add_rti VALUES("5"," b","Male","df`","110004","-","India","64652222","9211557755","bhavyagarg12@gmail.com","Indian","2016-10-12","2016-10-13","1","yes","2016-10-13","DD","","","yes");
-INSERT INTO add_rti VALUES("6"," mrx","Male","xxx","110004","Closed","India","64652222","9211557755","bhavyagarg12@gmail.com","Indian","2016-09-25","2016-09-25","0","no","2016-09-25","DD","1","1","yes");
+INSERT INTO add_rti VALUES("1"," Sarthak","Male","4323/7 Kamla Nagar,Delhi","110007","Delhi","India","22222222","9999911111","sarthak123@gmail.com","Indian","2017-08-28","2017-08-29","1","yes","2017-10-02","Cash","","","yes");
+INSERT INTO add_rti VALUES("2","Megha","Female","44B/3,Yamuna Vihar,Delhi","110004","Delhi","India","64652222","9211557755","codeb1ooded@gmail.com","Indian","2017-11-25","2017-11-30","5","yes","2017-11-25","DD","0","0","yes");
+INSERT INTO add_rti VALUES("3"," Saloni","Female","2341, Shastri Nagar, Delhi","110005","Delhi","India","23842323","9211134232","saloniBhartia@gmail.com","Indian","2017-09-03","2017-09-03","0","yes","2017-08-03","Cash","1","","");
+INSERT INTO add_rti VALUES("4","Arya","Female","232B,Adarsh Nagar,Delhi","110004","Delhi","Indian","64652222","9211557755","AryaStark12@gmail.com","Indian","2017-10-10","2017-10-10","0","yes","2017-11-25","DD","0","0","yes");
 
 
 
@@ -58,8 +56,8 @@ CREATE TABLE `article_section` (
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO  article_section VALUES("1","1(a)","sectionA Description");
-INSERT INTO  article_section VALUES("2","1(b)","sectionB Description");
+INSERT INTO  article_section VALUES("1","1(a)","Under this ACT of IT, the following information cannot be provided");
+INSERT INTO  article_section VALUES("2","1(b)","Under this act,all personal information of the army cannot be revealed to general public");
 
 
 
@@ -73,9 +71,9 @@ CREATE TABLE `article_sub_section` (
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO  article_sub_section VALUES("1","1","1(a)(a)","sub section desc a1");
-INSERT INTO  article_sub_section VALUES("2","1","1(a)(b)","sub section desc a2");
-INSERT INTO  article_sub_section VALUES("3","2","1(b)(a)","sub section desc b1");
+INSERT INTO  article_sub_section VALUES("1","1","1(a)(a)","Under this ACT of IT, the following information cannot be provided");
+INSERT INTO  article_sub_section VALUES("2","1","1(a)(b)","Under this act,all personal information of the army cannot be revealed to general public");
+INSERT INTO  article_sub_section VALUES("3","2","1(b)(a)","Information pertaining to nation\'s security may not be revealed.");
 
 
 
@@ -116,7 +114,8 @@ CREATE TABLE `info_about_reply` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
-INSERT INTO  info_about_reply VALUES("6","2016-10-03","2016-10-03","    Post 										","0"," Yes ");
+INSERT INTO  info_about_reply VALUES("3","2017-09-10","2017-09-10","  Mail 
+			","0"," Yes ");
 
 
 
@@ -146,6 +145,12 @@ CREATE TABLE `reply_queries` (
 
 INSERT INTO  reply_queries VALUES("1","1","xxx","","2016-11-17");
 INSERT INTO  reply_queries VALUES("1","2","ssss","","2016-11-17");
+INSERT INTO  reply_queries VALUES("3","1","The answer sheet can be collected within next week from the academics division b","sub section desc a2","2017-09-08");
+INSERT INTO  reply_queries VALUES("1","1","The information requested by the seeker cannot be provided as per given section.","sub section desc a1","2017-08-12");
+INSERT INTO  reply_queries VALUES("1","2","The following information is being provided as per users query and can be collec","","2017-08-15");
+INSERT INTO  reply_queries VALUES("1","1","Cannot be provided","sub section desc a1","2017-08-12");
+INSERT INTO  reply_queries VALUES("1","2","ssss","","2017-08-12");
+INSERT INTO  reply_queries VALUES("1","1","Under this act,all personal information of the army cannot be revealed to genera","Under this ACT of IT, the following information cannot be provided","2017-08-10");
 
 
 
@@ -161,7 +166,6 @@ CREATE TABLE `section4` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
-INSERT INTO  section4 VALUES("6","2016-10-20","1000","2016-10-23","2016-10-24","1");
 
 
 
@@ -169,16 +173,19 @@ DROP TABLE IF EXISTS  t2;
 
 CREATE TABLE `t2` (
   `id` int(11) NOT NULL,
+  `Internal ID` int(11) NOT NULL AUTO_INCREMENT,
   `q_no` int(11) NOT NULL,
   `ques` varchar(200) NOT NULL,
   `map` varchar(50) NOT NULL,
   `date_sent` date NOT NULL,
-  `flag` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `flag` int(11) NOT NULL,
+  PRIMARY KEY (`Internal ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
-INSERT INTO  t2 VALUES("1","1","qwerty","Ac","2016-11-17","0");
-INSERT INTO  t2 VALUES("1","2","qwerty2","Ex","2016-11-17","0");
-INSERT INTO  t2 VALUES("6","1","eee","Ac","2016-10-30","0");
+INSERT INTO  t2 VALUES("1","1","1","qwerty","Ac","2016-11-17","0");
+INSERT INTO  t2 VALUES("1","2","2","qwerty2","Ex","2016-11-17","0");
+INSERT INTO  t2 VALUES("4","4","1","dad","Ac","2016-09-30","0");
+INSERT INTO  t2 VALUES("3","5","1","To receive answer sheet for the subject OOSE","Ac","2017-09-06","0");
 
 
 
